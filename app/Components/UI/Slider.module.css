@@ -1,0 +1,85 @@
+.card{
+    cursor: pointer;
+    position: relative;
+}
+
+.card img{
+    width: 220px;
+    border-radius: 4px;
+}
+
+.card:hover img{
+    filter: brightness(120%);
+}
+
+.card:hover .icon{
+    display: flex !important;
+}
+
+.prices{
+    display: flex;
+    margin-top: 0.7rem;
+}
+
+.prices p:nth-child(1){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(10, 113, 248);
+    color: white;
+    font-size: 10px;
+    padding: 5px 10px;
+    margin-right: 8px;
+    border-radius: 4px;
+}
+
+
+.prices p:nth-child(2){
+    text-decoration: line-through;
+    color: gray;
+    margin-right: 8px;
+}
+
+.wish{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+.icon{
+    background-color: black;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+
+    color: white;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    padding: 0.2rem;
+    display: none;
+}
+
+.icon:hover{
+    transform: scale(1.1);
+}
+
+.icon:hover .tooltip{
+    display: block;
+}
+
+.tooltip{
+    position: fixed;
+    top: 1rem;
+    transform: translateX(-65%) !important;
+    background-color: rgb(34, 34, 34);
+    opacity: 0.8;
+    color: white;
+    font-size: 14px;
+    width: 150px;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    display: none;
+}

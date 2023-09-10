@@ -21,13 +21,27 @@ export default function GamesOnSale(){
 
     const [swiper, setSwiper] = useState(null)
     const [isBeginning, setIsBeginning] = useState(true)
-    const slides = []
+    const [isEnd, setIsEnd] = useState(false)
 
+    
+    // Filtering elements that has sale property
+    const slides = []
+    
     games.forEach(element => {
         if(element.sale){
             slides.push(element)
         }
     });
+
+    // Greying out the chevron buttons at the start and end
+    useEffect(() => {
+        if(swiper){
+            swiper.on("slideChange", (s) => {
+                setIsBeginning(s.isBeginning)
+                setIsEnd(s.isEnd)
+            })
+        }
+    }, [swiper])
 
     return(
         <div className={styles.container}>
@@ -36,7 +50,7 @@ export default function GamesOnSale(){
                     <div className={styles.title}>Game On Sale</div>
                     <div className={styles.buttons}>
                         <button onClick={() => swiper.slidePrev()} className={isBeginning ? styles.isBeginning : ''}><ion-icon name="chevron-back-outline"></ion-icon></button>
-                        <button onClick={() => swiper.slideNext()}><ion-icon name="chevron-forward-outline"></ion-icon></button>
+                        <button onClick={() => swiper.slideNext()} className={isEnd ? styles.isBeginning : ''}><ion-icon name="chevron-forward-outline"></ion-icon></button>
                     </div>
                 </div>
             

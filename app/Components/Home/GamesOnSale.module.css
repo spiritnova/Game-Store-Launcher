@@ -24,6 +24,10 @@
     font-size: 2rem;
 }
 
+.buttons button:active{
+    transform: scale(0.9);
+}
+
 .title{
     font-size: 18px;
 }

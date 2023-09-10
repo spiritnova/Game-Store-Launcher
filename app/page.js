@@ -9,8 +9,8 @@ export default function Home() {
       <Carousel/>
       <GamesOnSale/>
 
-      <Script src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'/>
-      <Script src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'/>
+      <Script type='module' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'/>
+      <Script noModule src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'/>
     </main>
   )
 }

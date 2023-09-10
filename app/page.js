@@ -1,5 +1,5 @@
-import Carousel from './Components/Carousel'
-import GamesOnSale from './Components/GamesOnSale'
+import Carousel from './Components/Home/Carousel'
+import GamesOnSale from './Components/Home/GamesOnSale'
 import styles from './page.module.css'
 import Script from 'next/script'
 

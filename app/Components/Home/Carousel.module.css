@@ -28,9 +28,8 @@
     color: white;
     position: absolute;
     top: 9rem;
-    left: 2rem;
+    left: 4rem;
     width: 500px;
-    visibility: hidden;
 }
 
 .content{
@@ -56,9 +55,6 @@
     opacity: 0.5;
 }
 
-.slide:hover .cover{
-    visibility: visible;
-}
 
 @keyframes slide_animation{
     0%{

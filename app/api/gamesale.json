@@ -1,5 +1,6 @@
 [
     {
+        "id" : 1,
         "image": "https://cdn1.epicgames.com/offer/e97659b501af4e3981d5430dad170911/EGS_HogwartsLegacy_AvalancheSoftware_S2_1200x1600-2bb94423bf1c7e2fca10577d9f2878b9?h=480&quality=medium&resize=1&w=360",
         "title": "Hogwarts Legacy",
         "prev_price" : 59.99,
@@ -8,6 +9,7 @@
     },
 
     {
+        "id" : 2,
         "image": "https://cdn1.epicgames.com/offer/0c40923dd1174a768f732a3b013dcff2/EGS_TheLastofUsPartI_NaughtyDogLLC_S2_1200x1600-41d1b88814bea2ee8cb7986ec24713e0?h=480&quality=medium&resize=1&w=360",
         "title": "The Last of Us Part 1",
         "prev_price": 59.99,
@@ -16,6 +18,7 @@
     },
 
     {
+        "id" : 3,
         "image": "https://cdn1.epicgames.com/offer/f5deacee017b4b109476933f7dd2edbd/EGS_EASPORTSFIFA23StandardEdition_EACanada_S2_1200x1600-c806355d9cc8b35ebe392f2a7db03075?h=480&quality=medium&resize=1&w=360",
         "title": "EA SPORTS FIFA 23 Standard Edition",
         "prev_price": 69.99,
@@ -23,6 +26,7 @@
         "sale": "-50%"
     },
     {
+        "id" : 4,
         "image": "https://cdn1.epicgames.com/3328b08ac1c14540aa265a1a85c07839/offer/hzd_tall-1200x1600-d4b1057afd47f9256d8da71f2f187be4.jpg?h=480&quality=medium&resize=1&w=360",
         "title": "Horizon Zero Dawn Complete Edition",
         "prev_price": 49.99,
@@ -30,6 +34,7 @@
         "sale": "-67%"
     },
     {
+        "id" : 5,
         "image": "https://cdn1.epicgames.com/offer/3ddd6a590da64e3686042d108968a6b2/EGS_GodofWar_SantaMonicaStudio_S2_1200x1600-fbdf3cbc2980749091d52751ffabb7b7_1200x1600-fbdf3cbc2980749091d52751ffabb7b7?h=480&quality=medium&resize=1&w=360",
         "title": "God of War",
         "prev_price": 49.99,
@@ -37,6 +42,7 @@
         "sale": "-40%"
     },
     {
+        "id" : 6,
         "image": "https://cdn1.epicgames.com/offer/f696430be718494fac1d6542cfb22542/EGS_MarvelsSpiderManMilesMorales_InsomniacGamesNixxesSoftware_S2_1200x1600-58989e7116de3f70a2ae6ea56ee202c6?h=480&quality=medium&resize=1&w=360",
         "title": "Marvel’s Spider-Man: Miles Morales",
         "prev_price": 49.99,
@@ -44,10 +50,29 @@
         "sale": "-33%"
     },
     {
+        "id" : 7,
         "image": "https://cdn1.epicgames.com/epic/offer/RDR2PC1227_Epic%20Games_860x1148-860x1148-b4c2210ee0c3c3b843a8de399bfe7f5c.jpg?h=480&quality=medium&resize=1&w=360",
         "title": "Red Dead Redemption 2",
         "prev_price": 59.99,
         "price": 14.99,
         "sale": "-75%"
+    },
+    {
+        "id" : 8,
+        "image": "https://images6.alphacoders.com/124/1245270.jpg",
+        "title": "Call Of Duty Modern Warfare 2",
+        "price": 69.99
+    },
+    {
+        "id" : 9,
+        "image": "https://images4.alphacoders.com/110/1105295.jpg",
+        "title": "Devil May Cry 5",
+        "price": 29.99
+    },
+    {
+        "id" : 10,
+        "image": "https://images4.alphacoders.com/587/587508.png",
+        "title": "Witcher 3: Wild Hunt",
+        "price": 39.99
     }
 ]

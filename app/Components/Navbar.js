@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import Gamepad from '../Assets/Gamepad'
 import styles from './Navbar.module.css'
 import Link from 'next/link'
+import Logo from './UI/Logo'
 
 export default function Navbar(){
     const [active, setIsActive] = useState(false)
@@ -20,8 +21,7 @@ export default function Navbar(){
     return(
         <div className={styles.nav}>
             <div className={styles.brand}>
-                <Gamepad color={'white'} width={'50px'} height={'50px'}/>
-                <p className={styles.logo}>Game Store</p>
+                <Logo/>
             </div>
             <ul className={`${styles.navLinks} ${active ? styles['nav-active'] : ''}`} ref={navLinks}>
                 <li className={styles.navItems}><Link href="/">Discover</Link></li>

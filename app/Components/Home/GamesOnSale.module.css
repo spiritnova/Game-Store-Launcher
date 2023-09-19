@@ -124,15 +124,16 @@
     color: gray !important;
 }
 
-.swiper{
+/* .swiper{
     flex-shrink: 1;
-}
+} */
 
 @media screen and (max-width: 1450px){
     .container{
-        padding: 4rem 5rem;
+        padding: 3rem 5rem;
     }
 }
+
 
 @media screen and (max-width: 768px){
     .container{
@@ -141,5 +142,12 @@
 
     .title{
         text-align: center;
+    }
+}
+
+
+@media screen and (max-width: 600px){
+    .container{
+        padding: 2rem 0 !important;
     }
 }

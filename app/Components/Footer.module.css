@@ -1,0 +1,81 @@
+.footer{
+
+    background-color: rgb(31, 31, 31);
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.upper{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.contacts{
+    border-bottom: 1px solid #373636;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+}
+
+.contactrow{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact{
+    display: flex;
+    align-items: center;
+}
+
+.icon{
+    margin-right: 0.4rem;
+}
+
+.icon svg{
+    font-size: 30px;
+    color: greenyellow;
+}
+
+
+.info h4{
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.info p{
+    font-size: 15px;
+    color: #757575;
+}
+
+@media (min-width: 768px) {
+    .contact{
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
+
+@media (min-width: 576px) {
+    .upper {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .upper {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .upper {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .upper {
+        max-width: 1140px;
+    }
+}

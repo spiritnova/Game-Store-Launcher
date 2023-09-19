@@ -57,9 +57,34 @@ export default function GamesOnSale(){
                 <Swiper
                     modules={[Navigation, Pagination]}
                     spaceBetween={30}
-                    slidesPerView={'auto'}
+                    slidesPerView={'1'}
                     grabCursor = {true}
                     onSwiper={(s) => setSwiper(s)}
+                    breakpoints = {{
+                        500:{
+                            slidesPerView: 1,
+                        },
+
+                        630:{
+                            slidesPerView: 2,
+                        },
+
+                        900: {
+                            slidesPerView: 3,
+                        },
+
+                        1200:{
+                            slidesPerView: 4,
+                        },
+
+                        1400:{
+                            slidesPerView: 5,
+                        },
+
+                        1680:{
+                            slidesPerView: 6,
+                        }
+                    }}
                 >
                 {slides.map(slide => (
                         <SwiperSlide key={slide.id} className={styles.swiper}>

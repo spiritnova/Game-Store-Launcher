@@ -1,0 +1,29 @@
+.logo{
+    background-color: var(--main);
+    display: inline-block;
+    border-radius: 50%;
+    padding: 0.5rem;
+    margin-right: 6px;
+}
+
+.logo svg{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: black;
+}
+
+
+.container{
+    display: flex;
+    align-items: center;
+}
+
+
+.container p{
+    font-family: 'INTER', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+}

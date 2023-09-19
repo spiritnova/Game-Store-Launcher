@@ -32,7 +32,7 @@
 
 .icon svg{
     font-size: 30px;
-    color: greenyellow;
+    color: var(--main);
 }
 
 
@@ -46,6 +46,13 @@
 .info p{
     font-size: 15px;
     color: #757575;
+}
+
+
+/** SECOND SECTION **/
+
+.content{
+    padding: 3rem 0;
 }
 
 @media (min-width: 768px) {

@@ -1,6 +1,8 @@
 .container{
     padding: 5rem 10%;
     position: relative;
+
+    background-color: #4776ff;
 }
 
 .title{
@@ -71,6 +73,7 @@
     visibility: visible;
 }
 
+
 @media screen and (min-width : 1024px) {
     .container{
         padding: 5rem 15%;
@@ -78,10 +81,23 @@
     .card{
         width: 33.33% !important;
     }
+
+    .cover img{
+        width: 143px;
+        height: 70px;
+    }
+
+    .image:hover .cover img{
+        transform: translateY(-57px);
+    }
 }
 
 @media screen and (min-width : 768px) {
     .card{
         width: 50%;
+    }
+    
+    .image:hover .cover img{
+        transform: translateY(-80px);
     }
 }

@@ -90,7 +90,7 @@ export default function MainCarousel() {
 
                     <div className={styles.cover} style={{top: '5rem'}}>
                         <div className={styles.content}>
-                            <Image src ={w3l} alt='Witcher 3 : wild hunt logo'/>
+                            <Image src ={w3l} alt='Witcher 3 : wild hunt logo' style={{width: 420}}/>
                             <h3>THE MOST AWARDED GAME OF A GENERATION NOW ENHANCED FOR THE NEXT</h3>
                             <p>You are Geralt of Rivia, mercenary monster slayer. Before you stands a war-torn, monster-infested continent you can explore at will. Your current contract? Tracking down Ciri — the Child of Prophecy, a living weapon that can alter the shape of the world.</p>
                             <Link href={`/games/10`}><Button text={'PURCHASE'}/></Link>

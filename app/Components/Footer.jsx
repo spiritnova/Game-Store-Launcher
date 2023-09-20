@@ -3,6 +3,7 @@ import Location from '@mui/icons-material/LocationOn';
 import PhoneEnabledIcon from '@mui/icons-material/PhoneEnabled';
 import EmailIcon from '@mui/icons-material/Email';
 import Logo from './UI/Logo';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -36,7 +37,45 @@ export default function Footer() {
 
 
             <div className={styles.content}>
-                <Logo/>
+                <div className={styles.row}>
+                    <div className={styles.brand}>
+                        <Logo/>
+                        <p className={styles.text}>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing elit,Lorem ipsum dolor sit amet.</p>
+                    </div>
+
+                    <div className={styles.quicklinks}>
+                        <div className={styles.header}><h4>Quick Links</h4></div>
+                        <div className={styles.links}>
+                            <li>
+                                <Link href='/'>Discover</Link>
+                            </li>
+
+                            <li>
+                                <Link href='/mylibrary'>My Library</Link>
+                            </li>
+
+                            <li>
+                                <Link href='#'>Games</Link>
+                            </li>
+
+                            <li>
+                                <Link href='#'>Contact Us</Link>
+                            </li>
+
+                            <li>
+                                <Link href='/about'>About</Link>
+                            </li>
+
+                            <li>
+                                <Link href='#'>Our Services</Link>
+                            </li>
+
+                            <li>
+                                <Link href='/news'>Latest News</Link>
+                            </li>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

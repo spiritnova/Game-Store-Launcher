@@ -55,9 +55,69 @@
     padding: 3rem 0;
 }
 
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.brand{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.text{
+    font-size: 14px;
+    color: #757575;
+    margin-top: 30px;
+}
+
+
+.quicklinks{
+    padding: 0 15px;
+    margin-top: 15px;
+}
+
+.header{
+    margin-bottom: 40px;
+    font-size: 20px;
+    font-weight: 600;
+    position: relative;
+}
+
+.header h4::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    height: 2px;
+    width: 50px;
+    background: var(--main);
+}
+
+
+.links li{
+    display: inline-block;
+    float: left;
+    width: 50%;
+    margin-bottom: 12px;
+}
+
+.links a{
+    color: #757575;
+}
+
+.links a:hover{
+    color: var(--main);
+}
+
 @media (min-width: 768px) {
     .contact{
         -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+
+    .brand{
         flex: 0 0 33.333333%;
         max-width: 33.333333%;
     }

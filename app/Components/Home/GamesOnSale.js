@@ -62,7 +62,7 @@ export default function GamesOnSale(){
                     onSwiper={(s) => setSwiper(s)}
                     breakpoints = {{
                         500:{
-                            slidesPerView: 1,
+                            slidesPerView: 2,
                         },
 
                         630:{

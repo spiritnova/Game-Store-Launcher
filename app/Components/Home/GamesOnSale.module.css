@@ -38,13 +38,19 @@
     position: relative;
 }
 
-.card img{
+.image{
+    position: relative;
     width: 220px;
     border-radius: 4px;
 }
 
-.card:hover img{
-    filter: brightness(120%);
+.image img{
+    width: 220px;
+    border-radius: 4px;
+}
+
+.image:hover img{
+    filter: contrast(120%) brightness(90%);
 }
 
 .card:hover .icon{
@@ -124,9 +130,6 @@
     color: gray !important;
 }
 
-/* .swiper{
-    flex-shrink: 1;
-} */
 
 @media screen and (max-width: 1450px){
     .container{

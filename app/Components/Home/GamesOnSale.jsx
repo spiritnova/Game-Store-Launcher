@@ -90,18 +90,21 @@ export default function GamesOnSale(){
                         <SwiperSlide key={slide.id} className={styles.swiper}>
                             <Link href={`/games/${slide.id}`}>
                                 <div className={styles.card}>
-                                    <img src={slide.image}/>
+                                    <div className={styles.image}>
+                                        <img src={slide.image}/>
+
+                                        <div className={styles.wish}>
+                                            <button className={styles.icon}>
+                                                <ion-icon name="add-outline"></ion-icon>
+                                                <span className={styles.tooltip}>Add to wishlist</span>
+                                            </button>
+                                        </div>
+                                    </div>
                                     <p>{slide.title}</p>
                                     <div className={styles.prices}>
                                         <p>{slide.sale}</p>
                                         <p>${slide.prev_price}</p>
                                         <p>${slide.price}</p>
-                                    </div>
-                                    <div className={styles.wish}>
-                                        <button className={styles.icon}>
-                                        <ion-icon name="add-outline"></ion-icon>
-                                        <span className={styles.tooltip}>Add to wishlist</span>
-                                        </button>
                                     </div>
                                 </div>
                             </Link>

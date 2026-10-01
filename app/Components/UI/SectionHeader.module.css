@@ -1,0 +1,41 @@
+.header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.4rem;
+}
+
+.title {
+    font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    margin-top: 0.15rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--main-text);
+    white-space: nowrap;
+}
+
+.link span {
+    display: inline-block;
+    transition: transform 150ms;
+}
+
+.link:hover span {
+    transform: translateX(3px);
+}

@@ -6,9 +6,10 @@ import Link from 'next/link'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'
 import DownloadIcon from '@mui/icons-material/Download'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
+import SystemUpdateAltIcon from '@mui/icons-material/SystemUpdateAlt'
 import { cardImage, formatSize, getEdition, getGame } from '@/lib/games'
 import { placeholderColor } from '@/lib/image-colors'
-import { useDownloads } from '@/lib/downloads'
+import { statusLabel, useDownloads } from '@/lib/downloads'
 import { formatLastPlayed, formatPlaytime, useStore } from '@/lib/store'
 import Button from '../UI/Button'
 import ProgressBar from '../UI/ProgressBar'
@@ -36,9 +37,10 @@ function LibraryCard({ entry }) {
   const lastPlayed = formatLastPlayed(entry.lastPlayed)
   const edition = getEdition(game, entry.edition)
 
+  const update = downloads.updateFor(game.slug)
   let status = 'Not installed'
-  if (download) status = { downloading: 'Downloading…', paused: 'Paused', queued: 'Queued' }[download.status]
-  else if (entry.installed) status = 'Installed'
+  if (download) status = statusLabel(download)
+  else if (entry.installed) status = update ? 'Update available' : 'Installed'
 
   return (
     <article className={styles.card}>
@@ -67,8 +69,8 @@ function LibraryCard({ entry }) {
         {download ? (
           <div className={styles.progressRow}>
             <ProgressBar value={download.progress} label={`${status} ${game.title}`} />
-            {download.status === 'paused' ? (
-              <Button variant="ghost" size="small" onClick={() => downloads.resume(game.slug)}>Resume</Button>
+            {download.status === 'paused' || download.status === 'queued' ? (
+              <Button variant="ghost" size="small" onClick={() => downloads.resume(game.slug)}>{download.status === 'paused' ? 'Resume' : 'Start'}</Button>
             ) : (
               <Button variant="ghost" size="small" onClick={() => downloads.cancel(game.slug)}>Cancel</Button>
             )}
@@ -77,9 +79,14 @@ function LibraryCard({ entry }) {
           <div className={styles.actions}>
             {entry.installed ? (
               <>
-                <Button variant="secondary" size="small" onClick={() => play(game)}>
+                <Button variant="success" size="small" onClick={() => play(game)}>
                   <PlayArrowIcon fontSize="small" /> Play
                 </Button>
+                {update && (
+                  <Button variant="secondary" size="small" onClick={() => downloads.queueUpdate(game.slug)} title={`${formatSize(update.sizeGB)} update`}>
+                    <SystemUpdateAltIcon fontSize="small" /> Update
+                  </Button>
+                )}
                 <button
                   type="button"
                   className={styles.iconButton}

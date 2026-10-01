@@ -1,21 +1,31 @@
 :root {
-  --bg: #121212;
-  --surface: #1f1f1f;
-  --surface-2: #2a2a2a;
-  --border: #373737;
-  --text: #ffffff;
-  --text-muted: #a8a8a8;
-  --main: #2e84ff;
-  --main-text: #6aa6ff;
-  --accent: #f8fc36;
-  --success: #3ccf7a;
-  --danger: #ff6b6b;
+  /* Surfaces: a deep blue-black with a slight cool tint, layered lighter as they rise */
+  --bg: #0a0b10;
+  --surface: #12141c;
+  --surface-2: #1a1d28;
+  --surface-3: #232736;
+  --border: rgba(255, 255, 255, 0.07);
+  --border-strong: rgba(255, 255, 255, 0.14);
 
-  --radius: 8px;
-  --sidebar-w: 248px;
+  --text: #f4f6fb;
+  --text-muted: #98a1b5;
+  --main: #3d8bff;
+  --main-text: #7db0ff;
+  --accent: #f5c542;
+  --success: #34d399;
+  --danger: #ff6b7a;
+
+  --radius-sm: 10px;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.5);
+
+  --sidebar-w: 256px;
   --topbar-h: 0px;
   --max-w: 1400px;
   --page-x: clamp(1rem, 4vw, 3rem);
+  --section-gap: clamp(2.5rem, 5vw, 4rem);
 }
 
 *,
@@ -35,8 +45,18 @@ body {
   background-color: var(--bg);
   color: var(--text);
   font-family: var(--font-poppins), system-ui, sans-serif;
-  line-height: 1.5;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.015em;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--main) 45%, transparent);
 }
 
 /* Accent colour, chosen in Settings > Appearance */
@@ -71,10 +91,25 @@ body {
 
 .content {
   container: main / inline-size;
+  position: relative;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
   min-width: 0;
   min-height: 100vh;
+}
+
+/* A soft accent glow at the top of every page */
+.content::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 520px;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 100% at 80% 0%, color-mix(in srgb, var(--main) 16%, transparent), transparent 70%),
+    radial-gradient(40% 80% at 0% 0%, color-mix(in srgb, var(--main) 7%, transparent), transparent 70%);
 }
 
 .page {
@@ -122,6 +157,27 @@ ul {
   outline-offset: 2px;
 }
 
+/* Form controls share one look */
+select,
+input[type='time'] {
+  padding: 0.6rem 0.85rem;
+  background-color: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+}
+
+select:focus,
+input[type='time']:focus {
+  border-color: var(--main);
+  outline: none;
+}
+
+select:disabled,
+input:disabled {
+  opacity: 0.5;
+}
+
 /* ====================== Utilities ================= */
 .container {
   width: 100%;
@@ -150,7 +206,7 @@ ul {
   padding: 0.5rem 1rem;
   background: var(--accent);
   color: #000;
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   font-weight: 600;
 }
 

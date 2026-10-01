@@ -634,7 +634,12 @@
         "price": 59.99,
         "includes": []
       }
-    ]
+    ],
+    "hero": "/images/banners/elden-ring.jpg",
+    "spotlight": {
+      "tagline": "Rise, Tarnished, and become Elden Lord.",
+      "blurb": "THE CRITICALLY ACCLAIMED FANTASY ACTION RPG. Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands…"
+    }
   },
   {
     "slug": "baldurs-gate-3",
@@ -660,7 +665,12 @@
         "price": 59.99,
         "includes": []
       }
-    ]
+    ],
+    "hero": "/images/banners/baldurs-gate-3.jpg",
+    "spotlight": {
+      "tagline": "Gather your party. Venture forth.",
+      "blurb": "Baldur’s Gate 3 is a story-rich, party-based RPG set in the universe of Dungeons & Dragons, where your choices shape a tale of fellowship and betrayal, survival and…"
+    }
   },
   {
     "slug": "cyberpunk-2077",
@@ -687,7 +697,12 @@
         "price": 59.99,
         "includes": []
       }
-    ]
+    ],
+    "hero": "/images/banners/cyberpunk-2077.jpg",
+    "spotlight": {
+      "tagline": "Welcome to Night City.",
+      "blurb": "Cyberpunk 2077 is an open-world, action-adventure RPG set in the dark future of Night City — a dangerous megalopolis obsessed with power, glamor, and ceaseless body…"
+    }
   },
   {
     "slug": "fallout-4",
@@ -1134,7 +1149,12 @@
         "price": 24.99,
         "includes": []
       }
-    ]
+    ],
+    "hero": "/images/banners/hades.jpg",
+    "spotlight": {
+      "tagline": "Defy the god of the dead.",
+      "blurb": "Defy the god of the dead as you hack and slash out of the Underworld in this rogue-like dungeon crawler from the creators of Bastion, Transistor, and Pyre."
+    }
   },
   {
     "slug": "hollow-knight",
@@ -1400,7 +1420,12 @@
         "price": 39.99,
         "includes": []
       }
-    ]
+    ],
+    "hero": "/images/banners/resident-evil-4.jpg",
+    "spotlight": {
+      "tagline": "Survival is just the beginning.",
+      "blurb": "Survival is just the beginning. Six years have passed since the biological disaster in Raccoon City. Leon S. Kennedy, one of the survivors, tracks the president's…"
+    }
   },
   {
     "slug": "resident-evil-village",
@@ -2056,7 +2081,12 @@
         "price": 59.99,
         "includes": []
       }
-    ]
+    ],
+    "hero": "/images/banners/forza-horizon-5.jpg",
+    "spotlight": {
+      "tagline": "Your festival. Your road.",
+      "blurb": "Explore the vibrant open world landscapes of Mexico with limitless, fun driving action in the world’s greatest cars."
+    }
   },
   {
     "slug": "assetto-corsa",

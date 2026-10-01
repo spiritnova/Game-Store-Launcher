@@ -6,7 +6,7 @@
 .link {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 0.75rem;
     height: 100%;
     border-radius: var(--radius);
 }
@@ -17,23 +17,60 @@
     overflow: hidden;
     border-radius: var(--radius);
     background-color: var(--surface);
-    margin-bottom: 0.35rem;
+    box-shadow: 0 0 0 1px var(--border);
+    transition: transform 280ms cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 280ms;
 }
 
 .image {
     object-fit: cover;
-    transition: transform 400ms ease, filter 200ms;
+    transition: transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.link:hover .media {
+    transform: translateY(-5px);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--main) 55%, transparent), 0 18px 36px rgba(0, 0, 0, 0.5),
+        0 0 28px color-mix(in srgb, var(--main) 22%, transparent);
 }
 
 .link:hover .image {
-    transform: scale(1.04);
-    filter: brightness(1.1);
+    transform: scale(1.05);
+}
+
+.discount {
+    position: absolute;
+    left: 0.6rem;
+    bottom: 0.6rem;
+    padding: 3px 9px;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--main) 80%, white), var(--main));
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding-inline: 0.1rem;
 }
 
 .title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.35;
+    letter-spacing: -0.005em;
+}
+
+.genre {
+    margin-bottom: 0.25rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
 }
 
 .action {
@@ -46,11 +83,13 @@
 @media (hover: hover) {
     .action:has(button[aria-pressed='false']) {
         opacity: 0;
-        transition: opacity 150ms;
+        transform: translateY(-4px);
+        transition: opacity 180ms, transform 180ms;
     }
 
     .card:hover .action,
     .card:focus-within .action {
         opacity: 1;
+        transform: none;
     }
 }

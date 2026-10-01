@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getGenreStats } from '@/lib/games'
 import { blurProps } from '@/lib/images'
+import SectionHeader from '../UI/SectionHeader'
 import styles from './Categories.module.css'
 
 export default function Categories() {
@@ -9,7 +10,7 @@ export default function Categories() {
 
     return (
         <section className={`container ${styles.section}`} aria-labelledby="categories-title">
-            <h2 id="categories-title" className={styles.title}>Browse by category</h2>
+            <SectionHeader id="categories-title" title="Browse by category" subtitle={`${stats.length} categories to explore`} href="/games" hrefLabel="All games" />
             <ul className={styles.grid}>
                 {stats.map(({ name, count, banner }) => (
                     <li key={name}>

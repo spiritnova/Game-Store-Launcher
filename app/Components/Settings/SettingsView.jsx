@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useDownloads } from '@/lib/downloads'
-import { ACCENTS, CONNECTIONS, useStore } from '@/lib/store'
+import { ACCENTS, AUTO_UPDATE_MODES, BANDWIDTH_LIMITS, CONNECTIONS, REGIONS, useStore } from '@/lib/store'
 import Avatar from '../UI/Avatar'
 import Button from '../UI/Button'
 import SignInPrompt from '../UI/SignInPrompt'
@@ -114,41 +114,155 @@ function AppearanceSection() {
   )
 }
 
+const regionGroups = Object.entries(REGIONS).reduce((groups, [id, region]) => {
+  ;(groups[region.group] ??= []).push([id, region])
+  return groups
+}, {})
+
+function TimeRange({ idPrefix, value, onChange, disabled }) {
+  return (
+    <div className={styles.timeRange}>
+      <label htmlFor={`${idPrefix}-start`}>From</label>
+      <input id={`${idPrefix}-start`} type="time" value={value.start} disabled={disabled} onChange={(e) => e.target.value && onChange({ ...value, start: e.target.value })} />
+      <label htmlFor={`${idPrefix}-end`}>to</label>
+      <input id={`${idPrefix}-end`} type="time" value={value.end} disabled={disabled} onChange={(e) => e.target.value && onChange({ ...value, end: e.target.value })} />
+      {value.start > value.end && <span className={styles.muted}>Runs overnight</span>}
+    </div>
+  )
+}
+
+function Switch({ checked, onChange, title, description }) {
+  return (
+    <label className={styles.toggleRow}>
+      <span>
+        <strong>{title}</strong>
+        <span className={styles.muted}>{description}</span>
+      </span>
+      <input type="checkbox" checked={checked} onChange={(e) => onChange(e.target.checked)} />
+      <span className={styles.switch} aria-hidden="true" />
+    </label>
+  )
+}
+
 function DownloadSection() {
   const { settings, updateSettings } = useStore()
   const { history, clearHistory } = useDownloads()
+  const region = REGIONS[settings.region] ?? REGIONS.auto
+
   return (
-    <div className={styles.card}>
-      <fieldset className={styles.field}>
-        <legend>Simulated connection speed</legend>
-        <div className={styles.options}>
-          {Object.entries(CONNECTIONS).map(([id, connection]) => (
-            <label key={id} className={styles.option}>
-              <input type="radio" name="connection" value={id} checked={settings.connection === id} onChange={() => updateSettings({ connection: id })} />
-              <span>
-                <strong>{connection.label}</strong>
-                <span className={styles.muted}>{connection.description}</span>
-              </span>
-            </label>
-          ))}
+    <div className={styles.stack}>
+      <div className={styles.card}>
+        <h2 className={styles.cardTitle}>Connection</h2>
+
+        <div className={styles.field}>
+          <label htmlFor="download-region">Download region</label>
+          <select id="download-region" value={settings.region} onChange={(e) => updateSettings({ region: e.target.value })} aria-describedby="region-help">
+            {Object.entries(regionGroups).map(([group, regions]) => (
+              <optgroup key={group} label={group}>
+                {regions.map(([id, r]) => (
+                  <option key={id} value={id}>{r.label}</option>
+                ))}
+              </optgroup>
+            ))}
+          </select>
+          <p id="region-help" className={styles.muted}>
+            {settings.region === 'auto'
+              ? 'The launcher picks the fastest server for you.'
+              : `Simulated: ${region.ping} ms ping, about ${Math.round(region.speed * 100)}% of your connection's speed from this region.`}
+          </p>
         </div>
-      </fieldset>
 
-      <label className={styles.toggleRow}>
-        <span>
-          <strong>Install games after purchase</strong>
-          <span className={styles.muted}>Start downloading new games as soon as you check out.</span>
-        </span>
-        <input type="checkbox" checked={settings.autoInstall} onChange={(e) => updateSettings({ autoInstall: e.target.checked })} />
-        <span className={styles.switch} aria-hidden="true" />
-      </label>
+        <div className={styles.field}>
+          <label htmlFor="bandwidth-limit">Limit download speed to</label>
+          <select id="bandwidth-limit" value={settings.bandwidthLimit} onChange={(e) => updateSettings({ bandwidthLimit: e.target.value })}>
+            {Object.entries(BANDWIDTH_LIMITS).map(([id, limit]) => (
+              <option key={id} value={id}>{limit.label}</option>
+            ))}
+          </select>
+        </div>
 
-      <div className={styles.toggleRow}>
-        <span>
-          <strong>Download history</strong>
-          <span className={styles.muted}>{history.length} finished {history.length === 1 ? 'download' : 'downloads'} saved.</span>
-        </span>
-        <Button variant="ghost" size="small" onClick={clearHistory} disabled={history.length === 0}>Clear history</Button>
+        <fieldset className={styles.field}>
+          <legend>Simulated connection speed</legend>
+          <div className={styles.options}>
+            {Object.entries(CONNECTIONS).map(([id, connection]) => (
+              <label key={id} className={styles.option}>
+                <input type="radio" name="connection" value={id} checked={settings.connection === id} onChange={() => updateSettings({ connection: id })} />
+                <span>
+                  <strong>{connection.label}</strong>
+                  <span className={styles.muted}>{connection.description}</span>
+                </span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        <Switch
+          checked={settings.showBits}
+          onChange={(showBits) => updateSettings({ showBits })}
+          title="Show speeds in bits per second"
+          description="Display Mbps instead of MB/s, like internet providers do."
+        />
+      </div>
+
+      <div className={styles.card}>
+        <h2 className={styles.cardTitle}>Download schedule</h2>
+        <Switch
+          checked={settings.schedule.enabled}
+          onChange={(enabled) => updateSettings({ schedule: { ...settings.schedule, enabled } })}
+          title="Only download during set hours"
+          description="Downloads wait outside this window, handy for off-peak hours. You can always start one manually."
+        />
+        <TimeRange
+          idPrefix="download-window"
+          value={settings.schedule}
+          disabled={!settings.schedule.enabled}
+          onChange={(window) => updateSettings({ schedule: { ...window, enabled: settings.schedule.enabled } })}
+        />
+      </div>
+
+      <div className={styles.card}>
+        <h2 className={styles.cardTitle}>Updates</h2>
+        <fieldset className={styles.field}>
+          <legend>Auto-update games</legend>
+          <div className={styles.options}>
+            {Object.entries(AUTO_UPDATE_MODES).map(([id, mode]) => (
+              <label key={id} className={styles.option}>
+                <input type="radio" name="auto-update" value={id} checked={settings.autoUpdate === id} onChange={() => updateSettings({ autoUpdate: id })} />
+                <span>
+                  <strong>{mode.label}</strong>
+                  <span className={styles.muted}>{mode.description}</span>
+                </span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+        <div className={styles.field}>
+          <span className={styles.fieldLabel}>Update window</span>
+          <TimeRange
+            idPrefix="update-window"
+            value={settings.updateWindow}
+            disabled={settings.autoUpdate !== 'scheduled'}
+            onChange={(updateWindow) => updateSettings({ updateWindow })}
+          />
+          <p className={styles.muted}>Only used when updates are limited to a window.</p>
+        </div>
+      </div>
+
+      <div className={styles.card}>
+        <h2 className={styles.cardTitle}>Installing</h2>
+        <Switch
+          checked={settings.autoInstall}
+          onChange={(autoInstall) => updateSettings({ autoInstall })}
+          title="Install games after purchase"
+          description="Start downloading new games as soon as you check out."
+        />
+        <div className={styles.toggleRow}>
+          <span>
+            <strong>Download history</strong>
+            <span className={styles.muted}>{history.length} finished {history.length === 1 ? 'download' : 'downloads'} saved.</span>
+          </span>
+          <Button variant="ghost" size="small" onClick={clearHistory} disabled={history.length === 0}>Clear history</Button>
+        </div>
       </div>
     </div>
   )

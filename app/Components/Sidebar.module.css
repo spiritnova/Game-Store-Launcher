@@ -7,9 +7,11 @@
     width: var(--sidebar-w);
     height: 100vh;
     height: 100dvh;
-    padding: 1.25rem 0.9rem 1rem;
+    padding: 1.4rem 0.9rem 1rem;
     overflow: hidden;
-    background-color: var(--surface);
+    background:
+        linear-gradient(180deg, color-mix(in srgb, var(--main) 7%, transparent), transparent 220px),
+        var(--surface);
     border-right: 1px solid var(--border);
 }
 
@@ -17,7 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-inline: 0.4rem;
+    padding-inline: 0.5rem;
 }
 
 .brand{
@@ -38,11 +40,12 @@
 
 .search input{
     width: 100%;
-    padding: 0.5rem 0.75rem 0.5rem 2.1rem;
+    padding: 0.6rem 0.8rem 0.6rem 2.2rem;
     background-color: var(--bg);
     border: 1px solid var(--border);
-    border-radius: var(--radius);
+    border-radius: 12px;
     font-size: 0.875rem;
+    transition: border-color 150ms, box-shadow 150ms;
 }
 
 .search input::placeholder{
@@ -51,12 +54,13 @@
 
 .search input:focus{
     border-color: var(--main);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--main) 22%, transparent);
     outline: none;
 }
 
 .searchIcon{
     position: absolute;
-    left: 0.7rem;
+    left: 0.75rem;
     color: var(--text-muted);
     pointer-events: none;
 }
@@ -74,18 +78,23 @@
     scrollbar-width: thin;
 }
 
+/* Never let the scroll area squash a panel; it scrolls instead */
+.scroll > *{
+    flex-shrink: 0;
+}
+
 .nav{
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 0.35rem;
 }
 
 .section{
-    margin: 0.6rem 0 0.3rem;
-    padding-inline: 0.6rem;
-    font-size: 0.7rem;
+    margin: 0.7rem 0 0.35rem;
+    padding-inline: 0.7rem;
+    font-size: 0.68rem;
     font-weight: 600;
-    letter-spacing: 1.5px;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--text-muted);
 }
@@ -101,37 +110,29 @@
     position: relative;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0.55rem 0.6rem;
-    border-radius: 6px;
+    gap: 0.8rem;
+    padding: 0.6rem 0.75rem;
+    border-radius: 12px;
     color: var(--text-muted);
-    font-size: 0.95rem;
+    font-size: 0.93rem;
+    font-weight: 500;
     transition: background-color 150ms, color 150ms;
 }
 
 .link:hover{
-    background-color: var(--surface-2);
+    background-color: rgba(255, 255, 255, 0.05);
     color: var(--text);
 }
 
 .active{
-    background-color: color-mix(in srgb, var(--main) 14%, transparent);
+    background: linear-gradient(90deg, color-mix(in srgb, var(--main) 22%, transparent), color-mix(in srgb, var(--main) 6%, transparent));
     color: var(--text);
-}
-
-.active::before{
-    content: '';
-    position: absolute;
-    left: -0.9rem;
-    top: 0.45rem;
-    bottom: 0.45rem;
-    width: 3px;
-    background-color: var(--main);
-    border-radius: 0 3px 3px 0;
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--main) 28%, transparent);
 }
 
 .active svg{
     color: var(--main-text);
+    filter: drop-shadow(0 0 6px color-mix(in srgb, var(--main) 70%, transparent));
 }
 
 .label{
@@ -140,10 +141,10 @@
 
 .count{
     min-width: 22px;
-    padding: 0 6px;
-    background-color: var(--surface-2);
+    padding: 0 7px;
+    background-color: rgba(255, 255, 255, 0.08);
     border-radius: 999px;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 600;
     text-align: center;
     color: var(--text);
@@ -154,24 +155,31 @@
 }
 
 .panel{
-    padding-top: 0.25rem;
-    border-top: 1px solid var(--border);
+    padding: 0.5rem 0.4rem 0.6rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.panel .section{
+    margin-top: 0.2rem;
 }
 
 .download{
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
-    padding: 0.5rem 0.6rem;
-    border-radius: 6px;
+    gap: 0.35rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 10px;
 }
 
 .download:hover{
-    background-color: var(--surface-2);
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .downloadTitle{
     font-size: 0.85rem;
+    font-weight: 500;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -183,6 +191,10 @@
     font-variant-numeric: tabular-nums;
 }
 
+.downloadPaused{
+    color: #e0b84c;
+}
+
 .quick{
     display: flex;
     flex-direction: column;
@@ -192,30 +204,30 @@
 .quick li{
     display: flex;
     align-items: center;
-    border-radius: 6px;
+    border-radius: 10px;
 }
 
 .quick li:hover{
-    background-color: var(--surface-2);
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .quickGame{
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.65rem;
     flex: 1;
     min-width: 0;
-    padding: 0.35rem 0.6rem;
-    border-radius: 6px;
+    padding: 0.35rem 0.5rem;
+    border-radius: 10px;
 }
 
 .thumb{
     position: relative;
     flex-shrink: 0;
-    width: 24px;
-    height: 32px;
+    width: 26px;
+    height: 34px;
     overflow: hidden;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 .thumb img{
@@ -237,13 +249,17 @@
     width: 28px;
     height: 28px;
     margin-right: 0.35rem;
-    background-color: var(--main);
+    background: linear-gradient(135deg, #3be3a6, #1fb88a);
     border: none;
     border-radius: 50%;
-    color: #fff;
+    color: #04251a;
     cursor: pointer;
     opacity: 0;
-    transition: opacity 150ms;
+    transition: opacity 150ms, transform 150ms;
+}
+
+.playButton:hover{
+    transform: scale(1.1);
 }
 
 .quick li:hover .playButton,
@@ -270,26 +286,27 @@
     align-items: center;
     gap: 0.25rem;
     padding: 0.35rem 0.4rem 0.35rem 0.35rem;
-    background-color: var(--bg);
-    border-radius: var(--radius);
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+    border-radius: 14px;
 }
 
 .profileLink{
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.65rem;
     flex: 1;
     min-width: 0;
     padding: 0.25rem;
-    border-radius: 6px;
+    border-radius: 10px;
 }
 
 .profileLink:hover{
-    background-color: var(--surface-2);
+    background-color: rgba(255, 255, 255, 0.06);
 }
 
 .profileActive{
-    background-color: color-mix(in srgb, var(--main) 14%, transparent);
+    background-color: color-mix(in srgb, var(--main) 16%, transparent);
 }
 
 .profileText{
@@ -315,7 +332,7 @@
 }
 
 .profilePlaceholder{
-    height: 52px;
+    height: 54px;
 }
 
 .signIn{
@@ -332,13 +349,13 @@
     flex-shrink: 0;
     background: none;
     border: none;
-    border-radius: 6px;
+    border-radius: 10px;
     color: var(--text-muted);
     cursor: pointer;
 }
 
 .iconButton:hover{
-    background-color: var(--surface-2);
+    background-color: rgba(255, 255, 255, 0.08);
     color: var(--text);
 }
 
@@ -375,8 +392,8 @@
         justify-content: space-between;
         height: var(--topbar-h);
         padding-inline: 0.75rem;
-        background-color: rgba(31, 31, 31, 0.92);
-        backdrop-filter: blur(8px);
+        background-color: rgba(10, 11, 16, 0.8);
+        backdrop-filter: blur(14px);
         border-bottom: 1px solid var(--border);
     }
 
@@ -389,7 +406,8 @@
         position: fixed;
         inset: 0;
         z-index: 30;
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: rgba(0, 0, 0, 0.65);
+        backdrop-filter: blur(3px);
         opacity: 0;
         visibility: hidden;
         transition: opacity 250ms, visibility 250ms;
@@ -406,7 +424,7 @@
         left: 0;
         z-index: 31;
         width: min(300px, 85vw);
-        box-shadow: 8px 0 24px rgba(0, 0, 0, 0.4);
+        box-shadow: var(--shadow-lg);
         visibility: hidden;
         transform: translateX(-100%);
         transition: transform 250ms ease, visibility 250ms;

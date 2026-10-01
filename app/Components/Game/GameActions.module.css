@@ -23,3 +23,7 @@
     font-weight: 600;
     color: var(--main-text);
 }
+
+.paused {
+    color: #e0b84c;
+}

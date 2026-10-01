@@ -63,6 +63,9 @@ export default function MainCarousel({ blurs = {} }) {
 
                         <div className={styles.cover}>
                             <div className={styles.content}>
+                                <ul className={styles.tags} aria-label="Genres">
+                                    {game.genres.slice(0, 3).map((genre) => <li key={genre}>{genre}</li>)}
+                                </ul>
                                 <div className={styles.logo}>
                                     <Image src={game.logo} alt={game.title} fill sizes="420px" unoptimized={isSvg(game.logo)} />
                                 </div>

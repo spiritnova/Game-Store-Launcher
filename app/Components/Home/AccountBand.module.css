@@ -1,0 +1,70 @@
+.section {
+    padding-block: calc(var(--section-gap) / 2) 0;
+}
+
+.band {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 2rem;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    background:
+        radial-gradient(70% 140% at 100% 0%, color-mix(in srgb, var(--main) 28%, transparent), transparent 70%),
+        linear-gradient(135deg, var(--surface-2), var(--surface));
+    border-radius: var(--radius-lg);
+    box-shadow: 0 0 0 1px var(--border-strong);
+}
+
+.copy h2 {
+    margin-bottom: 0.5rem;
+    font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+    font-weight: 700;
+}
+
+.copy p {
+    max-width: 48ch;
+    margin-bottom: 1.4rem;
+    color: #c3c9d8;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.perks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.perks li {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.85rem 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+.perks li svg {
+    flex-shrink: 0;
+    color: var(--main-text);
+}
+
+.perks strong {
+    display: block;
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+@container main (max-width: 800px) {
+    .band {
+        grid-template-columns: 1fr;
+    }
+}

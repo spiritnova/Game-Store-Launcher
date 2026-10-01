@@ -18,7 +18,7 @@ import SearchIcon from '@mui/icons-material/Search'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
 import VideogameAssetOutlinedIcon from '@mui/icons-material/VideogameAssetOutlined'
 import { cardImage, getGame } from '@/lib/games'
-import { formatSpeed, useDownloads } from '@/lib/downloads'
+import { formatSpeed, statusLabel, useDownloads } from '@/lib/downloads'
 import { useStore } from '@/lib/store'
 import Avatar from './UI/Avatar'
 import Button from './UI/Button'
@@ -85,19 +85,22 @@ function DownloadsNavLink(props) {
 }
 
 function DownloadsPanel() {
-    const { active, queue, speed } = useDownloads()
-    if (!active) return null
-    const game = getGame(active.slug)
-    const progress = (active.downloadedGB / game.sizeGB) * 100
+    const downloads = useDownloads()
+    const { settings } = useStore()
+    const { current, running, queue, speed } = downloads
+    if (!current) return null
+    const game = getGame(current.slug)
+    const status = downloads.statusOf(current.slug)
+    const paused = status.status === 'paused'
 
     return (
         <section className={styles.panel} aria-labelledby="downloads-title">
-            <h2 id="downloads-title" className={styles.section}>Downloading</h2>
+            <h2 id="downloads-title" className={styles.section}>{statusLabel(status)}</h2>
             <Link href="/downloads" className={styles.download}>
                 <p className={styles.downloadTitle}>{game.title}</p>
-                <ProgressBar value={progress} label={`Downloading ${game.title}`} />
-                <p className={styles.downloadMeta}>
-                    {formatSpeed(speed)}
+                <ProgressBar value={status.progress} label={`${statusLabel(status)} ${game.title}`} />
+                <p className={`${styles.downloadMeta} ${paused ? styles.downloadPaused : ''}`}>
+                    {running ? formatSpeed(speed, settings.showBits) : paused ? 'Paused · click to resume' : 'Waiting for schedule'}
                     {queue.length > 1 && <> · {queue.length - 1} queued</>}
                 </p>
             </Link>

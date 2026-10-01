@@ -399,5 +399,2105 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "counter-strike-2",
+    "title": "Counter-Strike 2",
+    "developer": "Valve",
+    "publisher": "Valve",
+    "releaseDate": "2012-08-21",
+    "genres": [
+      "Shooter",
+      "Multiplayer",
+      "Free to Play"
+    ],
+    "price": 0,
+    "cover": "/images/covers/counter-strike-2.jpg",
+    "banner": "/images/banners/counter-strike-2.jpg",
+    "logo": "/images/logos/counter-strike-2.png",
+    "description": "For over two decades, Counter-Strike has offered an elite competitive experience, one shaped by millions of players from across the globe. And now the next chapter in the CS story is about to begin. This is Counter-Strike 2.",
+    "sizeGB": 85,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 0,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "apex-legends",
+    "title": "Apex Legends",
+    "developer": "Respawn",
+    "publisher": "Electronic Arts",
+    "releaseDate": "2020-11-04",
+    "genres": [
+      "Shooter",
+      "Multiplayer",
+      "Free to Play"
+    ],
+    "price": 0,
+    "cover": "/images/covers/apex-legends.jpg",
+    "banner": "/images/banners/apex-legends.jpg",
+    "logo": "/images/logos/apex-legends.png",
+    "description": "Apex Legends is the award-winning, free-to-play Hero Shooter from Respawn Entertainment. Master an ever-growing roster of legendary characters with powerful abilities, and experience strategic squad play and innovative gameplay in the next evolution of Hero Shooter and Battle Royale.",
+    "sizeGB": 75,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 0,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "pubg-battlegrounds",
+    "title": "PUBG: BATTLEGROUNDS",
+    "developer": "PUBG Corporation",
+    "publisher": "KRAFTON, Inc.",
+    "releaseDate": "2017-12-21",
+    "genres": [
+      "Shooter",
+      "Multiplayer",
+      "Free to Play"
+    ],
+    "price": 0,
+    "cover": "/images/covers/pubg-battlegrounds.jpg",
+    "banner": "/images/banners/pubg-battlegrounds.jpg",
+    "logo": "/images/logos/pubg-battlegrounds.png",
+    "description": "PUBG: BATTLEGROUNDS, the high-stakes winner-take-all shooter that started the Battle Royale craze, is free-to-play! Drop into diverse maps, loot unique weapons and supplies, and survive in an ever-shrinking zone where every turn could be your last.",
+    "sizeGB": 50,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 0,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "tom-clancys-rainbow-six-siege",
+    "title": "Tom Clancy's Rainbow Six Siege",
+    "developer": "Ubisoft Montreal",
+    "publisher": "Ubisoft",
+    "releaseDate": "2015-12-01",
+    "genres": [
+      "Shooter",
+      "Multiplayer",
+      "Free to Play"
+    ],
+    "price": 0,
+    "cover": "/images/covers/tom-clancys-rainbow-six-siege.jpg",
+    "banner": "/images/banners/tom-clancys-rainbow-six-siege.jpg",
+    "logo": "/images/logos/tom-clancys-rainbow-six-siege.png",
+    "description": "Tom Clancy's Rainbow Six Siege is an elite, tactical team-based shooter where superior planning and execution triumph.",
+    "sizeGB": 65,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 0,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "helldivers-2",
+    "title": "HELLDIVERS 2",
+    "developer": "Arrowhead Game Studios",
+    "publisher": "PlayStation Publishing LLC",
+    "releaseDate": "2024-02-08",
+    "genres": [
+      "Shooter",
+      "Multiplayer",
+      "Action"
+    ],
+    "price": 39.99,
+    "salePrice": 29.99,
+    "cover": "/images/covers/helldivers-2.jpg",
+    "banner": "/images/banners/helldivers-2.jpg",
+    "logo": "/images/logos/helldivers-2.png",
+    "description": "The Galaxy’s Last Line of Offence. Enlist in the Helldivers and join the fight for freedom across a hostile galaxy in a fast, frantic, and ferocious third-person shooter.",
+    "sizeGB": 40,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 39.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "left-4-dead-2",
+    "title": "Left 4 Dead 2",
+    "developer": "Valve",
+    "publisher": "Valve",
+    "releaseDate": "2009-11-16",
+    "genres": [
+      "Shooter",
+      "Multiplayer",
+      "Horror"
+    ],
+    "price": 9.99,
+    "salePrice": 1.99,
+    "cover": "/images/covers/left-4-dead-2.jpg",
+    "banner": "/images/banners/left-4-dead-2.jpg",
+    "logo": "/images/logos/left-4-dead-2.png",
+    "description": "Set in the zombie apocalypse, Left 4 Dead 2 is a co-operative action horror FPS takes you and your friends through the cities, swamps and cemeteries of the Deep South, from Savannah to New Orleans across five expansive campaigns.",
+    "sizeGB": 13,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 9.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "doom-eternal",
+    "title": "DOOM Eternal",
+    "developer": "id Software",
+    "publisher": "Bethesda Softworks",
+    "releaseDate": "2020-03-19",
+    "genres": [
+      "Shooter",
+      "Action"
+    ],
+    "price": 29.99,
+    "salePrice": 9.89,
+    "cover": "/images/covers/doom-eternal.jpg",
+    "banner": "/images/banners/doom-eternal.jpg",
+    "logo": "/images/logos/doom-eternal.png",
+    "description": "Hell’s armies have invaded Earth. Become the Slayer in an epic single-player campaign to conquer demons across dimensions and stop the final destruction of humanity. The only thing they fear... is you.",
+    "sizeGB": 80,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 29.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "doom",
+    "title": "DOOM",
+    "developer": "id Software",
+    "publisher": "Bethesda Softworks",
+    "releaseDate": "2016-05-12",
+    "genres": [
+      "Shooter",
+      "Action"
+    ],
+    "price": 19.99,
+    "salePrice": 3.99,
+    "cover": "/images/covers/doom.jpg",
+    "banner": "/images/banners/doom.jpg",
+    "logo": "/images/logos/doom.png",
+    "description": "Now includes all three premium DLC packs (Unto the Evil, Hell Followed, and Bloodfall), maps, modes, and weapons, as well as all feature updates including Arcade Mode, Photo Mode, and the latest Update 6.66, which brings further multiplayer improvements as well as revamps multiplayer progression.",
+    "sizeGB": 55,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 19.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "elden-ring",
+    "title": "ELDEN RING",
+    "developer": "FromSoftware, Inc.",
+    "publisher": "FromSoftware, Inc.",
+    "releaseDate": "2022-02-24",
+    "genres": [
+      "Action",
+      "RPG",
+      "Open World"
+    ],
+    "price": 59.99,
+    "cover": "/images/covers/elden-ring.jpg",
+    "banner": "/images/banners/elden-ring.jpg",
+    "logo": "/images/logos/elden-ring.png",
+    "description": "THE CRITICALLY ACCLAIMED FANTASY ACTION RPG. Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.",
+    "sizeGB": 60,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 59.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "baldurs-gate-3",
+    "title": "Baldur's Gate 3",
+    "developer": "Larian Studios",
+    "publisher": "Larian Studios",
+    "releaseDate": "2023-08-03",
+    "genres": [
+      "RPG",
+      "Strategy"
+    ],
+    "price": 59.99,
+    "salePrice": 41.99,
+    "cover": "/images/covers/baldurs-gate-3.jpg",
+    "banner": "/images/banners/baldurs-gate-3.jpg",
+    "logo": "/images/logos/baldurs-gate-3.png",
+    "description": "Baldur’s Gate 3 is a story-rich, party-based RPG set in the universe of Dungeons & Dragons, where your choices shape a tale of fellowship and betrayal, survival and sacrifice, and the lure of absolute power.",
+    "sizeGB": 150,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 59.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "cyberpunk-2077",
+    "title": "Cyberpunk 2077",
+    "developer": "CD PROJEKT RED",
+    "publisher": "CD PROJEKT RED",
+    "releaseDate": "2020-12-09",
+    "genres": [
+      "RPG",
+      "Open World",
+      "Shooter"
+    ],
+    "price": 59.99,
+    "salePrice": 17.99,
+    "cover": "/images/covers/cyberpunk-2077.jpg",
+    "banner": "/images/banners/cyberpunk-2077.jpg",
+    "logo": "/images/logos/cyberpunk-2077.png",
+    "description": "Cyberpunk 2077 is an open-world, action-adventure RPG set in the dark future of Night City — a dangerous megalopolis obsessed with power, glamor, and ceaseless body modification.",
+    "sizeGB": 70,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 59.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "fallout-4",
+    "title": "Fallout 4",
+    "developer": "Bethesda Game Studios",
+    "publisher": "Bethesda Softworks",
+    "releaseDate": "2015-11-09",
+    "genres": [
+      "RPG",
+      "Open World",
+      "Shooter"
+    ],
+    "price": 19.99,
+    "salePrice": 7.99,
+    "cover": "/images/covers/fallout-4.jpg",
+    "banner": "/images/banners/fallout-4.jpg",
+    "logo": "/images/logos/fallout-4.png",
+    "description": "From Bethesda Game Studios, the award-winning creators of Starfield and The Elder Scrolls V: Skyrim, comes Fallout 4. A landmark in open-world RPG design and winner of over 200 ‘Best Of’ honors, including the DICE and BAFTA Game of the Year.",
+    "sizeGB": 30,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 19.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "the-elder-scrolls-v-skyrim-special-edition",
+    "title": "The Elder Scrolls V: Skyrim Special Edition",
+    "developer": "Bethesda Game Studios",
+    "publisher": "Bethesda Softworks",
+    "releaseDate": "2016-10-27",
+    "genres": [
+      "RPG",
+      "Open World"
+    ],
+    "price": 39.99,
+    "salePrice": 3.99,
+    "cover": "/images/covers/the-elder-scrolls-v-skyrim-special-edition.jpg",
+    "banner": "/images/banners/the-elder-scrolls-v-skyrim-special-edition.jpg",
+    "logo": "/images/logos/the-elder-scrolls-v-skyrim-special-edition.png",
+    "description": "Winner of more than 200 Game of the Year Awards, The Elder Scrolls V: Skyrim Special Edition brings the epic fantasy to life in stunning detail. The Special Edition includes the critically acclaimed game and add-ons with all-new features.",
+    "sizeGB": 12,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 39.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "starfield",
+    "title": "Starfield",
+    "developer": "Bethesda Game Studios",
+    "publisher": "Bethesda Softworks",
+    "releaseDate": "2023-09-05",
+    "genres": [
+      "RPG",
+      "Open World"
+    ],
+    "price": 49.99,
+    "salePrice": 29.99,
+    "cover": "/images/covers/starfield.jpg",
+    "banner": "/images/banners/starfield.jpg",
+    "logo": "/images/logos/starfield.png",
+    "description": "Starfield is the first new universe in 25 years from Bethesda Game Studios, the award-winning creators of The Elder Scrolls V: Skyrim and Fallout 4.",
+    "sizeGB": 125,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 49.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "disco-elysium-the-final-cut",
+    "title": "Disco Elysium - The Final Cut",
+    "developer": "ZA/UM",
+    "publisher": "ZA/UM",
+    "releaseDate": "2019-10-15",
+    "genres": [
+      "RPG",
+      "Indie"
+    ],
+    "price": 39.99,
+    "salePrice": 9.99,
+    "cover": "/images/covers/disco-elysium-the-final-cut.jpg",
+    "banner": "/images/banners/disco-elysium-the-final-cut.jpg",
+    "logo": "/images/logos/disco-elysium-the-final-cut.png",
+    "description": "Disco Elysium - The Final Cut is a groundbreaking role playing game. You’re a detective with a unique skill system at your disposal and a whole city to carve your path across. Interrogate unforgettable characters, crack murders or take bribes. Become a hero or an absolute disaster of a human being.",
+    "sizeGB": 20,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 39.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "persona-5-royal",
+    "title": "Persona 5 Royal",
+    "developer": "ATLUS",
+    "publisher": "SEGA",
+    "releaseDate": "2022-10-20",
+    "genres": [
+      "RPG"
+    ],
+    "price": 59.99,
+    "salePrice": 17.99,
+    "cover": "/images/covers/persona-5-royal.jpg",
+    "banner": "/images/banners/persona-5-royal.jpg",
+    "logo": "/images/logos/persona-5-royal.png",
+    "description": "Lead the Phantom Thieves of Hearts in this award winning, stylish turn-based RPG filled with dungeon crawling, party customization, strategic combat, and Persona fusion. Explore Tokyo, build relationships, battle Shadows, and infiltrate the minds of the corrupt to make them change their ways!",
+    "sizeGB": 41,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 59.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "monster-hunter-world",
+    "title": "Monster Hunter: World",
+    "developer": "CAPCOM Co., Ltd.",
+    "publisher": "CAPCOM Co., Ltd.",
+    "releaseDate": "2018-08-08",
+    "genres": [
+      "Action",
+      "RPG",
+      "Multiplayer"
+    ],
+    "price": 29.99,
+    "salePrice": 7.79,
+    "cover": "/images/covers/monster-hunter-world.jpg",
+    "banner": "/images/banners/monster-hunter-world.jpg",
+    "logo": "/images/logos/monster-hunter-world.png",
+    "description": "Welcome to a new world! In Monster Hunter: World, the latest installment in the series, you can enjoy the ultimate hunting experience, using everything at your disposal to hunt monsters in a new world teeming with surprises and excitement.",
+    "sizeGB": 52,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 29.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "nier-automata",
+    "title": "NieR:Automata",
+    "developer": "Square Enix",
+    "publisher": "Square Enix",
+    "releaseDate": "2017-03-17",
+    "genres": [
+      "Action",
+      "RPG"
+    ],
+    "price": 39.99,
+    "salePrice": 15.99,
+    "cover": "/images/covers/nier-automata.jpg",
+    "banner": "/images/banners/nier-automata.jpg",
+    "logo": "/images/logos/nier-automata.png",
+    "description": "NieR: Automata tells the story of androids 2B, 9S and A2 and their battle to reclaim the machine-driven dystopia overrun by powerful machines.",
+    "sizeGB": 50,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 39.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "dark-souls-iii",
+    "title": "DARK SOULS III",
+    "developer": "FromSoftware, Inc.",
+    "publisher": "FromSoftware, Inc.",
+    "releaseDate": "2016-04-11",
+    "genres": [
+      "Action",
+      "RPG"
+    ],
+    "price": 59.99,
+    "salePrice": 29.99,
+    "cover": "/images/covers/dark-souls-iii.jpg",
+    "banner": "/images/banners/dark-souls-iii.jpg",
+    "logo": "/images/logos/dark-souls-iii.png",
+    "description": "Dark Souls continues to push the boundaries with the latest, ambitious chapter in the critically-acclaimed and genre-defining series. Prepare yourself and Embrace The Darkness!",
+    "sizeGB": 25,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 59.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "sekiro-shadows-die-twice-goty-edition",
+    "title": "Sekiro: Shadows Die Twice - GOTY Edition",
+    "developer": "FromSoftware, Inc.",
+    "publisher": "Activision (Excluding Japan and Asia)",
+    "releaseDate": "2019-03-21",
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "price": 59.99,
+    "salePrice": 29.99,
+    "cover": "/images/covers/sekiro-shadows-die-twice-goty-edition.jpg",
+    "banner": "/images/banners/sekiro-shadows-die-twice-goty-edition.jpg",
+    "logo": "/images/logos/sekiro-shadows-die-twice-goty-edition.png",
+    "description": "Game of the Year - The Game Awards 2019 Best Action Game of 2019 - IGN Carve your own clever path to vengeance in the award winning adventure from developer FromSoftware, creators of Bloodborne and the Dark Souls series. Take Revenge. Restore Your Honor. Kill Ingeniously.",
+    "sizeGB": 25,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 59.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "hi-fi-rush",
+    "title": "Hi-Fi RUSH",
+    "developer": "Tango Gameworks",
+    "publisher": "KRAFTON, Inc.",
+    "releaseDate": "2023-01-25",
+    "genres": [
+      "Action"
+    ],
+    "price": 29.99,
+    "salePrice": 13.49,
+    "cover": "/images/covers/hi-fi-rush.jpg",
+    "banner": "/images/banners/hi-fi-rush.jpg",
+    "logo": "/images/logos/hi-fi-rush.png",
+    "description": "Test your abilities in two new game modes, uncover new rewards and even a few secrets in the Arcade Challenge! Update! Feel the beat as wannabe rockstar Chai and his ragtag team fight against an evil megacorp in a world that syncs to the music.",
+    "sizeGB": 20,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 29.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "control-ultimate-edition",
+    "title": "CONTROL Ultimate Edition",
+    "developer": "Remedy Entertainment",
+    "publisher": "Remedy Entertainment",
+    "releaseDate": "2020-08-27",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Shooter"
+    ],
+    "price": 39.99,
+    "salePrice": 5.99,
+    "cover": "/images/covers/control-ultimate-edition.jpg",
+    "banner": "/images/banners/control-ultimate-edition.jpg",
+    "logo": "/images/logos/control-ultimate-edition.png",
+    "description": "Winner of over 80 awards, CONTROL is a visually stunning third-person action-adventure that will keep you on the edge of your seat.",
+    "sizeGB": 42,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 39.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "hitman-world-of-assassination",
+    "title": "HITMAN World of Assassination",
+    "developer": "IO Interactive A/S",
+    "publisher": "IO Interactive A/S",
+    "releaseDate": "2022-01-20",
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "price": 29.99,
+    "salePrice": 2.99,
+    "cover": "/images/covers/hitman-world-of-assassination.jpg",
+    "banner": "/images/banners/hitman-world-of-assassination.jpg",
+    "logo": "/images/logos/hitman-world-of-assassination.png",
+    "description": "Enter the world of the ultimate assassin. HITMAN World of Assassination delivers the definitive stealth action experience, putting you in the shoes of Agent 47, a master assassin. Explore immersive locations, uncover hidden secrets, and eliminate targets with complete freedom of approach.",
+    "sizeGB": 60,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 29.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "tomb-raider-game-of-the-year",
+    "title": "Tomb Raider Game of the Year",
+    "developer": "Crystal Dynamics",
+    "publisher": "Crystal Dynamics",
+    "releaseDate": "2013-03-04",
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "price": 19.99,
+    "salePrice": 2.99,
+    "cover": "/images/covers/tomb-raider-game-of-the-year.jpg",
+    "banner": "/images/banners/tomb-raider-game-of-the-year.jpg",
+    "logo": "/images/logos/tomb-raider-game-of-the-year.png",
+    "description": "Tomb Raider explores the intense origin story of Lara Croft and her ascent from a young woman to a hardened survivor.",
+    "sizeGB": 12,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 19.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "sea-of-thieves-2026-edition",
+    "title": "Sea of Thieves: 2026 Edition",
+    "developer": "Rare Ltd",
+    "publisher": "Xbox Game Studios",
+    "releaseDate": "2020-06-03",
+    "genres": [
+      "Adventure",
+      "Multiplayer",
+      "Open World"
+    ],
+    "price": 39.99,
+    "salePrice": 13.99,
+    "cover": "/images/covers/sea-of-thieves-2026-edition.jpg",
+    "banner": "/images/banners/sea-of-thieves-2026-edition.jpg",
+    "logo": "/images/logos/sea-of-thieves-2026-edition.png",
+    "description": "Sea of Thieves is a smash-hit pirate adventure game, offering the quintessential pirate experience of plundering lost treasures, intense battles, vanquishing sea monsters and more. Dive in with this revised edition of the game, which includes access to digital bonus media.",
+    "sizeGB": 100,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 39.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "it-takes-two",
+    "title": "It Takes Two",
+    "developer": "Hazelight Studios",
+    "publisher": "Electronic Arts",
+    "releaseDate": "2021-03-25",
+    "genres": [
+      "Adventure",
+      "Puzzle",
+      "Multiplayer"
+    ],
+    "price": 39.99,
+    "salePrice": 11.99,
+    "cover": "/images/covers/it-takes-two.jpg",
+    "banner": "/images/banners/it-takes-two.jpg",
+    "logo": "/images/logos/it-takes-two.png",
+    "description": "Embark on the craziest journey of your life in It Takes Two. Invite a friend to join for free with Friend’s Pass and work together across a huge variety of gleefully disruptive gameplay challenges. Winner of GAME OF THE YEAR at the Game Awards 2021.",
+    "sizeGB": 50,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 39.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "dave-the-diver",
+    "title": "DAVE THE DIVER",
+    "developer": "MINTROCKET",
+    "publisher": "MINTROCKET",
+    "releaseDate": "2023-06-28",
+    "genres": [
+      "Adventure",
+      "Simulation",
+      "Indie"
+    ],
+    "price": 19.99,
+    "salePrice": 9.99,
+    "cover": "/images/covers/dave-the-diver.jpg",
+    "banner": "/images/banners/dave-the-diver.jpg",
+    "logo": "/images/logos/dave-the-diver.png",
+    "description": "DAVE THE DIVER is a casual, singleplayer adventure RPG featuring deep-sea exploration and fishing during the day and sushi restaurant management at night. Join Dave and his quirky friends as they seek to uncover the secrets of the mysterious Blue Hole.",
+    "sizeGB": 10,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 19.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "hades",
+    "title": "Hades",
+    "developer": "Supergiant Games",
+    "publisher": "Supergiant Games",
+    "releaseDate": "2020-09-17",
+    "genres": [
+      "Action",
+      "Roguelike",
+      "Indie"
+    ],
+    "price": 24.99,
+    "salePrice": 6.24,
+    "cover": "/images/covers/hades.jpg",
+    "banner": "/images/banners/hades.jpg",
+    "logo": "/images/logos/hades.png",
+    "description": "Defy the god of the dead as you hack and slash out of the Underworld in this rogue-like dungeon crawler from the creators of Bastion, Transistor, and Pyre.",
+    "sizeGB": 20,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 24.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "hollow-knight",
+    "title": "Hollow Knight",
+    "developer": "Team Cherry",
+    "publisher": "Team Cherry",
+    "releaseDate": "2017-02-24",
+    "genres": [
+      "Action",
+      "Platformer",
+      "Indie"
+    ],
+    "price": 14.99,
+    "cover": "/images/covers/hollow-knight.jpg",
+    "banner": "/images/banners/hollow-knight.jpg",
+    "logo": "/images/logos/hollow-knight.png",
+    "description": "Forge your own path in Hollow Knight! An epic action adventure through a vast ruined kingdom of insects and heroes. Explore twisting caverns, battle tainted creatures and befriend bizarre bugs, all in a classic, hand-drawn 2D style.",
+    "sizeGB": 9,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 14.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "celeste",
+    "title": "Celeste",
+    "developer": "Maddy Makes Games Inc.",
+    "publisher": "Maddy Makes Games Inc.",
+    "releaseDate": "2018-01-25",
+    "genres": [
+      "Platformer",
+      "Indie"
+    ],
+    "price": 19.99,
+    "salePrice": 4.99,
+    "cover": "/images/covers/celeste.jpg",
+    "banner": "/images/banners/celeste.jpg",
+    "logo": "/images/logos/celeste.png",
+    "description": "Help Madeline survive her inner demons on her journey to the top of Celeste Mountain, in this super-tight platformer from the creators of TowerFall. Brave hundreds of hand-crafted challenges, uncover devious secrets, and piece together the mystery of the mountain.",
+    "sizeGB": 1.2,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 19.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "cuphead",
+    "title": "Cuphead",
+    "developer": "Studio MDHR Entertainment Inc.",
+    "publisher": "Studio MDHR Entertainment Inc.",
+    "releaseDate": "2017-09-29",
+    "genres": [
+      "Platformer",
+      "Action",
+      "Indie"
+    ],
+    "price": 19.99,
+    "salePrice": 13.99,
+    "cover": "/images/covers/cuphead.jpg",
+    "banner": "/images/banners/cuphead.jpg",
+    "logo": "/images/logos/cuphead.png",
+    "description": "Cuphead is a classic run and gun action game heavily focused on boss battles. Inspired by cartoons of the 1930s, the visuals and audio are painstakingly created with the same techniques of the era, i.e. traditional hand drawn cel animation, watercolor backgrounds, and original jazz recordings.",
+    "sizeGB": 4,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 19.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "ori-and-the-will-of-the-wisps",
+    "title": "Ori and the Will of the Wisps",
+    "developer": "Moon Studios GmbH",
+    "publisher": "Xbox Game Studios",
+    "releaseDate": "2020-03-10",
+    "genres": [
+      "Platformer",
+      "Adventure"
+    ],
+    "price": 29.99,
+    "salePrice": 2.99,
+    "cover": "/images/covers/ori-and-the-will-of-the-wisps.jpg",
+    "banner": "/images/banners/ori-and-the-will-of-the-wisps.jpg",
+    "logo": "/images/logos/ori-and-the-will-of-the-wisps.png",
+    "description": "Play the critically acclaimed masterpiece. Embark on a new journey in a vast, exotic world where you’ll encounter towering enemies and challenging puzzles on your quest to unravel Ori’s destiny.",
+    "sizeGB": 20,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 29.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "dead-cells",
+    "title": "Dead Cells",
+    "developer": "Motion Twin",
+    "publisher": "Motion Twin",
+    "releaseDate": "2018-08-06",
+    "genres": [
+      "Roguelike",
+      "Platformer",
+      "Action"
+    ],
+    "price": 24.99,
+    "salePrice": 12.49,
+    "cover": "/images/covers/dead-cells.jpg",
+    "banner": "/images/banners/dead-cells.jpg",
+    "logo": "/images/logos/dead-cells.png",
+    "description": "Dead Cells is a roguelite, metroidvania inspired, action-platformer. You'll explore a sprawling, ever-changing castle... assuming you’re able to fight your way past its keepers in 2D souls-lite combat. No checkpoints. Kill, die, learn, repeat.",
+    "sizeGB": 0.5,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 24.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "vampire-survivors",
+    "title": "Vampire Survivors",
+    "developer": "poncle",
+    "publisher": "poncle",
+    "releaseDate": "2022-10-20",
+    "genres": [
+      "Roguelike",
+      "Action",
+      "Indie"
+    ],
+    "price": 4.99,
+    "salePrice": 3.74,
+    "cover": "/images/covers/vampire-survivors.jpg",
+    "banner": "/images/banners/vampire-survivors.jpg",
+    "logo": "/images/logos/vampire-survivors.png",
+    "description": "Mow down thousands of night creatures and survive until dawn! Vampire Survivors is a gothic horror casual game with rogue-lite elements, where your choices can allow you to quickly snowball against the hundreds of monsters that get thrown at you. Be the bullet hell!",
+    "sizeGB": 2.4,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 4.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "slay-the-spire",
+    "title": "Slay the Spire",
+    "developer": "Mega Crit",
+    "publisher": "Mega Crit",
+    "releaseDate": "2019-01-23",
+    "genres": [
+      "Roguelike",
+      "Strategy",
+      "Indie"
+    ],
+    "price": 24.99,
+    "salePrice": 6.24,
+    "cover": "/images/covers/slay-the-spire.jpg",
+    "banner": "/images/banners/slay-the-spire.jpg",
+    "logo": "/images/logos/slay-the-spire.png",
+    "description": "We fused card games and roguelikes together to make the best single player deckbuilder we could. Craft a unique deck, encounter bizarre creatures, discover relics of immense power, and Slay the Spire!",
+    "sizeGB": 1,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 24.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "balatro",
+    "title": "Balatro",
+    "developer": "LocalThunk",
+    "publisher": "Playstack",
+    "releaseDate": "2024-02-20",
+    "genres": [
+      "Roguelike",
+      "Strategy",
+      "Indie"
+    ],
+    "price": 14.99,
+    "salePrice": 11.99,
+    "cover": "/images/covers/balatro.jpg",
+    "banner": "/images/banners/balatro.jpg",
+    "logo": "/images/logos/balatro.png",
+    "description": "The poker roguelike. Balatro is a hypnotically satisfying deckbuilder where you play illegal poker hands, discover game-changing jokers, and trigger adrenaline-pumping, outrageous combos.",
+    "sizeGB": 0.1,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 14.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "portal-2",
+    "title": "Portal 2",
+    "developer": "Valve",
+    "publisher": "Valve",
+    "releaseDate": "2011-04-18",
+    "genres": [
+      "Puzzle",
+      "Adventure"
+    ],
+    "price": 9.99,
+    "salePrice": 1.99,
+    "cover": "/images/covers/portal-2.jpg",
+    "banner": "/images/banners/portal-2.jpg",
+    "logo": "/images/logos/portal-2.png",
+    "description": "The \"Perpetual Testing Initiative\" has been expanded to allow you to design co-op puzzles for you and your friends!",
+    "sizeGB": 8,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 9.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "resident-evil-4",
+    "title": "Resident Evil 4",
+    "developer": "CAPCOM Co., Ltd.",
+    "publisher": "CAPCOM Co., Ltd.",
+    "releaseDate": "2023-03-23",
+    "genres": [
+      "Horror",
+      "Action",
+      "Shooter"
+    ],
+    "price": 39.99,
+    "salePrice": 9.99,
+    "cover": "/images/covers/resident-evil-4.jpg",
+    "banner": "/images/banners/resident-evil-4.jpg",
+    "logo": "/images/logos/resident-evil-4.png",
+    "description": "Survival is just the beginning. Six years have passed since the biological disaster in Raccoon City. Leon S. Kennedy, one of the survivors, tracks the president's kidnapped daughter to a secluded European village, where there is something terribly wrong with the locals.",
+    "sizeGB": 20,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 39.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "resident-evil-village",
+    "title": "Resident Evil Village",
+    "developer": "CAPCOM Co., Ltd.",
+    "publisher": "CAPCOM Co., Ltd.",
+    "releaseDate": "2021-05-06",
+    "genres": [
+      "Horror",
+      "Action",
+      "Shooter"
+    ],
+    "price": 39.99,
+    "salePrice": 9.99,
+    "cover": "/images/covers/resident-evil-village.jpg",
+    "banner": "/images/banners/resident-evil-village.jpg",
+    "logo": "/images/logos/resident-evil-village.png",
+    "description": "Experience survival horror like never before in the 8th major installment in the Resident Evil franchise - Resident Evil Village. With detailed graphics, intense first-person action and masterful storytelling, the terror has never felt more realistic.",
+    "sizeGB": 20,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 39.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "dead-space",
+    "title": "Dead Space",
+    "developer": "Motive",
+    "publisher": "Electronic Arts",
+    "releaseDate": "2023-01-27",
+    "genres": [
+      "Horror",
+      "Shooter"
+    ],
+    "price": 59.99,
+    "salePrice": 11.99,
+    "cover": "/images/covers/dead-space.jpg",
+    "banner": "/images/banners/dead-space.jpg",
+    "logo": "/images/logos/dead-space.png",
+    "description": "The sci-fi survival-horror classic returns, completely rebuilt to offer an even more immersive experience — including visual, audio, and gameplay improvements — while staying faithful to the original game’s thrilling vision.",
+    "sizeGB": 50,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 59.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "phasmophobia",
+    "title": "Phasmophobia",
+    "developer": "Kinetic Games",
+    "publisher": "Kinetic Games",
+    "releaseDate": "2020-09-18",
+    "genres": [
+      "Horror",
+      "Multiplayer",
+      "Indie"
+    ],
+    "price": 19.99,
+    "salePrice": 13.99,
+    "cover": "/images/covers/phasmophobia.jpg",
+    "banner": "/images/banners/phasmophobia.jpg",
+    "logo": "/images/logos/phasmophobia.png",
+    "description": "Phasmophobia is a 4 player online co-op psychological horror. Paranormal activity is on the rise and it’s up to you and your team to use all the ghost-hunting equipment at your disposal in order to gather as much evidence as you can.",
+    "sizeGB": 21,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 19.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "lethal-company",
+    "title": "Lethal Company",
+    "developer": "Zeekerss",
+    "publisher": "Zeekerss",
+    "releaseDate": "2023-10-23",
+    "genres": [
+      "Horror",
+      "Multiplayer",
+      "Indie"
+    ],
+    "price": 9.99,
+    "cover": "/images/covers/lethal-company.jpg",
+    "banner": "/images/banners/lethal-company.jpg",
+    "logo": "/images/logos/lethal-company.png",
+    "description": "A co-op horror about scavenging at abandoned moons to sell scrap to the Company.",
+    "sizeGB": 4,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 9.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "carrion",
+    "title": "CARRION",
+    "developer": "Phobia Game Studio",
+    "publisher": "Devolver Digital",
+    "releaseDate": "2020-07-23",
+    "genres": [
+      "Horror",
+      "Adventure",
+      "Puzzle"
+    ],
+    "price": 19.99,
+    "salePrice": 3.99,
+    "cover": "/images/covers/carrion.jpg",
+    "banner": "/images/banners/carrion.jpg",
+    "logo": "/images/logos/carrion.png",
+    "description": "CARRION is a reverse horror game in which you assume the role of an amorphous creature of unknown origins, stalking and consuming those that imprisoned you.",
+    "sizeGB": 0.5,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 19.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "outlast",
+    "title": "Outlast",
+    "developer": "Red Barrels",
+    "publisher": "Red Barrels",
+    "releaseDate": "2013-09-04",
+    "genres": [
+      "Horror"
+    ],
+    "price": 14.99,
+    "salePrice": 3.74,
+    "cover": "/images/covers/outlast.jpg",
+    "banner": "/images/banners/outlast.jpg",
+    "logo": "/images/logos/outlast.png",
+    "description": "Hell is an experiment you can't survive in Outlast, a first-person survival horror game developed by veterans of some of the biggest game franchises in history. As investigative journalist Miles Upshur, explore Mount Massive Asylum and try to survive long enough to discover its terrible secret...",
+    "sizeGB": 5,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 14.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "terraria",
+    "title": "Terraria",
+    "developer": "Re-Logic",
+    "publisher": "Re-Logic",
+    "releaseDate": "2011-05-16",
+    "genres": [
+      "Adventure",
+      "Survival",
+      "Indie"
+    ],
+    "price": 9.99,
+    "salePrice": 4.99,
+    "cover": "/images/covers/terraria.jpg",
+    "banner": "/images/banners/terraria.jpg",
+    "logo": "/images/logos/terraria.png",
+    "description": "Dig, fight, explore, build! Nothing is impossible in this action-packed adventure game. Four Pack also available!",
+    "sizeGB": 20,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 9.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "valheim",
+    "title": "Valheim",
+    "developer": "Iron Gate AB",
+    "publisher": "Coffee Stain Publishing",
+    "releaseDate": "2026-09-09",
+    "genres": [
+      "Survival",
+      "Adventure",
+      "Multiplayer"
+    ],
+    "price": 29.99,
+    "salePrice": 26.99,
+    "cover": "/images/covers/valheim.jpg",
+    "banner": "/images/banners/valheim.jpg",
+    "logo": "/images/logos/valheim.png",
+    "description": "A collaborative exploration and survival game for 1-10 players, set in a procedurally generated afterlife inspired by Viking culture. Battle, build, and conquer your way to a saga worthy of Odin’s patronage!",
+    "sizeGB": 1,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 29.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "subnautica",
+    "title": "Subnautica",
+    "developer": "Unknown Worlds Entertainment",
+    "publisher": "Unknown Worlds Entertainment",
+    "releaseDate": "2018-01-23",
+    "genres": [
+      "Survival",
+      "Adventure",
+      "Open World"
+    ],
+    "price": 29.99,
+    "salePrice": 7.49,
+    "cover": "/images/covers/subnautica.jpg",
+    "banner": "/images/banners/subnautica.jpg",
+    "logo": "/images/logos/subnautica.png",
+    "description": "Descend into the depths of an alien underwater world filled with wonder and peril. Craft equipment, pilot submarines and out-smart wildlife to explore lush coral reefs, volcanoes, cave systems, and more - all while trying to survive.",
+    "sizeGB": 20,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 29.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "the-forest",
+    "title": "The Forest",
+    "developer": "Endnight Games Ltd",
+    "publisher": "Endnight Games Ltd",
+    "releaseDate": "2018-04-30",
+    "genres": [
+      "Survival",
+      "Horror"
+    ],
+    "price": 19.99,
+    "salePrice": 4.19,
+    "cover": "/images/covers/the-forest.jpg",
+    "banner": "/images/banners/the-forest.jpg",
+    "logo": "/images/logos/the-forest.png",
+    "description": "As the lone survivor of a passenger jet crash, you find yourself in a mysterious forest battling to stay alive against a society of cannibalistic mutants. Build, explore, survive in this terrifying first person survival horror simulator.",
+    "sizeGB": 5,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 19.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "rust",
+    "title": "Rust",
+    "developer": "Facepunch Studios",
+    "publisher": "Facepunch Studios",
+    "releaseDate": "2018-02-08",
+    "genres": [
+      "Survival",
+      "Multiplayer"
+    ],
+    "price": 39.99,
+    "salePrice": 19.99,
+    "cover": "/images/covers/rust.jpg",
+    "banner": "/images/banners/rust.jpg",
+    "logo": "/images/logos/rust.png",
+    "description": "The only aim in Rust is to survive. Everything wants you to die - the island’s wildlife, other inhabitants, the environment, and other survivors. Do whatever it takes to last another night.",
+    "sizeGB": 45,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 39.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "palworld",
+    "title": "Palworld",
+    "developer": "Pocketpair",
+    "publisher": "Pocketpair",
+    "releaseDate": "2026-07-09",
+    "genres": [
+      "Survival",
+      "Open World",
+      "Multiplayer"
+    ],
+    "price": 29.99,
+    "salePrice": 20.99,
+    "cover": "/images/covers/palworld.jpg",
+    "banner": "/images/banners/palworld.jpg",
+    "logo": "/images/logos/palworld.png",
+    "description": "Fight, farm, build and work alongside mysterious creatures called \"Pals\" in this completely new multiplayer, open world survival and crafting game!",
+    "sizeGB": 40,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 29.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "project-zomboid",
+    "title": "Project Zomboid",
+    "developer": "The Indie Stone",
+    "publisher": "The Indie Stone",
+    "releaseDate": "2013-11-08",
+    "genres": [
+      "Survival",
+      "Horror",
+      "Indie"
+    ],
+    "price": 24.99,
+    "salePrice": 16.74,
+    "cover": "/images/covers/project-zomboid.jpg",
+    "banner": "/images/banners/project-zomboid.jpg",
+    "logo": "/images/logos/project-zomboid.png",
+    "description": "Project Zomboid is the ultimate in zombie survival. Alone or in MP: you loot, build, craft, fight, farm and fish in a struggle to survive. A hardcore RPG skillset, a vast map, massively customisable sandbox and a cute tutorial raccoon await the unwary. So how will you die? All it takes is a bite..",
+    "sizeGB": 10,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 24.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "sid-meiers-civilization-vi",
+    "title": "Sid Meier’s Civilization VI",
+    "developer": "Firaxis Games",
+    "publisher": "2K",
+    "releaseDate": "2016-10-20",
+    "genres": [
+      "Strategy"
+    ],
+    "price": 59.99,
+    "salePrice": 5.99,
+    "cover": "/images/covers/sid-meiers-civilization-vi.jpg",
+    "banner": "/images/banners/sid-meiers-civilization-vi.jpg",
+    "logo": "/images/logos/sid-meiers-civilization-vi.png",
+    "description": "Expand your empire, advance your culture and go head-to-head against history’s greatest leaders. Will your civilization stand the test of time?",
+    "sizeGB": 23,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 59.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "total-war-warhammer-iii",
+    "title": "Total War: WARHAMMER III",
+    "developer": "CREATIVE ASSEMBLY",
+    "publisher": "SEGA",
+    "releaseDate": "2022-02-16",
+    "genres": [
+      "Strategy"
+    ],
+    "price": 59.99,
+    "salePrice": 8.99,
+    "cover": "/images/covers/total-war-warhammer-iii.jpg",
+    "banner": "/images/banners/total-war-warhammer-iii.jpg",
+    "logo": "/images/logos/total-war-warhammer-iii.png",
+    "description": "The cataclysmic conclusion to the Total War: WARHAMMER trilogy is here. Rally your forces and step into the Realm of Chaos, a dimension of mind-bending horror where the very fate of the world will be decided. Will you conquer your Daemons… or command them?",
+    "sizeGB": 120,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 59.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "age-of-empires-ii-definitive-edition",
+    "title": "Age of Empires II: Definitive Edition",
+    "developer": "World's Edge",
+    "publisher": "Xbox Game Studios",
+    "releaseDate": "2019-11-14",
+    "genres": [
+      "Strategy"
+    ],
+    "price": 34.99,
+    "salePrice": 23.44,
+    "cover": "/images/covers/age-of-empires-ii-definitive-edition.jpg",
+    "banner": "/images/banners/age-of-empires-ii-definitive-edition.jpg",
+    "logo": "/images/logos/age-of-empires-ii-definitive-edition.png",
+    "description": "42 Civilizations, 229 Campaign Missions, Singleplayer, Co-Op, Multiplayer, In-Game Editor, Mods, Cross-play...It is good to be the king.",
+    "sizeGB": 15,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 34.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "stellaris",
+    "title": "Stellaris",
+    "developer": "Paradox Development Studio",
+    "publisher": "Paradox Interactive",
+    "releaseDate": "2016-05-09",
+    "genres": [
+      "Strategy",
+      "Simulation"
+    ],
+    "price": 49.99,
+    "salePrice": 14.99,
+    "cover": "/images/covers/stellaris.jpg",
+    "banner": "/images/banners/stellaris.jpg",
+    "logo": "/images/logos/stellaris.png",
+    "description": "Explore a galaxy full of wonders in this sci-fi grand strategy game from Paradox Development Studios. Interact with diverse alien races, discover strange new worlds with unexpected events and expand the reach of your empire. Each new adventure holds almost limitless possibilities.",
+    "sizeGB": 10,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 49.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "xcom-2",
+    "title": "XCOM 2",
+    "developer": "Firaxis Games",
+    "publisher": "2K",
+    "releaseDate": "2016-02-04",
+    "genres": [
+      "Strategy"
+    ],
+    "price": 19.99,
+    "salePrice": 2.99,
+    "cover": "/images/covers/xcom-2.jpg",
+    "banner": "/images/banners/xcom-2.jpg",
+    "logo": "/images/logos/xcom-2.png",
+    "description": "XCOM 2 is the sequel to XCOM: Enemy Unknown, the 2012 award-winning strategy game of the year. Earth has changed and is now under alien rule. Facing impossible odds you must rebuild XCOM, and ignite a global resistance to reclaim our world and save humanity.",
+    "sizeGB": 45,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 19.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "cities-skylines",
+    "title": "Cities: Skylines",
+    "developer": "Colossal Order",
+    "publisher": "Paradox Interactive",
+    "releaseDate": "2015-03-10",
+    "genres": [
+      "Simulation",
+      "Strategy"
+    ],
+    "price": 29.99,
+    "salePrice": 8.99,
+    "cover": "/images/covers/cities-skylines.jpg",
+    "banner": "/images/banners/cities-skylines.jpg",
+    "logo": "/images/logos/cities-skylines.png",
+    "description": "Cities: Skylines is a modern take on the classic city simulation. The game introduces new game play elements to realize the thrill and hardships of creating and maintaining a real city whilst expanding on some well-established tropes of the city building experience.",
+    "sizeGB": 4,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 29.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "factorio",
+    "title": "Factorio",
+    "developer": "Wube Software LTD.",
+    "publisher": "Wube Software LTD.",
+    "releaseDate": "2020-08-14",
+    "genres": [
+      "Simulation",
+      "Strategy",
+      "Indie"
+    ],
+    "price": 35,
+    "cover": "/images/covers/factorio.jpg",
+    "banner": "/images/banners/factorio.jpg",
+    "logo": "/images/logos/factorio.png",
+    "description": "Factorio is a game about building and creating automated factories to produce items of increasing complexity, within an infinite 2D world. Use your imagination to design your factory, combine simple elements into ingenious structures, and finally protect it from the creatures who don't really like…",
+    "sizeGB": 10,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 35,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "satisfactory",
+    "title": "Satisfactory",
+    "developer": "Coffee Stain Studios",
+    "publisher": "Coffee Stain Publishing",
+    "releaseDate": "2024-09-10",
+    "genres": [
+      "Simulation",
+      "Open World",
+      "Survival"
+    ],
+    "price": 39.99,
+    "salePrice": 27.99,
+    "cover": "/images/covers/satisfactory.jpg",
+    "banner": "/images/banners/satisfactory.jpg",
+    "logo": "/images/logos/satisfactory.png",
+    "description": "Satisfactory is a first-person open-world factory building game with a dash of exploration and combat. Play alone or with friends, explore an alien planet, create multi-story factories, and enter conveyor belt heaven!",
+    "sizeGB": 20,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 39.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "rimworld",
+    "title": "RimWorld",
+    "developer": "Ludeon Studios",
+    "publisher": "Ludeon Studios",
+    "releaseDate": "2018-10-17",
+    "genres": [
+      "Simulation",
+      "Strategy",
+      "Indie"
+    ],
+    "price": 34.99,
+    "salePrice": 27.99,
+    "cover": "/images/covers/rimworld.jpg",
+    "banner": "/images/banners/rimworld.jpg",
+    "logo": "/images/logos/rimworld.png",
+    "description": "A sci-fi colony sim driven by an intelligent AI storyteller. Generates stories by simulating psychology, ecology, gunplay, melee combat, climate, biomes, diplomacy, interpersonal relationships, art, medicine, trade, and more.",
+    "sizeGB": 1,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 34.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "stardew-valley",
+    "title": "Stardew Valley",
+    "developer": "ConcernedApe",
+    "publisher": "ConcernedApe",
+    "releaseDate": "2016-02-26",
+    "genres": [
+      "Simulation",
+      "RPG",
+      "Indie"
+    ],
+    "price": 14.99,
+    "salePrice": 10.49,
+    "cover": "/images/covers/stardew-valley.jpg",
+    "banner": "/images/banners/stardew-valley.jpg",
+    "logo": "/images/logos/stardew-valley.png",
+    "description": "You've inherited your grandfather's old farm plot in Stardew Valley. Armed with hand-me-down tools and a few coins, you set out to begin your new life. Can you learn to live off the land and turn these overgrown fields into a thriving home?",
+    "sizeGB": 0.5,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 14.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "dota-2",
+    "title": "Dota 2",
+    "developer": "Valve",
+    "publisher": "Valve",
+    "releaseDate": "2013-07-09",
+    "genres": [
+      "Strategy",
+      "Multiplayer",
+      "Free to Play"
+    ],
+    "price": 0,
+    "cover": "/images/covers/dota-2.jpg",
+    "banner": "/images/banners/dota-2.jpg",
+    "logo": "/images/logos/dota-2.png",
+    "description": "Every day, millions of players worldwide enter battle as one of over a hundred Dota heroes. And no matter if it's their 10th hour of play or 1,000th, there's always something new to discover.",
+    "sizeGB": 60,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 0,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "forza-horizon-5",
+    "title": "Forza Horizon 5",
+    "developer": "Playground Games",
+    "publisher": "Xbox Game Studios",
+    "releaseDate": "2021-11-08",
+    "genres": [
+      "Racing",
+      "Open World"
+    ],
+    "price": 59.99,
+    "salePrice": 23.99,
+    "cover": "/images/covers/forza-horizon-5.jpg",
+    "banner": "/images/banners/forza-horizon-5.jpg",
+    "logo": "/images/logos/forza-horizon-5.png",
+    "description": "Explore the vibrant open world landscapes of Mexico with limitless, fun driving action in the world’s greatest cars.",
+    "sizeGB": 110,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 59.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "assetto-corsa",
+    "title": "Assetto Corsa",
+    "developer": "Kunos Simulazioni",
+    "publisher": "505 Games",
+    "releaseDate": "2014-12-19",
+    "genres": [
+      "Racing",
+      "Simulation"
+    ],
+    "price": 19.99,
+    "salePrice": 4.99,
+    "cover": "/images/covers/assetto-corsa.jpg",
+    "banner": "/images/banners/assetto-corsa.jpg",
+    "logo": "/images/logos/assetto-corsa.png",
+    "description": "Assetto Corsa v1.16 introduces the new \"Laguna Seca\" laser-scanned track, 7 new cars among which the eagerly awaited Alfa Romeo Giulia Quadrifoglio! Check the changelog for further info!",
+    "sizeGB": 30,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 19.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "euro-truck-simulator-2",
+    "title": "Euro Truck Simulator 2",
+    "developer": "SCS Software",
+    "publisher": "SCS Software",
+    "releaseDate": "2012-10-12",
+    "genres": [
+      "Simulation",
+      "Racing"
+    ],
+    "price": 19.99,
+    "salePrice": 4.99,
+    "cover": "/images/covers/euro-truck-simulator-2.jpg",
+    "banner": "/images/banners/euro-truck-simulator-2.jpg",
+    "logo": "/images/logos/euro-truck-simulator-2.png",
+    "description": "Travel across Europe as king of the road, a trucker who delivers important cargo across impressive distances! With dozens of cities to explore, your endurance, skill and speed will all be pushed to their limits.",
+    "sizeGB": 25,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 19.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "need-for-speed-unbound",
+    "title": "Need for Speed Unbound",
+    "developer": "Criterion Games",
+    "publisher": "Electronic Arts",
+    "releaseDate": "2022-12-01",
+    "genres": [
+      "Racing"
+    ],
+    "price": 69.99,
+    "salePrice": 6.99,
+    "cover": "/images/covers/need-for-speed-unbound.jpg",
+    "banner": "/images/banners/need-for-speed-unbound.jpg",
+    "logo": "/images/logos/need-for-speed-unbound.png",
+    "description": "Race to the top, definitely don’t flop. Outsmart the cops, and enter weekly qualifiers for The Grand: the ultimate street race. Pack your garage with precision-tuned, custom rides, and light up the streets with your style.",
+    "sizeGB": 50,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 69.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "efootball",
+    "title": "eFootball",
+    "developer": "KONAMI",
+    "publisher": "KONAMI",
+    "releaseDate": "2021-09-29",
+    "genres": [
+      "Sports",
+      "Multiplayer",
+      "Free to Play"
+    ],
+    "price": 0,
+    "cover": "/images/covers/efootball.jpg",
+    "banner": "/images/banners/efootball.jpg",
+    "logo": "/images/logos/efootball.png",
+    "description": "Step up and experience the exhilarating soccer game that has now surpassed 1 billion downloads! Play eFootball with users around the world!",
+    "sizeGB": 70,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 0,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "street-fighter-6",
+    "title": "Street Fighter 6",
+    "developer": "CAPCOM Co., Ltd.",
+    "publisher": "CAPCOM Co., Ltd.",
+    "releaseDate": "2023-06-01",
+    "genres": [
+      "Fighting"
+    ],
+    "price": 39.99,
+    "salePrice": 15.99,
+    "cover": "/images/covers/street-fighter-6.jpg",
+    "banner": "/images/banners/street-fighter-6.jpg",
+    "logo": "/images/logos/street-fighter-6.png",
+    "description": "Here comes Capcom’s newest challenger! Street Fighter 6 launches worldwide on June 2nd, 2023 and represents the next evolution of the Street Fighter series! Street Fighter 6 spans three distinct game modes, including World Tour, Fighting Ground and Battle Hub.",
+    "sizeGB": 60,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 39.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "tekken-8",
+    "title": "TEKKEN 8",
+    "developer": "Bandai Namco Studios Inc.",
+    "publisher": "Bandai Namco Entertainment",
+    "releaseDate": "2024-01-25",
+    "genres": [
+      "Fighting"
+    ],
+    "price": 39.99,
+    "salePrice": 23.99,
+    "cover": "/images/covers/tekken-8.jpg",
+    "banner": "/images/banners/tekken-8.jpg",
+    "logo": "/images/logos/tekken-8.png",
+    "description": "TEKKEN 8 is the latest addition to the TEKKEN series, the pinnacle of 3D fighting games. Join the fight with over 32 characters and bear witness to the next installment in this epic saga. Get ready for the biggest and best TEKKEN game ever made!",
+    "sizeGB": 100,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 39.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "mortal-kombat-1",
+    "title": "Mortal Kombat 1",
+    "developer": "NetherRealm Studios",
+    "publisher": "Warner Bros. Games",
+    "releaseDate": "2023-09-19",
+    "genres": [
+      "Fighting"
+    ],
+    "price": 49.99,
+    "salePrice": 9.99,
+    "cover": "/images/covers/mortal-kombat-1.jpg",
+    "banner": "/images/banners/mortal-kombat-1.jpg",
+    "logo": "/images/logos/mortal-kombat-1.png",
+    "description": "Discover a reborn Mortal Kombat Universe created by the Fire God Liu Kang. Mortal Kombat 1 ushers in a new era of the iconic franchise with a new fighting system, game modes, and fatalities!",
+    "sizeGB": 140,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 49.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "among-us",
+    "title": "Among Us",
+    "developer": "Innersloth",
+    "publisher": "Innersloth",
+    "releaseDate": "2018-11-16",
+    "genres": [
+      "Multiplayer",
+      "Casual"
+    ],
+    "price": 4.99,
+    "salePrice": 2.99,
+    "cover": "/images/covers/among-us.jpg",
+    "banner": "/images/banners/among-us.jpg",
+    "logo": "/images/logos/among-us.png",
+    "description": "An online and local party game of teamwork and betrayal for 4-15 players...in space!",
+    "sizeGB": 20,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 4.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "overcooked-2",
+    "title": "Overcooked! 2",
+    "developer": "Ghost Town Games Ltd.",
+    "publisher": "Team17",
+    "releaseDate": "2018-08-07",
+    "genres": [
+      "Casual",
+      "Multiplayer"
+    ],
+    "price": 24.99,
+    "salePrice": 6.24,
+    "cover": "/images/covers/overcooked-2.jpg",
+    "banner": "/images/banners/overcooked-2.jpg",
+    "logo": "/images/logos/overcooked-2.png",
+    "description": "Overcooked returns with a brand-new helping of chaotic cooking action! Journey back to the Onion Kingdom and assemble your team of chefs in classic couch co-op or online play for up to four players. Hold onto your aprons… it’s time to save the world again!",
+    "sizeGB": 3,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 24.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "death-stranding-directors-cut",
+    "title": "DEATH STRANDING DIRECTOR'S CUT",
+    "developer": "KOJIMA PRODUCTIONS",
+    "publisher": "505 Games",
+    "releaseDate": "2022-03-30",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Open World"
+    ],
+    "price": 39.99,
+    "salePrice": 9.99,
+    "cover": "/images/covers/death-stranding-directors-cut.jpg",
+    "banner": "/images/banners/death-stranding-directors-cut.jpg",
+    "logo": "/images/logos/death-stranding-directors-cut.png",
+    "description": "From legendary game creator Hideo Kojima comes a genre-defying experience, now expanded in this definitive DIRECTOR’S CUT. As Sam Bridges, your mission is to deliver hope to humanity by connecting the last survivors of a decimated America. Can you reunite the shattered world, one step at a time?",
+    "sizeGB": 80,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 39.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "grand-theft-auto-v-enhanced",
+    "title": "Grand Theft Auto V Enhanced",
+    "developer": "Rockstar North",
+    "publisher": "Rockstar Games",
+    "releaseDate": "2025-03-04",
+    "genres": [
+      "Action",
+      "Open World",
+      "Multiplayer"
+    ],
+    "price": 29.99,
+    "salePrice": 14.99,
+    "cover": "/images/covers/grand-theft-auto-v-enhanced.jpg",
+    "banner": "/images/banners/grand-theft-auto-v-enhanced.jpg",
+    "logo": "/images/logos/grand-theft-auto-v-enhanced.png",
+    "description": "Experience entertainment blockbusters Grand Theft Auto V and Grand Theft Auto Online — now upgraded for a new generation with stunning visuals, faster loading, 3D audio, and more, plus exclusive content for GTA Online players.",
+    "sizeGB": 105,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 29.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "riders-republic",
+    "title": "Riders Republic",
+    "developer": "Ubisoft Annecy",
+    "publisher": "Ubisoft Entertainment",
+    "releaseDate": "2023-06-08",
+    "genres": [
+      "Sports",
+      "Open World",
+      "Multiplayer"
+    ],
+    "price": 39.99,
+    "salePrice": 3.99,
+    "cover": "/images/covers/riders-republic.jpg",
+    "banner": "/images/banners/riders-republic.jpg",
+    "logo": "/images/logos/riders-republic.png",
+    "description": "Jump into a massive multiplayer playground! Bike, ski, snowboard, or wingsuit across an open world sports paradise where the rules are yours to make or break.",
+    "sizeGB": 20,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 39.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "motogp25",
+    "title": "MotoGP25",
+    "developer": "Milestone S.r.l.",
+    "publisher": "Milestone S.r.l.",
+    "releaseDate": "2025-04-30",
+    "genres": [
+      "Sports",
+      "Racing"
+    ],
+    "price": 49.99,
+    "salePrice": 9.99,
+    "cover": "/images/covers/motogp25.jpg",
+    "banner": "/images/banners/motogp25.jpg",
+    "logo": "/images/logos/motogp25.png",
+    "description": "Rev up your engines for the 2025 season! Feel the authentic MotoGP thrills with refined sound design and exciting challenges. Train with new disciplines in Race Off mode and choose the Arcade or Pro Experience for ultimate fun or realism!",
+    "sizeGB": 24,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 49.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "pga-tour-2k25",
+    "title": "PGA TOUR 2K25",
+    "developer": "HB Studios",
+    "publisher": "2K",
+    "releaseDate": "2025-02-27",
+    "genres": [
+      "Sports"
+    ],
+    "price": 39.99,
+    "salePrice": 17.99,
+    "cover": "/images/covers/pga-tour-2k25.jpg",
+    "banner": "/images/banners/pga-tour-2k25.jpg",
+    "logo": "/images/logos/pga-tour-2k25.png",
+    "description": "Take your best shot at glory in PGA TOUR 2K25! In a 2K-first, compete in three prestigious major tournaments. Personalize your game with expanded MyCAREER, MyPLAYER and Course Designer options. Challenge friends across ranked, casual, and cross-platform multiplayer.",
+    "sizeGB": 30,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 39.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "tony-hawks-pro-skater-1-2",
+    "title": "Tony Hawk's Pro Skater 1 + 2",
+    "developer": "Vicarious Visions",
+    "publisher": "Activision",
+    "releaseDate": "2023-10-03",
+    "genres": [
+      "Sports",
+      "Platformer"
+    ],
+    "price": 39.99,
+    "salePrice": 15.99,
+    "cover": "/images/covers/tony-hawks-pro-skater-1-2.jpg",
+    "banner": "/images/banners/tony-hawks-pro-skater-1-2.jpg",
+    "logo": "/images/logos/tony-hawks-pro-skater-1-2.png",
+    "description": "Play the fully-remastered Tony Hawk’s Pro Skater & Tony Hawk’s Pro Skater 2 games in one epic collection, rebuilt from the ground up in incredible HD.",
+    "sizeGB": 24,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 39.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "descenders",
+    "title": "Descenders",
+    "developer": "RageSquid",
+    "publisher": "No More Robots",
+    "releaseDate": "2019-05-07",
+    "genres": [
+      "Sports",
+      "Indie",
+      "Racing"
+    ],
+    "price": 24.99,
+    "salePrice": 6.24,
+    "cover": "/images/covers/descenders.jpg",
+    "banner": "/images/banners/descenders.jpg",
+    "logo": "/images/logos/descenders.png",
+    "description": "Descenders is extreme downhill freeriding for the modern era, with procedurally generated worlds, and where mistakes have real consequences. Will you lead your team to glory and become the next legendary Descender?",
+    "sizeGB": 17,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 24.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "snowrunner",
+    "title": "SnowRunner",
+    "developer": "Saber Interactive",
+    "publisher": "Focus Entertainment",
+    "releaseDate": "2021-05-17",
+    "genres": [
+      "Simulation",
+      "Racing",
+      "Open World"
+    ],
+    "price": 29.99,
+    "salePrice": 11.99,
+    "cover": "/images/covers/snowrunner.jpg",
+    "banner": "/images/banners/snowrunner.jpg",
+    "logo": "/images/logos/snowrunner.png",
+    "description": "Get ready for the next-generation off-road experience! Drive powerful vehicles and overcome extreme open environments to complete dozens of challenging missions solo or with up to 3 friends!",
+    "sizeGB": 50,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 29.99,
+        "includes": []
+      }
+    ]
   }
 ]

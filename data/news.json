@@ -1,10 +1,20 @@
 [
   {
+    "slug": "catalog-expansion",
+    "date": "2026-10-01",
+    "category": "Store update",
+    "title": "The store just got a lot bigger: 90+ games across 19 categories",
+    "excerpt": "From roguelikes and horror to fighting games, racing sims and free-to-play shooters, there is now something for every kind of player. Browse by category from the home page.",
+    "image": "/images/banners/elden-ring.jpg",
+    "href": "/games",
+    "cta": "Browse the catalog"
+  },
+  {
     "slug": "mega-sale",
     "date": "2026-09-24",
     "category": "Sale",
     "title": "The Mega Sale is live: up to 75% off",
-    "excerpt": "Red Dead Redemption 2 and Hogwarts Legacy lead this week's deals, with seven games discounted across the store.",
+    "excerpt": "Red Dead Redemption 2 and Hogwarts Legacy lead this week's deals, with dozens of games discounted across the store.",
     "image": "/images/covers/red-dead-redemption-2.jpg",
     "href": "/games?sale=1",
     "cta": "Shop the sale"

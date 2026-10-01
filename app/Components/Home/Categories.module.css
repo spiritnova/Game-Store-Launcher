@@ -1,0 +1,65 @@
+.section {
+    padding-block: 3rem 1rem;
+}
+
+.title {
+    margin-bottom: 1.25rem;
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 0.9rem;
+}
+
+.tile {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    height: 104px;
+    overflow: hidden;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color 200ms, transform 200ms;
+}
+
+.tile:hover {
+    border-color: var(--main);
+    transform: translateY(-3px);
+}
+
+.tile img {
+    object-fit: cover;
+    transition: transform 400ms;
+}
+
+.tile:hover img {
+    transform: scale(1.06);
+}
+
+.label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.name {
+    font-weight: 600;
+}
+
+.count {
+    font-size: 0.78rem;
+    color: #cfcfcf;
+}
+
+@container main (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

@@ -7,7 +7,8 @@ Nothing is actually sold. Sign-in, purchases, installs and playtime are simulate
 ## Features
 
 - **Launcher layout**: a Steam-style sidebar with store and library navigation, live counts, a downloads panel, quick launch for installed games and your profile. On phones it becomes a slide-out drawer.
-- **Discover**: spotlight carousel (pausable, honours reduced-motion settings), a "games on sale" row and featured games.
+- **Discover**: spotlight carousel (pausable, honours reduced-motion settings), a top-deals row, featured games and a "Browse by category" grid.
+- **A real-sized catalog**: 90+ games across 19 categories (Action, RPG, Horror, Roguelike, Strategy, Racing, Sports, Fighting, Free to Play…), imported from Steam's public store listings.
 - **Browse**: search by title, developer or publisher; filter by genre or "on sale"; sort by price, discount, release date or title. Filters are stored in the URL, so a view like `/games?genre=RPG&sale=1` can be shared.
 - **Game pages**: screenshot gallery with a full-screen viewer, editions (Deluxe, Gold, Complete…), bundles, player modes (single-player, co-op, online), system requirements, supported languages, player reviews with helpful votes, a discussion thread, "More from this studio" and related games. Every game page is statically generated, and unknown games return a 404.
 - **Cart & checkout**: buy any edition, or a bundle priced for the games you don't own yet. Sale and bundle discounts are itemised, and checkout asks you to sign in.
@@ -44,7 +45,8 @@ Other scripts:
 npm run lint    # ESLint (next/core-web-vitals)
 npm run build   # production build
 npm start       # serve the production build
-npm run images  # regenerate image placeholders after adding or changing artwork
+npm run import:steam  # import more games from Steam (see below)
+npm run images       # regenerate image placeholders after adding or changing artwork
 ```
 
 Set `NEXT_PUBLIC_SITE_URL` to your deployed URL so Open Graph images resolve to absolute links.
@@ -78,10 +80,13 @@ lib/
   images.js       Blur placeholders (server only)
 scripts/
   image-meta.mjs  Generates image placeholders
+  import-steam.mjs  Imports games, details and artwork from the Steam store API
 public/images/    Game covers, banners and logos
 ```
 
-To add a game, add an entry to `data/games.json` and `data/game-details.json` with its images in `public/images/`, then run `npm run images`. Add `salePrice` to put it on sale, `featured: true` to show it in Featured, or a `spotlight` block to add it to the home carousel.
+To add games, add a `[steamAppId, [genres]]` line to the `CATALOG` list in `scripts/import-steam.mjs` and run `npm run import:steam`, then `npm run images`. The importer downloads and optimizes the artwork and fills in prices, descriptions, screenshots, requirements and languages. It skips games already imported, and games without a US price or standard cover art. Prices are the live US prices at import time.
+
+You can also add a game by hand: an entry in `data/games.json` and `data/game-details.json`, with its images in `public/images/`. Add `salePrice` to put it on sale, `featured: true` to show it in Featured, or a `spotlight` block to add it to the home carousel.
 
 ## Credits
 

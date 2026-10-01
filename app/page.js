@@ -1,5 +1,6 @@
 import Carousel from './Components/Home/Carousel'
 import FeaturedGames from './Components/Home/FeaturedGames'
+import Categories from './Components/Home/Categories'
 import GamesOnSale from './Components/Home/GamesOnSale'
 import Button from './Components/UI/Button'
 import { allGames, spotlightGames } from '@/lib/games'
@@ -13,6 +14,7 @@ export default function Home() {
       <Carousel blurs={Object.fromEntries(spotlightGames.map((g) => [g.hero, blurProps(g.hero).blurDataURL]))}/>
       <GamesOnSale/>
       <FeaturedGames/>
+      <Categories/>
 
       <section className={`container ${styles.cta}`}>
         <h2>Looking for something else?</h2>

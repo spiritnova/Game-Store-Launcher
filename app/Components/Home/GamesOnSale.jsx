@@ -8,9 +8,12 @@ import 'swiper/css';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
-import { gamesOnSale } from '@/lib/games';
+import { topDeals } from '@/lib/games';
 import GameCard from '../UI/GameCard';
 import styles from './GamesOnSale.module.css'
+
+// The 16 biggest discounts; "View all" opens the full list in Browse.
+const deals = topDeals(16)
 
 export default function GamesOnSale(){
     const [swiper, setSwiper] = useState(null)
@@ -22,7 +25,7 @@ export default function GamesOnSale(){
     return(
         <section className={`container ${styles.container}`} aria-labelledby="sale-title">
             <div className={styles.header}>
-                <h2 id="sale-title" className={styles.title}>Games on sale</h2>
+                <h2 id="sale-title" className={styles.title}>Top deals</h2>
                 <Link href="/games?sale=1" className={styles.viewAll}>View all</Link>
                 <div className={styles.buttons}>
                     <button
@@ -60,7 +63,7 @@ export default function GamesOnSale(){
                     1300: { slidesPerView: 6, spaceBetween: 24 },
                 }}
             >
-                {gamesOnSale.map(game => (
+                {deals.map(game => (
                     <SwiperSlide key={game.slug} className={styles.slide}>
                         <GameCard game={game} sizes="(max-width: 600px) 50vw, (max-width: 1200px) 25vw, 240px" />
                     </SwiperSlide>

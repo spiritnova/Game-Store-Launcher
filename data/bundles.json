@@ -26,5 +26,61 @@
     "description": "Tight squad tactics and all-out war in two blockbuster shooters.",
     "games": ["call-of-duty-modern-warfare-2", "battlefield-2042"],
     "discount": 10
+  },
+  {
+    "slug": "soulslike-starter-pack",
+    "title": "Soulslike Starter Pack",
+    "description": "Three punishing, beautiful action RPGs from the studio that defined the genre.",
+    "games": ["elden-ring", "dark-souls-iii", "sekiro-shadows-die-twice-goty-edition"],
+    "discount": 15
+  },
+  {
+    "slug": "indie-darlings",
+    "title": "Indie Darlings",
+    "description": "Five award-winning indies that prove big ideas don't need big budgets.",
+    "games": ["hades", "hollow-knight", "celeste", "stardew-valley", "dead-cells"],
+    "discount": 20
+  },
+  {
+    "slug": "horror-night",
+    "title": "Horror Night",
+    "description": "Five ways to never sleep again: survival horror, remakes and co-op ghost hunting.",
+    "games": ["resident-evil-4", "resident-evil-village", "dead-space", "outlast", "phasmophobia"],
+    "discount": 15
+  },
+  {
+    "slug": "strategy-masters",
+    "title": "Strategy Masters",
+    "description": "Build empires, command armies and outwit the AI across five strategy classics.",
+    "games": ["sid-meiers-civilization-vi", "total-war-warhammer-iii", "age-of-empires-ii-definitive-edition", "xcom-2", "stellaris"],
+    "discount": 15
+  },
+  {
+    "slug": "survival-crafters",
+    "title": "Survival Crafters",
+    "description": "Gather, build and survive in four very different worlds.",
+    "games": ["terraria", "valheim", "subnautica", "the-forest"],
+    "discount": 15
+  },
+  {
+    "slug": "fighting-game-legends",
+    "title": "Fighting Game Legends",
+    "description": "The three biggest names in fighting games, ready for your next tournament night.",
+    "games": ["street-fighter-6", "tekken-8", "mortal-kombat-1"],
+    "discount": 15
+  },
+  {
+    "slug": "racing-garage",
+    "title": "Racing Garage",
+    "description": "From open-road festivals to sim racing and hauling trucks across Europe.",
+    "games": ["forza-horizon-5", "assetto-corsa", "need-for-speed-unbound", "euro-truck-simulator-2"],
+    "discount": 10
+  },
+  {
+    "slug": "rip-and-tear",
+    "title": "Rip and Tear",
+    "description": "Id Software's reboot and its sequel, plus co-op zombie mayhem.",
+    "games": ["doom", "doom-eternal", "left-4-dead-2"],
+    "discount": 10
   }
 ]

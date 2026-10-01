@@ -83,10 +83,13 @@ export default function GamePage({ params }) {
               <span aria-hidden="true">/</span>
               <span aria-current="page">{game.title}</span>
             </nav>
-            <div className={styles.logo}>
-              <Image src={game.logo} alt="" fill sizes="320px" unoptimized={isSvg(game.logo)} />
-            </div>
-            <h1 className="visually-hidden">{game.title}</h1>
+            {game.logo && (
+              <div className={styles.logo}>
+                <Image src={game.logo} alt="" fill sizes="320px" unoptimized={isSvg(game.logo)} />
+              </div>
+            )}
+            {/* The logo already shows the title; without one, show the title as text */}
+            <h1 className={game.logo ? 'visually-hidden' : styles.title}>{game.title}</h1>
             <p className={styles.meta}>
               {game.developer} · {releaseYear(game)}
               {info.metacritic && (
@@ -115,11 +118,13 @@ export default function GamePage({ params }) {
             <p>{game.description}</p>
           </section>
 
-          <Features features={info.features} />
+          {info.features.length > 0 && <Features features={info.features} />}
           {game.editions.length > 1 && <Editions game={game} />}
           {bundles.length > 0 && <Bundles bundles={bundles} />}
-          <SystemRequirements requirements={info.requirements} />
-          <Languages languages={info.languages} />
+          {(info.requirements.minimum.length > 0 || info.requirements.recommended.length > 0) && (
+            <SystemRequirements requirements={info.requirements} />
+          )}
+          {info.languages.interface.length > 0 && <Languages languages={info.languages} />}
           <Reviews game={game} seeded={getSeedReviews(game)} />
           <Comments game={game} seeded={getSeedComments(game, multiplayer)} />
         </div>
@@ -156,7 +161,7 @@ export default function GamePage({ params }) {
             </div>
             <div>
               <dt>Languages</dt>
-              <dd>{info.languages.interface.length}</dd>
+              <dd>{info.languages.interface.length || '—'}</dd>
             </div>
           </dl>
           <a href="#reviews" className={styles.editionsLink}>Read player reviews</a>

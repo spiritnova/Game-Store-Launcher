@@ -170,7 +170,7 @@ export default function CartView() {
 
             {session ? (
               <Button size="large" onClick={purchase}>
-                Purchase for {formatPrice(total)}
+                {total === 0 ? 'Get for free' : `Purchase for ${formatPrice(total)}`}
               </Button>
             ) : (
               <div className={styles.signIn}>

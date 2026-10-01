@@ -6,10 +6,13 @@ import Link from 'next/link'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'
 import DownloadIcon from '@mui/icons-material/Download'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
-import { cardImage, getGame } from '@/lib/games'
+import { cardImage, formatSize, getEdition, getGame } from '@/lib/games'
+import { placeholderColor } from '@/lib/image-colors'
+import { useDownloads } from '@/lib/downloads'
 import { formatLastPlayed, formatPlaytime, useStore } from '@/lib/store'
 import Button from '../UI/Button'
 import ProgressBar from '../UI/ProgressBar'
+import SignInPrompt from '../UI/SignInPrompt'
 import { CardGridSkeleton } from '../UI/Skeleton'
 import styles from './LibraryView.module.css'
 
@@ -26,18 +29,26 @@ const sorts = {
 }
 
 function LibraryCard({ entry }) {
-  const { downloads, install, cancelInstall, uninstall, play } = useStore()
+  const { uninstall, play } = useStore()
+  const downloads = useDownloads()
   const { game } = entry
-  const progress = downloads[game.slug]
+  const download = downloads.statusOf(game.slug)
   const lastPlayed = formatLastPlayed(entry.lastPlayed)
+  const edition = getEdition(game, entry.edition)
 
   let status = 'Not installed'
-  if (progress !== undefined) status = 'Installing…'
+  if (download) status = { downloading: 'Downloading…', paused: 'Paused', queued: 'Queued' }[download.status]
   else if (entry.installed) status = 'Installed'
 
   return (
     <article className={styles.card}>
-      <Link href={`/games/${game.slug}`} className={styles.media} tabIndex={-1} aria-hidden="true">
+      <Link
+        href={`/games/${game.slug}`}
+        className={styles.media}
+        tabIndex={-1}
+        aria-hidden="true"
+        style={{ backgroundColor: placeholderColor(cardImage(game)) }}
+      >
         <Image src={cardImage(game)} alt="" fill sizes="(max-width: 600px) 50vw, 220px" />
         <span className={`${styles.status} ${entry.installed ? styles.installed : ''}`}>{status}</span>
       </Link>
@@ -46,15 +57,21 @@ function LibraryCard({ entry }) {
         <h2 className={styles.title}>
           <Link href={`/games/${game.slug}`}>{game.title}</Link>
         </h2>
+        {edition.id !== 'standard' && <p className={styles.edition}>{edition.name}</p>}
         <p className={styles.meta}>
           {formatPlaytime(entry.playtimeMinutes)}
           {lastPlayed && <> · {lastPlayed}</>}
+          {!entry.installed && <> · {formatSize(game.sizeGB)}</>}
         </p>
 
-        {progress !== undefined ? (
+        {download ? (
           <div className={styles.progressRow}>
-            <ProgressBar value={progress} label={`Installing ${game.title}`} />
-            <Button variant="ghost" size="small" onClick={() => cancelInstall(game)}>Cancel</Button>
+            <ProgressBar value={download.progress} label={`${status} ${game.title}`} />
+            {download.status === 'paused' ? (
+              <Button variant="ghost" size="small" onClick={() => downloads.resume(game.slug)}>Resume</Button>
+            ) : (
+              <Button variant="ghost" size="small" onClick={() => downloads.cancel(game.slug)}>Cancel</Button>
+            )}
           </div>
         ) : (
           <div className={styles.actions}>
@@ -74,7 +91,7 @@ function LibraryCard({ entry }) {
                 </button>
               </>
             ) : (
-              <Button variant="ghost" size="small" onClick={() => install(game)}>
+              <Button variant="ghost" size="small" onClick={() => downloads.install(game)}>
                 <DownloadIcon fontSize="small" /> Install
               </Button>
             )}
@@ -86,7 +103,7 @@ function LibraryCard({ entry }) {
 }
 
 export default function LibraryView() {
-  const { hydrated, library } = useStore()
+  const { hydrated, session, library } = useStore()
   const [filter, setFilter] = useState('all')
   const [sort, setSort] = useState('recent')
 
@@ -113,6 +130,12 @@ export default function LibraryView() {
 
       {!hydrated ? (
         <CardGridSkeleton count={4} />
+      ) : !session ? (
+        <SignInPrompt
+          title="Sign in to see your library"
+          text="Your games, installs and playtime are saved to your account."
+          next="/library"
+        />
       ) : library.length === 0 ? (
         <div className={styles.empty}>
           <h2>Your library is empty</h2>

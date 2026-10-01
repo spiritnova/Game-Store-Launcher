@@ -12,7 +12,8 @@
   --danger: #ff6b6b;
 
   --radius: 8px;
-  --nav-h: 4rem;
+  --sidebar-w: 248px;
+  --topbar-h: 0px;
   --max-w: 1400px;
   --page-x: clamp(1rem, 4vw, 3rem);
 }
@@ -31,8 +32,6 @@ html {
 
 body {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   background-color: var(--bg);
   color: var(--text);
   font-family: var(--font-poppins), system-ui, sans-serif;
@@ -40,8 +39,60 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Accent colour, chosen in Settings > Appearance */
+:root[data-accent="purple"] {
+  --main: #8b5cf6;
+  --main-text: #b69cff;
+}
+
+:root[data-accent="green"] {
+  --main: #16a34a;
+  --main-text: #5ee28c;
+}
+
+:root[data-accent="orange"] {
+  --main: #ea580c;
+  --main-text: #ffa260;
+}
+
+:root[data-accent="pink"] {
+  --main: #db2777;
+  --main-text: #f58bc0;
+}
+
+/* Sidebar + content column. Components size themselves with @container main queries,
+   so their breakpoints follow the content width rather than the window. */
+.shell {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
+  align-items: start;
+  min-height: 100vh;
+}
+
+.content {
+  container: main / inline-size;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 100vh;
+}
+
 .page {
   flex: 1;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --topbar-h: 3.5rem;
+  }
+
+  .shell {
+    display: block;
+  }
+
+  .content {
+    min-height: calc(100vh - var(--topbar-h));
+  }
 }
 
 a {
@@ -56,7 +107,8 @@ img {
 
 button,
 input,
-select {
+select,
+textarea {
   font: inherit;
   color: inherit;
 }

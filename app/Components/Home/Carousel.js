@@ -16,7 +16,8 @@ import GameActions from '../Game/GameActions';
 import Price from '../UI/Price';
 import styles from './Carousel.module.css'
 
-export default function MainCarousel() {
+// `blurs` maps each hero image to its blurred placeholder (computed on the server).
+export default function MainCarousel({ blurs = {} }) {
     const [swiper, setSwiper] = useState(null)
     const [paused, setPaused] = useState(false)
 
@@ -54,7 +55,9 @@ export default function MainCarousel() {
                             alt=""
                             fill
                             priority={index === 0}
-                            sizes="100vw"
+                            sizes="(max-width: 900px) 100vw, calc(100vw - 248px)"
+                            placeholder={blurs[game.hero] ? 'blur' : 'empty'}
+                            blurDataURL={blurs[game.hero]}
                             className={styles.image}
                         />
 

@@ -1,0 +1,1330 @@
+{
+  "call-of-duty-modern-warfare-2": {
+    "screenshots": [
+      "/images/screenshots/call-of-duty-modern-warfare-2-1.jpg",
+      "/images/screenshots/call-of-duty-modern-warfare-2-2.jpg",
+      "/images/screenshots/call-of-duty-modern-warfare-2-3.jpg",
+      "/images/screenshots/call-of-duty-modern-warfare-2-4.jpg",
+      "/images/screenshots/call-of-duty-modern-warfare-2-5.jpg"
+    ],
+    "features": [
+      "Single-player",
+      "Online multiplayer",
+      "Online co-op",
+      "Cross-platform multiplayer",
+      "Controller support",
+      "Achievements",
+      "In-game purchases"
+    ],
+    "languages": {
+      "interface": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Arabic",
+        "Japanese",
+        "Korean",
+        "Polish",
+        "Portuguese - Brazil",
+        "Russian",
+        "Simplified Chinese",
+        "Spanish - Latin America",
+        "Traditional Chinese"
+      ],
+      "audio": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Japanese",
+        "Korean",
+        "Polish",
+        "Portuguese - Brazil",
+        "Russian",
+        "Spanish - Latin America"
+      ]
+    },
+    "requirements": {
+      "minimum": [
+        [
+          "OS",
+          "Windows 10 64 Bit (latest update)"
+        ],
+        [
+          "Processor",
+          "Intel Core i3-6100 / Core i5-2500K or AMD Ryzen 3 1200"
+        ],
+        [
+          "Memory",
+          "8 GB RAM"
+        ],
+        [
+          "Graphics",
+          "NVIDIA GeForce GTX 960 or AMD Radeon RX 470 - DirectX 12.0 compatible system"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Network",
+          "Broadband Internet connection"
+        ],
+        [
+          "Storage",
+          "125 GB available space"
+        ]
+      ],
+      "recommended": [
+        [
+          "OS",
+          "Windows 10 64 Bit (latest update) or Windows 11 64 Bit (latest update)"
+        ],
+        [
+          "Processor",
+          "Intel Core i5-6600K / Core i7-4770 or AMD Ryzen 5 1400"
+        ],
+        [
+          "Memory",
+          "8 GB RAM"
+        ],
+        [
+          "Graphics",
+          "NVIDIA GeForce GTX 1060 or AMD Radeon RX 580 - DirectX 12.0 compatible system or Intel Arc A770"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Network",
+          "Broadband Internet connection"
+        ],
+        [
+          "Storage",
+          "125 GB available space"
+        ]
+      ]
+    }
+  },
+  "devil-may-cry-5": {
+    "screenshots": [
+      "/images/screenshots/devil-may-cry-5-1.jpg",
+      "/images/screenshots/devil-may-cry-5-2.jpg",
+      "/images/screenshots/devil-may-cry-5-3.jpg",
+      "/images/screenshots/devil-may-cry-5-4.jpg",
+      "/images/screenshots/devil-may-cry-5-5.jpg"
+    ],
+    "features": [
+      "Single-player",
+      "Online multiplayer",
+      "Online co-op",
+      "Controller support",
+      "Achievements",
+      "Cloud saves",
+      "HDR"
+    ],
+    "languages": {
+      "interface": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Portuguese - Brazil",
+        "Polish",
+        "Russian",
+        "Simplified Chinese",
+        "Traditional Chinese",
+        "Japanese",
+        "Korean"
+      ],
+      "audio": [
+        "English",
+        "Japanese"
+      ]
+    },
+    "requirements": {
+      "minimum": [
+        [
+          "OS",
+          "WINDOWS 10 (64-BIT Required)"
+        ],
+        [
+          "Processor",
+          "Intel Core i5-4460, AMD FX-6300, or better"
+        ],
+        [
+          "Memory",
+          "8 GB RAM"
+        ],
+        [
+          "Graphics",
+          "NVIDIA GeForce GTX 760 or AMD Radeon R7 260x with 2GB Video RAM, or better"
+        ],
+        [
+          "DirectX",
+          "Version 11"
+        ],
+        [
+          "Storage",
+          "35 GB available space"
+        ],
+        [
+          "Additional Notes",
+          "*Xinput support Controllers recommended *Internet connection required for game activation. (Network connectivity uses Steam developed by Valve Corporation.)"
+        ]
+      ],
+      "recommended": [
+        [
+          "OS",
+          "WINDOWS 10 / 11"
+        ],
+        [
+          "Processor",
+          "Intel Core i7-3770, AMD FX-9590, or better"
+        ],
+        [
+          "Memory",
+          "8 GB RAM"
+        ],
+        [
+          "Graphics",
+          "NVIDIA GeForce GTX 1060 with 6GB VRAM, AMD Radeon RX 480 with 8GB VRAM, or better"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Storage",
+          "35 GB available space"
+        ],
+        [
+          "Additional Notes",
+          "*Xinput support Controllers recommended *Internet connection required for game activation. (Network connectivity uses Steam developed by Valve Corporation.)"
+        ]
+      ]
+    },
+    "metacritic": 89
+  },
+  "the-witcher-3": {
+    "screenshots": [
+      "/images/screenshots/the-witcher-3-1.jpg",
+      "/images/screenshots/the-witcher-3-2.jpg",
+      "/images/screenshots/the-witcher-3-3.jpg",
+      "/images/screenshots/the-witcher-3-4.jpg",
+      "/images/screenshots/the-witcher-3-5.jpg"
+    ],
+    "features": [
+      "Single-player",
+      "Controller support",
+      "Achievements",
+      "Cloud saves",
+      "HDR"
+    ],
+    "languages": {
+      "interface": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Arabic",
+        "Czech",
+        "Hungarian",
+        "Japanese",
+        "Korean",
+        "Polish",
+        "Portuguese - Brazil",
+        "Russian",
+        "Traditional Chinese",
+        "Turkish",
+        "Simplified Chinese",
+        "Spanish - Latin America",
+        "Ukrainian"
+      ],
+      "audio": [
+        "English",
+        "French",
+        "German",
+        "Japanese",
+        "Korean",
+        "Polish",
+        "Portuguese - Brazil",
+        "Russian",
+        "Simplified Chinese"
+      ]
+    },
+    "requirements": {
+      "minimum": [
+        [
+          "OS",
+          "64-bit Windows 11"
+        ],
+        [
+          "Processor",
+          "Core i5-8400 / Ryzen 5 2600"
+        ],
+        [
+          "Memory",
+          "12 GB RAM"
+        ],
+        [
+          "Graphics",
+          "GeForce GTX 1660 / Radeon RX 5500 XT 8GB / Arc A580"
+        ],
+        [
+          "Storage",
+          "60 SSD GB available space"
+        ],
+        [
+          "Additional Notes",
+          "VRAM 6 GB"
+        ]
+      ],
+      "recommended": [
+        [
+          "OS",
+          "64-bit Windows 11"
+        ],
+        [
+          "Processor",
+          "Intel Core i7 8700K / AMD Ryzen 5 3600X"
+        ],
+        [
+          "Memory",
+          "16 GB RAM"
+        ],
+        [
+          "Graphics",
+          "RTX 2060 Super / AMD Radeon RX 6600 XT / Intel Arc B580"
+        ],
+        [
+          "Storage",
+          "60 SSD GB available space"
+        ],
+        [
+          "Additional Notes",
+          "VRAM 8 GB"
+        ]
+      ]
+    },
+    "metacritic": 93
+  },
+  "hogwarts-legacy": {
+    "screenshots": [
+      "/images/screenshots/hogwarts-legacy-1.jpg",
+      "/images/screenshots/hogwarts-legacy-2.jpg",
+      "/images/screenshots/hogwarts-legacy-3.jpg",
+      "/images/screenshots/hogwarts-legacy-4.jpg",
+      "/images/screenshots/hogwarts-legacy-5.jpg"
+    ],
+    "features": [
+      "Single-player",
+      "Controller support",
+      "Achievements",
+      "Cloud saves",
+      "HDR",
+      "In-game purchases"
+    ],
+    "languages": {
+      "interface": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Arabic",
+        "Japanese",
+        "Korean",
+        "Polish",
+        "Portuguese - Brazil",
+        "Russian",
+        "Simplified Chinese",
+        "Spanish - Latin America",
+        "Traditional Chinese"
+      ],
+      "audio": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Japanese",
+        "Portuguese - Brazil",
+        "Spanish - Latin America"
+      ]
+    },
+    "requirements": {
+      "minimum": [
+        [
+          "OS",
+          "64-bit Windows 10"
+        ],
+        [
+          "Processor",
+          "Intel Core i5-6600 (3.3Ghz) or AMD Ryzen 5 1400 (3.2Ghz)"
+        ],
+        [
+          "Memory",
+          "16 GB RAM"
+        ],
+        [
+          "Graphics",
+          "NVIDIA GeForce GTX 960 4GB or AMD Radeon RX 470 4GB"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Storage",
+          "85 GB available space"
+        ],
+        [
+          "Additional Notes",
+          "SSD (Preferred), HDD (Supported), 720p/30 fps, Low Quality Settings"
+        ]
+      ],
+      "recommended": [
+        [
+          "OS",
+          "64-bit Windows 10"
+        ],
+        [
+          "Processor",
+          "Intel Core i7-8700 (3.2Ghz) or AMD Ryzen 5 3600 (3.6 Ghz)"
+        ],
+        [
+          "Memory",
+          "16 GB RAM"
+        ],
+        [
+          "Graphics",
+          "NVIDIA GeForce 1080 Ti or AMD Radeon RX 5700 XT or INTEL Arc A770"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Storage",
+          "85 GB available space"
+        ],
+        [
+          "Additional Notes",
+          "SSD, 1080p/60 fps, High Quality Settings"
+        ]
+      ]
+    },
+    "metacritic": 83
+  },
+  "the-last-of-us-part-1": {
+    "screenshots": [
+      "/images/screenshots/the-last-of-us-part-1-1.jpg",
+      "/images/screenshots/the-last-of-us-part-1-2.jpg",
+      "/images/screenshots/the-last-of-us-part-1-3.jpg",
+      "/images/screenshots/the-last-of-us-part-1-4.jpg",
+      "/images/screenshots/the-last-of-us-part-1-5.jpg"
+    ],
+    "features": [
+      "Single-player",
+      "Controller support",
+      "Achievements",
+      "Cloud saves"
+    ],
+    "languages": {
+      "interface": [
+        "English",
+        "Italian",
+        "Spanish - Spain",
+        "Czech",
+        "Dutch",
+        "Greek",
+        "French",
+        "German",
+        "Danish",
+        "Finnish",
+        "Hungarian",
+        "Japanese",
+        "Korean",
+        "Norwegian",
+        "Polish",
+        "Portuguese - Brazil",
+        "Portuguese - Portugal",
+        "Russian",
+        "Simplified Chinese",
+        "Spanish - Latin America",
+        "Swedish",
+        "Thai",
+        "Traditional Chinese",
+        "Turkish",
+        "Croatian"
+      ],
+      "audio": [
+        "English",
+        "Italian",
+        "Spanish - Spain",
+        "Greek",
+        "French",
+        "German",
+        "Japanese",
+        "Polish",
+        "Portuguese - Brazil",
+        "Portuguese - Portugal",
+        "Russian",
+        "Spanish - Latin America",
+        "Turkish"
+      ]
+    },
+    "requirements": {
+      "minimum": [
+        [
+          "OS",
+          "Windows 10 (Version 1909 or Newer)"
+        ],
+        [
+          "Processor",
+          "AMD Ryzen 5 1500X, Intel Core i7-4770K"
+        ],
+        [
+          "Memory",
+          "16 GB RAM"
+        ],
+        [
+          "Graphics",
+          "AMD Radeon RX 470 (4 GB), AMD Radeon RX 6500 XT (4 GB), NVIDIA GeForce GTX 970 (4 GB), NVIDIA GeForce GTX 1050 Ti (4 GB)"
+        ],
+        [
+          "Storage",
+          "100 GB available space"
+        ],
+        [
+          "Additional Notes",
+          "SSD Recommended"
+        ]
+      ],
+      "recommended": [
+        [
+          "OS",
+          "Windows 10 (Version 1909 or Newer)"
+        ],
+        [
+          "Processor",
+          "AMD Ryzen 5 3600X, Intel Core i7-8700"
+        ],
+        [
+          "Memory",
+          "16 GB RAM"
+        ],
+        [
+          "Graphics",
+          "AMD Radeon RX 5700 XT (8 GB), AMD Radeon RX 6600 XT (8 GB), NVIDIA GeForce RTX 2070 SUPER (8 GB), NVIDIA GeForce RTX 3060 (8 GB)"
+        ],
+        [
+          "Storage",
+          "100 GB available space"
+        ],
+        [
+          "Additional Notes",
+          "SSD Recommended"
+        ]
+      ]
+    }
+  },
+  "fifa-23": {
+    "screenshots": [
+      "/images/screenshots/fifa-23-1.jpg",
+      "/images/screenshots/fifa-23-2.jpg",
+      "/images/screenshots/fifa-23-3.jpg",
+      "/images/screenshots/fifa-23-4.jpg",
+      "/images/screenshots/fifa-23-5.jpg"
+    ],
+    "features": [
+      "Single-player",
+      "Online multiplayer",
+      "Online co-op",
+      "Local co-op & split screen",
+      "Cross-platform multiplayer",
+      "Controller support",
+      "Achievements",
+      "In-game purchases"
+    ],
+    "languages": {
+      "interface": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Arabic",
+        "Czech",
+        "Danish",
+        "Dutch",
+        "Japanese",
+        "Korean",
+        "Norwegian",
+        "Polish",
+        "Portuguese - Portugal",
+        "Portuguese - Brazil",
+        "Russian",
+        "Simplified Chinese",
+        "Spanish - Latin America",
+        "Swedish",
+        "Traditional Chinese",
+        "Turkish"
+      ],
+      "audio": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Arabic",
+        "Dutch",
+        "Japanese",
+        "Polish",
+        "Portuguese - Brazil",
+        "Russian",
+        "Simplified Chinese"
+      ]
+    },
+    "requirements": {
+      "minimum": [
+        [
+          "OS",
+          "Windows 10 - 64-Bit (Latest Update)"
+        ],
+        [
+          "Processor",
+          "Intel Core i5 6600k or AMD Ryzen 5 1600"
+        ],
+        [
+          "Memory",
+          "8 GB RAM"
+        ],
+        [
+          "Graphics",
+          "NVIDIA GeForce GTX 1050 Ti or AMD Radeon RX 570"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Network",
+          "Broadband Internet connection"
+        ],
+        [
+          "Storage",
+          "100 GB available space"
+        ]
+      ],
+      "recommended": [
+        [
+          "OS",
+          "Windows 10 - 64-Bit (Latest Update)"
+        ],
+        [
+          "Processor",
+          "Intel Core i7 6700 or AMD Ryzen 7 2700X"
+        ],
+        [
+          "Memory",
+          "12 GB RAM"
+        ],
+        [
+          "Graphics",
+          "NVIDIA GeForce GTX 1660 or AMD Radeon RX 5600 XT"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Network",
+          "Broadband Internet connection"
+        ],
+        [
+          "Storage",
+          "100 GB available space"
+        ]
+      ]
+    }
+  },
+  "horizon-zero-dawn": {
+    "screenshots": [
+      "/images/screenshots/horizon-zero-dawn-1.jpg",
+      "/images/screenshots/horizon-zero-dawn-2.jpg",
+      "/images/screenshots/horizon-zero-dawn-3.jpg",
+      "/images/screenshots/horizon-zero-dawn-4.jpg",
+      "/images/screenshots/horizon-zero-dawn-5.jpg"
+    ],
+    "features": [
+      "Single-player",
+      "Controller support",
+      "Achievements",
+      "Cloud saves"
+    ],
+    "languages": {
+      "interface": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Arabic",
+        "Danish",
+        "Dutch",
+        "Finnish",
+        "Japanese",
+        "Korean",
+        "Norwegian",
+        "Polish",
+        "Portuguese - Portugal",
+        "Portuguese - Brazil",
+        "Russian",
+        "Simplified Chinese",
+        "Spanish - Latin America",
+        "Swedish",
+        "Traditional Chinese"
+      ],
+      "audio": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Arabic",
+        "Polish",
+        "Portuguese - Portugal",
+        "Portuguese - Brazil",
+        "Russian",
+        "Spanish - Latin America"
+      ]
+    },
+    "requirements": {
+      "minimum": [
+        [
+          "OS",
+          "Windows 10 64-bits"
+        ],
+        [
+          "Processor",
+          "Intel Core i5-2500K@3.3GHz or AMD FX 6300@3.5GHz"
+        ],
+        [
+          "Memory",
+          "8 GB RAM"
+        ],
+        [
+          "Graphics",
+          "Nvidia GeForce GTX 780 (3 GB) or AMD Radeon R9 290 (4GB)"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Storage",
+          "100 GB available space"
+        ]
+      ],
+      "recommended": [
+        [
+          "OS",
+          "Windows 10 64-bits"
+        ],
+        [
+          "Processor",
+          "Intel Core i7-4770K@3.5GHz or Ryzen 5 1500X@3.5GHz"
+        ],
+        [
+          "Memory",
+          "16 GB RAM"
+        ],
+        [
+          "Graphics",
+          "Nvidia GeForce GTX 1060 (6 GB) or AMD Radeon RX 580 (8GB)"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Storage",
+          "100 GB available space"
+        ]
+      ]
+    }
+  },
+  "god-of-war": {
+    "screenshots": [
+      "/images/screenshots/god-of-war-1.jpg",
+      "/images/screenshots/god-of-war-2.jpg",
+      "/images/screenshots/god-of-war-3.jpg",
+      "/images/screenshots/god-of-war-4.jpg",
+      "/images/screenshots/god-of-war-5.jpg"
+    ],
+    "features": [
+      "Single-player",
+      "Controller support",
+      "Achievements",
+      "Cloud saves"
+    ],
+    "languages": {
+      "interface": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Dutch",
+        "Japanese",
+        "Korean",
+        "Polish",
+        "Portuguese - Portugal",
+        "Portuguese - Brazil",
+        "Russian",
+        "Spanish - Latin America",
+        "Turkish",
+        "Traditional Chinese",
+        "Czech",
+        "Hungarian",
+        "Greek"
+      ],
+      "audio": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Japanese",
+        "Polish",
+        "Portuguese - Portugal",
+        "Portuguese - Brazil",
+        "Russian",
+        "Spanish - Latin America"
+      ]
+    },
+    "requirements": {
+      "minimum": [
+        [
+          "OS",
+          "Windows 10"
+        ],
+        [
+          "Processor",
+          "Intel i5-2500k (4 core 3.3 GHz) or AMD Ryzen 3 1200 (4 core 3.1 GHz)"
+        ],
+        [
+          "Memory",
+          "8 GB RAM"
+        ],
+        [
+          "Graphics",
+          "NVIDIA GTX 960 (4 GB) or AMD R9 290X (4 GB)"
+        ],
+        [
+          "DirectX",
+          "Version 11"
+        ],
+        [
+          "Storage",
+          "70 GB available space"
+        ],
+        [
+          "Additional Notes",
+          "DirectX feature level 11_1 required"
+        ]
+      ],
+      "recommended": [
+        [
+          "OS",
+          "Windows 10"
+        ],
+        [
+          "Processor",
+          "Intel i5-6600k (4 core 3.5 GHz) or AMD Ryzen 5 2400 G (4 core 3.6 GHz)"
+        ],
+        [
+          "Memory",
+          "8 GB RAM"
+        ],
+        [
+          "Graphics",
+          "NVIDIA GTX 1060 (6 GB) or AMD RX 570 (4 GB)"
+        ],
+        [
+          "DirectX",
+          "Version 11"
+        ],
+        [
+          "Storage",
+          "70 GB available space"
+        ],
+        [
+          "Additional Notes",
+          "DirectX feature level 11_1 required"
+        ]
+      ]
+    },
+    "metacritic": 93
+  },
+  "spider-man-miles-morales": {
+    "screenshots": [
+      "/images/screenshots/spider-man-miles-morales-1.jpg",
+      "/images/screenshots/spider-man-miles-morales-2.jpg",
+      "/images/screenshots/spider-man-miles-morales-3.jpg",
+      "/images/screenshots/spider-man-miles-morales-4.jpg",
+      "/images/screenshots/spider-man-miles-morales-5.jpg"
+    ],
+    "features": [
+      "Single-player",
+      "Controller support",
+      "Achievements",
+      "Cloud saves"
+    ],
+    "languages": {
+      "interface": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Czech",
+        "Danish",
+        "Dutch",
+        "Finnish",
+        "Greek",
+        "Hungarian",
+        "Japanese",
+        "Korean",
+        "Norwegian",
+        "Polish",
+        "Portuguese - Brazil",
+        "Portuguese - Portugal",
+        "Russian",
+        "Simplified Chinese",
+        "Spanish - Latin America",
+        "Swedish",
+        "Traditional Chinese"
+      ],
+      "audio": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Japanese",
+        "Polish",
+        "Portuguese - Brazil",
+        "Portuguese - Portugal",
+        "Russian",
+        "Spanish - Latin America"
+      ]
+    },
+    "requirements": {
+      "minimum": [
+        [
+          "OS",
+          "Windows 10 64-bit 1909"
+        ],
+        [
+          "Processor",
+          "Intel Core i3-4160, 3.6 GHz or AMD equivalent"
+        ],
+        [
+          "Memory",
+          "8 GB RAM"
+        ],
+        [
+          "Graphics",
+          "NVIDIA GTX 950 or AMD Radeon RX 470"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Storage",
+          "75 GB available space"
+        ]
+      ],
+      "recommended": [
+        [
+          "OS",
+          "Windows 10 64-bit 1909"
+        ],
+        [
+          "Processor",
+          "Intel Core i5-4670, 3.4 Ghz or AMD Ryzen 5 1600, 3.2 Ghz"
+        ],
+        [
+          "Memory",
+          "16 GB RAM"
+        ],
+        [
+          "Graphics",
+          "NVIDIA GTX 1060 6GB or AMD Radeon RX 580 8GB"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Storage",
+          "75 GB available space"
+        ],
+        [
+          "Additional Notes",
+          "75 GB SSD space Recommended"
+        ]
+      ]
+    }
+  },
+  "red-dead-redemption-2": {
+    "screenshots": [
+      "/images/screenshots/red-dead-redemption-2-1.jpg",
+      "/images/screenshots/red-dead-redemption-2-2.jpg",
+      "/images/screenshots/red-dead-redemption-2-3.jpg",
+      "/images/screenshots/red-dead-redemption-2-4.jpg",
+      "/images/screenshots/red-dead-redemption-2-5.jpg"
+    ],
+    "features": [
+      "Single-player",
+      "Online multiplayer",
+      "Online co-op",
+      "Controller support",
+      "Achievements",
+      "In-game purchases"
+    ],
+    "languages": {
+      "interface": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Japanese",
+        "Korean",
+        "Polish",
+        "Russian",
+        "Simplified Chinese",
+        "Spanish - Latin America",
+        "Traditional Chinese",
+        "Portuguese - Brazil"
+      ],
+      "audio": [
+        "English"
+      ]
+    },
+    "requirements": {
+      "minimum": [
+        [
+          "OS",
+          "Windows 10 - 64-bit"
+        ],
+        [
+          "Processor",
+          "Intel Core i5-2500K / AMD FX-6300"
+        ],
+        [
+          "Memory",
+          "8 GB RAM"
+        ],
+        [
+          "Graphics",
+          "Nvidia GeForce GTX 770 2GB / AMD Radeon R9 280 3GB"
+        ],
+        [
+          "Network",
+          "Broadband Internet connection"
+        ],
+        [
+          "Storage",
+          "150 GB available space"
+        ],
+        [
+          "Sound Card",
+          "Direct X Compatible"
+        ]
+      ],
+      "recommended": [
+        [
+          "OS",
+          "Windows 10 - 64-bit"
+        ],
+        [
+          "Processor",
+          "Intel Core i7-4770K / AMD Ryzen 5 1500X"
+        ],
+        [
+          "Memory",
+          "12 GB RAM"
+        ],
+        [
+          "Graphics",
+          "Nvidia GeForce GTX 1060 6GB / AMD Radeon RX 480 4GB"
+        ],
+        [
+          "Network",
+          "Broadband Internet connection"
+        ],
+        [
+          "Storage",
+          "150 GB available space"
+        ],
+        [
+          "Sound Card",
+          "Direct X Compatible"
+        ]
+      ]
+    },
+    "metacritic": 93
+  },
+  "battlefield-2042": {
+    "screenshots": [
+      "/images/screenshots/battlefield-2042-1.jpg",
+      "/images/screenshots/battlefield-2042-2.jpg",
+      "/images/screenshots/battlefield-2042-3.jpg",
+      "/images/screenshots/battlefield-2042-4.jpg",
+      "/images/screenshots/battlefield-2042-5.jpg"
+    ],
+    "features": [
+      "Online multiplayer",
+      "Online co-op",
+      "Controller support",
+      "Achievements",
+      "HDR",
+      "In-game purchases"
+    ],
+    "languages": {
+      "interface": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Arabic",
+        "Japanese",
+        "Korean",
+        "Polish",
+        "Portuguese - Brazil",
+        "Russian",
+        "Simplified Chinese",
+        "Spanish - Latin America",
+        "Traditional Chinese"
+      ],
+      "audio": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Arabic",
+        "Japanese",
+        "Polish",
+        "Portuguese - Brazil",
+        "Russian",
+        "Simplified Chinese",
+        "Spanish - Latin America"
+      ]
+    },
+    "requirements": {
+      "minimum": [
+        [
+          "OS",
+          "64-bit Windows 10"
+        ],
+        [
+          "Processor",
+          "AMD Ryzen 5 1600, Core i5 6600K"
+        ],
+        [
+          "Memory",
+          "8 GB RAM"
+        ],
+        [
+          "Graphics",
+          "AMD Radeon RX 560,Nvidia GeForce GTX 1050 Ti"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Network",
+          "Broadband Internet connection"
+        ],
+        [
+          "Storage",
+          "100 GB available space"
+        ],
+        [
+          "Sound Card",
+          "No recommendation"
+        ]
+      ],
+      "recommended": [
+        [
+          "OS",
+          "64-bit Windows 10"
+        ],
+        [
+          "Processor",
+          "AMD Ryzen 7 2700X, Intel Core i7 4790"
+        ],
+        [
+          "Memory",
+          "16 GB RAM"
+        ],
+        [
+          "Graphics",
+          "AMD Radeon RX 6600 XT, Nvidia GeForce RTX 3060"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Network",
+          "Broadband Internet connection"
+        ],
+        [
+          "Storage",
+          "100 GB available space"
+        ],
+        [
+          "Sound Card",
+          "No recommendation"
+        ]
+      ]
+    }
+  },
+  "f1-22": {
+    "screenshots": [
+      "/images/screenshots/f1-22-1.jpg",
+      "/images/screenshots/f1-22-2.jpg",
+      "/images/screenshots/f1-22-3.jpg",
+      "/images/screenshots/f1-22-4.jpg",
+      "/images/screenshots/f1-22-5.jpg"
+    ],
+    "features": [
+      "Single-player",
+      "Online multiplayer",
+      "Online co-op",
+      "Local co-op & split screen",
+      "Controller support",
+      "Achievements",
+      "Cloud saves",
+      "HDR",
+      "In-game purchases"
+    ],
+    "languages": {
+      "interface": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Dutch",
+        "Japanese",
+        "Portuguese - Brazil",
+        "Simplified Chinese",
+        "Polish",
+        "Russian"
+      ],
+      "audio": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Dutch",
+        "Japanese",
+        "Portuguese - Brazil",
+        "Simplified Chinese"
+      ]
+    },
+    "requirements": {
+      "minimum": [
+        [
+          "OS",
+          "Windows 10 64-bit (Version 1909) | For Ray Tracing or VR: Windows 10 64-bit (Version 2004)"
+        ],
+        [
+          "Processor",
+          "Intel Core i3-2130 or AMD FX 4300 |For VR: Intel Core i5-9600k or AMD Ryzen 5 2600X"
+        ],
+        [
+          "Memory",
+          "8 GB RAM"
+        ],
+        [
+          "Graphics",
+          "NVIDIA GTX 1050 Ti or AMD RX 470 | For Ray Tracing: GeForce RTX 2060 or Radeon RX 6700 XT | For VR: NVIDIA GTX 1660 Ti or AMD RX 590"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Network",
+          "Broadband Internet connection"
+        ],
+        [
+          "Storage",
+          "80 GB available space"
+        ],
+        [
+          "Sound Card",
+          "DirectX Compatible"
+        ],
+        [
+          "VR Support",
+          "SteamVR. Keyboard and mouse required"
+        ]
+      ],
+      "recommended": [
+        [
+          "OS",
+          "Windows 10 64-bit (Version 1909) | For Ray Tracing or VR: Windows 10 64-bit (Version 2004)"
+        ],
+        [
+          "Processor",
+          "Intel Core i5 9600K or AMD Ryzen 5 2600X"
+        ],
+        [
+          "Memory",
+          "16 GB RAM"
+        ],
+        [
+          "Graphics",
+          "NVIDIA GTX 1660 Ti or AMD RX 590 | For Ray Tracing: GeForce RTX 3070 or Radeon RX 6800 | For VR: NVIDIA RTX 2070 or AMD RX 6700 XT"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Network",
+          "Broadband Internet connection"
+        ],
+        [
+          "Storage",
+          "80 GB available space"
+        ],
+        [
+          "Sound Card",
+          "DirectX Compatible"
+        ]
+      ]
+    },
+    "metacritic": 81
+  }
+}

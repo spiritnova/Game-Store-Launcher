@@ -18,7 +18,10 @@ const sections = [
         title: 'Your games',
         links: [
             { href: '/library', label: 'Library' },
+            { href: '/downloads', label: 'Downloads' },
             { href: '/wishlist', label: 'Wishlist' },
+            { href: '/cart', label: 'Cart' },
+            { href: '/settings', label: 'Profile & settings' },
             { href: '/about', label: 'About this project' },
         ],
     },

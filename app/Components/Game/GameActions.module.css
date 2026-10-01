@@ -17,3 +17,9 @@
     min-width: 240px;
     flex: 1;
 }
+
+.status {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--main-text);
+}

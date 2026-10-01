@@ -5,7 +5,11 @@
     "developer": "Infinity Ward",
     "publisher": "Activision",
     "releaseDate": "2022-10-28",
-    "genres": ["Shooter", "Action", "Multiplayer"],
+    "genres": [
+      "Shooter",
+      "Action",
+      "Multiplayer"
+    ],
     "price": 69.99,
     "hero": "/images/heroes/call-of-duty-modern-warfare-2.jpg",
     "logo": "/images/logos/call-of-duty-modern-warfare-2.png",
@@ -13,7 +17,27 @@
       "tagline": "The ultimate weapon is team.",
       "blurb": "Squad up and fight alongside the iconic operators of Task Force 141 with the return of Modern Warfare."
     },
-    "description": "Task Force 141 is back. Take on a globe-trotting campaign of covert missions, then jump into large-scale multiplayer battles and co-op Special Ops built on a fully overhauled engine, with tighter gunplay and smarter AI."
+    "description": "Task Force 141 is back. Take on a globe-trotting campaign of covert missions, then jump into large-scale multiplayer battles and co-op Special Ops built on a fully overhauled engine, with tighter gunplay and smarter AI.",
+    "banner": "/images/banners/call-of-duty-modern-warfare-2.jpg",
+    "sizeGB": 125,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 69.99,
+        "includes": []
+      },
+      {
+        "id": "vault",
+        "name": "Vault Edition",
+        "price": 99.99,
+        "includes": [
+          "Red Team 141 Operator Pack",
+          "FJX Cinder Weapon Vault",
+          "Battle Pass with 50 tier skips"
+        ]
+      }
+    ]
   },
   {
     "slug": "devil-may-cry-5",
@@ -21,7 +45,9 @@
     "developer": "Capcom",
     "publisher": "Capcom",
     "releaseDate": "2019-03-08",
-    "genres": ["Action"],
+    "genres": [
+      "Action"
+    ],
     "price": 29.99,
     "hero": "/images/heroes/devil-may-cry-5.jpg",
     "logo": "/images/logos/devil-may-cry-5.png",
@@ -29,7 +55,28 @@
       "tagline": "Climb the stylish ranks!",
       "blurb": "Legendary DMC action returns, made all the more stylish by the power modern gaming has to offer."
     },
-    "description": "Demon hunters Nero, Dante and the mysterious V team up to stop a demonic invasion of Red Grave City. Chain combos, swap weapons mid-fight and push your style rank to SSS in the sharpest action game Capcom has made."
+    "description": "Demon hunters Nero, Dante and the mysterious V team up to stop a demonic invasion of Red Grave City. Chain combos, swap weapons mid-fight and push your style rank to SSS in the sharpest action game Capcom has made.",
+    "banner": "/images/banners/devil-may-cry-5.jpg",
+    "sizeGB": 35,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 29.99,
+        "includes": []
+      },
+      {
+        "id": "deluxe",
+        "name": "Deluxe Edition",
+        "price": 39.99,
+        "includes": [
+          "Devil Breaker pack",
+          "Cavaliere R motorcycle weapon",
+          "Live-action cutscenes",
+          "Alternate battle music"
+        ]
+      }
+    ]
   },
   {
     "slug": "the-witcher-3",
@@ -37,7 +84,10 @@
     "developer": "CD PROJEKT RED",
     "publisher": "CD PROJEKT RED",
     "releaseDate": "2015-05-19",
-    "genres": ["RPG", "Open World"],
+    "genres": [
+      "RPG",
+      "Open World"
+    ],
     "price": 39.99,
     "hero": "/images/heroes/the-witcher-3.jpg",
     "logo": "/images/logos/the-witcher-3.png",
@@ -45,7 +95,26 @@
       "tagline": "The most awarded game of a generation.",
       "blurb": "You are Geralt of Rivia, mercenary monster slayer. Your current contract: track down Ciri, the Child of Prophecy."
     },
-    "description": "Explore a war-torn, monster-infested continent at your own pace. Take on contracts, make choices with lasting consequences, and follow Geralt's search for Ciri across one of the richest open worlds in gaming."
+    "description": "Explore a war-torn, monster-infested continent at your own pace. Take on contracts, make choices with lasting consequences, and follow Geralt's search for Ciri across one of the richest open worlds in gaming.",
+    "banner": "/images/banners/the-witcher-3.jpg",
+    "sizeGB": 60,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 39.99,
+        "includes": []
+      },
+      {
+        "id": "complete",
+        "name": "Complete Edition",
+        "price": 49.99,
+        "includes": [
+          "Hearts of Stone expansion",
+          "Blood and Wine expansion"
+        ]
+      }
+    ]
   },
   {
     "slug": "hogwarts-legacy",
@@ -53,11 +122,35 @@
     "developer": "Avalanche Software",
     "publisher": "Warner Bros. Games",
     "releaseDate": "2023-02-10",
-    "genres": ["RPG", "Open World", "Adventure"],
+    "genres": [
+      "RPG",
+      "Open World",
+      "Adventure"
+    ],
     "price": 59.99,
     "salePrice": 14.99,
     "cover": "/images/covers/hogwarts-legacy.jpg",
-    "description": "Step into the wizarding world of the 1800s as a student with a rare gift. Attend classes, brew potions, master spells and uncover a hidden truth that threatens Hogwarts and everything beyond its walls."
+    "description": "Step into the wizarding world of the 1800s as a student with a rare gift. Attend classes, brew potions, master spells and uncover a hidden truth that threatens Hogwarts and everything beyond its walls.",
+    "banner": "/images/banners/hogwarts-legacy.jpg",
+    "logo": "/images/logos/hogwarts-legacy.png",
+    "sizeGB": 85,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 59.99,
+        "includes": []
+      },
+      {
+        "id": "deluxe",
+        "name": "Deluxe Edition",
+        "price": 69.99,
+        "includes": [
+          "Dark Arts Pack: Thestral mount, Dark Arts Battle Arena and cosmetic set",
+          "Dark Arts Garrison Hat"
+        ]
+      }
+    ]
   },
   {
     "slug": "the-last-of-us-part-1",
@@ -65,11 +158,25 @@
     "developer": "Naughty Dog",
     "publisher": "PlayStation PC LLC",
     "releaseDate": "2023-03-28",
-    "genres": ["Action", "Adventure"],
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
     "price": 59.99,
     "salePrice": 47.99,
     "cover": "/images/covers/the-last-of-us-part-1.jpg",
-    "description": "Twenty years after a pandemic collapsed civilization, hardened survivor Joel is hired to smuggle 14-year-old Ellie out of a military quarantine zone. A full rebuild of the acclaimed original, including the Left Behind prologue."
+    "description": "Twenty years after a pandemic collapsed civilization, hardened survivor Joel is hired to smuggle 14-year-old Ellie out of a military quarantine zone. A full rebuild of the acclaimed original, including the Left Behind prologue.",
+    "banner": "/images/banners/the-last-of-us-part-1.jpg",
+    "logo": "/images/logos/the-last-of-us-part-1.png",
+    "sizeGB": 100,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 59.99,
+        "includes": []
+      }
+    ]
   },
   {
     "slug": "fifa-23",
@@ -77,14 +184,36 @@
     "developer": "EA Vancouver",
     "publisher": "Electronic Arts",
     "releaseDate": "2022-09-30",
-    "genres": ["Sports", "Multiplayer"],
+    "genres": [
+      "Sports",
+      "Multiplayer"
+    ],
     "price": 69.99,
     "salePrice": 34.99,
     "cover": "/images/covers/fifa-23.jpg",
     "hero": "/images/heroes/fifa-23.jpg",
     "logo": "/images/logos/fifa-23.svg",
     "featured": true,
-    "description": "The World's Game, with men's and women's FIFA World Cup tournaments, women's club football, cross-play and HyperMotion2 animation that makes every match feel closer to the real thing."
+    "description": "The World's Game, with men's and women's FIFA World Cup tournaments, women's club football, cross-play and HyperMotion2 animation that makes every match feel closer to the real thing.",
+    "banner": "/images/banners/fifa-23.jpg",
+    "sizeGB": 100,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 69.99,
+        "includes": []
+      },
+      {
+        "id": "ultimate",
+        "name": "Ultimate Edition",
+        "price": 99.99,
+        "includes": [
+          "4,600 FIFA Points",
+          "Ultimate Team bonus packs"
+        ]
+      }
+    ]
   },
   {
     "slug": "horizon-zero-dawn",
@@ -92,11 +221,26 @@
     "developer": "Guerrilla Games",
     "publisher": "PlayStation PC LLC",
     "releaseDate": "2020-08-07",
-    "genres": ["Action", "RPG", "Open World"],
+    "genres": [
+      "Action",
+      "RPG",
+      "Open World"
+    ],
     "price": 49.99,
     "salePrice": 16.49,
     "cover": "/images/covers/horizon-zero-dawn.jpg",
-    "description": "Hunt colossal machines across a lush post-apocalyptic world as Aloy, an outcast searching for her past. Includes the Frozen Wilds expansion and all bonus content."
+    "description": "Hunt colossal machines across a lush post-apocalyptic world as Aloy, an outcast searching for her past. Includes the Frozen Wilds expansion and all bonus content.",
+    "banner": "/images/banners/horizon-zero-dawn.jpg",
+    "logo": "/images/logos/horizon-zero-dawn.png",
+    "sizeGB": 100,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 49.99,
+        "includes": []
+      }
+    ]
   },
   {
     "slug": "god-of-war",
@@ -104,11 +248,25 @@
     "developer": "Santa Monica Studio",
     "publisher": "PlayStation PC LLC",
     "releaseDate": "2022-01-14",
-    "genres": ["Action", "Adventure"],
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
     "price": 49.99,
     "salePrice": 29.99,
     "cover": "/images/covers/god-of-war.jpg",
-    "description": "Kratos has left his vengeance behind and now lives as a man in the realm of Norse gods. Journey with his son Atreus through a dangerous world, fighting to survive and learning to be a father."
+    "description": "Kratos has left his vengeance behind and now lives as a man in the realm of Norse gods. Journey with his son Atreus through a dangerous world, fighting to survive and learning to be a father.",
+    "banner": "/images/banners/god-of-war.jpg",
+    "logo": "/images/logos/god-of-war.png",
+    "sizeGB": 70,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 49.99,
+        "includes": []
+      }
+    ]
   },
   {
     "slug": "spider-man-miles-morales",
@@ -116,11 +274,25 @@
     "developer": "Insomniac Games",
     "publisher": "PlayStation PC LLC",
     "releaseDate": "2022-11-18",
-    "genres": ["Action", "Open World"],
+    "genres": [
+      "Action",
+      "Open World"
+    ],
     "price": 49.99,
     "salePrice": 33.49,
     "cover": "/images/covers/spider-man-miles-morales.jpg",
-    "description": "Miles Morales protects his new home in a snowy Harlem while a war between an energy corporation and a high-tech criminal army threatens to tear it apart. Master bio-electric venom blasts and camouflage to become his own Spider-Man."
+    "description": "Miles Morales protects his new home in a snowy Harlem while a war between an energy corporation and a high-tech criminal army threatens to tear it apart. Master bio-electric venom blasts and camouflage to become his own Spider-Man.",
+    "banner": "/images/banners/spider-man-miles-morales.jpg",
+    "logo": "/images/logos/spider-man-miles-morales.png",
+    "sizeGB": 75,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 49.99,
+        "includes": []
+      }
+    ]
   },
   {
     "slug": "red-dead-redemption-2",
@@ -128,11 +300,35 @@
     "developer": "Rockstar Games",
     "publisher": "Rockstar Games",
     "releaseDate": "2019-11-05",
-    "genres": ["Action", "Adventure", "Open World"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Open World"
+    ],
     "price": 59.99,
     "salePrice": 14.99,
     "cover": "/images/covers/red-dead-redemption-2.jpg",
-    "description": "America, 1899. Arthur Morgan and the Van der Linde gang are outlaws on the run as the age of the Wild West comes to an end. An epic story set across a vast, living world, plus Red Dead Online."
+    "description": "America, 1899. Arthur Morgan and the Van der Linde gang are outlaws on the run as the age of the Wild West comes to an end. An epic story set across a vast, living world, plus Red Dead Online.",
+    "banner": "/images/banners/red-dead-redemption-2.jpg",
+    "logo": "/images/logos/red-dead-redemption-2.png",
+    "sizeGB": 150,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 59.99,
+        "includes": []
+      },
+      {
+        "id": "ultimate",
+        "name": "Ultimate Edition",
+        "price": 99.99,
+        "includes": [
+          "Story Mode bonus missions, horse and weapons",
+          "Red Dead Online bonus outfits and rank boosts"
+        ]
+      }
+    ]
   },
   {
     "slug": "battlefield-2042",
@@ -140,12 +336,34 @@
     "developer": "DICE",
     "publisher": "Electronic Arts",
     "releaseDate": "2021-11-19",
-    "genres": ["Shooter", "Multiplayer"],
+    "genres": [
+      "Shooter",
+      "Multiplayer"
+    ],
     "price": 17.99,
     "hero": "/images/heroes/battlefield-2042.jpg",
     "logo": "/images/logos/battlefield-2042.svg",
     "featured": true,
-    "description": "All-out warfare on a massive scale. Squad up with up to 128 players on huge, dynamic maps, call in vehicles and adapt to extreme weather events that can turn a battle in seconds."
+    "description": "All-out warfare on a massive scale. Squad up with up to 128 players on huge, dynamic maps, call in vehicles and adapt to extreme weather events that can turn a battle in seconds.",
+    "banner": "/images/banners/battlefield-2042.jpg",
+    "sizeGB": 100,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 17.99,
+        "includes": []
+      },
+      {
+        "id": "gold",
+        "name": "Gold Edition",
+        "price": 39.99,
+        "includes": [
+          "Year 1 Pass with 4 new Specialists",
+          "Battle Pass tier skips"
+        ]
+      }
+    ]
   },
   {
     "slug": "f1-22",
@@ -153,11 +371,33 @@
     "developer": "Codemasters",
     "publisher": "Electronic Arts",
     "releaseDate": "2022-07-01",
-    "genres": ["Racing", "Sports"],
+    "genres": [
+      "Racing",
+      "Sports"
+    ],
     "price": 59.99,
     "hero": "/images/heroes/f1-22.jpg",
     "logo": "/images/logos/f1-22.png",
     "featured": true,
-    "description": "Enter the new era of Formula 1 with redesigned cars and overhauled rules. Race through the 2022 season, build your own team in My Team, and experience F1 Life between races."
+    "description": "Enter the new era of Formula 1 with redesigned cars and overhauled rules. Race through the 2022 season, build your own team in My Team, and experience F1 Life between races.",
+    "banner": "/images/banners/f1-22.jpg",
+    "sizeGB": 80,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 59.99,
+        "includes": []
+      },
+      {
+        "id": "champions",
+        "name": "Champions Edition",
+        "price": 79.99,
+        "includes": [
+          "PitCoin bonus",
+          "Bonus My Team and F1 Life items"
+        ]
+      }
+    ]
   }
 ]

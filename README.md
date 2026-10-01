@@ -2,18 +2,23 @@
 
 A showcase PC game launcher built with Next.js. It recreates the two halves of a launcher like Epic or Steam: a **storefront** to discover and buy games, and a **library** to install and launch them.
 
-Nothing is actually sold. Purchases, installs and playtime are simulated and saved in your browser.
+Nothing is actually sold. Sign-in, purchases, installs and playtime are simulated and saved in your browser.
 
 ## Features
 
+- **Launcher layout**: a Steam-style sidebar with store and library navigation, live counts, a downloads panel, quick launch for installed games and your profile. On phones it becomes a slide-out drawer.
 - **Discover**: spotlight carousel (pausable, honours reduced-motion settings), a "games on sale" row and featured games.
 - **Browse**: search by title, developer or publisher; filter by genre or "on sale"; sort by price, discount, release date or title. Filters are stored in the URL, so a view like `/games?genre=RPG&sale=1` can be shared.
-- **Game pages**: banner, description, price with discount, developer/publisher/release info and related games. Every game is statically generated, and unknown games return a 404.
-- **Wishlist**: add games from any card or game page; the navbar shows a count.
-- **Library**: buy a game, then install it (with a live progress bar), play it or uninstall it. Filter by install state and sort by recent activity.
+- **Game pages**: screenshot gallery with a full-screen viewer, editions (Deluxe, Gold, Complete…), bundles, player modes (single-player, co-op, online), system requirements, supported languages, player reviews with helpful votes, a discussion thread, "More from this studio" and related games. Every game page is statically generated, and unknown games return a 404.
+- **Cart & checkout**: buy any edition, or a bundle priced for the games you don't own yet. Sale and bundle discounts are itemised, and checkout asks you to sign in.
+- **Accounts**: sign in with any username, or with one click as the demo player. Each account keeps its own library and wishlist. Passwords are only validated, never stored.
+- **Wishlist**: add games from any card or game page (requires sign-in).
+- **Library & downloads**: install, play and uninstall games. The download manager has a queue you can reorder, pause/resume, a live speed graph, ETAs, storage usage and a simulated connection speed (demo turbo, 1 Gbps or 100 Mbps).
+- **Profile & settings**: display name, bio, avatar colour, an accent colour for the whole launcher, download settings, sign out and account deletion.
+- **Performance**: images are served as resized WebP with blurred placeholders and colour backgrounds while loading; heavy game details (requirements, languages) stay on the server; download progress lives in its own context so it doesn't re-render the whole app.
 - **Polish**: toasts for every action, loading skeletons, empty states, a custom 404, per-page titles, an Open Graph image and keyboard and screen-reader support.
 
-First-time visitors get a small demo library. You can restore it at any time from the About page.
+The demo player account comes with a few games. Use **Reset demo data** on the About page to restore it.
 
 ## Tech stack
 
@@ -22,6 +27,7 @@ First-time visitors get a small demo library. You can restore it at any time fro
 - CSS Modules with shared design tokens in `app/globals.css`
 - [Swiper](https://swiperjs.com/) for the carousels
 - [Material UI icons](https://mui.com/material-ui/material-icons/)
+- `next/image` with [sharp](https://sharp.pixelplumbing.com/) for resized WebP output and generated blur placeholders
 
 ## Getting started
 
@@ -38,6 +44,7 @@ Other scripts:
 npm run lint    # ESLint (next/core-web-vitals)
 npm run build   # production build
 npm start       # serve the production build
+npm run images  # regenerate image placeholders after adding or changing artwork
 ```
 
 Set `NEXT_PUBLIC_SITE_URL` to your deployed URL so Open Graph images resolve to absolute links.
@@ -48,22 +55,34 @@ Set `NEXT_PUBLIC_SITE_URL` to your deployed URL so Open Graph images resolve to 
 
 ```
 app/
-  Components/     UI building blocks (Navbar, Footer, cards, carousels, views)
+  Components/     UI building blocks (Sidebar, Footer, cards, carousels, views)
   games/          Browse page and game pages (/games/[slug])
   library/        Library page
   wishlist/       Wishlist page
+  cart/           Cart and checkout
+  downloads/      Download manager
+  settings/       Profile & settings
+  signin/         Mock sign-in
   news/, about/   Static content pages
 data/
-  games.json      Game catalogue (prices, art, descriptions)
+  games.json      Game catalogue: prices, editions, art, descriptions (sent to the browser)
+  game-details.json  Screenshots, features, languages, requirements (server only)
+  bundles.json    Bundles and their discounts
+  image-meta.json, image-colors.json  Generated image placeholders
   news.json       News posts
 lib/
   games.js        Catalogue helpers (pricing, filtering, related games)
-  store.js        Client store: library, wishlist, simulated installs
+  store.js        Client store: accounts, profiles, settings, cart, library, wishlist, reviews, comments
+  downloads.js    Download queue and simulated network
+  community.js    Sample reviews and comments from demo players
+  images.js       Blur placeholders (server only)
+scripts/
+  image-meta.mjs  Generates image placeholders
 public/images/    Game covers, banners and logos
 ```
 
-To add a game, add an entry to `data/games.json` with its images in `public/images/`. Add `salePrice` to put it on sale, `featured: true` to show it in Featured, or a `spotlight` block to add it to the home carousel.
+To add a game, add an entry to `data/games.json` and `data/game-details.json` with its images in `public/images/`, then run `npm run images`. Add `salePrice` to put it on sale, `featured: true` to show it in Featured, or a `spotlight` block to add it to the home carousel.
 
 ## Credits
 
-Game titles, logos and artwork are trademarks of their respective owners and are used for demonstration only. Prices are illustrative.
+Game titles, logos and artwork are trademarks of their respective owners and are used for demonstration only. Screenshots, system requirements, languages and feature lists come from the games' public store listings. Prices and edition contents are illustrative, and reviews and comments by demo players are sample content.

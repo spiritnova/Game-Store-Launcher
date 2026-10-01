@@ -6,11 +6,12 @@ import { cardImage, currentPrice, formatPrice, getGame, isOnSale } from '@/lib/g
 import { useStore } from '@/lib/store'
 import Button from '../UI/Button'
 import Price from '../UI/Price'
+import SignInPrompt from '../UI/SignInPrompt'
 import Skeleton from '../UI/Skeleton'
 import styles from './WishlistView.module.css'
 
 export default function WishlistView() {
-  const { hydrated, wishlist, buy, toggleWishlist } = useStore()
+  const { hydrated, session, wishlist, cartItemFor, addToCart, toggleWishlist } = useStore()
 
   const games = [...wishlist]
     .sort((a, b) => b.addedAt - a.addedAt)
@@ -35,6 +36,12 @@ export default function WishlistView() {
         <div className={styles.list} aria-busy="true" aria-label="Loading">
           {[0, 1].map((i) => <Skeleton key={i} height="132px" radius="8px" />)}
         </div>
+      ) : !session ? (
+        <SignInPrompt
+          title="Sign in to see your wishlist"
+          text="Save games for later and keep an eye on their discounts."
+          next="/wishlist"
+        />
       ) : games.length === 0 ? (
         <div className={styles.empty}>
           <h2>Your wishlist is empty</h2>
@@ -61,7 +68,11 @@ export default function WishlistView() {
                 <Price game={game} />
               </div>
               <div className={styles.actions}>
-                <Button size="small" onClick={() => buy(game)}>Buy now</Button>
+                {cartItemFor(game.slug) ? (
+                  <Button size="small" variant="secondary" href="/cart">In cart</Button>
+                ) : (
+                  <Button size="small" onClick={() => addToCart(game)}>Add to cart</Button>
+                )}
                 <Button size="small" variant="ghost" onClick={() => toggleWishlist(game)} aria-label={`Remove ${game.title} from wishlist`}>
                   Remove
                 </Button>

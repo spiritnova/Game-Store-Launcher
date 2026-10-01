@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "playstation-studios-collection",
+    "title": "PlayStation Studios Collection",
+    "description": "Four acclaimed PlayStation adventures, from Norse myth to post-apocalyptic America.",
+    "games": ["god-of-war", "horizon-zero-dawn", "spider-man-miles-morales", "the-last-of-us-part-1"],
+    "discount": 15
+  },
+  {
+    "slug": "open-world-legends",
+    "title": "Open World Legends",
+    "description": "Hundreds of hours across three of the biggest open worlds ever made.",
+    "games": ["the-witcher-3", "red-dead-redemption-2", "hogwarts-legacy"],
+    "discount": 15
+  },
+  {
+    "slug": "ea-sports-pack",
+    "title": "EA SPORTS Pack",
+    "description": "The pitch and the paddock: FIFA 23 and F1 22 together.",
+    "games": ["fifa-23", "f1-22"],
+    "discount": 10
+  },
+  {
+    "slug": "frontline-shooter-pack",
+    "title": "Frontline Shooter Pack",
+    "description": "Tight squad tactics and all-out war in two blockbuster shooters.",
+    "games": ["call-of-duty-modern-warfare-2", "battlefield-2042"],
+    "discount": 10
+  }
+]

@@ -1,8 +1,11 @@
 'use client'
 
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'
 import DownloadIcon from '@mui/icons-material/Download'
+import PauseIcon from '@mui/icons-material/Pause'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
-import { currentPrice, formatPrice } from '@/lib/games'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
+import { useDownloads } from '@/lib/downloads'
 import { useStore } from '@/lib/store'
 import Button from '../UI/Button'
 import Skeleton from '../UI/Skeleton'
@@ -10,10 +13,11 @@ import WishlistButton from '../UI/WishlistButton'
 import ProgressBar from '../UI/ProgressBar'
 import styles from './GameActions.module.css'
 
-// Buy / install / play controls that follow the game's state in the library.
+// Cart / install / play controls that follow the game's state for the signed-in user.
 // `detailsHref` adds a link to the game page (used in the home carousel).
 export default function GameActions({ game, detailsHref, stacked = false }) {
-    const { hydrated, getEntry, downloads, buy, install, cancelInstall, play } = useStore()
+    const { hydrated, getEntry, cartItemFor, addToCart, play } = useStore()
+    const downloads = useDownloads()
     const className = `${styles.actions} ${stacked ? styles.stacked : ''}`
 
     if (!hydrated) {
@@ -25,28 +29,43 @@ export default function GameActions({ game, detailsHref, stacked = false }) {
     }
 
     const entry = getEntry(game.slug)
-    const progress = downloads[game.slug]
     const details = detailsHref && <Button href={detailsHref} variant="ghost" size="large">View details</Button>
 
     if (!entry) {
         return (
             <div className={className}>
-                <Button size="large" onClick={() => buy(game)} aria-label={`Buy ${game.title} for ${formatPrice(currentPrice(game))}`}>
-                    Buy now
-                </Button>
+                {cartItemFor(game.slug) ? (
+                    <Button href="/cart" variant="secondary" size="large">
+                        <ShoppingCartIcon fontSize="small" /> In cart
+                    </Button>
+                ) : (
+                    <Button size="large" onClick={() => addToCart(game)}>
+                        <AddShoppingCartIcon fontSize="small" /> Add to cart
+                    </Button>
+                )}
                 {details ?? <WishlistButton game={game} variant="full" />}
             </div>
         )
     }
 
-    if (progress !== undefined) {
+    const download = downloads.statusOf(game.slug)
+
+    if (download) {
+        const label = { downloading: 'Downloading', paused: 'Paused', queued: 'Queued' }[download.status]
         return (
             <div className={className}>
                 <div className={styles.installing}>
-                    <ProgressBar value={progress} label={`Installing ${game.title}`} />
-                    <Button variant="ghost" size="small" onClick={() => cancelInstall(game)}>Cancel</Button>
+                    <span className={styles.status}>{label}</span>
+                    <ProgressBar value={download.progress} label={`${label} ${game.title}`} />
+                    {download.status === 'paused' ? (
+                        <Button variant="ghost" size="small" onClick={() => downloads.resume(game.slug)}>Resume</Button>
+                    ) : (
+                        <Button variant="ghost" size="small" onClick={() => downloads.pause(game.slug)} aria-label={`Pause ${game.title}`}>
+                            <PauseIcon fontSize="small" />
+                        </Button>
+                    )}
                 </div>
-                {details}
+                {details ?? <Button href="/downloads" variant="ghost" size="large">View downloads</Button>}
             </div>
         )
     }
@@ -58,7 +77,7 @@ export default function GameActions({ game, detailsHref, stacked = false }) {
                     <PlayArrowIcon /> Play
                 </Button>
             ) : (
-                <Button variant="secondary" size="large" onClick={() => install(game)}>
+                <Button variant="secondary" size="large" onClick={() => downloads.install(game)}>
                     <DownloadIcon /> Install
                 </Button>
             )}

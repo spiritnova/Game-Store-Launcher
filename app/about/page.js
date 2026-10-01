@@ -9,9 +9,13 @@ export const metadata = {
 
 const features = [
   { title: 'Discover', text: 'A spotlight carousel, a row of current deals and featured games on the home page.' },
+  { title: 'Game pages', text: 'Screenshot gallery, editions, bundles, player modes, system requirements, languages, player reviews and a discussion thread.' },
   { title: 'Browse', text: 'Search the catalogue, filter by genre or discount and sort by price or release date. Filters live in the URL, so any view can be shared.' },
+  { title: 'Cart & checkout', text: 'Buy any edition or a whole bundle (you only pay for the games you don’t own yet) and check out.' },
+  { title: 'Accounts', text: 'Sign in with any username, or as the demo player, and each account keeps its own library and wishlist.' },
   { title: 'Wishlist', text: 'Save games for later and see discounts at a glance.' },
-  { title: 'Library', text: 'Buy a game, then install, launch and uninstall it, with a live install progress bar and playtime tracking.' },
+  { title: 'Library & downloads', text: 'A download manager with a queue, pause and resume, a live speed graph and a simulated connection speed, plus quick launch from the sidebar.' },
+  { title: 'Profile & settings', text: 'Edit your display name, bio and avatar colour, pick an accent colour for the whole launcher and tune downloads.' },
 ]
 
 const stack = [
@@ -19,6 +23,7 @@ const stack = [
   'React 18 with Context for client state',
   'CSS Modules and design tokens',
   'Swiper for the carousels',
+  'next/image with WebP and blurred placeholders',
   'Material UI icons',
   'localStorage persistence',
 ]
@@ -30,8 +35,8 @@ export default function About() {
         <h1>About Ultimate</h1>
         <p>
           Ultimate is a portfolio project that recreates the core of a PC game launcher: a storefront to find games
-          and a library to install and play them. Nothing is sold and no account is needed. Your purchases,
-          wishlist and installs are simulated and saved in this browser only.
+          and a library to install and play them. Nothing is sold and sign-in is simulated: accounts, purchases,
+          wishlists and installs are saved in this browser only.
         </p>
       </header>
 
@@ -66,7 +71,7 @@ export default function About() {
 
         <section aria-labelledby="demo-title">
           <h2 id="demo-title">Demo data</h2>
-          <p>Want a fresh start? Reset the library and wishlist to the sample data a first-time visitor sees.</p>
+          <p>Want a fresh start? This signs you out, empties the cart and restores the demo player&apos;s library and wishlist.</p>
           <ResetDemoButton />
         </section>
       </div>

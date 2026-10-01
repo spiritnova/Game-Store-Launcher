@@ -2,14 +2,15 @@ import Carousel from './Components/Home/Carousel'
 import FeaturedGames from './Components/Home/FeaturedGames'
 import GamesOnSale from './Components/Home/GamesOnSale'
 import Button from './Components/UI/Button'
-import { allGames } from '@/lib/games'
+import { allGames, spotlightGames } from '@/lib/games'
+import { blurProps } from '@/lib/images'
 import styles from './page.module.css'
 
 export default function Home() {
   return (
     <main>
       <h1 className="visually-hidden">Discover games on Ultimate</h1>
-      <Carousel/>
+      <Carousel blurs={Object.fromEntries(spotlightGames.map((g) => [g.hero, blurProps(g.hero).blurDataURL]))}/>
       <GamesOnSale/>
       <FeaturedGames/>
 

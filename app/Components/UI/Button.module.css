@@ -39,7 +39,7 @@
 }
 
 .secondary:not(:disabled):hover {
-  background-color: #1a6fe8;
+  background-color: color-mix(in srgb, var(--main) 85%, black);
 }
 
 .ghost {

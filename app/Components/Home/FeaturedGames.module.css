@@ -1,7 +1,7 @@
 .section{
     padding-block: 4rem;
     background:
-        radial-gradient(ellipse at top, rgba(46, 132, 255, 0.18), transparent 60%),
+        radial-gradient(ellipse at top, color-mix(in srgb, var(--main) 18%, transparent), transparent 60%),
         var(--surface);
     border-block: 1px solid var(--border);
 }
@@ -81,13 +81,13 @@
     font-weight: 500;
 }
 
-@media screen and (min-width: 600px) {
+@container main (min-width: 600px) {
     .cards{
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media screen and (min-width: 1024px) {
+@container main (min-width: 1024px) {
     .cards{
         grid-template-columns: repeat(3, 1fr);
     }

@@ -1,17 +1,15 @@
 .banner {
   position: relative;
   overflow: hidden;
-  padding-block: 4rem 3rem;
+  min-height: 380px;
+  display: flex;
+  align-items: flex-end;
+  padding-block: 4rem 2.5rem;
 }
 
 .backdrop {
   object-fit: cover;
-  object-position: center 25%;
-}
-
-.blurred {
-  filter: blur(28px);
-  transform: scale(1.2);
+  object-position: center 30%;
 }
 
 .banner::after {
@@ -19,8 +17,8 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(10, 10, 10, 0.9) 0%, rgba(10, 10, 10, 0.6) 60%, rgba(10, 10, 10, 0.4) 100%),
-    linear-gradient(0deg, var(--bg) 0%, rgba(18, 18, 18, 0) 40%);
+    linear-gradient(90deg, rgba(10, 10, 10, 0.88) 0%, rgba(10, 10, 10, 0.55) 55%, rgba(10, 10, 10, 0.2) 100%),
+    linear-gradient(0deg, var(--bg) 0%, rgba(18, 18, 18, 0) 45%);
 }
 
 .bannerInner {
@@ -34,7 +32,7 @@
 .coverArt {
   position: relative;
   flex-shrink: 0;
-  width: 220px;
+  width: 200px;
   aspect-ratio: 3 / 4;
   overflow: hidden;
   border-radius: var(--radius);
@@ -48,7 +46,7 @@
 .heading {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.7rem;
   min-width: 0;
 }
 
@@ -56,7 +54,7 @@
   display: flex;
   gap: 0.5rem;
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: #c8c8c8;
 }
 
 .breadcrumb a:hover {
@@ -66,8 +64,8 @@
 
 .logo {
   position: relative;
-  width: min(320px, 100%);
-  height: 90px;
+  width: min(360px, 100%);
+  height: 110px;
 }
 
 .logo img {
@@ -75,14 +73,32 @@
   object-position: left center;
 }
 
-.heading h1 {
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
-  font-weight: 700;
-  line-height: 1.15;
+.meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  color: #d0d0d0;
 }
 
-.meta {
-  color: #d0d0d0;
+.metacritic {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+}
+
+.metacritic strong {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 26px;
+  padding: 0 4px;
+  background-color: #66cc33;
+  border-radius: 4px;
+  color: #000;
+  font-size: 0.9rem;
 }
 
 .genres {
@@ -107,9 +123,17 @@
 
 .body {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 340px;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  align-items: start;
   gap: 3rem;
-  padding-top: 2.5rem;
+  padding-top: 2rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  min-width: 0;
 }
 
 .about h2,
@@ -120,7 +144,7 @@
 }
 
 .about p {
-  max-width: 65ch;
+  max-width: 70ch;
   color: #d0d0d0;
   font-size: 1.05rem;
 }
@@ -128,27 +152,36 @@
 .purchase {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  align-self: start;
+  gap: 1.1rem;
   position: sticky;
-  top: calc(var(--nav-h) + 1.5rem);
+  top: calc(var(--topbar-h) + 1.5rem);
   padding: 1.5rem;
   background-color: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
 }
 
+.editionsLink {
+  font-size: 0.875rem;
+  color: var(--main-text);
+  text-align: center;
+}
+
+.editionsLink:hover {
+  text-decoration: underline;
+}
+
 .details {
   display: flex;
   flex-direction: column;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
 }
 
 .details div {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  padding-block: 0.6rem;
+  padding-block: 0.55rem;
   border-top: 1px solid var(--border);
 }
 
@@ -170,7 +203,7 @@
   gap: 1.5rem;
 }
 
-@media (max-width: 900px) {
+@container main (max-width: 960px) {
   .body {
     grid-template-columns: 1fr;
   }
@@ -181,8 +214,9 @@
   }
 }
 
-@media (max-width: 600px) {
+@container main (max-width: 600px) {
   .banner {
+    min-height: 0;
     padding-block: 2rem;
   }
 
@@ -193,6 +227,10 @@
   }
 
   .coverArt {
-    width: 140px;
+    width: 120px;
+  }
+
+  .logo {
+    height: 80px;
   }
 }

@@ -179,7 +179,7 @@
   margin-bottom: 0.5rem;
 }
 
-@media (max-width: 600px) {
+@container main (max-width: 600px) {
   .sort {
     margin-left: 0;
   }

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { featuredGames, isSvg } from '@/lib/games'
+import { blurProps } from '@/lib/images'
 import Price from '../UI/Price'
 import styles from './FeaturedGames.module.css'
 
@@ -15,7 +16,7 @@ export default function FeaturedGames(){
                         <li key={game.slug}>
                             <Link href={`/games/${game.slug}`} className={styles.card}>
                                 <div className={styles.image}>
-                                    <Image src={game.hero} alt="" fill sizes="(max-width: 768px) 100vw, 33vw" />
+                                    <Image src={game.hero} alt="" fill sizes="(max-width: 900px) 100vw, 30vw" {...blurProps(game.hero)} />
                                     <div className={styles.cover}>
                                         <div className={styles.logo}>
                                             <Image src={game.logo} alt="" fill sizes="200px" unoptimized={isSvg(game.logo)} />

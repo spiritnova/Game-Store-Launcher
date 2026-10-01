@@ -83,7 +83,7 @@
 }
 
 
-@media (max-width: 768px) {
+@container main (max-width: 768px) {
     .swiper :global(.swiper-button-next),
     .swiper :global(.swiper-button-prev){
         display: none;

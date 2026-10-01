@@ -1,6 +1,6 @@
 import Footer from './Components/Footer'
-import Navbar from './Components/Navbar'
 import Providers from './Components/Providers'
+import Sidebar from './Components/Sidebar'
 import './globals.css'
 import localFont from 'next/font/local'
 
@@ -55,9 +55,13 @@ export default function RootLayout({ children }) {
       <body>
         <Providers>
           <a href="#main" className="skip-link">Skip to content</a>
-          <Navbar />
-          <div id="main" className="page">{children}</div>
-          <Footer />
+          <div className="shell">
+            <Sidebar />
+            <div className="content">
+              <div id="main" className="page">{children}</div>
+              <Footer />
+            </div>
+          </div>
         </Providers>
       </body>
     </html>

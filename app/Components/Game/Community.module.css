@@ -1,0 +1,322 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1.25rem;
+}
+
+.header h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.countTag {
+    margin-left: 0.25rem;
+    padding: 1px 8px;
+    background-color: var(--surface-2);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+.summary {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.summary strong {
+    font-size: 1rem;
+}
+
+.positive strong,
+.verdict.positive {
+    color: var(--main-text);
+}
+
+.mixed strong {
+    color: #e0b84c;
+}
+
+.negative strong,
+.verdict.negative {
+    color: var(--danger);
+}
+
+.meter {
+    flex-basis: 100%;
+    height: 6px;
+    overflow: hidden;
+    background-color: var(--danger);
+    border-radius: 999px;
+}
+
+.meter span {
+    display: block;
+    height: 100%;
+    background-color: var(--main);
+}
+
+.notice {
+    padding: 1rem;
+    background-color: var(--surface);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.form textarea {
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+    resize: vertical;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+}
+
+.form textarea:focus {
+    border-color: var(--main);
+    outline: none;
+}
+
+.form textarea[aria-invalid='true'] {
+    border-color: var(--danger);
+}
+
+.vote {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+}
+
+.vote legend {
+    float: left;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.vote button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.9rem;
+    background-color: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.vote button[aria-pressed='true']:first-of-type {
+    background-color: var(--main);
+    border-color: var(--main);
+}
+
+.vote button[aria-pressed='true']:last-of-type {
+    background-color: var(--danger);
+    border-color: var(--danger);
+    color: #000;
+}
+
+.formFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.formActions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.hint {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+}
+
+.error {
+    font-size: 0.8rem;
+    color: var(--danger);
+}
+
+.commentForm {
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.commentInput {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.listHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.demoNote {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.sort {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.sort select {
+    padding: 0.35rem 0.6rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1rem 1.25rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.mine {
+    border-color: color-mix(in srgb, var(--main) 50%, var(--border));
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.youTag {
+    padding: 0 6px;
+    background-color: var(--main);
+    border-radius: 4px;
+    font-size: 0.7rem;
+    color: #fff;
+}
+
+.meta {
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.verdict {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.text {
+    color: #d6d6d6;
+    font-size: 0.925rem;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+.itemActions {
+    display: flex;
+    gap: 1rem;
+}
+
+.itemActions button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.itemActions button:hover {
+    color: var(--text);
+}
+
+.helpful[aria-pressed='true'] {
+    color: var(--main-text) !important;
+}
+
+.comment {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.commentBody {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    min-width: 0;
+}
+
+.more {
+    align-self: flex-start;
+    padding: 0.5rem 1rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.more:hover {
+    border-color: #555;
+}

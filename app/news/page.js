@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import news from '@/data/news.json'
+import { blurProps } from '@/lib/images'
 import styles from './page.module.css'
 
 export const metadata = {
@@ -24,7 +25,7 @@ export default function News() {
 
       <article className={styles.lead}>
         <div className={styles.leadImage}>
-          <Image src={lead.image} alt="" fill priority sizes="(max-width: 900px) 100vw, 50vw" />
+          <Image src={lead.image} alt="" fill priority sizes="(max-width: 900px) 100vw, 50vw" {...blurProps(lead.image)} />
         </div>
         <div className={styles.leadBody}>
           <p className={styles.meta}>
@@ -42,7 +43,7 @@ export default function News() {
           <li key={post.slug}>
             <article className={styles.card}>
               <div className={styles.cardImage}>
-                <Image src={post.image} alt="" fill sizes="(max-width: 600px) 100vw, 33vw" />
+                <Image src={post.image} alt="" fill sizes="(max-width: 600px) 100vw, 30vw" {...blurProps(post.image)} />
               </div>
               <div className={styles.cardBody}>
                 <p className={styles.meta}>

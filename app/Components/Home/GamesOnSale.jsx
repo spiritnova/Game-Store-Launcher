@@ -49,19 +49,20 @@ export default function GamesOnSale(){
                 spaceBetween={16}
                 slidesPerView={2}
                 grabCursor
+                breakpointsBase="container"
                 onSwiper={(s) => { setSwiper(s); syncEdges(s) }}
                 onSlideChange={syncEdges}
                 onResize={syncEdges}
                 breakpoints={{
-                    640: { slidesPerView: 3, spaceBetween: 20 },
-                    900: { slidesPerView: 4, spaceBetween: 24 },
-                    1200: { slidesPerView: 5, spaceBetween: 24 },
-                    1500: { slidesPerView: 6, spaceBetween: 24 },
+                    520: { slidesPerView: 3, spaceBetween: 20 },
+                    760: { slidesPerView: 4, spaceBetween: 24 },
+                    1000: { slidesPerView: 5, spaceBetween: 24 },
+                    1300: { slidesPerView: 6, spaceBetween: 24 },
                 }}
             >
                 {gamesOnSale.map(game => (
                     <SwiperSlide key={game.slug} className={styles.slide}>
-                        <GameCard game={game} sizes="(max-width: 640px) 50vw, (max-width: 1200px) 25vw, 240px" />
+                        <GameCard game={game} sizes="(max-width: 600px) 50vw, (max-width: 1200px) 25vw, 240px" />
                     </SwiperSlide>
                 ))}
             </Swiper>

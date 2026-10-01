@@ -12,6 +12,7 @@ import { placeholderColor } from '@/lib/image-colors'
 import { statusLabel, useDownloads } from '@/lib/downloads'
 import { formatLastPlayed, formatPlaytime, useStore } from '@/lib/store'
 import Button from '../UI/Button'
+import Select from '../UI/Select'
 import ProgressBar from '../UI/ProgressBar'
 import SignInPrompt from '../UI/SignInPrompt'
 import { CardGridSkeleton } from '../UI/Skeleton'
@@ -162,11 +163,7 @@ export default function LibraryView() {
 
             <div className={styles.sort}>
               <label htmlFor="library-sort">Sort by</label>
-              <select id="library-sort" value={sort} onChange={(e) => setSort(e.target.value)}>
-                {Object.entries(sorts).map(([value, { label }]) => (
-                  <option key={value} value={value}>{label}</option>
-                ))}
-              </select>
+              <Select id="library-sort" value={sort} onChange={setSort} options={Object.entries(sorts).map(([value, { label }]) => ({ value, label }))} align="right" />
             </div>
           </div>
 

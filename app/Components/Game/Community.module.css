@@ -197,14 +197,6 @@
     color: var(--text-muted);
 }
 
-.sort select {
-    padding: 0.35rem 0.6rem;
-    background-color: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    color: var(--text);
-}
-
 .list {
     display: flex;
     flex-direction: column;

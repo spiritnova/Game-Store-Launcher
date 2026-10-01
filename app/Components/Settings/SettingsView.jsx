@@ -6,6 +6,7 @@ import { useDownloads } from '@/lib/downloads'
 import { ACCENTS, AUTO_UPDATE_MODES, BANDWIDTH_LIMITS, CONNECTIONS, REGIONS, useStore } from '@/lib/store'
 import Avatar from '../UI/Avatar'
 import Button from '../UI/Button'
+import Select from '../UI/Select'
 import SignInPrompt from '../UI/SignInPrompt'
 import Skeleton from '../UI/Skeleton'
 import styles from './SettingsView.module.css'
@@ -114,11 +115,6 @@ function AppearanceSection() {
   )
 }
 
-const regionGroups = Object.entries(REGIONS).reduce((groups, [id, region]) => {
-  ;(groups[region.group] ??= []).push([id, region])
-  return groups
-}, {})
-
 function TimeRange({ idPrefix, value, onChange, disabled }) {
   return (
     <div className={styles.timeRange}>
@@ -156,15 +152,14 @@ function DownloadSection() {
 
         <div className={styles.field}>
           <label htmlFor="download-region">Download region</label>
-          <select id="download-region" value={settings.region} onChange={(e) => updateSettings({ region: e.target.value })} aria-describedby="region-help">
-            {Object.entries(regionGroups).map(([group, regions]) => (
-              <optgroup key={group} label={group}>
-                {regions.map(([id, r]) => (
-                  <option key={id} value={id}>{r.label}</option>
-                ))}
-              </optgroup>
-            ))}
-          </select>
+          <Select
+            id="download-region"
+            className={styles.select}
+            value={settings.region}
+            onChange={(r) => updateSettings({ region: r })}
+            aria-describedby="region-help"
+            options={Object.entries(REGIONS).map(([id, r]) => ({ value: id, label: r.label, group: r.group }))}
+          />
           <p id="region-help" className={styles.muted}>
             {settings.region === 'auto'
               ? 'The launcher picks the fastest server for you.'
@@ -174,11 +169,13 @@ function DownloadSection() {
 
         <div className={styles.field}>
           <label htmlFor="bandwidth-limit">Limit download speed to</label>
-          <select id="bandwidth-limit" value={settings.bandwidthLimit} onChange={(e) => updateSettings({ bandwidthLimit: e.target.value })}>
-            {Object.entries(BANDWIDTH_LIMITS).map(([id, limit]) => (
-              <option key={id} value={id}>{limit.label}</option>
-            ))}
-          </select>
+          <Select
+            id="bandwidth-limit"
+            className={styles.select}
+            value={settings.bandwidthLimit}
+            onChange={(bandwidthLimit) => updateSettings({ bandwidthLimit })}
+            options={Object.entries(BANDWIDTH_LIMITS).map(([id, limit]) => ({ value: id, label: limit.label }))}
+          />
         </div>
 
         <fieldset className={styles.field}>

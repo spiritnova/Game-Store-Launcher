@@ -6,6 +6,7 @@ import SearchIcon from '@mui/icons-material/Search'
 import { allGames, currentPrice, discountPercent, genres, isOnSale } from '@/lib/games'
 import GameCard from '../UI/GameCard'
 import Button from '../UI/Button'
+import Select from '../UI/Select'
 import styles from './BrowseGames.module.css'
 
 const sorts = {
@@ -112,11 +113,7 @@ export default function BrowseGames() {
 
         <div className={styles.sort}>
           <label htmlFor="browse-sort">Sort by</label>
-          <select id="browse-sort" value={sort} onChange={(e) => setSort(e.target.value)}>
-            {Object.entries(sorts).map(([value, { label }]) => (
-              <option key={value} value={value}>{label}</option>
-            ))}
-          </select>
+          <Select id="browse-sort" value={sort} onChange={setSort} options={Object.entries(sorts).map(([value, { label }]) => ({ value, label }))} align="right" />
         </div>
       </div>
 

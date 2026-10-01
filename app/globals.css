@@ -157,8 +157,7 @@ ul {
   outline-offset: 2px;
 }
 
-/* Form controls share one look */
-select,
+/* Time inputs share the dropdown look (dropdowns use the Select component) */
 input[type='time'] {
   padding: 0.6rem 0.85rem;
   background-color: var(--surface-2);
@@ -167,13 +166,11 @@ input[type='time'] {
   color: var(--text);
 }
 
-select:focus,
 input[type='time']:focus {
   border-color: var(--main);
   outline: none;
 }
 
-select:disabled,
 input:disabled {
   opacity: 0.5;
 }

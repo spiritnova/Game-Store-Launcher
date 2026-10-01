@@ -8,6 +8,7 @@ import { authorHue, formatDate, reviewSummary } from '@/lib/community'
 import { useStore } from '@/lib/store'
 import Avatar from '../UI/Avatar'
 import Button from '../UI/Button'
+import Select from '../UI/Select'
 import styles from './Community.module.css'
 
 const MIN_LENGTH = 20
@@ -115,13 +116,16 @@ export default function Reviews({ game, seeded }) {
 
             <div className={styles.listHeader}>
                 <p className={styles.demoNote}>Reviews from demo players are sample content.</p>
-                <label className={styles.sort}>
-                    Sort by
-                    <select value={sort} onChange={(e) => setSort(e.target.value)}>
-                        <option value="helpful">Most helpful</option>
-                        <option value="newest">Newest</option>
-                    </select>
-                </label>
+                <div className={styles.sort}>
+                    <label htmlFor="reviews-sort">Sort by</label>
+                    <Select
+                        id="reviews-sort"
+                        value={sort}
+                        onChange={setSort}
+                        align="right"
+                        options={[{ value: 'helpful', label: 'Most helpful' }, { value: 'newest', label: 'Newest' }]}
+                    />
+                </div>
             </div>
 
             <ul className={styles.list}>

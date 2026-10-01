@@ -56,15 +56,6 @@
   color: var(--text-muted);
 }
 
-.sort select {
-  padding: 0.5rem 0.75rem;
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  color: var(--text);
-  cursor: pointer;
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

@@ -1,0 +1,33 @@
+.prices {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.badge {
+    padding: 2px 8px;
+    background-color: var(--main);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+.original {
+    color: var(--text-muted);
+}
+
+.current {
+    font-weight: 600;
+}
+
+.large {
+    font-size: 1.4rem;
+}
+
+.large .badge {
+    font-size: 0.95rem;
+    padding: 4px 10px;
+}

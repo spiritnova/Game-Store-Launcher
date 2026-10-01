@@ -1,29 +1,24 @@
-.logo{
-    background-color: var(--main);
-    display: inline-block;
-    border-radius: 50%;
-    padding: 0.5rem;
-    margin-right: 6px;
-}
-
-.logo svg{
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    color: black;
-}
-
-
 .container{
     display: flex;
     align-items: center;
 }
 
+.logo{
+    display: flex;
+    background-color: var(--main);
+    border-radius: 50%;
+    padding: 0.4rem;
+    margin-right: 8px;
+}
+
+.logo svg{
+    font-size: 1.75rem;
+    color: black;
+}
 
 .container p{
-    font-family: 'INTER', sans-serif;
-    font-weight: 500;
+    font-family: var(--font-inter), sans-serif;
+    font-weight: 600;
     font-size: 22px;
+    letter-spacing: 0.5px;
 }

@@ -1,74 +1,127 @@
-.container{
-    overflow: hidden;
-    height: 700px;
+.hero{
+    position: relative;
 }
 
-.slider{
-    width: 100%;
-    height: 700px;
-    position: relative;
+.swiper{
+    --swiper-navigation-size: 28px;
 }
 
 .slide{
-    width: 100%;
-    height: 700px;
     position: relative;
+    height: clamp(560px, 78vh, 760px);
+    display: flex;
+    align-items: center;
 }
 
 .image{
-    height: 100%;
-    width: 100%;
     object-fit: cover;
-    position: absolute;
+    object-position: center;
 }
 
+/* Darken the left side so the copy stays readable on bright artwork */
 .cover{
-    color: white;
     position: absolute;
-    top: 9rem;
-    left: 4rem;
-    width: 500px;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 calc(var(--page-x) + 3rem);
+    background:
+        linear-gradient(90deg, rgba(10, 10, 10, 0.92) 0%, rgba(10, 10, 10, 0.75) 35%, rgba(10, 10, 10, 0) 70%),
+        linear-gradient(0deg, var(--bg) 0%, rgba(18, 18, 18, 0) 25%);
 }
 
 .content{
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    gap: 1rem;
+    max-width: 520px;
 }
 
-.content img{
-    margin-bottom: 2rem;
+.logo{
     position: relative;
-    height: 260px;
-    width: 500px;
+    width: min(420px, 100%);
+    height: 160px;
+    margin-bottom: 0.5rem;
 }
 
-.content button{
-    margin-top: 1rem;
+.logo img{
+    object-fit: contain;
+    object-position: left center;
 }
 
-.slide:hover .image{
-    opacity: 0.5;
+.content h2{
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 700;
+    line-height: 1.25;
+    text-transform: uppercase;
+}
+
+.content p{
+    color: #d6d6d6;
+}
+
+.playback{
+    position: absolute;
+    right: var(--page-x);
+    bottom: 1.25rem;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+}
+
+.playback:hover{
+    background-color: rgba(0, 0, 0, 0.85);
 }
 
 
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
+    .swiper :global(.swiper-button-next),
+    .swiper :global(.swiper-button-prev){
+        display: none;
+    }
+
     .slide{
-        display: flex;
-        justify-content: center;
+        align-items: flex-end;
+        height: auto;
+        min-height: 600px;
+    }
+
+    .cover{
+        position: relative;
+        padding: 12rem var(--page-x) 4rem;
+        background: linear-gradient(0deg, var(--bg) 0%, rgba(10, 10, 10, 0.88) 45%, rgba(10, 10, 10, 0.2) 100%);
+    }
+
+    .content{
         align-items: center;
+        text-align: center;
+        max-width: none;
+        margin-inline: auto;
     }
 
-    .cover{
-        position: static;
-        z-index: 1;
+    .logo{
+        height: 110px;
+        width: min(320px, 100%);
     }
-}
 
-@media (max-width : 600px){
-    .cover{
-        transform: scale(0.8);
+    .logo img{
+        object-position: center;
+    }
+
+    .content > div:last-child{
+        justify-content: center;
+    }
+
+    .playback{
+        bottom: 0.75rem;
     }
 }

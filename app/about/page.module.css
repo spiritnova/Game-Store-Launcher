@@ -1,0 +1,89 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-top: 2.5rem;
+}
+
+.header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.header p {
+  max-width: 68ch;
+  color: #cfcfcf;
+  font-size: 1.05rem;
+}
+
+.page h2 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.features li {
+  padding: 1.25rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--main);
+  border-radius: var(--radius);
+}
+
+.features h3 {
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.features p,
+.columns p {
+  color: var(--text-muted);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+}
+
+.columns p {
+  margin-bottom: 1rem;
+}
+
+.columns a,
+.disclaimer a {
+  color: var(--main-text);
+}
+
+.columns a:hover,
+.disclaimer a:hover {
+  text-decoration: underline;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--text-muted);
+}
+
+.stack li::before {
+  content: '▸';
+  margin-right: 0.5rem;
+  color: var(--main);
+}
+
+.disclaimer {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}

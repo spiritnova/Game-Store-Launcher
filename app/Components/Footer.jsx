@@ -1,83 +1,77 @@
+import Link from 'next/link'
+import EmailIcon from '@mui/icons-material/Email'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import Logo from './UI/Logo'
 import styles from './Footer.module.css'
-import Location from '@mui/icons-material/LocationOn';
-import PhoneEnabledIcon from '@mui/icons-material/PhoneEnabled';
-import EmailIcon from '@mui/icons-material/Email';
-import Logo from './UI/Logo';
-import Link from 'next/link';
+
+const sections = [
+    {
+        title: 'Store',
+        links: [
+            { href: '/', label: 'Discover' },
+            { href: '/games', label: 'Browse games' },
+            { href: '/games?sale=1', label: 'Games on sale' },
+            { href: '/news', label: 'News' },
+        ],
+    },
+    {
+        title: 'Your games',
+        links: [
+            { href: '/library', label: 'Library' },
+            { href: '/wishlist', label: 'Wishlist' },
+            { href: '/about', label: 'About this project' },
+        ],
+    },
+]
 
 export default function Footer() {
   return (
-    <div className={styles.footer}>
-        <div className={styles.upper}>
-            <div className={styles.contacts}>
-                <div className={styles.contactrow}>
-                    <div className={styles.contact}>
-                        <div className={styles.icon}><Location/></div>
-                        <div className={styles.info}>
-                            <h4>Find us</h4>
-                            <p>1010 Avenue, sw 54321, chandigarh</p>
-                        </div>
-                    </div>
-                    <div className={styles.contact}>
-                        <div className={styles.icon}><PhoneEnabledIcon/></div>
-                        <div className={styles.info}>
-                            <h4>Call us</h4>
-                            <p>9876543210 0</p>
-                        </div>
-                    </div>
-                    <div className={styles.contact}>
-                        <div className={styles.icon}><EmailIcon/></div>
-                        <div className={styles.info}>
-                            <h4>Mail us</h4>
-                            <p>ibrahimabboud2000@gmail.com</p>
-                        </div>
-                    </div>
-                </div>
+    <footer className={styles.footer}>
+        <div className={`container ${styles.content}`}>
+            <div className={styles.brand}>
+                <Logo/>
+                <p className={styles.text}>
+                    A showcase game launcher built with Next.js. Discover deals, build a wishlist and
+                    manage a library of installed games, all in your browser.
+                </p>
             </div>
 
-
-            <div className={styles.content}>
-                <div className={styles.row}>
-                    <div className={styles.brand}>
-                        <Logo/>
-                        <p className={styles.text}>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing elit,Lorem ipsum dolor sit amet.</p>
-                    </div>
-
-                    <div className={styles.quicklinks}>
-                        <div className={styles.header}><h4>Quick Links</h4></div>
-                        <div className={styles.links}>
-                            <li>
-                                <Link href='/'>Discover</Link>
+            {sections.map((section) => (
+                <nav key={section.title} className={styles.column} aria-label={section.title}>
+                    <h2 className={styles.header}>{section.title}</h2>
+                    <ul className={styles.links}>
+                        {section.links.map((link) => (
+                            <li key={link.href}>
+                                <Link href={link.href}>{link.label}</Link>
                             </li>
+                        ))}
+                    </ul>
+                </nav>
+            ))}
 
-                            <li>
-                                <Link href='/mylibrary'>My Library</Link>
-                            </li>
-
-                            <li>
-                                <Link href='#'>Games</Link>
-                            </li>
-
-                            <li>
-                                <Link href='#'>Contact Us</Link>
-                            </li>
-
-                            <li>
-                                <Link href='/about'>About</Link>
-                            </li>
-
-                            <li>
-                                <Link href='#'>Our Services</Link>
-                            </li>
-
-                            <li>
-                                <Link href='/news'>Latest News</Link>
-                            </li>
-                        </div>
-                    </div>
-                </div>
+            <div className={styles.column}>
+                <h2 className={styles.header}>Contact</h2>
+                <ul className={styles.links}>
+                    <li>
+                        <a href="mailto:ibrahimabboud2000@gmail.com" className={styles.iconLink}>
+                            <EmailIcon fontSize="small" /> Email me
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/spiritnova/Game-Store-Launcher" className={styles.iconLink} target="_blank" rel="noreferrer">
+                            <GitHubIcon fontSize="small" /> Source on GitHub
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
+
+        <div className={styles.bottom}>
+            <div className={`container ${styles.bottomRow}`}>
+                <p>© {new Date().getFullYear()} Ultimate. A portfolio project, not a real store.</p>
+                <p>Game titles and artwork are trademarks of their respective owners.</p>
+            </div>
+        </div>
+    </footer>
   )
 }

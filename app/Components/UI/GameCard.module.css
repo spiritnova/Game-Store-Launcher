@@ -1,0 +1,56 @@
+.card {
+    position: relative;
+    height: 100%;
+}
+
+.link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    height: 100%;
+    border-radius: var(--radius);
+}
+
+.media {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background-color: var(--surface);
+    margin-bottom: 0.35rem;
+}
+
+.image {
+    object-fit: cover;
+    transition: transform 400ms ease, filter 200ms;
+}
+
+.link:hover .image {
+    transform: scale(1.04);
+    filter: brightness(1.1);
+}
+
+.title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+.action {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+}
+
+/* On devices with a mouse, reveal the card action on hover/focus. Touch devices always show it. */
+@media (hover: hover) {
+    .action:has(button[aria-pressed='false']) {
+        opacity: 0;
+        transition: opacity 150ms;
+    }
+
+    .card:hover .action,
+    .card:focus-within .action {
+        opacity: 1;
+    }
+}

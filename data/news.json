@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "mega-sale",
+    "date": "2026-09-24",
+    "category": "Sale",
+    "title": "The Mega Sale is live: up to 75% off",
+    "excerpt": "Red Dead Redemption 2 and Hogwarts Legacy lead this week's deals, with seven games discounted across the store.",
+    "image": "/images/covers/red-dead-redemption-2.jpg",
+    "href": "/games?sale=1",
+    "cta": "Shop the sale"
+  },
+  {
+    "slug": "library-playtime",
+    "date": "2026-09-15",
+    "category": "Launcher update",
+    "title": "Your library now tracks playtime",
+    "excerpt": "See how long you have played each game and when you last launched it, then sort your library by recent activity.",
+    "image": "/images/heroes/the-witcher-3.jpg",
+    "href": "/library",
+    "cta": "Open your library"
+  },
+  {
+    "slug": "featured-battlefield",
+    "date": "2026-09-02",
+    "category": "Featured",
+    "title": "Battlefield 2042 joins the featured lineup",
+    "excerpt": "128-player battles and dynamic weather are now front and centre on the Discover page, alongside F1 22 and FIFA 23.",
+    "image": "/images/heroes/battlefield-2042.jpg",
+    "href": "/games/battlefield-2042",
+    "cta": "View game"
+  },
+  {
+    "slug": "wishlists",
+    "date": "2026-08-20",
+    "category": "Launcher update",
+    "title": "Save games for later with wishlists",
+    "excerpt": "Tap the + on any game card to add it to your wishlist. Sale prices appear on your wishlist automatically.",
+    "image": "/images/heroes/devil-may-cry-5.jpg",
+    "href": "/wishlist",
+    "cta": "View wishlist"
+  },
+  {
+    "slug": "spotlight-mw2",
+    "date": "2026-08-05",
+    "category": "Spotlight",
+    "title": "Spotlight: Call of Duty: Modern Warfare II",
+    "excerpt": "Task Force 141 is back. Catch up on the campaign, Special Ops and multiplayer before the next season starts.",
+    "image": "/images/heroes/call-of-duty-modern-warfare-2.jpg",
+    "href": "/games/call-of-duty-modern-warfare-2",
+    "cta": "View game"
+  }
+]

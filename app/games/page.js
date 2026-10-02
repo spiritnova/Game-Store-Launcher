@@ -4,7 +4,7 @@ import { CardGridSkeleton } from '../Components/UI/Skeleton'
 
 export const metadata = {
   title: 'Browse games',
-  description: 'Search and filter every game in the Ultimate store by genre, price and discount.',
+  description: 'Search and filter every game in the Ultimate Game Launcher store by genre, price and discount.',
 }
 
 export default function Games() {

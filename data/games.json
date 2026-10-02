@@ -94,6 +94,44 @@
           "Alternate battle music"
         ]
       }
+    ],
+    "dlc": [
+      {
+        "id": "super-character-3-pack",
+        "title": "Super Character 3-Pack",
+        "description": "Instantly unlocks this content, which is normally acquired as a completion reward for DANTE MUST DIE mode.",
+        "price": 5.99,
+        "salePrice": 4.79,
+        "releaseDate": "2019-03-21",
+        "image": "/images/dlc/devil-may-cry-5--super-character-3-pack.jpg"
+      },
+      {
+        "id": "playable-character-vergil",
+        "title": "Playable Character: Vergil",
+        "description": "Adds Vergil as a playable character in the story campaign, Bloody Palace mode and The Void.",
+        "price": 4.99,
+        "salePrice": 3.74,
+        "releaseDate": "2020-12-14",
+        "image": "/images/dlc/devil-may-cry-5--playable-character-vergil.jpg"
+      },
+      {
+        "id": "taunt-trio",
+        "title": "Taunt Trio",
+        "description": "Instantly unlocks this content, which normally costs 3,000,000 Red Orbs. These taunts allow you to increase your Style rank more easily.",
+        "price": 3.99,
+        "salePrice": 3.19,
+        "releaseDate": "2019-03-21",
+        "image": "/images/dlc/devil-may-cry-5--taunt-trio.jpg"
+      },
+      {
+        "id": "live-action-cutscenes",
+        "title": "Live Action Cutscenes",
+        "description": "Changes the in-game cutscenes to the live-action movies recorded during development. Use the Options > Cutscene Customize option to change (available after starting mission 2).",
+        "price": 3.99,
+        "salePrice": 2.59,
+        "releaseDate": "2019-03-07",
+        "image": "/images/dlc/devil-may-cry-5--live-action-cutscenes.jpg"
+      }
     ]
   },
   {
@@ -139,6 +177,24 @@
           "Blood and Wine expansion"
         ]
       }
+    ],
+    "dlc": [
+      {
+        "id": "hearts-of-stone",
+        "title": "Hearts of Stone",
+        "description": "Become Geralt of Rivia, a professional monster slayer hired to defeat a man who possesses the power of immortality.",
+        "price": 19.99,
+        "releaseDate": "2015-10-12",
+        "image": "/images/dlc/the-witcher-3--hearts-of-stone.jpg"
+      },
+      {
+        "id": "blood-and-wine",
+        "title": "Blood and Wine",
+        "description": "Become professional monster slayer Geralt of Rivia and explore Toussaint, a remote land untouched by war, where you will unravel the horrifying secret behind a beast terrorizing the kingdom.",
+        "price": 9.99,
+        "releaseDate": "2016-05-30",
+        "image": "/images/dlc/the-witcher-3--blood-and-wine.jpg"
+      }
     ]
   },
   {
@@ -182,6 +238,17 @@
           "Dark Arts Pack: Thestral mount, Dark Arts Battle Arena and cosmetic set",
           "Dark Arts Garrison Hat"
         ]
+      }
+    ],
+    "dlc": [
+      {
+        "id": "dark-arts-pack",
+        "title": "Dark Arts Pack",
+        "description": "This pack includes: -Thestral Mount -Dark Arts Cosmetic Set -Dark Arts Battle Arena",
+        "price": 19.99,
+        "salePrice": 1.99,
+        "releaseDate": "2023-02-10",
+        "image": "/images/dlc/hogwarts-legacy--dark-arts-pack.jpg"
       }
     ]
   },
@@ -446,6 +513,16 @@
           "Battle Pass tier skips"
         ]
       }
+    ],
+    "dlc": [
+      {
+        "id": "elite-upgrade",
+        "title": "Elite Upgrade",
+        "description": "Head into battle fully equipped. Get the Battlefield 2042 Elite Upgrade* and catch up if you’ve missed out on the 4 Specialists, 10 weapons, and 6 vehicles from the game’s first year.",
+        "price": 29.99,
+        "releaseDate": "2023-05-26",
+        "image": "/images/dlc/battlefield-2042--elite-upgrade.jpg"
+      }
     ]
   },
   {
@@ -619,6 +696,16 @@
         "price": 0,
         "includes": []
       }
+    ],
+    "dlc": [
+      {
+        "id": "battle-pass-bundle",
+        "title": "Battle Pass Bundle",
+        "description": "Get this season's Premium Battle Pass, 25 Battle Pass levels, and a seven-day Renown Booster. Only available until the end of the season, so get it before it’s gone!",
+        "price": 19.99,
+        "releaseDate": "2026-09-01",
+        "image": "/images/dlc/tom-clancys-rainbow-six-siege--battle-pass-bundle.jpg"
+      }
     ]
   },
   {
@@ -722,6 +809,17 @@
         "price": 29.99,
         "includes": []
       }
+    ],
+    "dlc": [
+      {
+        "id": "complete-cosmetic-pack",
+        "title": "Complete Cosmetic Pack",
+        "description": "Whether you’re conquering demons in the single player campaign or facing off against other players in BATTLEMODE, the Complete Cosmetic Pack offers the full breadth of style and attitude.",
+        "price": 9.99,
+        "salePrice": 7.99,
+        "releaseDate": "2026-06-12",
+        "image": "/images/dlc/doom-eternal--complete-cosmetic-pack.jpg"
+      }
     ]
   },
   {
@@ -790,6 +888,32 @@
         "includes": []
       }
     ],
+    "dlc": [
+      {
+        "id": "shadow-of-the-erdtree-premium-bundle",
+        "title": "Shadow of the Erdtree Premium Bundle",
+        "description": "The Premium Bundle includes the following content: ELDEN RING Shadow of the Erdtree expansion and ELDEN RING Shadow of the Erdtree Digital Artbook & Original Soundtrack",
+        "price": 49.99,
+        "releaseDate": "2024-06-20",
+        "image": "/images/dlc/elden-ring--shadow-of-the-erdtree-premium-bundle.jpg"
+      },
+      {
+        "id": "shadow-of-the-erdtree",
+        "title": "Shadow of the Erdtree",
+        "description": "The ELDEN RING Shadow of the Erdtree expansion features an all-new story set in the Land of Shadow imbued with mystery, perilous dungeons, and new enemies, weapons and equipment.",
+        "price": 39.99,
+        "releaseDate": "2024-06-20",
+        "image": "/images/dlc/elden-ring--shadow-of-the-erdtree.jpg"
+      },
+      {
+        "id": "tarnished-pack",
+        "title": "Tarnished Pack",
+        "description": "The ELDEN RING Tarnished Pack grants additional content including 2 new starting classes, new armor, and a new Torrent appearance customization feature which are usable in the base game and the Shadow of the Erdtree…",
+        "price": 4.99,
+        "releaseDate": "2026-08-27",
+        "image": "/images/dlc/elden-ring--tarnished-pack.jpg"
+      }
+    ],
     "hero": "/images/banners/elden-ring.jpg",
     "spotlight": {
       "tagline": "Rise, Tarnished, and become Elden Lord.",
@@ -828,6 +952,17 @@
         "name": "Standard Edition",
         "price": 59.99,
         "includes": []
+      }
+    ],
+    "dlc": [
+      {
+        "id": "digital-deluxe-edition-dlc",
+        "title": "Digital Deluxe Edition DLC",
+        "description": "The Digital Deluxe Edition includes both practical and cosmetic in-game items, such as a unique custom dice skin and the Mask of the Shapeshifter from Divinity: Original Sin 2.",
+        "price": 9.99,
+        "salePrice": 6.99,
+        "releaseDate": "2023-08-03",
+        "image": "/images/dlc/baldurs-gate-3--digital-deluxe-edition-dlc.jpg"
       }
     ],
     "hero": "/images/banners/baldurs-gate-3.jpg",
@@ -869,6 +1004,17 @@
         "includes": []
       }
     ],
+    "dlc": [
+      {
+        "id": "phantom-liberty",
+        "title": "Phantom Liberty",
+        "description": "Phantom Liberty is a new spy-thriller expansion for the open-world action-adventure RPG Cyberpunk 2077. As cyber-enhanced mercenary V, join secret agent Solomon Reed to unravel a web of shattered loyalties and sinister…",
+        "price": 29.99,
+        "salePrice": 17.99,
+        "releaseDate": "2023-09-25",
+        "image": "/images/dlc/cyberpunk-2077--phantom-liberty.jpg"
+      }
+    ],
     "hero": "/images/banners/cyberpunk-2077.jpg",
     "spotlight": {
       "tagline": "Welcome to Night City.",
@@ -906,6 +1052,44 @@
         "price": 19.99,
         "includes": []
       }
+    ],
+    "dlc": [
+      {
+        "id": "season-pass",
+        "title": "Season Pass",
+        "description": "Experience the complete post-apocalyptic adventure featuring the 6 official expansions for Bethesda Game Studios’ award-winning RPG, bundled together for one great value.",
+        "price": 34.99,
+        "salePrice": 13.99,
+        "releaseDate": "2016-03-21",
+        "image": "/images/dlc/fallout-4--season-pass.jpg"
+      },
+      {
+        "id": "creations-bundle",
+        "title": "Creations Bundle",
+        "description": "Outfit yourself with unique weapons, power armor, building packs, and more with over 150 Creation Club items to expand your adventures through the Commonwealth.",
+        "price": 19.99,
+        "salePrice": 15.99,
+        "releaseDate": "2025-11-10",
+        "image": "/images/dlc/fallout-4--creations-bundle.jpg"
+      },
+      {
+        "id": "far-harbor",
+        "title": "Far Harbor",
+        "description": "A new case from Valentine’s Detective Agency leads you on a search for a young woman and a secret colony of synths.",
+        "price": 14.99,
+        "salePrice": 8.99,
+        "releaseDate": "2016-05-18",
+        "image": "/images/dlc/fallout-4--far-harbor.jpg"
+      },
+      {
+        "id": "nuka-world",
+        "title": "Nuka-World",
+        "description": "Take a trip to Nuka-World, a vast amusement park now a lawless city of Raiders. Explore an all-new region with an open wasteland and park zones like Safari Adventure, Dry Rock Gulch, Kiddie Kingdom, and the Galactic…",
+        "price": 9.99,
+        "salePrice": 5.99,
+        "releaseDate": "2016-08-29",
+        "image": "/images/dlc/fallout-4--nuka-world.jpg"
+      }
     ]
   },
   {
@@ -938,6 +1122,25 @@
         "price": 39.99,
         "includes": []
       }
+    ],
+    "dlc": [
+      {
+        "id": "the-elder-scrolls-v-skyrim-anniversary-upgrade",
+        "title": "The Elder Scrolls V: Skyrim Anniversary Upgrade",
+        "description": "The Anniversary Upgrade includes pre-existing and new Creation Club content like quests, dungeons, bosses, weapons, spells, and more. With Creations, there is a lot more to discover.",
+        "price": 19.99,
+        "salePrice": 9.99,
+        "releaseDate": "2021-11-10",
+        "image": "/images/dlc/the-elder-scrolls-v-skyrim-special-edition--the-elder-scrolls-v-skyrim-anniversary-upgrade.jpg"
+      },
+      {
+        "id": "creations",
+        "title": "Creations",
+        "description": "Creation Credits can be used in the Creations menu in Skyrim. Browse the selection in-game by category and use your Credits to purchase content.",
+        "price": 4.99,
+        "releaseDate": "2017-09-25",
+        "image": "/images/dlc/the-elder-scrolls-v-skyrim-special-edition--creations.jpg"
+      }
     ]
   },
   {
@@ -969,6 +1172,43 @@
         "name": "Standard Edition",
         "price": 49.99,
         "includes": []
+      }
+    ],
+    "dlc": [
+      {
+        "id": "digital-premium-edition-upgrade",
+        "title": "DIGITAL PREMIUM EDITION UPGRADE",
+        "description": "Starfield is the first new universe in 25 years from Bethesda Game Studios, the award-winning creators of The Elder Scrolls V: Skyrim and Fallout 4.",
+        "price": 24.99,
+        "salePrice": 17.49,
+        "releaseDate": "2023-09-05",
+        "image": "/images/dlc/starfield--digital-premium-edition-upgrade.jpg"
+      },
+      {
+        "id": "shattered-space",
+        "title": "Shattered Space",
+        "description": "Shattered Space is a new story expansion for Starfield, Bethesda Game Studios’ epic role-playing game and first new universe in more than twenty-five years.",
+        "price": 19.99,
+        "salePrice": 13.99,
+        "releaseDate": "2024-09-30",
+        "image": "/images/dlc/starfield--shattered-space.jpg"
+      },
+      {
+        "id": "terran-armada",
+        "title": "Terran Armada",
+        "description": "A ruthless faction of military deserters has built an army of robots to unite humanity by force.",
+        "price": 9.99,
+        "salePrice": 6.99,
+        "releaseDate": "2026-04-07",
+        "image": "/images/dlc/starfield--terran-armada.jpg"
+      },
+      {
+        "id": "creations",
+        "title": "Creations",
+        "description": "Creation Credits can be used in the Creations menu in Starfield. Browse the selection in-game by category and use your Credits to purchase content. Creations are compatible with the main game and official add-ons.",
+        "price": 4.99,
+        "releaseDate": "2024-06-09",
+        "image": "/images/dlc/starfield--creations.jpg"
       }
     ]
   },
@@ -1068,6 +1308,43 @@
         "price": 29.99,
         "includes": []
       }
+    ],
+    "dlc": [
+      {
+        "id": "iceborne",
+        "title": "Iceborne",
+        "description": "“Explore the New World… and Beyond!“ Monster Hunter: World’s adventures reach new heights in “Monster Hunter World: Iceborne.” With new monsters, new locales, new quests, new weapon combos, and so much more, Iceborne…",
+        "price": 39.99,
+        "salePrice": 5.99,
+        "releaseDate": "2020-01-09",
+        "image": "/images/dlc/monster-hunter-world--iceborne.jpg"
+      },
+      {
+        "id": "iceborne-deluxe-kit",
+        "title": "Iceborne Deluxe Kit",
+        "description": "Expand your ‘Monster Hunter World: Iceborne’ experience with this special ‘Deluxe Kit’ that adds a wide variety of content ranging from layered armor, gestures, sticker sets, additional character creation options and…",
+        "price": 14.99,
+        "salePrice": 9.74,
+        "releaseDate": "2020-01-09",
+        "image": "/images/dlc/monster-hunter-world--iceborne-deluxe-kit.jpg"
+      },
+      {
+        "id": "deluxe-kit",
+        "title": "Deluxe Kit",
+        "description": "Adds the following contents to Monster Hunter: World:Samurai Set Layered armor sets will change the look of your armor without changing the properties underneath.",
+        "price": 9.99,
+        "salePrice": 7.49,
+        "releaseDate": "2018-08-09",
+        "image": "/images/dlc/monster-hunter-world--deluxe-kit.jpg"
+      },
+      {
+        "id": "iceborne-mhw-i-room-decor-cute-decor-set",
+        "title": "Iceborne - MHW:I Room Decor: Cute Decor Set",
+        "description": "A decor set you can use to decorate your room. Decorate your room to your heart's content!",
+        "price": 9.99,
+        "releaseDate": "2020-02-05",
+        "image": "/images/dlc/monster-hunter-world--iceborne-mhw-i-room-decor-cute-decor-set.jpg"
+      }
     ]
   },
   {
@@ -1100,6 +1377,17 @@
         "price": 39.99,
         "includes": []
       }
+    ],
+    "dlc": [
+      {
+        "id": "3c3c1d119440927",
+        "title": "3C3C1D119440927",
+        "description": "The NieR: Automata 3C3C1D119440927 DLC is out now and includes three new colosseums to challenge, plus additional sub-quests.",
+        "price": 9.99,
+        "salePrice": 3.99,
+        "releaseDate": "2017-05-02",
+        "image": "/images/dlc/nier-automata--3c3c1d119440927.jpg"
+      }
     ]
   },
   {
@@ -1131,6 +1419,35 @@
         "name": "Standard Edition",
         "price": 59.99,
         "includes": []
+      }
+    ],
+    "dlc": [
+      {
+        "id": "season-pass",
+        "title": "Season Pass",
+        "description": "Expand your DARK SOULS III experience with the Season Pass and gain access to 2 epic DLC packs at a discounted price. Challenge yourself with new maps, bosses, enemies and additional weapon and armor sets.",
+        "price": 24.99,
+        "salePrice": 12.49,
+        "releaseDate": "2016-06-01",
+        "image": "/images/dlc/dark-souls-iii--season-pass.jpg"
+      },
+      {
+        "id": "ashes-of-ariandel",
+        "title": "Ashes of Ariandel",
+        "description": "As part of the Dark Souls III Season Pass, expand your Dark Souls III experience with the Ashes of Ariandel DLC pack.",
+        "price": 14.99,
+        "salePrice": 7.49,
+        "releaseDate": "2016-10-24",
+        "image": "/images/dlc/dark-souls-iii--ashes-of-ariandel.jpg"
+      },
+      {
+        "id": "the-ringed-city",
+        "title": "The Ringed City",
+        "description": "The Ringed City is the final Dark Souls III expansion. Journey to the world’s end to search for the Ringed City and encounter new lands, new bosses, new enemies with new armor, magic and items.",
+        "price": 14.99,
+        "salePrice": 7.49,
+        "releaseDate": "2017-03-27",
+        "image": "/images/dlc/dark-souls-iii--the-ringed-city.jpg"
       }
     ]
   },
@@ -1194,6 +1511,44 @@
         "name": "Standard Edition",
         "price": 29.99,
         "includes": []
+      }
+    ],
+    "dlc": [
+      {
+        "id": "deluxe-edition-upgrade-pack",
+        "title": "Deluxe Edition Upgrade Pack",
+        "description": "Get yourself some bonus swag with the Hi-Fi RUSH Deluxe Upgrade Pack! Mix up your look with some special cosmetics, plus Gears for a head start on unlocking skills & upgrades.",
+        "price": 9.99,
+        "salePrice": 4.49,
+        "releaseDate": "2023-01-25",
+        "image": "/images/dlc/hi-fi-rush--deluxe-edition-upgrade-pack.jpg"
+      },
+      {
+        "id": "bossplay-costume-pack",
+        "title": "Bossplay Costume Pack",
+        "description": "Dress up your crew with this set of six outfits inspired by the bosses of Hi-Fi RUSH! Being bad never felt (or looked) so good",
+        "price": 4.99,
+        "salePrice": 2.24,
+        "releaseDate": "2023-04-10",
+        "image": "/images/dlc/hi-fi-rush--bossplay-costume-pack.jpg"
+      },
+      {
+        "id": "teamplay-costume-pack",
+        "title": "Teamplay Costume Pack",
+        "description": "Give your Hi-Fi RUSH crew a new look inspired by each other's styles with the Teamplay Costume Pack! After all, sharing is caring.",
+        "price": 4.99,
+        "salePrice": 2.24,
+        "releaseDate": "2023-11-07",
+        "image": "/images/dlc/hi-fi-rush--teamplay-costume-pack.jpg"
+      },
+      {
+        "id": "traditional-garb-costume-pack",
+        "title": "Traditional Garb Costume Pack",
+        "description": "Fit out the Hi-Fi RUSH gang with looks inspired by the past with the Traditional Garb Costume Pack! Rockstars don't always wear ripped jeans, you know.",
+        "price": 4.99,
+        "salePrice": 2.24,
+        "releaseDate": "2023-07-05",
+        "image": "/images/dlc/hi-fi-rush--traditional-garb-costume-pack.jpg"
       }
     ]
   },
@@ -1260,6 +1615,42 @@
         "name": "Standard Edition",
         "price": 29.99,
         "includes": []
+      }
+    ],
+    "dlc": [
+      {
+        "id": "hitman-woa-the-herbalist-pack",
+        "title": "HITMAN WOA - The Herbalist Pack",
+        "description": "Unlock a series of cosmetics inspired by The Herbalist Elusive Target mission and gain permanent access to The Visionary - A two-level Arcade contract featuring The Herbalist Elusive Target and The Herbalist Assignment…",
+        "price": 7.99,
+        "releaseDate": "2026-08-27",
+        "image": "/images/dlc/hitman-world-of-assassination--hitman-woa-the-herbalist-pack.jpg"
+      },
+      {
+        "id": "hitman-woa-the-getaway-pack",
+        "title": "HITMAN WOA - The Getaway Pack",
+        "description": "The Getaway Pack features a collection of outfits, weapons, and gear inspired by sun-soaked destinations and luxury getaways, as well as new Freelancer Safehouse cosmetics.",
+        "price": 4.99,
+        "releaseDate": "2026-08-27",
+        "image": "/images/dlc/hitman-world-of-assassination--hitman-woa-the-getaway-pack.jpg"
+      },
+      {
+        "id": "hitman-woa-the-wizard-pack",
+        "title": "HITMAN WOA - The Wizard Pack",
+        "description": "Unlock a series of cosmetics inspired by The Wizard Elusive Target mission and gain permanent access to The Pugilist - A two-level Arcade contract featuring The Wizard Elusive Target.",
+        "price": 4.99,
+        "salePrice": 3.49,
+        "releaseDate": "2026-06-05",
+        "image": "/images/dlc/hitman-world-of-assassination--hitman-woa-the-wizard-pack.jpg"
+      },
+      {
+        "id": "hitman-woa-world-champions-pack",
+        "title": "HITMAN WOA - World Champions Pack",
+        "description": "The World Champions Pack features a variety of outfits, weapons, and gear inspired by iconic sport disciplines from around the world, each designed to bring a competitive edge to your missions.",
+        "price": 4.99,
+        "salePrice": 3.49,
+        "releaseDate": "2026-06-05",
+        "image": "/images/dlc/hitman-world-of-assassination--hitman-woa-world-champions-pack.jpg"
       }
     ]
   },
@@ -1329,6 +1720,35 @@
         "price": 39.99,
         "includes": []
       }
+    ],
+    "dlc": [
+      {
+        "id": "sea-of-thieves-2026-premium-bundle",
+        "title": "Sea of Thieves: 2026 Premium Bundle",
+        "description": "Dive into Sea of Thieves with this special edition, which includes all additional content from the 2026 Deluxe Edition and adds a Premium Bundle containing the Cardinal Lodestar Cat, Ship Collection, Costume Set and…",
+        "price": 59.99,
+        "salePrice": 20.99,
+        "releaseDate": "2026-04-09",
+        "image": "/images/dlc/sea-of-thieves-2026-edition--sea-of-thieves-2026-premium-bundle.jpg"
+      },
+      {
+        "id": "sea-of-thieves-2026-deluxe-bundle",
+        "title": "Sea of Thieves: 2026 Deluxe Bundle",
+        "description": "Dive into Sea of Thieves with this special edition of the smash-hit pirate adventure, which includes the base version of the game plus a Deluxe Bundle of content containing a varied assortment of cosmetics, currency and…",
+        "price": 49.99,
+        "salePrice": 17.49,
+        "releaseDate": "2026-04-09",
+        "image": "/images/dlc/sea-of-thieves-2026-edition--sea-of-thieves-2026-deluxe-bundle.jpg"
+      },
+      {
+        "id": "immerse-gamepack-sea-of-thieves",
+        "title": "Immerse Gamepack Sea of Thieves",
+        "description": "Step into the soundscape of the seas. This bundle includes a single Immerse Gamepack licence, unlocking continued use of your Personalised Profile for heightened, immersive audio.",
+        "price": 19.99,
+        "salePrice": 14.99,
+        "releaseDate": "2025-11-13",
+        "image": "/images/dlc/sea-of-thieves-2026-edition--immerse-gamepack-sea-of-thieves.jpg"
+      }
     ]
   },
   {
@@ -1396,6 +1816,35 @@
         "name": "Standard Edition",
         "price": 19.99,
         "includes": []
+      }
+    ],
+    "dlc": [
+      {
+        "id": "in-the-jungle-content-pack",
+        "title": "In the Jungle Content Pack",
+        "description": "Dave’s next dive takes him deep into the jungle. A mysterious anomaly draws Dave and his crew into the jungle, where a hidden village, a mysterious lake, and a brand-new restaurant await. New systems. New allies.",
+        "price": 9.99,
+        "salePrice": 7.99,
+        "releaseDate": "2026-06-18",
+        "image": "/images/dlc/dave-the-diver--in-the-jungle-content-pack.jpg"
+      },
+      {
+        "id": "digital-extra",
+        "title": "Digital Extra",
+        "description": "The Digital Extra expansion will give you a richer Dave the Diver play experience.",
+        "price": 8.99,
+        "salePrice": 4.49,
+        "releaseDate": "2023-06-28",
+        "image": "/images/dlc/dave-the-diver--digital-extra.jpg"
+      },
+      {
+        "id": "ichibans-holiday-content-pack",
+        "title": "Ichiban's Holiday Content Pack",
+        "description": "Ichiban Kasuga visits the Blue Hole for a peaceful getaway, but chaos isn’t far behind!",
+        "price": 6.99,
+        "salePrice": 2.09,
+        "releaseDate": "2025-04-10",
+        "image": "/images/dlc/dave-the-diver--ichibans-holiday-content-pack.jpg"
       }
     ]
   },
@@ -1534,6 +1983,17 @@
         "price": 19.99,
         "includes": []
       }
+    ],
+    "dlc": [
+      {
+        "id": "the-delicious-last-course",
+        "title": "The Delicious Last Course",
+        "description": "Cuphead and Mugman are joined by Ms. Chalice for a DLC add-on adventure on a brand new island! With new weapons, new charms, and Ms.",
+        "price": 7.99,
+        "salePrice": 5.59,
+        "releaseDate": "2022-06-30",
+        "image": "/images/dlc/cuphead--the-delicious-last-course.jpg"
+      }
     ]
   },
   {
@@ -1600,6 +2060,44 @@
         "price": 24.99,
         "includes": []
       }
+    ],
+    "dlc": [
+      {
+        "id": "return-to-castlevania",
+        "title": "Return to Castlevania",
+        "description": "Battle through the ancient corridors of Dracula’s Castle in this expansion to the acclaimed fast-paced action roguelite Dead Cells.",
+        "price": 9.99,
+        "salePrice": 6.99,
+        "releaseDate": "2023-03-06",
+        "image": "/images/dlc/dead-cells--return-to-castlevania.jpg"
+      },
+      {
+        "id": "the-queen-and-the-sea",
+        "title": "The Queen and the Sea",
+        "description": "Battle your way through sunken shipwrecks, scale a burning lighthouse and confront your deadliest foe yet. If you manage to make it through all that, maybe you’ll finally get off this god-forsaken island...",
+        "price": 4.99,
+        "salePrice": 2.49,
+        "releaseDate": "2022-01-06",
+        "image": "/images/dlc/dead-cells--the-queen-and-the-sea.jpg"
+      },
+      {
+        "id": "fatal-falls",
+        "title": "Fatal Falls",
+        "description": "Take on two new levels and a boss as you dodge new traps and enemies.",
+        "price": 4.99,
+        "salePrice": 2.49,
+        "releaseDate": "2021-01-26",
+        "image": "/images/dlc/dead-cells--fatal-falls.jpg"
+      },
+      {
+        "id": "the-bad-seed",
+        "title": "The Bad Seed",
+        "description": "Explore a relaxing Arboretum, wade through a noxious Swamp and take on a new boss in this early game content designed to expand the Dead Cells universe.",
+        "price": 4.99,
+        "salePrice": 2.49,
+        "releaseDate": "2020-02-11",
+        "image": "/images/dlc/dead-cells--the-bad-seed.jpg"
+      }
     ]
   },
   {
@@ -1634,6 +2132,44 @@
         "name": "Standard Edition",
         "price": 4.99,
         "includes": []
+      }
+    ],
+    "dlc": [
+      {
+        "id": "ode-to-castlevania",
+        "title": "Ode to Castlevania",
+        "description": "Everyone is here in Vampire Survivors: Ode to Castlevania",
+        "price": 3.99,
+        "salePrice": 2.99,
+        "releaseDate": "2024-10-31",
+        "image": "/images/dlc/vampire-survivors--ode-to-castlevania.jpg"
+      },
+      {
+        "id": "operation-guns",
+        "title": "Operation Guns",
+        "description": "Grab your blaster, join Contra Force, and be the bullet hell in Vampire Survivors: Operation Guns",
+        "price": 2.49,
+        "salePrice": 1.86,
+        "releaseDate": "2024-05-09",
+        "image": "/images/dlc/vampire-survivors--operation-guns.jpg"
+      },
+      {
+        "id": "emergency-meeting",
+        "title": "Emergency Meeting",
+        "description": "Gather your Crewmates, eject Impostors, and be the bullet hell in Vampire Survivors: Emergency Meeting.",
+        "price": 2.49,
+        "salePrice": 1.86,
+        "releaseDate": "2023-12-18",
+        "image": "/images/dlc/vampire-survivors--emergency-meeting.jpg"
+      },
+      {
+        "id": "tides-of-the-foscari",
+        "title": "Tides of the Foscari",
+        "description": "A fighter, a mage, and a thief enter a forest: a quest. Explore a surprising new forest, called Lake, and wield incredible new weapons, like the sword, the arrow, and the magic, in this fantasy based on fantasy.",
+        "price": 1.99,
+        "salePrice": 1.49,
+        "releaseDate": "2023-04-13",
+        "image": "/images/dlc/vampire-survivors--tides-of-the-foscari.jpg"
       }
     ]
   },
@@ -1771,6 +2307,43 @@
         "includes": []
       }
     ],
+    "dlc": [
+      {
+        "id": "separate-ways",
+        "title": "Separate Ways",
+        "description": "Separate Ways – the missing link in the main story – is a thrilling survival-horror adventure starring Ada Wong.",
+        "price": 9.99,
+        "releaseDate": "2023-09-20",
+        "image": "/images/dlc/resident-evil-4--separate-ways.jpg"
+      },
+      {
+        "id": "treasure-map-expansion",
+        "title": "Treasure Map: Expansion",
+        "description": "Discover the hidden treasures that await! With this map, additional treasures will be placed throughout the game. Some of these treasures can only be obtained by this method.",
+        "price": 3.99,
+        "salePrice": 2.99,
+        "releaseDate": "2023-03-23",
+        "image": "/images/dlc/resident-evil-4--treasure-map-expansion.jpg"
+      },
+      {
+        "id": "leon-ashley-costumes-casual",
+        "title": "Leon & Ashley Costumes: 'Casual'",
+        "description": "Survive in style with this set of casual costumes for Leon and Ashley. Your enemies will be too distracted by your expression of individuality to know what hit 'em!",
+        "price": 3.99,
+        "salePrice": 2.99,
+        "releaseDate": "2023-03-23",
+        "image": "/images/dlc/resident-evil-4--leon-ashley-costumes-casual.jpg"
+      },
+      {
+        "id": "leon-ashley-costumes-romantic",
+        "title": "Leon & Ashley Costumes: 'Romantic'",
+        "description": "Indulge in a world of bliss with this set of romantic costumes for Leon and Ashley. Fight with flair. Survive with sophistication.",
+        "price": 3.99,
+        "salePrice": 2.99,
+        "releaseDate": "2023-03-23",
+        "image": "/images/dlc/resident-evil-4--leon-ashley-costumes-romantic.jpg"
+      }
+    ],
     "hero": "/images/banners/resident-evil-4.jpg",
     "spotlight": {
       "tagline": "Survival is just the beginning.",
@@ -1809,6 +2382,43 @@
         "price": 39.99,
         "includes": []
       }
+    ],
+    "dlc": [
+      {
+        "id": "winters-expansion",
+        "title": "Winters’ Expansion",
+        "description": "Experience brand-new additional content for the award-winning modern horror masterpiece Resident Evil: Village: Third Person Mode, The Mercenaries Additional Orders and Shadows of Rose.",
+        "price": 19.99,
+        "salePrice": 9.99,
+        "releaseDate": "2022-10-27",
+        "image": "/images/dlc/resident-evil-village--winters-expansion.jpg"
+      },
+      {
+        "id": "trauma-pack",
+        "title": "Trauma Pack",
+        "description": "Dredge up Ethan's painful past with these items. Includes the \"Samurai Edge\" weapon, the \"Mr. Everywhere\" accessory, special safe room music, and more!",
+        "price": 12.99,
+        "salePrice": 9.74,
+        "releaseDate": "2021-05-06",
+        "image": "/images/dlc/resident-evil-village--trauma-pack.jpg"
+      },
+      {
+        "id": "street-wolf-outfit",
+        "title": "Street Wolf Outfit",
+        "description": "Give Rose a tougher look as she takes on enemies with this jacket which features the logo of Chris Redfied's Hound Wolf squad on the back.",
+        "price": 2.99,
+        "salePrice": 2.24,
+        "releaseDate": "2022-12-15",
+        "image": "/images/dlc/resident-evil-village--street-wolf-outfit.jpg"
+      },
+      {
+        "id": "mr-raccoon-weapon-charm",
+        "title": "Mr. Raccoon Weapon Charm",
+        "description": "Mr. Raccoon—of Raccoon City fame—is back and more charming than ever! Local hunters say he brings good luck. This item can be obtained via the in-game merchant.",
+        "price": 0.99,
+        "releaseDate": "2021-07-07",
+        "image": "/images/dlc/resident-evil-village--mr-raccoon-weapon-charm.jpg"
+      }
     ]
   },
   {
@@ -1841,6 +2451,16 @@
         "name": "Standard Edition",
         "price": 59.99,
         "includes": []
+      }
+    ],
+    "dlc": [
+      {
+        "id": "digital-deluxe-edition-upgrade",
+        "title": "Digital Deluxe Edition Upgrade",
+        "description": "The Dead Space Digital Deluxe Edition Upgrade includes the five exclusive cosmetics (three Unique Suits and two Suit Textures).",
+        "price": 10,
+        "releaseDate": "2023-01-27",
+        "image": "/images/dlc/dead-space--digital-deluxe-edition-upgrade.jpg"
       }
     ]
   },
@@ -1942,6 +2562,17 @@
         "price": 19.99,
         "includes": []
       }
+    ],
+    "dlc": [
+      {
+        "id": "deluxe-edition-content",
+        "title": "Deluxe Edition Content",
+        "description": "Includes CARRION Digital Comic Book, The Art of CARRION Art Book, and an exclusive set of CARRION wallpapers. Featuring an exclusive track The Worm Turns by Cris Velasco.",
+        "price": 9.99,
+        "salePrice": 3.99,
+        "releaseDate": "2020-10-30",
+        "image": "/images/dlc/carrion--deluxe-edition-content.jpg"
+      }
     ]
   },
   {
@@ -1972,6 +2603,17 @@
         "name": "Standard Edition",
         "price": 14.99,
         "includes": []
+      }
+    ],
+    "dlc": [
+      {
+        "id": "whistleblower-dlc",
+        "title": "Whistleblower DLC",
+        "description": "Whistleblower will let you play as Waylon Park, a software engineer under contract with Murkoff and the man who emailed journalists around the world - including Miles - at the beginning of Outlast.",
+        "price": 4.99,
+        "salePrice": 1.24,
+        "releaseDate": "2014-05-06",
+        "image": "/images/dlc/outlast--whistleblower-dlc.jpg"
       }
     ]
   },
@@ -2142,6 +2784,44 @@
         "price": 39.99,
         "includes": []
       }
+    ],
+    "dlc": [
+      {
+        "id": "warhammer-40-000-pack",
+        "title": "Warhammer 40,000 Pack",
+        "description": "The infamous Death Korps of Krieg march into Rust, bringing their grim, war-forged resolve to the island. This pack delivers battle-scarred war gear, inspired by one of Warhammer 40,000’s most fearless regiments.",
+        "price": 12.99,
+        "salePrice": 10.39,
+        "releaseDate": "2025-10-23",
+        "image": "/images/dlc/rust--warhammer-40-000-pack.jpg"
+      },
+      {
+        "id": "voice-props-pack",
+        "title": "Voice Props Pack",
+        "description": "Tune in to the Voice Props Pack - a selection of audio themed items for Rust!",
+        "price": 12.99,
+        "salePrice": 6.49,
+        "releaseDate": "2021-07-01",
+        "image": "/images/dlc/rust--voice-props-pack.jpg"
+      },
+      {
+        "id": "instruments-pack",
+        "title": "Instruments Pack",
+        "description": "Play a tune with the Instrument pack for Rust. Includes 10 new instruments!",
+        "price": 9.99,
+        "salePrice": 4.99,
+        "releaseDate": "2019-12-05",
+        "image": "/images/dlc/rust--instruments-pack.jpg"
+      },
+      {
+        "id": "sunburn-pack",
+        "title": "Sunburn Pack",
+        "description": "Hit the beach in style with the Sunburn Pack for Rust - a collection of 15 new summer themed goodies!",
+        "price": 9.99,
+        "salePrice": 4.99,
+        "releaseDate": "2020-07-09",
+        "image": "/images/dlc/rust--sunburn-pack.jpg"
+      }
     ]
   },
   {
@@ -2246,6 +2926,42 @@
         "price": 59.99,
         "includes": []
       }
+    ],
+    "dlc": [
+      {
+        "id": "new-frontier-pass",
+        "title": "New Frontier Pass",
+        "description": "Continue your quest to build your greatest empire with the Civilization VI - New Frontier Pass, featuring eight new civilizations and nine new leaders, and a variety of new gameplay content, including six new game modes.",
+        "price": 39.99,
+        "releaseDate": "2020-05-20",
+        "image": "/images/dlc/sid-meiers-civilization-vi--new-frontier-pass.jpg"
+      },
+      {
+        "id": "gathering-storm",
+        "title": "Gathering Storm",
+        "description": "Civilization VI: Gathering Storm introduces an active planet where geology and climatology present unique new challenges.",
+        "price": 39.99,
+        "salePrice": 19.99,
+        "releaseDate": "2019-02-13",
+        "image": "/images/dlc/sid-meiers-civilization-vi--gathering-storm.jpg"
+      },
+      {
+        "id": "rise-and-fall",
+        "title": "Rise and Fall",
+        "description": "The Civilization VI: Rise and Fall expansion brings new choices, strategies, and challenges for players as they guide a civilization through the ages.",
+        "price": 29.99,
+        "salePrice": 14.99,
+        "releaseDate": "2018-02-07",
+        "image": "/images/dlc/sid-meiers-civilization-vi--rise-and-fall.jpg"
+      },
+      {
+        "id": "leader-pass",
+        "title": "Leader Pass",
+        "description": "Rethink how you rule with the Civilization VI: Leader Pass! Discover new paths to world domination with 18 new leader selections. New content is available free for current and new owners of Civilization VI Anthology.",
+        "price": 19.99,
+        "releaseDate": "2022-11-21",
+        "image": "/images/dlc/sid-meiers-civilization-vi--leader-pass.jpg"
+      }
     ]
   },
   {
@@ -2277,6 +2993,44 @@
         "name": "Standard Edition",
         "price": 59.99,
         "includes": []
+      }
+    ],
+    "dlc": [
+      {
+        "id": "upgrade-pack",
+        "title": "UPGRADE PACK",
+        "description": "Upgrade your Total War: WARHAMMER experience with Total War: WARHAMMER III’s original factions and Legendary Lords or wage total war to decide the fate of the Warhammer world across the Realms of Chaos campaign mode.",
+        "price": 59.99,
+        "salePrice": 8.99,
+        "releaseDate": "2025-12-03",
+        "image": "/images/dlc/total-war-warhammer-iii--upgrade-pack.jpg"
+      },
+      {
+        "id": "forge-of-the-chaos-dwarfs",
+        "title": "Forge of the Chaos Dwarfs",
+        "description": "The Forge of the Chaos Dwarfs campaign pack introduces a new brutal race, the Chaos Dwarfs, into Total War: WARHAMMER III, in both the Realm of Chaos and Immortal Empires campaigns.",
+        "price": 24.99,
+        "salePrice": 9.99,
+        "releaseDate": "2023-04-13",
+        "image": "/images/dlc/total-war-warhammer-iii--forge-of-the-chaos-dwarfs.jpg"
+      },
+      {
+        "id": "total-war-warhammer-ii-curse-of-the-vampire-coast",
+        "title": "Total War: WARHAMMER II - Curse of the Vampire Coast",
+        "description": "Dread prows pierce the gloom ahead, and the ghastly truth is laid bare: upon the ghoul-winds come the swollen hulks and decaying vessels of the Vampire Coast! Run now – run hard and fast. For it is all you can do.",
+        "price": 18.99,
+        "salePrice": 9.49,
+        "releaseDate": "2018-11-08",
+        "image": "/images/dlc/total-war-warhammer-iii--total-war-warhammer-ii-curse-of-the-vampire-coast.jpg"
+      },
+      {
+        "id": "total-war-warhammer-ii-rise-of-the-tomb-kings",
+        "title": "Total War: WARHAMMER II - Rise of the Tomb Kings",
+        "description": "Across the arid deserts of Nehekhara, vast legions of skeletal warriors rise from beneath the baking sands to slaughter those who trespass into their domain.",
+        "price": 18.99,
+        "salePrice": 6.45,
+        "releaseDate": "2018-01-23",
+        "image": "/images/dlc/total-war-warhammer-iii--total-war-warhammer-ii-rise-of-the-tomb-kings.jpg"
       }
     ]
   },
@@ -2311,6 +3065,43 @@
         "price": 34.99,
         "includes": []
       }
+    ],
+    "dlc": [
+      {
+        "id": "dynasties-of-india",
+        "title": "Dynasties of India",
+        "description": "This expansion brings three new civilizations of India plus three full new campaigns to Age of Empires II: Definitive Edition for the first time.",
+        "price": 34.99,
+        "salePrice": 23.44,
+        "releaseDate": "2022-04-28",
+        "image": "/images/dlc/age-of-empires-ii-definitive-edition--dynasties-of-india.jpg"
+      },
+      {
+        "id": "dawn-of-the-dukes",
+        "title": "Dawn of the Dukes",
+        "description": "Welcome to Dawn of the Dukes, the second new official expansion to Age of Empires II: Definitive Edition. Challenge friends with two additional civilizations as well as new units and technologies.",
+        "price": 34.99,
+        "salePrice": 23.44,
+        "releaseDate": "2021-08-10",
+        "image": "/images/dlc/age-of-empires-ii-definitive-edition--dawn-of-the-dukes.jpg"
+      },
+      {
+        "id": "lords-of-the-west",
+        "title": "Lords of the West",
+        "description": "Welcome to Lords of the West, the first new official expansion to Age of Empires II: Definitive Edition. Challenge friends with two additional civilizations, new units and tech and enjoy three new single player…",
+        "price": 34.99,
+        "salePrice": 23.44,
+        "releaseDate": "2021-01-26",
+        "image": "/images/dlc/age-of-empires-ii-definitive-edition--lords-of-the-west.jpg"
+      },
+      {
+        "id": "age-of-empires-ii-de-the-viking-sagas",
+        "title": "Age of Empires II: DE - The Viking Sagas",
+        "description": "Unleash the fury of the North and lead the Danes, Saxons, and Varangians into epic Viking battles.",
+        "price": 19.99,
+        "releaseDate": "2026-09-22",
+        "image": "/images/dlc/age-of-empires-ii-definitive-edition--age-of-empires-ii-de-the-viking-sagas.jpg"
+      }
     ]
   },
   {
@@ -2344,6 +3135,43 @@
         "price": 49.99,
         "includes": []
       }
+    ],
+    "dlc": [
+      {
+        "id": "nomads",
+        "title": "Nomads",
+        "description": "In Nomads, you thrive inside colossal Arkships that carry your people, your industry, and your ambition across the stars.",
+        "price": 24.99,
+        "releaseDate": "2026-06-15",
+        "image": "/images/dlc/stellaris--nomads.jpg"
+      },
+      {
+        "id": "biogenesis",
+        "title": "BioGenesis",
+        "description": "Take command of the forces of life itself in Stellaris: BioGenesis. Engineer living ships, terraform entire ecosystems, and wield advanced genetic tools to shape the destiny of your empire.",
+        "price": 24.99,
+        "salePrice": 14.99,
+        "releaseDate": "2025-05-05",
+        "image": "/images/dlc/stellaris--biogenesis.jpg"
+      },
+      {
+        "id": "the-machine-age",
+        "title": "The Machine Age",
+        "description": "It is an age of technological glory, rapid social change, and unbridled ambition… But in the depths of space, a danger unlike any before encountered is about to emerge, a looming threat that will throw the very meaning…",
+        "price": 24.99,
+        "salePrice": 12.49,
+        "releaseDate": "2024-05-07",
+        "image": "/images/dlc/stellaris--the-machine-age.jpg"
+      },
+      {
+        "id": "shadows-of-the-shroud",
+        "title": "Shadows of the Shroud",
+        "description": "The psionic plane holds untold power—but at what cost? Shadows of the Shroud is a complete overhaul of the Psionic Ascension path, introducing new moral dilemmas, patron allegiances, and the ever-present temptation of…",
+        "price": 19.99,
+        "salePrice": 11.99,
+        "releaseDate": "2025-09-22",
+        "image": "/images/dlc/stellaris--shadows-of-the-shroud.jpg"
+      }
     ]
   },
   {
@@ -2373,6 +3201,35 @@
         "name": "Standard Edition",
         "price": 19.99,
         "includes": []
+      }
+    ],
+    "dlc": [
+      {
+        "id": "war-of-the-chosen",
+        "title": "War of the Chosen",
+        "description": "XCOM 2: War of the Chosen adds extensive new content in the fight against ADVENT including new soldier classes, enemies, missions, maps and more. Requires XCOM 2 game. Sold separately.",
+        "price": 19.99,
+        "salePrice": 3.99,
+        "releaseDate": "2018-12-03",
+        "image": "/images/dlc/xcom-2--war-of-the-chosen.jpg"
+      },
+      {
+        "id": "war-of-the-chosen-tactical-legacy-pack",
+        "title": "War of the Chosen - Tactical Legacy Pack",
+        "description": "The XCOM 2: War of the Chosen - Tactical Legacy Pack includes a collection of new game modes, maps, weapons, armors, Photobooth options, and more that honors the legacy of the XCOM series.",
+        "price": 7.99,
+        "salePrice": 6.39,
+        "releaseDate": "2018-12-03",
+        "image": "/images/dlc/xcom-2--war-of-the-chosen-tactical-legacy-pack.jpg"
+      },
+      {
+        "id": "resistance-warrior-pack",
+        "title": "Resistance Warrior Pack",
+        "description": "Customize your squad of resistance fighters with a set of bonus outfits and head gear, as well as custom armor and face camo. Instantly unlock a survivor of the old war as a new recruit in your barracks.",
+        "price": 4.99,
+        "salePrice": 4.49,
+        "releaseDate": "2016-11-22",
+        "image": "/images/dlc/xcom-2--resistance-warrior-pack.jpg"
       }
     ]
   },
@@ -2404,6 +3261,44 @@
         "name": "Standard Edition",
         "price": 29.99,
         "includes": []
+      }
+    ],
+    "dlc": [
+      {
+        "id": "plazas-promenades",
+        "title": "Plazas & Promenades",
+        "description": "Say Goodbye to noise and pollution and Hello to pedestrian streets, car-free areas, and modern plazas. It’s time to level up your Cities with this environment-friendly expansion!",
+        "price": 14.99,
+        "salePrice": 7.49,
+        "releaseDate": "2022-09-14",
+        "image": "/images/dlc/cities-skylines--plazas-promenades.jpg"
+      },
+      {
+        "id": "sunset-harbor",
+        "title": "Sunset Harbor",
+        "description": "Ahoy! Cities: Skylines - Sunset Harbor introduces the fishing industry, new mass transit options, and important city services.",
+        "price": 14.99,
+        "salePrice": 7.49,
+        "releaseDate": "2020-03-26",
+        "image": "/images/dlc/cities-skylines--sunset-harbor.jpg"
+      },
+      {
+        "id": "industries",
+        "title": "Industries",
+        "description": "layers can customize their industrial areas with supply chains for the four different resource types and unique factories. Well managed industry areas will level up and become more efficient.",
+        "price": 14.99,
+        "salePrice": 7.49,
+        "releaseDate": "2018-10-23",
+        "image": "/images/dlc/cities-skylines--industries.jpg"
+      },
+      {
+        "id": "parklife",
+        "title": "Parklife",
+        "description": "Cities: Skylines - Parklife is a playful new expansion, making your city more alive with new amusement parks, nature reserves, city parks and zoos, and giving new life to your empty land with custom parks and gardens.",
+        "price": 14.99,
+        "salePrice": 7.49,
+        "releaseDate": "2018-05-24",
+        "image": "/images/dlc/cities-skylines--parklife.jpg"
       }
     ]
   },
@@ -2439,6 +3334,16 @@
         "name": "Standard Edition",
         "price": 35,
         "includes": []
+      }
+    ],
+    "dlc": [
+      {
+        "id": "space-age",
+        "title": "Space Age",
+        "description": "Factorio: Space Age continues the player's journey after launching rockets into space. Discover new worlds with unique challenges, exploit their novel resources for advanced technological gains, and manage your fleet of…",
+        "price": 35,
+        "releaseDate": "2024-10-21",
+        "image": "/images/dlc/factorio--space-age.jpg"
       }
     ]
   },
@@ -2507,6 +3412,44 @@
         "name": "Standard Edition",
         "price": 34.99,
         "includes": []
+      }
+    ],
+    "dlc": [
+      {
+        "id": "odyssey",
+        "title": "Odyssey",
+        "description": "Build your own ship and travel across the planet! Explore exotic biomes, expand your mobile colony, and launch into space. Scavenge ancient tech on asteroids, abandoned space stations, and satellites.",
+        "price": 24.99,
+        "salePrice": 22.49,
+        "releaseDate": "2025-07-11",
+        "image": "/images/dlc/rimworld--odyssey.jpg"
+      },
+      {
+        "id": "anomaly",
+        "title": "Anomaly",
+        "description": "Darkness stirs on the rim. Survive flesh infestations, cultist attacks, shambling undead, blood rains, invisible hunters, and other sanity-shredding perils. Capture and study entities to harness the power of the void.",
+        "price": 24.99,
+        "salePrice": 21.24,
+        "releaseDate": "2024-04-11",
+        "image": "/images/dlc/rimworld--anomaly.jpg"
+      },
+      {
+        "id": "biotech",
+        "title": "Biotech",
+        "description": "Control mechanoids, raise a family with children, and play with genetic modifications. Fight or ally with xenohuman factions and explore the dark secrets of the blood-drinkers.",
+        "price": 24.99,
+        "salePrice": 21.24,
+        "releaseDate": "2022-10-21",
+        "image": "/images/dlc/rimworld--biotech.jpg"
+      },
+      {
+        "id": "ideology",
+        "title": "Ideology",
+        "description": "What do you believe? RimWorld - Ideology adds belief systems to the game. Play as piratical nudist cannibals, blind undergrounder mole people, charitable ranching cowboys, machine-obsessed transhumanists, and many more.",
+        "price": 19.99,
+        "salePrice": 15.99,
+        "releaseDate": "2021-07-20",
+        "image": "/images/dlc/rimworld--ideology.jpg"
       }
     ]
   },
@@ -2611,6 +3554,43 @@
         "includes": []
       }
     ],
+    "dlc": [
+      {
+        "id": "car-pass",
+        "title": "Car Pass",
+        "description": "Get 42 extra cars at one low price! The Car Pass will deliver 34 new cars to your game weekly, one per week. As a bonus, you’ll also receive 8 Formula Drift Cars to get you started.",
+        "price": 29.99,
+        "salePrice": 17.99,
+        "releaseDate": "2021-11-08",
+        "image": "/images/dlc/forza-horizon-5--car-pass.jpg"
+      },
+      {
+        "id": "vip",
+        "title": "VIP",
+        "description": "Forza Horizon 5 VIP Membership features exclusive rewards that give your game a boost and make you stand out at the Horizon Festival.",
+        "price": 19.99,
+        "releaseDate": "2021-11-08",
+        "image": "/images/dlc/forza-horizon-5--vip.jpg"
+      },
+      {
+        "id": "hot-wheels",
+        "title": "Hot Wheels",
+        "description": "Forza Horizon 5: Hot Wheels is included with the Forza Horizon 5 Premium Edition, Expansions Bundle, and Premium Add-Ons Bundle. This add-on requires Forza Horizon 5 (game sold separately).",
+        "price": 19.99,
+        "salePrice": 7.99,
+        "releaseDate": "2022-07-19",
+        "image": "/images/dlc/forza-horizon-5--hot-wheels.jpg"
+      },
+      {
+        "id": "rally-adventure",
+        "title": "Rally Adventure",
+        "description": "FORZA HORIZON 5 RALLY ADVENTURE is included with the Forza Horizon 5 Premium Edition, Expansions Bundle, and Premium Add-Ons Bundle. This add-on requires Forza Horizon 5 (game sold separately).",
+        "price": 19.99,
+        "salePrice": 7.99,
+        "releaseDate": "2023-03-29",
+        "image": "/images/dlc/forza-horizon-5--rally-adventure.jpg"
+      }
+    ],
     "hero": "/images/banners/forza-horizon-5.jpg",
     "spotlight": {
       "tagline": "Your festival. Your road.",
@@ -2647,6 +3627,44 @@
         "price": 19.99,
         "includes": []
       }
+    ],
+    "dlc": [
+      {
+        "id": "ferrari-70th-anniversary-pack",
+        "title": "Ferrari 70th Anniversary Pack",
+        "description": "The Ferrari 70th Anniversary Celebration Pack introduces seven iconic cars, including the SF70H, the sixteenth car produced by Ferrari to compete in the F1 World Championshipone of which has been chosen by our community!",
+        "price": 6.99,
+        "salePrice": 2.09,
+        "releaseDate": "2017-09-19",
+        "image": "/images/dlc/assetto-corsa--ferrari-70th-anniversary-pack.jpg"
+      },
+      {
+        "id": "dream-pack-1",
+        "title": "Dream Pack 1",
+        "description": "The DREAM PACK 1 is the first add-on content pack ASSETTO CORSA: it adds to Assetto Corsa the legendary circuit of Nürburgring-Nordschleife and ten new awesome cars.",
+        "price": 6.99,
+        "salePrice": 2.09,
+        "releaseDate": "2015-03-11",
+        "image": "/images/dlc/assetto-corsa--dream-pack-1.jpg"
+      },
+      {
+        "id": "dream-pack-2",
+        "title": "Dream Pack 2",
+        "description": "Welcome to DREAM PACK 2, the newest add-on content pack ASSETTO CORSA. This package adds to Assetto Corsa the circuit of Catalunya (Barcelona) and seven new awesome cars in nine total versions.",
+        "price": 6.99,
+        "salePrice": 2.09,
+        "releaseDate": "2015-10-08",
+        "image": "/images/dlc/assetto-corsa--dream-pack-2.jpg"
+      },
+      {
+        "id": "dream-pack-3",
+        "title": "Dream Pack 3",
+        "description": "Welcome to DREAM PACK 3, the newest add-on content pack ASSETTO CORSA. This package adds to Assetto Corsa the legendary circuit of Brands Hatch (UK) and eight new awesome cars in nine total versions.",
+        "price": 6.99,
+        "salePrice": 2.09,
+        "releaseDate": "2015-12-15",
+        "image": "/images/dlc/assetto-corsa--dream-pack-3.jpg"
+      }
     ]
   },
   {
@@ -2681,6 +3699,44 @@
         "price": 19.99,
         "includes": []
       }
+    ],
+    "dlc": [
+      {
+        "id": "nordic-horizons",
+        "title": "Nordic Horizons",
+        "description": "Deliver cargo through the captivating landscapes of northern Scandinavia!",
+        "price": 17.99,
+        "salePrice": 16.19,
+        "releaseDate": "2025-11-27",
+        "image": "/images/dlc/euro-truck-simulator-2--nordic-horizons.jpg"
+      },
+      {
+        "id": "iberia",
+        "title": "Iberia",
+        "description": "The Iberian Peninsula is full of rich and diverse landscapes, from semi-arid southeastern deserts to the green coniferous forests.",
+        "price": 17.99,
+        "salePrice": 8.99,
+        "releaseDate": "2021-04-08",
+        "image": "/images/dlc/euro-truck-simulator-2--iberia.jpg"
+      },
+      {
+        "id": "road-to-the-black-sea",
+        "title": "Road to the Black Sea",
+        "description": "Get ready to start your engines and deliver cargo around the countries of Romania, Bulgaria and Turkey. Featuring 20 new major cities, 22 new companies to deliver with, an extensive road network and much more.",
+        "price": 17.99,
+        "salePrice": 8.99,
+        "releaseDate": "2019-12-05",
+        "image": "/images/dlc/euro-truck-simulator-2--road-to-the-black-sea.jpg"
+      },
+      {
+        "id": "beyond-the-baltic-sea",
+        "title": "Beyond the Baltic Sea",
+        "description": "Beyond the Baltic Sea DLC brings to Euro Truck Simulator 2 the countries of Lithuania, Latvia and Estonia, parts of western Russia, and the south of Finland.",
+        "price": 17.99,
+        "salePrice": 8.99,
+        "releaseDate": "2018-11-29",
+        "image": "/images/dlc/euro-truck-simulator-2--beyond-the-baltic-sea.jpg"
+      }
     ]
   },
   {
@@ -2713,6 +3769,40 @@
         "name": "Standard Edition",
         "price": 69.99,
         "includes": []
+      }
+    ],
+    "dlc": [
+      {
+        "id": "ultimate-collection-upgrade",
+        "title": "Ultimate Collection Upgrade",
+        "description": "The Ultimate Collection Upgrade is the ultimate catch-up pack. Instant access to all post-launch premium content. Get access to 9 fully customizable cars, over 45 Customs, and hundreds of additional cosmetics.",
+        "price": 14.99,
+        "releaseDate": "2024-10-29",
+        "image": "/images/dlc/need-for-speed-unbound--ultimate-collection-upgrade.jpg"
+      },
+      {
+        "id": "trick-or-street-swag-pack",
+        "title": "Trick or Street Swag Pack",
+        "description": "Make an entrance with the new Trick or Street Swag Pack, containing a one-off Legendary Custom clothing pack inspired by the golden age of American animation, a Skeleton Head mask, a driving effect, & more.",
+        "price": 14.99,
+        "releaseDate": "2023-10-12",
+        "image": "/images/dlc/need-for-speed-unbound--trick-or-street-swag-pack.jpg"
+      },
+      {
+        "id": "hip-hop-origin-swag-pack",
+        "title": "Hip Hop Origin Swag Pack",
+        "description": "Take to the streets & celebrate the origins of hip-hop.",
+        "price": 14.99,
+        "releaseDate": "2023-08-16",
+        "image": "/images/dlc/need-for-speed-unbound--hip-hop-origin-swag-pack.jpg"
+      },
+      {
+        "id": "robojets-swag-pack",
+        "title": "Robojets Swag Pack",
+        "description": "Switch lanes with the premium pack containing a one-off Legendary Custom and an incredible range of uniquely designed items.",
+        "price": 14.99,
+        "releaseDate": "2023-06-20",
+        "image": "/images/dlc/need-for-speed-unbound--robojets-swag-pack.jpg"
       }
     ]
   },
@@ -2785,6 +3875,43 @@
         "price": 39.99,
         "includes": []
       }
+    ],
+    "dlc": [
+      {
+        "id": "year-2-ultimate-pass",
+        "title": "Year 2 Ultimate Pass",
+        "description": "Year 2 Ultimate Pass - 4 additional characters - 4 additional characters' colors: Outfit 1 Colors 3-10 - 4 additional characters' costume: Outfit 2 (including colors 1-10) - 4 additional characters' costume: Outfit 3…",
+        "price": 49.99,
+        "salePrice": 32.49,
+        "releaseDate": "2024-06-07",
+        "image": "/images/dlc/street-fighter-6--year-2-ultimate-pass.jpg"
+      },
+      {
+        "id": "year-1-ultimate-pass",
+        "title": "Year 1 Ultimate Pass",
+        "description": "Year 1 Ultimate Pass - 4 additional characters - 4 additional characters' colors: Outfit 1 Colors 3-10 - 4 additional characters' costume: Outfit 2 (including colors 1-10) - 4 additional characters' costume: Outfit 3…",
+        "price": 49.99,
+        "salePrice": 24.99,
+        "releaseDate": "2023-06-01",
+        "image": "/images/dlc/street-fighter-6--year-1-ultimate-pass.jpg"
+      },
+      {
+        "id": "year-3-ultimate-pass",
+        "title": "Year 3 Ultimate Pass",
+        "description": "Year 3 Ultimate Pass - 4 additional characters - 4 additional characters' colors: Outfit 1 Colors 3-10 - 4 additional characters' costume: Outfit 2 (including colors 1-10) - 4 additional characters' costume: Outfit 3…",
+        "price": 47.99,
+        "salePrice": 38.39,
+        "releaseDate": "2025-07-15",
+        "image": "/images/dlc/street-fighter-6--year-3-ultimate-pass.jpg"
+      },
+      {
+        "id": "year-4-ultimate-pass",
+        "title": "Year 4 Ultimate Pass",
+        "description": "Year 4 Ultimate Pass - 4 additional characters - 4 additional characters' colors: Outfit 1 Colors 3-10 - 4 additional characters' costume: Outfit 2 (including colors 1-10) - 4 additional characters' costume: Outfit 3…",
+        "price": 45.99,
+        "releaseDate": "2026-06-05",
+        "image": "/images/dlc/street-fighter-6--year-4-ultimate-pass.jpg"
+      }
     ]
   },
   {
@@ -2817,6 +3944,43 @@
         "name": "Standard Edition",
         "price": 39.99,
         "includes": []
+      }
+    ],
+    "dlc": [
+      {
+        "id": "season-2-character-stage-pass",
+        "title": "Season 2 Character & Stage Pass",
+        "description": "The Season 2 Character & Stage Pass includes the following content: 4 Additional playable characters and 2 Additional battle stages.",
+        "price": 39.99,
+        "salePrice": 35.99,
+        "releaseDate": "2025-03-31",
+        "image": "/images/dlc/tekken-8--season-2-character-stage-pass.jpg"
+      },
+      {
+        "id": "season-1-character-stage-pass",
+        "title": "Season 1 Character & Stage Pass",
+        "description": "The Season 1 Character & Stage Pass includes the following content: 4 Additional playable characters, 2 Additional battle stages, Character Costume: Gold Suit Pack, Avatar Costume: Classic TEKKEN T-Shirt Set, and 4…",
+        "price": 39.99,
+        "salePrice": 29.99,
+        "releaseDate": "2025-03-31",
+        "image": "/images/dlc/tekken-8--season-1-character-stage-pass.jpg"
+      },
+      {
+        "id": "season-3-pass",
+        "title": "Season 3 Pass",
+        "description": "The Season 3 Pass includes the following content: 4 additional playable characters, 1 additional battle stage, and the Character Costume: Aurora Outfit Pack.",
+        "price": 34.99,
+        "releaseDate": "2026-02-09",
+        "image": "/images/dlc/tekken-8--season-3-pass.jpg"
+      },
+      {
+        "id": "season-2-character-pass",
+        "title": "Season 2 Character Pass",
+        "description": "The Season 2 Character Pass includes the following content: 4 Additional playable characters.",
+        "price": 29.99,
+        "salePrice": 26.99,
+        "releaseDate": "2025-03-31",
+        "image": "/images/dlc/tekken-8--season-2-character-pass.jpg"
       }
     ]
   },
@@ -2853,6 +4017,44 @@
         "name": "Standard Edition",
         "price": 49.99,
         "includes": []
+      }
+    ],
+    "dlc": [
+      {
+        "id": "definitive-edition-upgrade",
+        "title": "Definitive Edition Upgrade",
+        "description": "Upgrade your Mortal Kombat 1 base game with instant access to the Story Expansion, Kombat Pack, Kombat Pack 2, Mortal Kombat and II Movie Skins, Dragon Krystals, and more!",
+        "price": 59.99,
+        "salePrice": 11.99,
+        "releaseDate": "2025-05-15",
+        "image": "/images/dlc/mortal-kombat-1--definitive-edition-upgrade.jpg"
+      },
+      {
+        "id": "mk1-khaos-reigns-expansion",
+        "title": "MK1: Khaos Reigns Expansion",
+        "description": "Includes Story Expansion + Kombat Pack 2 Available at Launch: Noob Saibot Cyrax Sektor Available Post-Launch (includes early access): Ghostface (Scream Franchise) T-1000 (Terminator 2) Conan the Barbarian",
+        "price": 49.99,
+        "salePrice": 9.99,
+        "releaseDate": "2024-09-24",
+        "image": "/images/dlc/mortal-kombat-1--mk1-khaos-reigns-expansion.jpg"
+      },
+      {
+        "id": "mk1-kombat-pack",
+        "title": "MK1: Kombat Pack",
+        "description": "Includes: Fighters Omni-Man (Invincible) Quan Chi Peacemaker (DC Peacemaker) Ermac Homelander (The Boys) Takahashi Takeda Kameos Tremor Khameleon Janet Cage Mavado Ferra JCVD Skin for Johnny Cage",
+        "price": 29.99,
+        "salePrice": 5.99,
+        "releaseDate": "2023-09-19",
+        "image": "/images/dlc/mortal-kombat-1--mk1-kombat-pack.jpg"
+      },
+      {
+        "id": "mk1-kameo-unlock-pack",
+        "title": "MK1: Kameo Unlock Pack",
+        "description": "Jumpstart Mortal Kombat 1 with 5 classic Kameo characters in this pack. Kameos include: Sub-Zero Scorpion Kung Lao Shujinko Motaro Kameo characters are unlockable through play.",
+        "price": 19.99,
+        "salePrice": 9.99,
+        "releaseDate": "2023-09-19",
+        "image": "/images/dlc/mortal-kombat-1--mk1-kameo-unlock-pack.jpg"
       }
     ]
   },
@@ -2922,6 +4124,44 @@
         "name": "Standard Edition",
         "price": 24.99,
         "includes": []
+      }
+    ],
+    "dlc": [
+      {
+        "id": "season-pass",
+        "title": "Season Pass",
+        "description": "This content requires the base game on Steam in order to play.",
+        "price": 19.99,
+        "salePrice": 6.79,
+        "releaseDate": "2019-04-18",
+        "image": "/images/dlc/overcooked-2--season-pass.jpg"
+      },
+      {
+        "id": "night-of-the-hangry-horde",
+        "title": "Night of the Hangry Horde",
+        "description": "This content requires the base game on Steam in order to play. Night of the Hangry Horde is available for free for all players who have purchased the Overcooked! 2 Season Pass!",
+        "price": 9.99,
+        "salePrice": 3.99,
+        "releaseDate": "2019-06-13",
+        "image": "/images/dlc/overcooked-2--night-of-the-hangry-horde.jpg"
+      },
+      {
+        "id": "carnival-of-chaos",
+        "title": "Carnival of Chaos",
+        "description": "Overcooked! 2 Carnival of Chaos invites players to a celebration of all things cooking, co-op and chaos! This colourful new DLC will put players to the test as you take on combo meals and that kitchen essential, the…",
+        "price": 5.99,
+        "salePrice": 2.39,
+        "releaseDate": "2019-09-12",
+        "image": "/images/dlc/overcooked-2--carnival-of-chaos.jpg"
+      },
+      {
+        "id": "campfire-cook-off",
+        "title": "Campfire Cook Off",
+        "description": "This content requires the base game on Steam in order to play.",
+        "price": 5.99,
+        "salePrice": 2.39,
+        "releaseDate": "2019-04-18",
+        "image": "/images/dlc/overcooked-2--campfire-cook-off.jpg"
       }
     ]
   },
@@ -3029,6 +4269,43 @@
         "price": 39.99,
         "includes": []
       }
+    ],
+    "dlc": [
+      {
+        "id": "careers-pack",
+        "title": "Careers Pack",
+        "description": "With the Careers Pack, unlock skate and BMX! Comes with over 30 new events and 150+ pieces of gear. Master new tricks and dominate the competition! Riders Republic is required to play this extension.",
+        "price": 39.99,
+        "salePrice": 19.99,
+        "releaseDate": "2026-04-22",
+        "image": "/images/dlc/riders-republic--careers-pack.jpg"
+      },
+      {
+        "id": "blind-spot-pack-riders-republic",
+        "title": "Blind Spot Pack Riders Republic",
+        "description": "Receive 2,500 Republic Coins and a Legendary outfit, including a pair of shoes and an emote. Use Coins to unlock toys and sport add-ons, or purchase extra cosmetic items for your rider!",
+        "price": 24.99,
+        "releaseDate": "2023-09-27",
+        "image": "/images/dlc/riders-republic--blind-spot-pack-riders-republic.jpg"
+      },
+      {
+        "id": "motor-pack",
+        "title": "Motor Pack",
+        "description": "With the Motor Pack, unlock the rocket skis, snowmobile, jumbo bike, rocket bike, and dirt bike. Riders Republic is required to play this extension.",
+        "price": 19.99,
+        "salePrice": 9.99,
+        "releaseDate": "2026-04-22",
+        "image": "/images/dlc/riders-republic--motor-pack.jpg"
+      },
+      {
+        "id": "x-treme-board-pack",
+        "title": "X-TREME Board Pack",
+        "description": "With the X-TREME Pack, unlock the longboard, hoverboard, mountainboard, and snowskate. Riders Republic is required to play this extension.",
+        "price": 19.99,
+        "salePrice": 9.99,
+        "releaseDate": "2026-04-22",
+        "image": "/images/dlc/riders-republic--x-treme-board-pack.jpg"
+      }
     ]
   },
   {
@@ -3064,6 +4341,26 @@
         "price": 49.99,
         "includes": []
       }
+    ],
+    "dlc": [
+      {
+        "id": "off-road-helmets-pack",
+        "title": "Off Road Helmets Pack",
+        "description": "Give your custom rider a stylish head start with this pack of 6 additional off-road helmets and their dedicated liveries!",
+        "price": 1.99,
+        "salePrice": 0.59,
+        "releaseDate": "2025-04-30",
+        "image": "/images/dlc/motogp25--off-road-helmets-pack.jpg"
+      },
+      {
+        "id": "iconic-liveries-pack",
+        "title": "Iconic Liveries Pack",
+        "description": "Style up your training with 10 special liveries for Minibikes, Motard and Flat Track bikes, inspired by the most iconic MotoGP graphics.",
+        "price": 0.99,
+        "salePrice": 0.49,
+        "releaseDate": "2025-04-30",
+        "image": "/images/dlc/motogp25--iconic-liveries-pack.jpg"
+      }
     ]
   },
   {
@@ -3098,6 +4395,44 @@
         "name": "Standard Edition",
         "price": 39.99,
         "includes": []
+      }
+    ],
+    "dlc": [
+      {
+        "id": "members-pass",
+        "title": "Member’s Pass",
+        "description": "Includes PGA TOUR 2K25 Clubhouse Pass Premium for Seasons 1-5 and Clubhouse Gear Pack. Access additional seasonal quests, boosts, and valuable items. Clubhouse Gear Pack includes one outfit per body type per season.",
+        "price": 39.99,
+        "salePrice": 25.99,
+        "releaseDate": "2025-02-20",
+        "image": "/images/dlc/pga-tour-2k25--members-pass.jpg"
+      },
+      {
+        "id": "pro-accelerator-bonus-pack",
+        "title": "Pro Accelerator Bonus Pack",
+        "description": "You didn’t show up for second place and you’re not waiting to compete. 8800 VC 5 X LVL↑ Tokens 12 X Fittings Puma Footwear Limited Edition Ping Iron 6 X Evo Tools",
+        "price": 29.99,
+        "salePrice": 22.49,
+        "releaseDate": "2026-01-06",
+        "image": "/images/dlc/pga-tour-2k25--pro-accelerator-bonus-pack.jpg"
+      },
+      {
+        "id": "year-2-members-pass",
+        "title": "Year 2 Member's Pass",
+        "description": "Includes PGA TOUR 2K25 Clubhouse Pass Premium for Seasons 6-8 and Clubhouse Gear Pack Year 2. Get access to additional seasonal quests to earn extra boosts and valuable items.",
+        "price": 24.99,
+        "salePrice": 18.74,
+        "releaseDate": "2026-01-06",
+        "image": "/images/dlc/pga-tour-2k25--year-2-members-pass.jpg"
+      },
+      {
+        "id": "starter-pack",
+        "title": "Starter Pack",
+        "description": "Tee off strong with the PGA TOUR 2K25 Starter Pack: •1 Evo Tool: Increase Club Set or Ball performance •5 Level-Up Tokens: Level up a Club Set or Ball •5 Club Fittings: Customize club attributes for your playstyle •3…",
+        "price": 19.99,
+        "salePrice": 12.99,
+        "releaseDate": "2025-02-20",
+        "image": "/images/dlc/pga-tour-2k25--starter-pack.jpg"
       }
     ]
   },
@@ -3201,6 +4536,44 @@
         "name": "Standard Edition",
         "price": 29.99,
         "includes": []
+      }
+    ],
+    "dlc": [
+      {
+        "id": "sabertooth-livery",
+        "title": "Sabertooth Livery",
+        "description": "Customize your SnowRunner experience with the Sabertooth Livery DLC, available exclusively for the Heavy Duty Derry Longhorn 4520!",
+        "price": 39.99,
+        "salePrice": 15.99,
+        "releaseDate": "2021-05-17",
+        "image": "/images/dlc/snowrunner--sabertooth-livery.jpg"
+      },
+      {
+        "id": "season-16-high-voltage",
+        "title": "Season 16: High Voltage",
+        "description": "Welcome to Washington! High Voltage tasks you with building a hydropower plant across 3 large maps with the help of 3 new trucks. Season 16 is SnowRunner’s fourth expansion and is included in the Year 4 Pass.",
+        "price": 11.99,
+        "salePrice": 8.39,
+        "releaseDate": "2025-09-04",
+        "image": "/images/dlc/snowrunner--season-16-high-voltage.jpg"
+      },
+      {
+        "id": "season-12-public-energy",
+        "title": "Season 12: Public Energy",
+        "description": "Season 12: Public Energy is included in the Year 3 Pass. Requires the base game SnowRunner to run. North Carolina’s state government needs you to assist in the establishment of a nuclear power station and to help local…",
+        "price": 11.99,
+        "salePrice": 7.79,
+        "releaseDate": "2024-01-31",
+        "image": "/images/dlc/snowrunner--season-12-public-energy.jpg"
+      },
+      {
+        "id": "season-8-grand-harvest",
+        "title": "Season 8: Grand Harvest",
+        "description": "This product is included in the Year 2 Pass for SnowRunner. After a streak of crop failures and poor harvests, operate three new vehicles to restore sustainable farming activities and alternative energy sources in the…",
+        "price": 11.99,
+        "salePrice": 7.79,
+        "releaseDate": "2022-10-13",
+        "image": "/images/dlc/snowrunner--season-8-grand-harvest.jpg"
       }
     ]
   }

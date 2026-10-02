@@ -126,3 +126,50 @@
     font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
     font-size: 0.8rem;
 }
+
+.notes {
+    margin-left: 1.1rem;
+    list-style: disc;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.dlcList {
+    display: flex;
+    flex-direction: column;
+}
+
+.dlcList li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+}
+
+.dlcName {
+    min-width: 0;
+}
+
+.dlcOwned {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+.linkButton {
+    flex-shrink: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: 0.85rem;
+    color: var(--main-text);
+    cursor: pointer;
+}
+
+.linkButton:hover {
+    text-decoration: underline;
+}

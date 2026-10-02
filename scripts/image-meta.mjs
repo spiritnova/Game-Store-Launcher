@@ -28,7 +28,7 @@ for await (const file of walk(imagesDir)) {
   const { dominant } = await image.stats()
   const hex = '#' + [dominant.r, dominant.g, dominant.b].map((v) => v.toString(16).padStart(2, '0')).join('')
   // Client components only need colours for card and banner art
-  if (/^\/images\/(covers|heroes|banners)\//.test(src)) colors[src] = hex
+  if (/^\/images\/(covers|heroes|banners|dlc)\//.test(src)) colors[src] = hex
 
   // Logos are transparent and shown at small sizes: they don't need a blurred placeholder.
   const entry = { width, height }

@@ -95,3 +95,13 @@ export const CATALOG = [
   [945360, ['Multiplayer', 'Casual']],
   [728880, ['Casual', 'Multiplayer']],
 ]
+
+// Games added by hand (not imported from CATALOG) whose Steam title differs from ours, so a title
+// search wouldn't find them.
+export const HAND_ADDED_APP_IDS = { 'the-witcher-3': 292030 }
+
+// DLC that Steam doesn't list on the game's store page or doesn't price on its own, as
+// [app id, standard US price]. The Witcher 3's expansions are sold through its Expansion Pass.
+export const EXTRA_DLC = {
+  'the-witcher-3': [[378648, 9.99], [378649, 19.99]],
+}

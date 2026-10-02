@@ -11,10 +11,19 @@ export default function Dialog({ open, onClose, title, description, children, fo
     const titleId = useId()
     const descriptionId = useId()
 
+    // Set while the dialog closes because `open` turned false: its "close" event arrives later and must not
+    // call onClose, or it could close the next dialog opened in its place (Properties -> Refund).
+    const closingFromProp = useRef(false)
+
     useEffect(() => {
         const dialog = ref.current
-        if (open && !dialog.open) dialog.showModal()
-        else if (!open && dialog.open) dialog.close()
+        if (open && !dialog.open) {
+            closingFromProp.current = false
+            dialog.showModal()
+        } else if (!open && dialog.open) {
+            closingFromProp.current = true
+            dialog.close()
+        }
     }, [open])
 
     return (
@@ -23,7 +32,11 @@ export default function Dialog({ open, onClose, title, description, children, fo
             className={`${styles.dialog} ${styles[size]}`}
             aria-labelledby={titleId}
             aria-describedby={description ? descriptionId : undefined}
-            onClose={onClose}
+            // Escape closes the <dialog> itself; tell the parent so its state follows
+            onClose={() => {
+                if (closingFromProp.current) closingFromProp.current = false
+                else onClose()
+            }}
             // A click on the backdrop lands on the <dialog> itself
             onClick={(e) => e.target === ref.current && onClose()}
         >

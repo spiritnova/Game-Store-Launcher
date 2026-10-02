@@ -10,20 +10,20 @@ Nothing is actually sold. Sign-in, purchases, installs, playtime and friends are
 - **Discover**: spotlight carousel (pausable, honours reduced-motion settings), a top-deals row, featured games and a "Browse by category" grid.
 - **A real-sized catalog**: 90+ games across 19 categories (Action, RPG, Horror, Roguelike, Strategy, Racing, Sports, Fighting, Free to Play…), imported from Steam's public store listings.
 - **Browse**: search by title, developer or publisher; combine genres, player modes (co-op, online, controller support…) and price ranges; show only sales; hide games you own or wishlisted; sort by price, discount, release date or title. Active filters show as removable chips, and every filter is stored in the URL, so a view like `/games?genre=RPG,Action&modes=online-co-op&price=under-20` can be shared.
-- **Game pages**: screenshot gallery with a full-screen viewer, editions (Deluxe, Gold, Complete…), bundles, player modes (single-player, co-op, online), system requirements, supported languages, ESRB and PEGI age ratings with content descriptors, achievements with global unlock rates, friends who own the game, player reviews with helpful votes, a discussion thread, "More from this studio" and related games. Mature games ask for a date of birth first, like Steam. Every game page is statically generated, and unknown games return a 404.
+- **Game pages**: screenshot gallery with a full-screen viewer, editions (Deluxe, Gold, Complete…), bundles, player modes (single-player, co-op, online), system requirements, supported languages, downloadable content (expansions and add-ons imported from Steam, bought separately or included with editions like the Complete Edition), ESRB and PEGI age ratings with content descriptors, achievements with global unlock rates, friends who own the game, player reviews with helpful votes, a discussion thread, "More from this studio" and related games. Mature games ask for a date of birth first, like Steam. Every game page is statically generated, and unknown games return a 404.
 - **Cart & checkout**: buy any edition, or a bundle priced for the games you don't own yet. Sale and bundle discounts are itemised. Pay with the wallet or a simulated card, and buy any game as a gift for a friend, with a message.
-- **Purchases & refunds**: a purchase history with itemised receipts (order number, payment method, discounts). Games bought in the last 14 days and played for less than 2 hours can be refunded to the original payment method.
+- **Purchases & refunds**: a purchase history with itemised receipts (order number, payment method, discounts). Games bought in the last 14 days and played for less than 2 hours can be refunded to the original payment method; DLC too, counting playtime since it was bought. Refunding a game keeps the DLC you bought for it.
 - **Wallet**: add funds or redeem a gift card code (`ULTIMATE-DEMO-20` and `WELCOME-5` work once per account).
 - **Accounts**: sign in with any username, or with one click as the demo player. Each account keeps its own library and wishlist. Passwords are only validated, never stored.
 - **Wishlist**: add games from any card or game page (requires sign-in).
-- **Library & downloads**: install, play and uninstall games. Organise them into collections, favourites and hidden games, and search or sort the library. Playing a game runs a session that adds playtime (fast-forwarded in the demo) and unlocks achievements as you go. Each game has properties: launch options, verify files (repairs anything that fails), move the install folder between drives, and purchase and refund details. The download manager has a queue you can reorder, pause/resume, a live speed graph, ETAs, storage per drive and a simulated connection speed (demo turbo, 1 Gbps or 100 Mbps).
+- **Library & downloads**: install, play and uninstall games. Organise them into collections, favourites and hidden games, and search or sort the library. Playing a game runs a session that adds playtime (fast-forwarded in the demo) and unlocks achievements as you go. Updates come with a version number and patch notes; the library has an Updates filter and an "Update all" button. Each game has properties: version and what's new, owned DLC, launch options, verify files (repairs anything that fails), move the install folder between drives, and purchase and refund details. The download manager has a queue you can reorder, pause/resume, a live speed graph, ETAs, storage per drive and a simulated connection speed (demo turbo, 1 Gbps or 100 Mbps).
 - **Friends & profiles**: add friends by username (demo players or other accounts in the same browser), see who's online or playing what, follow recent activity, and open public profiles (`/u/pixelnomad`) with recently played games, achievements, most played games and reviews. Review and comment authors link to their profiles.
 - **Notifications**: wishlist sales, finished downloads and updates, achievements, gifts, friends and refunds, each type switchable in Settings.
 - **Profile & settings**: display name, bio, avatar colour, dark, light or system theme, an accent colour, currency (prices convert from US dollars at fixed demo rates), date of birth for age-rated games, notification types, download and install-drive settings, purchases, wallet, sign out and account deletion.
 - **Performance**: images are served as resized WebP with blurred placeholders and colour backgrounds while loading; heavy game details (requirements, languages) stay on the server; download progress lives in its own context so it doesn't re-render the whole app.
 - **Polish**: toasts for every action, loading skeletons, empty states, a custom 404, error pages that offer to reset damaged saved data, per-page titles, an Open Graph image and keyboard and screen-reader support.
 
-The demo player account comes with a few games, four friends, a collection, a wallet balance and a purchase history (Red Dead Redemption 2 is still refundable). Use **Reset demo data** on the About page to restore it.
+The demo player account comes with a few games (two with updates waiting, so it updates manually), DLC, four friends, a collection, a wallet balance and a purchase history (Red Dead Redemption 2 is still refundable). Use **Reset demo data** on the About page to restore it.
 
 ## Tech stack
 
@@ -51,6 +51,8 @@ npm run build   # production build
 npm start       # serve the production build
 npm run import:steam  # import more games from Steam (see below)
 npm run import:ratings  # refresh ESRB/PEGI age ratings from Steam
+npm run import:dlc      # refresh DLC (titles, prices, art) from Steam, then run `npm run images`
+npm run brand           # regenerate the favicon, wordmarks and Open Graph image from assets/brand
 npm run images       # regenerate image placeholders after adding or changing artwork
 ```
 
@@ -74,7 +76,7 @@ app/
   signin/         Mock sign-in
   news/, about/   Static content pages
 data/
-  games.json      Game catalogue: prices, editions, features, art, descriptions (sent to the browser)
+  games.json      Game catalogue: prices, editions, DLC, features, art, descriptions (sent to the browser)
   game-details.json  Screenshots, languages, requirements, age ratings (server only)
   bundles.json    Bundles and their discounts
   image-meta.json, image-colors.json  Generated image placeholders
@@ -93,8 +95,12 @@ scripts/
   image-meta.mjs  Generates image placeholders
   import-steam.mjs  Imports games, details and artwork from the Steam store API
   import-ratings.mjs  Adds ESRB/PEGI age ratings from the Steam store API
+  import-dlc.mjs  Imports DLC (up to four paid add-ons per game) from the Steam store API
+  brand.mjs       Generates the brand assets
   catalog.mjs, steam.mjs  The list of Steam games and shared helpers
-public/images/    Game covers, banners and logos
+public/images/    Game covers, banners, logos and DLC art
+public/brand/     Ultimate Game Launcher wordmarks (generated by `npm run brand`)
+assets/brand/     Source logos: the app icon and the wordmark
 ```
 
 To add games, add a `[steamAppId, [genres]]` line to the `CATALOG` list in `scripts/import-steam.mjs` and run `npm run import:steam`, then `npm run images`. The importer downloads and optimizes the artwork and fills in prices, descriptions, screenshots, requirements and languages. It skips games already imported, and games without a US price or standard cover art. Prices are the live US prices at import time.
@@ -103,4 +109,4 @@ You can also add a game by hand: an entry in `data/games.json` and `data/game-de
 
 ## Credits
 
-Game titles, logos and artwork are trademarks of their respective owners and are used for demonstration only. Screenshots, system requirements, languages, feature lists and age ratings come from the games' public store listings (games whose US listing shows no rating are marked "Not rated"). Prices and edition contents are illustrative, exchange rates are fixed demo values, and demo players, their reviews, comments, libraries and achievements are sample content.
+Game titles, logos and artwork are trademarks of their respective owners and are used for demonstration only. Screenshots, system requirements, languages, feature lists, DLC and age ratings come from the games' public store listings (games whose US listing shows no rating are marked "Not rated"). Prices and edition contents are illustrative, exchange rates are fixed demo values, and demo players, their reviews, comments, libraries and achievements are sample content.

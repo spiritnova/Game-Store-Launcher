@@ -6,7 +6,7 @@ import styles from './page.module.css'
 
 export const metadata = {
   title: 'News',
-  description: 'Sales, launcher updates and spotlights from the Ultimate store.',
+  description: 'Sales, launcher updates and spotlights from the Ultimate Game Launcher store.',
 }
 
 function formatDate(date) {
@@ -20,7 +20,7 @@ export default function News() {
     <main className="container">
       <header className={styles.header}>
         <h1>News</h1>
-        <p>Sales, launcher updates and spotlights from the Ultimate store.</p>
+        <p>Sales, launcher updates and spotlights from the Ultimate Game Launcher store.</p>
       </header>
 
       <article className={styles.lead}>

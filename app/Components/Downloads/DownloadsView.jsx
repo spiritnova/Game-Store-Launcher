@@ -227,7 +227,13 @@ export default function DownloadsView() {
                                             <Thumb game={updatable} />
                                             <div className={styles.rowBody}>
                                                 <p className={styles.rowTitle}>{updatable.title}</p>
-                                                <p className={styles.rowMeta}>{formatSize(update.sizeGB)} update</p>
+                                                <p className={styles.rowMeta}>Version {update.version} · {formatSize(update.sizeGB)}</p>
+                                                <details className={styles.notes}>
+                                                    <summary>What’s new</summary>
+                                                    <ul>
+                                                        {update.notes.map((note) => <li key={note}>{note}</li>)}
+                                                    </ul>
+                                                </details>
                                             </div>
                                             <Button variant="ghost" size="small" onClick={() => downloads.queueUpdate(update.slug)}>
                                                 <SystemUpdateAltIcon fontSize="small" /> Update

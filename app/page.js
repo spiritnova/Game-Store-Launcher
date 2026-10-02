@@ -42,7 +42,7 @@ export default function Home() {
 
   return (
     <main>
-      <h1 className="visually-hidden">Discover games on Ultimate</h1>
+      <h1 className="visually-hidden">Discover games on Ultimate Game Launcher</h1>
       <Carousel blurs={Object.fromEntries(spotlightGames.map((g) => [g.hero, blurProps(g.hero).blurDataURL]))}/>
 
       <ContinuePlaying/>

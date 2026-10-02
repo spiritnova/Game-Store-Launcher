@@ -336,3 +336,12 @@
   align-items: center;
   gap: 0.35rem;
 }
+
+.warning {
+  margin-top: 0.25rem;
+  color: var(--warning) !important;
+}
+
+.warning a {
+  text-decoration: underline;
+}

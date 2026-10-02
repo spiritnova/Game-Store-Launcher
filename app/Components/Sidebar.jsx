@@ -221,8 +221,8 @@ export default function Sidebar(){
                 >
                     <MenuIcon />
                 </button>
-                <Link href="/" className={styles.brand} aria-label="Ultimate home">
-                    <Logo/>
+                <Link href="/" className={styles.brand} aria-label="Ultimate Game Launcher home">
+                    <Logo height={34} />
                 </Link>
                 <div className={styles.topActions}>
                     <Notifications className={styles.iconButton} />
@@ -237,8 +237,8 @@ export default function Sidebar(){
 
             <aside id="sidebar" className={`${styles.sidebar} ${open ? styles.open : ''}`} aria-label="Sidebar">
                 <div className={styles.header}>
-                    <Link href="/" className={styles.brand} aria-label="Ultimate home">
-                        <Logo/>
+                    <Link href="/" className={styles.brand} aria-label="Ultimate Game Launcher home">
+                        <Logo height={44} priority />
                     </Link>
                     <div className={styles.desktopOnly}>
                         <Notifications className={styles.iconButton} />

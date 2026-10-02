@@ -45,14 +45,15 @@ function Receipt({ tx, onRefund }) {
                 </thead>
                 <tbody>
                     {tx.items.map((item, i) => {
-                        const refund = tx.type === 'purchase' && item.slug && !item.giftTo && !item.refunded ? refundInfo(item.slug) : null
+                        const refund = tx.type === 'purchase' && item.slug && !item.giftTo && !item.refunded ? refundInfo(item.slug, item.dlc ?? null) : null
                         const refundable = refund?.eligible && refund.transaction.id === tx.id
                         return (
                             <tr key={`${item.slug ?? item.title}-${i}`}>
                                 <td>
-                                    {item.slug && getGame(item.slug) ? <Link href={`/games/${item.slug}`}>{item.title}</Link> : item.title}
+                                    {item.slug && getGame(item.slug) ? <Link href={`/games/${item.slug}${item.dlc ? '#dlc' : ''}`}>{item.title}</Link> : item.title}
                                     <span className={styles.itemMeta}>
                                         {[
+                                            item.dlc ? `DLC for ${item.gameTitle ?? getGame(item.slug)?.title}` : null,
                                             item.editionName && item.editionName !== 'Standard Edition' ? item.editionName : null,
                                             item.bundle ? `Part of ${item.bundle}` : null,
                                             item.giftTo ? `Gift for ${profileOf(item.giftTo).displayName}` : null,
@@ -60,7 +61,7 @@ function Receipt({ tx, onRefund }) {
                                         ].filter(Boolean).join(' · ')}
                                     </span>
                                     {refundable && (
-                                        <button type="button" className={styles.refundLink} onClick={() => onRefund(getGame(item.slug))}>
+                                        <button type="button" className={styles.refundLink} onClick={() => onRefund({ game: getGame(item.slug), dlcId: item.dlc ?? null })}>
                                             Request a refund
                                         </button>
                                     )}
@@ -157,7 +158,7 @@ export default function Purchases() {
                 </ul>
             )}
 
-            {refunding && <RefundDialog game={refunding} open onClose={() => setRefunding(null)} />}
+            {refunding && <RefundDialog game={refunding.game} dlcId={refunding.dlcId} open onClose={() => setRefunding(null)} />}
         </div>
     )
 }

@@ -12,7 +12,7 @@ export function generateMetadata({ params }) {
   const player = getPlayer(username)
   return {
     title: player ? `${player.displayName}’s profile` : `@${username}`,
-    description: player?.bio ?? 'A player profile on Ultimate.',
+    description: player?.bio ?? 'A player profile on Ultimate Game Launcher.',
   }
 }
 

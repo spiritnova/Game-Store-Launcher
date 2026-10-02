@@ -6,7 +6,8 @@ import Link from 'next/link'
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'
-import { bundlePrice, cardImage, editionPrice, getBundle, getEdition, getGame } from '@/lib/games'
+import ExtensionOutlinedIcon from '@mui/icons-material/ExtensionOutlined'
+import { bundlePrice, cardImage, dlcPrice, editionPrice, getBundle, getDlc, getEdition, getGame } from '@/lib/games'
 import { placeholderColor } from '@/lib/image-colors'
 import { useDownloads } from '@/lib/downloads'
 import { DEMO_USER, useStore } from '@/lib/store'
@@ -14,8 +15,26 @@ import Button from '../UI/Button'
 import Skeleton from '../UI/Skeleton'
 import styles from './CartView.module.css'
 
-// Normalizes a cart item (single game or bundle) into what the cart displays and charges.
-function describe(item, owns, profileOf) {
+// Normalizes a cart item (game, DLC or bundle) into what the cart displays and charges.
+// `gameInCart` tells whether a DLC's base game is being bought in the same order.
+function describe(item, owns, profileOf, gameInCart) {
+  if (item.type === 'dlc') {
+    const game = getGame(item.slug)
+    const dlc = getDlc(game, item.dlc)
+    return {
+      id: item.id,
+      title: dlc.title,
+      subtitle: `DLC for ${game.title}`,
+      href: `/games/${game.slug}#dlc`,
+      // The game's cover: DLC art is landscape and gets cropped in the portrait thumbnail
+      image: cardImage(game),
+      tag: 'DLC',
+      // DLC needs the game: already owned, or in this order
+      missingBase: !owns(game.slug) && !gameInCart(game.slug) ? game : null,
+      original: dlc.price,
+      price: dlcPrice(dlc),
+    }
+  }
   if (item.type === 'game') {
     const game = getGame(item.slug)
     const edition = getEdition(game, item.edition)
@@ -25,6 +44,7 @@ function describe(item, owns, profileOf) {
       title: game.title,
       subtitle: item.gift ? `Gift for ${profileOf(item.gift.to).displayName} · ${editionLabel}` : editionLabel,
       gift: item.gift,
+      tag: item.gift ? 'Gift' : null,
       href: `/games/${game.slug}`,
       image: cardImage(game),
       original: edition.price,
@@ -40,7 +60,7 @@ function describe(item, owns, profileOf) {
     subtitle: `Bundle · ${price.games.map((g) => g.title).join(', ')}${ownedCount ? ` (${ownedCount} already owned, not charged)` : ''}`,
     href: `/games/${bundle.games[0]}`,
     image: cardImage(getGame(bundle.games[0])),
-    bundle: true,
+    tag: 'Bundle',
     original: price.games.reduce((sum, game) => sum + game.price, 0),
     price: price.price,
   }
@@ -48,13 +68,13 @@ function describe(item, owns, profileOf) {
 
 function OrderConfirmation({ order, autoInstalled }) {
   const { formatPrice, profileOf } = useStore()
-  const bought = order.purchases.length
+  const bought = order.purchases.length + order.dlc.length
   return (
     <div className={styles.confirmation}>
       <CheckCircleIcon className={styles.check} />
       <h2>Thanks for your purchase!</h2>
       <p>
-        {bought > 0 && <>{bought === 1 ? '1 game was' : `${bought} games were`} added to your library. </>}
+        {bought > 0 && <>{bought === 1 ? '1 item was' : `${bought} items were`} added to your library. </>}
         {order.gifts.length > 0 && <>{order.gifts.length === 1 ? '1 gift was' : `${order.gifts.length} gifts were`} sent. </>}
         Order total: {formatPrice(order.total)}.
         {autoInstalled && bought > 0 && ' Downloads have started.'}
@@ -64,6 +84,11 @@ function OrderConfirmation({ order, autoInstalled }) {
           <li key={game.slug}>
             {game.title}
             {edition.id !== 'standard' && ` · ${edition.name}`}
+          </li>
+        ))}
+        {order.dlc.map(({ game, dlc }) => (
+          <li key={`${game.slug}-${dlc.id}`}>
+            <ExtensionOutlinedIcon fontSize="inherit" /> {dlc.title}
           </li>
         ))}
         {order.gifts.map(({ game, to }) => (
@@ -89,7 +114,10 @@ export default function CartView() {
   const [method, setMethod] = useState(null)
   const [error, setError] = useState(null)
 
-  const lines = cart.map((item) => describe(item, owns, profileOf))
+  const gameInCart = (slug) =>
+    cart.some((item) => !item.gift && ((item.type === 'game' && item.slug === slug) || (item.type === 'bundle' && getBundle(item.slug).games.includes(slug))))
+  const lines = cart.map((item) => describe(item, owns, profileOf, gameInCart))
+  const blocked = lines.find((line) => line.missingBase)
   const subtotal = lines.reduce((sum, line) => sum + line.original, 0)
   const total = lines.reduce((sum, line) => sum + line.price, 0)
   const savings = subtotal - total
@@ -143,8 +171,7 @@ export default function CartView() {
                   style={{ backgroundColor: placeholderColor(line.image) }}
                 >
                   <Image src={line.image} alt="" fill sizes="80px" />
-                  {line.bundle && <span className={styles.bundleTag}>Bundle</span>}
-                  {line.gift && <span className={styles.bundleTag}>Gift</span>}
+                  {line.tag && <span className={styles.bundleTag}>{line.tag}</span>}
                 </Link>
                 <div className={styles.info}>
                   <h2>
@@ -152,6 +179,11 @@ export default function CartView() {
                   </h2>
                   <p>{line.subtitle}</p>
                   {line.gift?.message && <p className={styles.giftMessage}>“{line.gift.message}”</p>}
+                  {line.missingBase && (
+                    <p className={styles.warning}>
+                      Requires {line.missingBase.title}. <Link href={`/games/${line.missingBase.slug}`}>Add the game to your cart</Link>
+                    </p>
+                  )}
                 </div>
                 <div className={styles.price}>
                   {line.original > line.price && <s>{formatPrice(line.original)}</s>}
@@ -212,7 +244,8 @@ export default function CartView() {
                   </fieldset>
                 )}
                 {error && <p className={styles.error} role="alert">{error}</p>}
-                <Button size="large" onClick={purchase}>
+                {blocked && <p className={styles.error}>Add {blocked.missingBase.title} to your cart, or remove its DLC, to check out.</p>}
+                <Button size="large" onClick={purchase} disabled={Boolean(blocked)}>
                   {total === 0 ? 'Get for free' : `Purchase for ${formatPrice(total)}`}
                 </Button>
               </>

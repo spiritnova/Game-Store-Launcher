@@ -1,26 +1,30 @@
 'use client'
 
+import { getDlc } from '@/lib/games'
 import { formatDateTime, REFUND_DAYS, REFUND_MINUTES, useStore } from '@/lib/store'
 import Button from '../UI/Button'
 import Dialog from '../UI/Dialog'
 import styles from './PropertiesDialog.module.css'
 
-// Explains the refund policy, then refunds the game (and removes it from the library) on confirmation.
-export default function RefundDialog({ game, open, onClose }) {
+// Explains the refund policy, then refunds the game (removing it from the library) or one of its DLC.
+export default function RefundDialog({ game, dlcId = null, open, onClose }) {
     const { refundInfo, refund, formatMoney } = useStore()
-    const info = open ? refundInfo(game.slug) : null
+    const info = open ? refundInfo(game.slug, dlcId) : null
+    const name = dlcId ? getDlc(game, dlcId)?.title : game.title
 
     return (
         <Dialog
             open={open && Boolean(info)}
             onClose={onClose}
-            title={`Refund ${game.title}`}
-            description={`Games bought in the last ${REFUND_DAYS} days and played for less than ${REFUND_MINUTES / 60} hours can be refunded.`}
+            title={`Refund ${name}`}
+            description={dlcId
+                ? `DLC bought in the last ${REFUND_DAYS} days can be refunded if you've played less than ${REFUND_MINUTES / 60} hours since buying it.`
+                : `Games bought in the last ${REFUND_DAYS} days and played for less than ${REFUND_MINUTES / 60} hours can be refunded.`}
             footer={
                 info?.eligible ? (
                     <>
-                        <Button variant="ghost" onClick={onClose}>Keep the game</Button>
-                        <Button onClick={() => { refund(game.slug); onClose() }}>Refund {formatMoney(info.amount)}</Button>
+                        <Button variant="ghost" onClick={onClose}>Keep {dlcId ? 'it' : 'the game'}</Button>
+                        <Button onClick={() => { refund(game.slug, dlcId); onClose() }}>Refund {formatMoney(info.amount)}</Button>
                     </>
                 ) : (
                     <Button variant="ghost" onClick={onClose}>Close</Button>
@@ -35,10 +39,14 @@ export default function RefundDialog({ game, open, onClose }) {
                         <div><dt>Refund amount</dt><dd>{formatMoney(info.amount)}</dd></div>
                         <div><dt>Refunded to</dt><dd>{info.method === 'wallet' ? 'Your Ultimate Wallet' : 'Card ending 4242'}</dd></div>
                     </dl>
-                    <p className={styles.muted}>{game.title} will be uninstalled and removed from your library, along with its playtime and achievements.</p>
+                    <p className={styles.muted}>
+                        {dlcId
+                            ? `${name} will be removed from ${game.title}.`
+                            : `${game.title} will be uninstalled and removed from your library, along with its playtime and achievements. DLC you bought for it stays yours.`}
+                    </p>
                 </div>
             ) : (
-                <p className={styles.muted}>This game can’t be refunded: {info?.reason}</p>
+                <p className={styles.muted}>This {dlcId ? 'DLC' : 'game'} can’t be refunded: {info?.reason}</p>
             )}
         </Dialog>
     )

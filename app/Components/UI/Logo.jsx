@@ -1,13 +1,16 @@
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
+import Image from 'next/image'
 import styles from './Logo.module.css'
 
-export default function Logo() {
-  return (
-    <div className={styles.container}>
-        <div className={styles.logo}>
-            <SportsEsportsIcon/>
-        </div>
-        <p>Ultimate</p>
-    </div>
-  )
+// The Ultimate Game Launcher wordmark, with white lettering on the dark theme and ink lettering on
+// the light theme. Assets come from `npm run brand`.
+export default function Logo({ height = 40, priority = false }) {
+    const width = Math.round(height * (507 / 140))
+    const size = { width, height, style: { width, height } }
+
+    return (
+        <span className={styles.logo}>
+            <Image src="/brand/wordmark-on-dark.png" alt="Ultimate Game Launcher" {...size} priority={priority} className={styles.onDark} />
+            <Image src="/brand/wordmark-on-light.png" alt="" aria-hidden="true" {...size} className={styles.onLight} />
+        </span>
+    )
 }

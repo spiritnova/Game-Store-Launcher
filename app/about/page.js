@@ -4,7 +4,7 @@ import styles from './page.module.css'
 
 export const metadata = {
   title: 'About',
-  description: 'About Ultimate, a game launcher showcase built with Next.js.',
+  description: 'About Ultimate Game Launcher, a game launcher showcase built with Next.js.',
 }
 
 const features = [
@@ -32,9 +32,9 @@ export default function About() {
   return (
     <main className={`container ${styles.page}`}>
       <header className={styles.header}>
-        <h1>About Ultimate</h1>
+        <h1>About Ultimate Game Launcher</h1>
         <p>
-          Ultimate is a portfolio project that recreates the core of a PC game launcher: a storefront to find games
+          Ultimate Game Launcher is a portfolio project that recreates the core of a PC game launcher: a storefront to find games
           and a library to install and play them. Nothing is sold and sign-in is simulated: accounts, purchases,
           wishlists and installs are saved in this browser only.
         </p>

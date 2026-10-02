@@ -10,7 +10,7 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises'
 import path from 'node:path'
 import sharp from 'sharp'
 import { CATALOG } from './catalog.mjs'
-import { decode, fetchApp, parseRating, slugify } from './steam.mjs'
+import { decode, fetchApp, parseRating, shorten, slugify, stripTags } from './steam.mjs'
 
 const root = path.resolve(import.meta.dirname, '..')
 const out = (...p) => path.join(root, 'public', 'images', ...p)
@@ -30,17 +30,6 @@ const FEATURES = [
   ['HDR', ['HDR available']],
   ['In-game purchases', ['In-App Purchases']],
 ]
-
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
-
-const stripTags = (html) => decode(html.replace(/<br\s*\/?>/gi, ' ').replace(/<[^>]+>/g, ' '))
-
-function shorten(text, max = 300) {
-  if (text.length <= max) return text
-  const cut = text.slice(0, max)
-  const sentence = cut.lastIndexOf('. ')
-  return sentence > max * 0.5 ? cut.slice(0, sentence + 1) : cut.slice(0, cut.lastIndexOf(' ')) + '…'
-}
 
 function parseRequirements(html) {
   if (!html) return []
@@ -107,10 +96,8 @@ for (const [id, genres] of CATALOG) {
     d = await fetchApp(id)
   } catch (error) {
     skipped.push(`${id}: ${error.message}`)
-    await sleep(1500)
     continue
   }
-  await sleep(450)
   if (!d) { skipped.push(`${id}: no store data`); continue }
 
   const slug = slugify(d.name)

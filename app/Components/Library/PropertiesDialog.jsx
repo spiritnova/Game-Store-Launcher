@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { formatSize, getEdition } from '@/lib/games'
 import { useDownloads } from '@/lib/downloads'
-import { DRIVES, driveUsage, formatDateTime, formatPlaytime, useStore } from '@/lib/store'
+import { DRIVES, driveUsage, formatDateTime, formatPlaytime, getUpdate, installedVersion, useStore } from '@/lib/store'
 import Button from '../UI/Button'
 import Dialog from '../UI/Dialog'
 import ProgressBar from '../UI/ProgressBar'
@@ -14,6 +14,7 @@ import styles from './PropertiesDialog.module.css'
 const tabs = [
     { id: 'general', label: 'General' },
     { id: 'files', label: 'Installed files' },
+    { id: 'dlc', label: 'DLC' },
     { id: 'purchase', label: 'Purchase' },
 ]
 
@@ -40,6 +41,7 @@ function GeneralTab({ game, entry }) {
     const { setLaunchOptions } = useStore()
     const [options, setOptions] = useState(entry.launchOptions ?? '')
     const saved = options === (entry.launchOptions ?? '')
+    const update = getUpdate(entry)
 
     return (
         <form
@@ -69,7 +71,16 @@ function GeneralTab({ game, entry }) {
                 <div><dt>Playtime</dt><dd>{formatPlaytime(entry.playtimeMinutes)}</dd></div>
                 <div><dt>Last played</dt><dd>{entry.lastPlayed ? formatDateTime(entry.lastPlayed) : 'Never'}</dd></div>
                 <div><dt>Edition</dt><dd>{getEdition(game, entry.edition).name}</dd></div>
+                {entry.installed && <div><dt>Version</dt><dd>{installedVersion(entry)}{update && ` (${update.version} available)`}</dd></div>}
             </dl>
+            {update && (
+                <div className={styles.block}>
+                    <h3>What’s new in {update.version}</h3>
+                    <ul className={styles.notes}>
+                        {update.notes.map((note) => <li key={note}>{note}</li>)}
+                    </ul>
+                </div>
+            )}
         </form>
     )
 }
@@ -186,7 +197,41 @@ function PurchaseTab({ game, entry, onRefund }) {
     )
 }
 
-export default function PropertiesDialog({ game, open, onClose, onRefund }) {
+function DlcTab({ game, onRefundDlc }) {
+    const { dlcFor, refundInfo } = useStore()
+    const owned = dlcFor(game.slug)
+    const dlc = game.dlc ?? []
+
+    return (
+        <div className={styles.section}>
+            <p className={styles.muted}>{owned.all.length} of {dlc.length} add-ons owned. Owned DLC installs with the game.</p>
+            <ul className={styles.dlcList}>
+                {dlc.map((item) => {
+                    const included = owned.included.includes(item.id)
+                    const bought = owned.bought.includes(item.id)
+                    const refundable = bought && refundInfo(game.slug, item.id)?.eligible
+                    return (
+                        <li key={item.id}>
+                            <span className={styles.dlcName}>{item.title}</span>
+                            {included ? (
+                                <span className={styles.result}>Included with your edition</span>
+                            ) : bought ? (
+                                <span className={styles.dlcOwned}>
+                                    <span className={styles.result}>Owned</span>
+                                    {refundable && <button type="button" className={styles.linkButton} onClick={() => onRefundDlc(item.id)}>Refund</button>}
+                                </span>
+                            ) : (
+                                <Link href={`/games/${game.slug}#dlc`} className={styles.linkButton}>Get it</Link>
+                            )}
+                        </li>
+                    )
+                })}
+            </ul>
+        </div>
+    )
+}
+
+export default function PropertiesDialog({ game, open, onClose, onRefund, onRefundDlc }) {
     const { getEntry } = useStore()
     const [tab, setTab] = useState('general')
     const entry = getEntry(game.slug)
@@ -196,7 +241,7 @@ export default function PropertiesDialog({ game, open, onClose, onRefund }) {
             {entry && (
                 <>
                     <div className={styles.tabs} role="tablist" aria-label="Properties">
-                        {tabs.map((t) => (
+                        {tabs.filter((t) => t.id !== 'dlc' || game.dlc?.length).map((t) => (
                             <button
                                 key={t.id}
                                 type="button"
@@ -213,6 +258,7 @@ export default function PropertiesDialog({ game, open, onClose, onRefund }) {
                     <div id="props-panel" role="tabpanel" aria-labelledby={`props-tab-${tab}`}>
                         {tab === 'general' && <GeneralTab game={game} entry={entry} />}
                         {tab === 'files' && <FilesTab game={game} entry={entry} />}
+                        {tab === 'dlc' && <DlcTab game={game} onRefundDlc={onRefundDlc} />}
                         {tab === 'purchase' && <PurchaseTab game={game} entry={entry} onRefund={onRefund} />}
                     </div>
                 </>

@@ -15,7 +15,7 @@ import { achievementProgress } from '@/lib/achievements'
 import { cardImage, formatSize, getEdition, getGame } from '@/lib/games'
 import { placeholderColor } from '@/lib/image-colors'
 import { statusLabel, useDownloads } from '@/lib/downloads'
-import { formatLastPlayed, formatPlaytime, useStore } from '@/lib/store'
+import { formatLastPlayed, formatPlaytime, getUpdate, useStore } from '@/lib/store'
 import Button from '../UI/Button'
 import Select from '../UI/Select'
 import ProgressBar from '../UI/ProgressBar'
@@ -28,6 +28,7 @@ const filters = {
   all: { label: 'All', test: () => true },
   installed: { label: 'Installed', test: (entry) => entry.installed },
   'not-installed': { label: 'Not installed', test: (entry) => !entry.installed },
+  updates: { label: 'Updates', test: (entry) => Boolean(getUpdate(entry)) },
 }
 
 const sorts = {
@@ -38,7 +39,7 @@ const sorts = {
 }
 
 function LibraryCard({ entry }) {
-  const { play, stopPlaying, playing } = useStore()
+  const { play, stopPlaying, playing, dlcFor } = useStore()
   const downloads = useDownloads()
   const { game } = entry
   const download = downloads.statusOf(game.slug)
@@ -63,7 +64,7 @@ function LibraryCard({ entry }) {
         style={{ backgroundColor: placeholderColor(cardImage(game)) }}
       >
         <Image src={cardImage(game)} alt="" fill sizes="(max-width: 600px) 50vw, 220px" />
-        <span className={`${styles.status} ${entry.installed ? styles.installed : ''} ${isPlaying ? styles.playing : ''}`}>{status}</span>
+        <span className={`${styles.status} ${entry.installed ? styles.installed : ''} ${update && !download && !isPlaying ? styles.hasUpdate : ''} ${isPlaying ? styles.playing : ''}`}>{status}</span>
         {entry.favorite && <FavoriteIcon className={styles.favorite} fontSize="small" />}
       </Link>
 
@@ -77,6 +78,7 @@ function LibraryCard({ entry }) {
           {formatPlaytime(entry.playtimeMinutes)}
           {lastPlayed && <> · {lastPlayed}</>}
           {!entry.installed && <> · {formatSize(game.sizeGB)}</>}
+          {game.dlc?.length > 0 && <> · {dlcFor(game.slug).all.length}/{game.dlc.length} DLC</>}
         </p>
         {achievements && (
           <Link href={`/games/${game.slug}#achievements`} className={styles.achievements} title={`${achievements.unlocked} of ${achievements.total} achievements`}>
@@ -130,6 +132,7 @@ function LibraryCard({ entry }) {
 
 export default function LibraryView() {
   const { hydrated, session, library, collections, createCollection, renameCollection, deleteCollection } = useStore()
+  const downloads = useDownloads()
   const [shelf, setShelf] = useState('all')
   const [filter, setFilter] = useState('all')
   const [sort, setSort] = useState('recent')
@@ -158,6 +161,7 @@ export default function LibraryView() {
   const installedCount = library.filter((entry) => entry.installed).length
   const totalHours = Math.round(library.reduce((sum, entry) => sum + entry.playtimeMinutes, 0) / 60)
   const unlocked = library.reduce((sum, entry) => sum + (achievementProgress(entry)?.unlocked ?? 0), 0)
+  const updateCount = library.filter(filters.updates.test).length
 
   return (
     <>
@@ -170,6 +174,11 @@ export default function LibraryView() {
             </p>
           )}
         </div>
+        {hydrated && downloads.updates.length > 0 && (
+          <Button variant="secondary" onClick={downloads.updateAll}>
+            <SystemUpdateAltIcon fontSize="small" /> Update all ({downloads.updates.length})
+          </Button>
+        )}
       </header>
 
       {!hydrated ? (
@@ -218,6 +227,7 @@ export default function LibraryView() {
               {Object.entries(filters).map(([value, { label }]) => (
                 <button key={value} type="button" aria-pressed={filter === value} onClick={() => setFilter(value)}>
                   {label}
+                  {value === 'updates' && updateCount > 0 && <span className={styles.updateCount}>{updateCount}</span>}
                 </button>
               ))}
             </div>
@@ -243,6 +253,7 @@ export default function LibraryView() {
                 {q ? `No games match “${query.trim()}”.`
                   : current.id === 'favorites' ? 'Mark games as favourites from the ⋯ menu on any game.'
                   : current.id === 'hidden' ? 'Games you hide show up here.'
+                  : filter === 'updates' ? 'Your installed games are up to date.'
                   : collection ? 'This collection is empty. Use the ⋯ menu on any game to add it.'
                   : 'No games match this filter.'}
               </p>

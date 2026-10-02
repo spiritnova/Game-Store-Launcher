@@ -51,6 +51,7 @@ function NameForm({ initial, submitLabel, onCancel, onSubmit }) {
 export default function GameMenu({ game, className }) {
     const { getEntry, collections, toggleFavorite, toggleHidden, toggleCollection, createCollection, uninstall } = useStore()
     const [dialog, setDialog] = useState(null)
+    const [refundDlc, setRefundDlc] = useState(null)
     const entry = getEntry(game.slug)
     if (!entry) return null
 
@@ -66,15 +67,24 @@ export default function GameMenu({ game, className }) {
         { label: 'Request a refund…', icon: ReplayIcon, onSelect: () => setDialog('refund') },
     ]
 
-    const close = () => setDialog(null)
+    const close = () => {
+        setDialog(null)
+        setRefundDlc(null)
+    }
     return (
         <>
             <Menu label={`Manage ${game.title}`} items={items} buttonClassName={className ?? styles.button}>
                 <MoreHorizIcon fontSize="small" />
             </Menu>
             <CollectionNameDialog open={dialog === 'collection'} onClose={close} title="New collection" onSubmit={(name) => createCollection(name, game.slug)} />
-            <PropertiesDialog game={game} open={dialog === 'properties'} onClose={close} onRefund={() => setDialog('refund')} />
-            <RefundDialog game={game} open={dialog === 'refund'} onClose={close} />
+            <PropertiesDialog
+                game={game}
+                open={dialog === 'properties'}
+                onClose={close}
+                onRefund={() => setDialog('refund')}
+                onRefundDlc={(id) => { setRefundDlc(id); setDialog('refund') }}
+            />
+            <RefundDialog game={game} dlcId={refundDlc} open={dialog === 'refund'} onClose={close} />
         </>
     )
 }

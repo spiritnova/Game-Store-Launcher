@@ -32,7 +32,7 @@ export default function Footer() {
     <footer className={styles.footer}>
         <div className={`container ${styles.content}`}>
             <div className={styles.brand}>
-                <Logo/>
+                <Logo height={52} />
                 <p className={styles.text}>
                     A showcase game launcher built with Next.js. Discover deals, build a wishlist and
                     manage a library of installed games, all in your browser.
@@ -71,7 +71,7 @@ export default function Footer() {
 
         <div className={styles.bottom}>
             <div className={`container ${styles.bottomRow}`}>
-                <p>© {new Date().getFullYear()} Ultimate. A portfolio project, not a real store.</p>
+                <p>© {new Date().getFullYear()} Ultimate Game Launcher. A portfolio project, not a real store.</p>
                 <p>Game titles and artwork are trademarks of their respective owners.</p>
             </div>
         </div>

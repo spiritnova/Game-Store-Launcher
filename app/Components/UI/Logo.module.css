@@ -1,24 +1,16 @@
-.container{
-    display: flex;
+.logo {
+    display: inline-flex;
     align-items: center;
 }
 
-.logo{
-    display: flex;
-    background-color: var(--main);
-    border-radius: 50%;
-    padding: 0.4rem;
-    margin-right: 8px;
+.onLight {
+    display: none;
 }
 
-.logo svg{
-    font-size: 1.75rem;
-    color: black;
+:global([data-theme='light']) .onDark {
+    display: none;
 }
 
-.container p{
-    font-family: var(--font-inter), sans-serif;
-    font-weight: 600;
-    font-size: 22px;
-    letter-spacing: 0.5px;
+:global([data-theme='light']) .onLight {
+    display: block;
 }

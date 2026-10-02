@@ -21,6 +21,7 @@ import AgeGate from '@/app/Components/Game/AgeGate'
 import AgeRating, { gateAge } from '@/app/Components/Game/AgeRating'
 import Bundles from '@/app/Components/Game/Bundles'
 import Comments from '@/app/Components/Game/Comments'
+import Dlc from '@/app/Components/Game/Dlc'
 import FriendsWhoOwn from '@/app/Components/Game/FriendsWhoOwn'
 import Editions from '@/app/Components/Game/Editions'
 import GameActions from '@/app/Components/Game/GameActions'
@@ -125,6 +126,7 @@ export default function GamePage({ params }) {
 
             {game.features.length > 0 && <Features features={game.features} />}
             {game.editions.length > 1 && <Editions game={game} />}
+            <Dlc game={game} />
             {bundles.length > 0 && <Bundles bundles={bundles} />}
             {(info.requirements.minimum.length > 0 || info.requirements.recommended.length > 0) && (
               <SystemRequirements requirements={info.requirements} />
@@ -141,6 +143,11 @@ export default function GamePage({ params }) {
             {game.editions.length > 1 && (
               <a href="#editions" className={styles.editionsLink}>
                 {game.editions.length} editions available
+              </a>
+            )}
+            {game.dlc?.length > 0 && (
+              <a href="#dlc" className={styles.editionsLink}>
+                {game.dlc.length} DLC {game.dlc.length === 1 ? 'add-on' : 'add-ons'} available
               </a>
             )}
 

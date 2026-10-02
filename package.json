@@ -9,7 +9,9 @@
     "lint": "next lint",
     "images": "node scripts/image-meta.mjs",
     "import:steam": "node scripts/import-steam.mjs",
-    "import:ratings": "node scripts/import-ratings.mjs"
+    "import:ratings": "node scripts/import-ratings.mjs",
+    "import:dlc": "node scripts/import-dlc.mjs",
+    "brand": "node scripts/brand.mjs"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",

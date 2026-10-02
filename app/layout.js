@@ -26,19 +26,19 @@ const inter = localFont({
 })
 
 const description =
-  'Ultimate is a game launcher showcase: discover new releases and deals, build a wishlist, and manage your library of installed games.'
+  'Ultimate Game Launcher is a game launcher showcase: discover new releases and deals, build a wishlist, and manage your library of installed games.'
 
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
   title: {
     default: 'Ultimate Game Launcher',
-    template: '%s · Ultimate',
+    template: '%s · Ultimate Game Launcher',
   },
   description,
   openGraph: {
     title: 'Ultimate Game Launcher',
     description,
-    siteName: 'Ultimate',
+    siteName: 'Ultimate Game Launcher',
     type: 'website',
   },
   twitter: {
@@ -47,7 +47,7 @@ export const metadata = {
 }
 
 export const viewport = {
-  themeColor: '#121212',
+  themeColor: '#0a0b10',
 }
 
 // Applies the saved theme and accent before the first paint, so there's no flash of the wrong colours.

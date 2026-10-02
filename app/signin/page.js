@@ -3,7 +3,7 @@ import SignInForm from '../Components/Account/SignInForm'
 
 export const metadata = {
   title: 'Sign in',
-  description: 'Sign in to Ultimate to buy games and manage your library.',
+  description: 'Sign in to Ultimate Game Launcher to buy games and manage your library.',
 }
 
 export default function SignIn() {

@@ -65,8 +65,8 @@ export default function SignInForm() {
 
   return (
     <div className={styles.card}>
-      <Logo />
-      <h1>Sign in to Ultimate</h1>
+      <Logo height={48} />
+      <h1>Sign in to Ultimate Game Launcher</h1>
       <p className={styles.lead}>Your library and wishlist are saved to your account.</p>
 
       <Button size="large" className={styles.full} onClick={() => finish(DEMO_USER)}>

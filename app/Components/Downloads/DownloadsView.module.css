@@ -404,3 +404,20 @@
         flex-direction: column;
     }
 }
+
+.notes {
+    margin-top: 0.2rem;
+    font-size: 0.8rem;
+}
+
+.notes summary {
+    width: fit-content;
+    color: var(--main-text);
+    cursor: pointer;
+}
+
+.notes ul {
+    margin: 0.35rem 0 0.15rem 1.1rem;
+    list-style: disc;
+    color: var(--text-muted);
+}

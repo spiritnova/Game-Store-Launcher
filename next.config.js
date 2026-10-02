@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Lets a production build live beside a running `npm run dev` (they would overwrite each other's .next):
+  //   NEXT_DIST_DIR=.next-prod npm run build && NEXT_DIST_DIR=.next-prod npm start
+  distDir: process.env.NEXT_DIST_DIR || '.next',
   // The old sign-in page became the login screen
   async redirects() {
     return [{ source: '/signin', destination: '/login', permanent: false }]

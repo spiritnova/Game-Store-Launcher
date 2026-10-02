@@ -1,6 +1,4 @@
-import Footer from './Components/Footer'
 import Providers from './Components/Providers'
-import Sidebar from './Components/Sidebar'
 import { STORAGE_KEY } from '@/lib/storage-key'
 import './globals.css'
 import localFont from 'next/font/local'
@@ -62,16 +60,8 @@ export default function RootLayout({ children }) {
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
-        <Providers>
-          <a href="#main" className="skip-link">Skip to content</a>
-          <div className="shell">
-            <Sidebar />
-            <div className="content">
-              <div id="main" className="page">{children}</div>
-              <Footer />
-            </div>
-          </div>
-        </Providers>
+        {/* The launcher's pages (with the sidebar) are in app/(launcher); login and register in app/(auth) */}
+        <Providers>{children}</Providers>
       </body>
     </html>
   )

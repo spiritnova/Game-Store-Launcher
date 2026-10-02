@@ -16,7 +16,7 @@ export default function SignInPrompt({ title, text, next }) {
             <p>{text}</p>
             <div className={styles.actions}>
                 <Button onClick={() => signIn(DEMO_USER)}>Continue as demo player</Button>
-                <Button href={`/signin?next=${encodeURIComponent(next)}`} variant="ghost">Sign in</Button>
+                <Button href={`/login?next=${encodeURIComponent(next)}`} variant="ghost">Log in</Button>
             </div>
         </div>
     )

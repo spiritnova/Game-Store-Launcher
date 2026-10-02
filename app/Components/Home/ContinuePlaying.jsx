@@ -9,17 +9,16 @@ import { placeholderColor } from '@/lib/image-colors'
 import { useDownloads } from '@/lib/downloads'
 import { formatLastPlayed, formatPlaytime, useStore } from '@/lib/store'
 import Button from '../UI/Button'
-import AccountBand from './AccountBand'
 import SectionHeader from '../UI/SectionHeader'
 import styles from './ContinuePlaying.module.css'
 
-// "Continue playing" for signed-in players; a sign-in promo for everyone else.
+// "Continue playing": the player's recently played installed games.
 export default function ContinuePlaying() {
     const { hydrated, session, library, play } = useStore()
     const downloads = useDownloads()
 
     if (!hydrated) return <div className={styles.placeholder} aria-hidden="true" />
-    if (!session) return <AccountBand />
+    if (!session) return null
 
     const recent = library
         .filter((entry) => entry.installed)

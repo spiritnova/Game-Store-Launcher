@@ -357,13 +357,7 @@
     text-overflow: ellipsis;
 }
 
-.profilePlaceholder{
-    height: 54px;
-}
 
-.signIn{
-    width: 100%;
-}
 
 .iconButton{
     position: relative;

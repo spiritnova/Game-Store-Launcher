@@ -26,7 +26,6 @@ import { formatSpeed, statusLabel, useDownloads } from '@/lib/downloads'
 import { useStore } from '@/lib/store'
 import { useNow } from '@/lib/useNow'
 import Avatar from './UI/Avatar'
-import Button from './UI/Button'
 import Logo from './UI/Logo'
 import Notifications from './UI/Notifications'
 import { PresenceDot, presenceLabel, usePresence } from './UI/Presence'
@@ -319,9 +318,8 @@ export default function Sidebar(){
                         {hydrated && <ThemeToggle />}
                     </div>
 
-                    {!hydrated ? (
-                        <div className={styles.profilePlaceholder} />
-                    ) : user ? (
+                    {/* The launcher only opens once someone is logged in (see AuthGate) */}
+                    {user && (
                         <div className={styles.profile}>
                             <Link
                                 href={profileHref}
@@ -350,10 +348,6 @@ export default function Sidebar(){
                                 <LogoutIcon fontSize="small" />
                             </Link>
                         </div>
-                    ) : (
-                        <Button href={`/signin?next=${encodeURIComponent(pathname)}`} variant="secondary" className={styles.signIn}>
-                            Sign in
-                        </Button>
                     )}
                 </div>
             </aside>

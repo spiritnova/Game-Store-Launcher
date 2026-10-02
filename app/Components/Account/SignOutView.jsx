@@ -8,7 +8,7 @@ import Avatar from '../UI/Avatar'
 import Button from '../UI/Button'
 import Logo from '../UI/Logo'
 import Skeleton from '../UI/Skeleton'
-import styles from './SignInForm.module.css'
+import styles from './AuthForm.module.css'
 
 // Only allow redirects to paths on this site.
 function safeNext(value) {
@@ -35,15 +35,15 @@ export default function SignOutView() {
     return (
       <div className={styles.card}>
         {signedOut ? <CheckCircleIcon className={styles.done} /> : <Logo height={48} />}
-        <h1>{signedOut ? 'You’ve signed out' : 'You’re not signed in'}</h1>
+        <h1>{signedOut ? 'You’ve signed out' : 'You’re not logged in'}</h1>
         <p className={styles.lead}>
           {signedOut
             ? `See you soon, ${signedOut}. Your library and settings stay saved in this browser.`
-            : 'Sign in to see your library, wishlist and friends.'}
+            : 'Log in to open your launcher.'}
         </p>
         <div className={styles.row}>
-          <Button href="/signin">Sign in{signedOut ? ' again' : ''}</Button>
-          <Button href="/" variant="ghost">Back to the store</Button>
+          <Button href="/login">Log in{signedOut ? ' again' : ''}</Button>
+          <Button href="/register" variant="ghost">Create an account</Button>
         </div>
       </div>
     )

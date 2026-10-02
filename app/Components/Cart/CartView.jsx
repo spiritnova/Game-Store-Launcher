@@ -356,7 +356,7 @@ export default function CartView() {
               <div className={styles.signIn}>
                 <p>Sign in to complete your purchase.</p>
                 <Button size="large" onClick={() => signIn(DEMO_USER)}>Continue as demo player</Button>
-                <Button href="/signin?next=%2Fcart" variant="ghost">Sign in</Button>
+                <Button href="/login?next=%2Fcart" variant="ghost">Log in</Button>
               </div>
             )}
             <p className={styles.note}>This is a demo store. No payment is taken.</p>

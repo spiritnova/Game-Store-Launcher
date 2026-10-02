@@ -14,7 +14,7 @@ Nothing is actually sold. Sign-in, purchases, installs, playtime and friends are
 - **Cart & checkout**: buy any edition, or a bundle priced for the games you don't own yet. Sale and bundle discounts are itemised. Pay with the wallet or a simulated card (with a short simulated processing step), apply a coupon code (`SAVE10`, `INDIE25`, `ADDONS15`, `BIG15`, `FIRSTPLAY`), and buy any game as a gift for a friend, with a message. Own a lower edition? Upgrade to a higher one for the price difference, with DLC you already bought credited.
 - **Purchases & refunds**: a purchase history with itemised receipts (order number, payment method, discounts). Games bought in the last 14 days and played for less than 2 hours can be refunded to the original payment method; DLC too, counting playtime since it was bought. Refunding a game also refunds edition upgrades bought for it, and keeps the DLC you bought for it.
 - **Wallet**: add funds or redeem a gift card code (`ULTIMATE-DEMO-20` and `WELCOME-5` work once per account).
-- **Accounts**: sign in with any username, or with one click as the demo player. Each account keeps its own library and wishlist. Passwords are only validated, never stored.
+- **Login and registration**: the launcher opens behind an entry screen. Create an account (username, display name, password with a strength meter) or log in; passwords are checked against a salted SHA-256 hash kept in the browser, never stored as text. The demo account is one click away (or log in with `demo` / `demo`). Opening any launcher page while logged out shows a short boot screen, then the login screen, and returns you to that page afterwards. Signing out asks first.
 - **Wishlist**: add games from any card or game page (requires sign-in).
 - **Library & downloads**: install, play and uninstall games. Organise them into collections, favourites and hidden games, and search or sort the library. Playing a game runs a session that adds playtime (fast-forwarded in the demo) and unlocks achievements as you go. Updates come with a version number and patch notes; the library has an Updates filter and an "Update all" button. Each game has properties: version and what's new, owned DLC, launch options, verify files (repairs anything that fails), move the install folder between drives, and purchase and refund details. The download manager has a queue you can reorder, pause/resume, a live speed graph, ETAs, storage per drive and a simulated connection speed (demo turbo, 1 Gbps or 100 Mbps).
 - **Friends & profiles**: add friends by username (demo players or other accounts in the same browser), see who's online or playing what, follow recent activity, and open public profiles (`/u/pixelnomad`) with recently played games, achievements, most played games and reviews. Review and comment authors link to their profiles.
@@ -65,16 +65,17 @@ Set `NEXT_PUBLIC_SITE_URL` to your deployed URL so Open Graph images resolve to 
 ```
 app/
   Components/     UI building blocks (Sidebar, Footer, cards, carousels, views)
-  games/          Browse page and game pages (/games/[slug])
-  library/        Library page
-  wishlist/       Wishlist page
-  cart/           Cart and checkout
-  downloads/      Download manager
-  friends/        Friends list and activity
-  u/[username]/   Public player profiles
-  settings/       Profile, settings, purchases and wallet
-  signin/, signout/  Mock sign-in and sign-out
-  news/, about/   Static content pages
+  (auth)/         Entry screen without the launcher around it: login, register, signout
+  (launcher)/     Everything behind login, with the sidebar (layout.js holds the login gate)
+    games/          Browse page and game pages (/games/[slug])
+    library/        Library page
+    wishlist/       Wishlist page
+    cart/           Cart and checkout
+    downloads/      Download manager
+    friends/        Friends list and activity
+    u/[username]/   Public player profiles
+    settings/       Profile, settings, purchases and wallet
+    news/, about/   Static content pages
 data/
   games.json      Game catalogue: prices, editions, DLC, features, art, descriptions (sent to the browser)
   game-details.json  Screenshots, languages, requirements, age ratings (server only)

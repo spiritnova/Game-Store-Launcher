@@ -1,0 +1,133 @@
+.auth {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+/* ---------- Brand panel ---------- */
+.brand {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    background-color: #07080c;
+}
+
+.mosaic {
+    position: absolute;
+    inset: -20% -10%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 14px;
+    transform: rotate(-10deg);
+    opacity: 0.55;
+}
+
+.tile {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #1a1d28;
+}
+
+.tile img {
+    object-fit: cover;
+}
+
+/* Fade the art towards the bottom left, where the text sits */
+.brand::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(20deg, rgba(7, 8, 12, 0.97) 25%, rgba(7, 8, 12, 0.75) 55%, rgba(7, 8, 12, 0.35)),
+        radial-gradient(60% 50% at 20% 85%, rgba(248, 180, 0, 0.16), transparent 70%);
+}
+
+.brandContent {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
+    padding: clamp(2rem, 4vw, 3.5rem);
+}
+
+.pitch {
+    max-width: 30rem;
+}
+
+.pitch h2 {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.pitch p {
+    margin-top: 0.75rem;
+    color: var(--text-soft);
+}
+
+.perks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+}
+
+.perks li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+}
+
+.perks svg {
+    color: #f8b400;
+}
+
+.note {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* ---------- Form side ---------- */
+.panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1.25rem;
+    background:
+        radial-gradient(60% 40% at 50% 0%, color-mix(in srgb, var(--main) 10%, transparent), transparent 70%),
+        var(--bg);
+}
+
+@media (max-width: 900px) {
+    .auth {
+        grid-template-columns: 1fr;
+    }
+
+    .brandContent {
+        gap: 1rem;
+        padding: 1.5rem 1.25rem;
+    }
+
+    .pitch h2 {
+        font-size: 1.4rem;
+    }
+
+    .pitch p,
+    .perks,
+    .note {
+        display: none;
+    }
+
+    .panel {
+        align-items: flex-start;
+        padding-top: 1.5rem;
+    }
+}

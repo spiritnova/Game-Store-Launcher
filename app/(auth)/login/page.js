@@ -1,0 +1,16 @@
+import { Suspense } from 'react'
+import AuthForm from '../../Components/Account/AuthForm'
+
+export const metadata = {
+  title: 'Log in',
+  description: 'Log in to Ultimate Game Launcher.',
+}
+
+export default function Login() {
+  return (
+    // AuthForm reads ?next= from the URL, which requires a Suspense boundary for static rendering
+    <Suspense>
+      <AuthForm mode="login" />
+    </Suspense>
+  )
+}

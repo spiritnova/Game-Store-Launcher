@@ -1,0 +1,250 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.1rem;
+    width: 100%;
+    max-width: 440px;
+    padding: 2rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+.tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    width: 100%;
+    padding: 4px;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.tabs a {
+    padding: 0.55rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.tabs a:hover {
+    color: var(--text);
+}
+
+.tabs a[aria-current='page'] {
+    background-color: var(--surface-3);
+    color: var(--text);
+}
+
+.heading {
+    width: 100%;
+    text-align: center;
+}
+
+.heading h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.heading p {
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.field label {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.optional {
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.field input {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    background-color: var(--bg);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+}
+
+.field input:focus {
+    border-color: var(--main);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--main) 22%, transparent);
+    outline: none;
+}
+
+.field input[aria-invalid='true'] {
+    border-color: var(--danger);
+}
+
+.passwordRow {
+    position: relative;
+    display: flex;
+}
+
+.passwordRow input {
+    padding-right: 2.75rem;
+}
+
+.reveal {
+    position: absolute;
+    top: 50%;
+    right: 0.4rem;
+    display: flex;
+    padding: 0.35rem;
+    background: none;
+    border: none;
+    border-radius: 8px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.reveal:hover {
+    color: var(--text);
+    background-color: var(--hover);
+}
+
+.hint {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.error {
+    font-size: 0.8rem;
+    color: var(--danger);
+}
+
+.formError {
+    padding: 0.65rem 0.85rem;
+    background-color: color-mix(in srgb, var(--danger) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--danger) 40%, transparent);
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    color: var(--danger);
+}
+
+.strength {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.meter {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+}
+
+.meter span {
+    height: 4px;
+    border-radius: 999px;
+    background-color: var(--surface-3);
+}
+
+.meter .level1 {
+    background-color: var(--danger);
+}
+
+.meter .level2 {
+    background-color: var(--warning);
+}
+
+.meter .level3 {
+    background-color: #4cc2ff;
+}
+
+.meter .level4 {
+    background-color: var(--success);
+}
+
+.full {
+    width: 100%;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: var(--border);
+}
+
+.footnote {
+    font-size: 0.85rem;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.footnote a {
+    color: var(--main-text);
+    font-weight: 600;
+}
+
+.footnote a:hover {
+    text-decoration: underline;
+}
+
+.footnote strong {
+    color: var(--text);
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.privacy {
+    font-size: 0.75rem;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+/* Sign-out page (shares the card) */
+.lead {
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.done {
+    font-size: 3.5rem !important;
+    color: var(--success);
+}
+
+.card h1 {
+    text-align: center;
+}

@@ -1,8 +1,13 @@
-import { discountPercent, formatPrice, isOnSale } from '@/lib/games'
+'use client'
+
+import { discountPercent, isOnSale } from '@/lib/games'
+import { useStore } from '@/lib/store'
 import styles from './Price.module.css'
 
 // `hideBadge` drops the discount pill (cards show it on the cover instead).
+// Prices follow the currency chosen in Settings.
 export default function Price({ game, size, hideBadge = false }) {
+    const { formatPrice } = useStore()
     const classes = [styles.prices, size && styles[size]].filter(Boolean).join(' ')
 
     if (game.price === 0) {

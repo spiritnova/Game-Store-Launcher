@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { authorHue, formatDate } from '@/lib/community'
 import { formatRelative, useStore } from '@/lib/store'
 import Avatar from '../UI/Avatar'
@@ -65,7 +66,7 @@ export default function Comments({ game, seeded }) {
                             <Avatar user={comment.author} size={32} />
                             <div className={styles.commentBody}>
                                 <p className={styles.name}>
-                                    {comment.author.displayName}
+                                    <Link href={`/u/${comment.author.username}`} className={styles.authorLink}>{comment.author.displayName}</Link>
                                     <span className={styles.meta}>
                                         {comment.seeded ? formatDate(comment.createdAt) : formatRelative(new Date(comment.createdAt).getTime())}
                                     </span>

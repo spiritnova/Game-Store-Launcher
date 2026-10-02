@@ -3,56 +3,37 @@
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import CloseIcon from '@mui/icons-material/Close'
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined'
 import DownloadIcon from '@mui/icons-material/Download'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined'
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined'
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined'
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined'
 import LogoutIcon from '@mui/icons-material/Logout'
 import MenuIcon from '@mui/icons-material/Menu'
 import NewspaperOutlinedIcon from '@mui/icons-material/NewspaperOutlined'
+import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
-import SearchIcon from '@mui/icons-material/Search'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
+import StopIcon from '@mui/icons-material/Stop'
 import VideogameAssetOutlinedIcon from '@mui/icons-material/VideogameAssetOutlined'
 import { cardImage, getGame } from '@/lib/games'
 import { formatSpeed, statusLabel, useDownloads } from '@/lib/downloads'
 import { useStore } from '@/lib/store'
+import { useNow } from '@/lib/useNow'
 import Avatar from './UI/Avatar'
 import Button from './UI/Button'
 import Logo from './UI/Logo'
+import Notifications from './UI/Notifications'
+import { PresenceDot, presenceLabel, usePresence } from './UI/Presence'
 import ProgressBar from './UI/ProgressBar'
+import SearchBox from './SearchBox'
 import styles from './Sidebar.module.css'
 
-function SearchForm() {
-    const router = useRouter()
-    const [query, setQuery] = useState('')
-
-    function handleSubmit(e) {
-        e.preventDefault()
-        const q = query.trim()
-        router.push(q ? `/games?q=${encodeURIComponent(q)}` : '/games')
-        setQuery('')
-    }
-
-    return (
-        <form role="search" className={styles.search} onSubmit={handleSubmit}>
-            <SearchIcon className={styles.searchIcon} fontSize="small" />
-            <label className="visually-hidden" htmlFor="sidebar-search">Search games</label>
-            <input
-                id="sidebar-search"
-                type="search"
-                placeholder="Search store"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-            />
-        </form>
-    )
-}
-
-function NavLink({ href, icon: Icon, label, count, active, onNavigate }) {
+function NavLink({ href, icon: Icon, label, count, countLabel, active, onNavigate }) {
     return (
         <li>
             <Link
@@ -69,7 +50,7 @@ function NavLink({ href, icon: Icon, label, count, active, onNavigate }) {
                 {count > 0 && (
                     <span className={styles.count}>
                         {count}
-                        <span className="visually-hidden"> {count === 1 ? 'item' : 'items'}</span>
+                        <span className="visually-hidden"> {countLabel ?? (count === 1 ? 'item' : 'items')}</span>
                     </span>
                 )}
             </Link>
@@ -108,12 +89,88 @@ function DownloadsPanel() {
     )
 }
 
+// The running game, with a session timer and a way to close it.
+function NowPlaying() {
+    const { playing, stopPlaying } = useStore()
+    const now = useNow(1000)
+    if (!playing) return null
+    const game = getGame(playing.slug)
+    const minutes = Math.max(0, Math.floor(((now - playing.startedAt) / 1000) * playing.scale))
+    const session = minutes < 60 ? `${minutes} min` : `${Math.floor(minutes / 60)} h ${minutes % 60} min`
+
+    return (
+        <section className={`${styles.panel} ${styles.nowPlaying}`} aria-labelledby="now-playing-title">
+            <h2 id="now-playing-title" className={styles.section}>Now playing</h2>
+            <div className={styles.playingRow}>
+                <Link href={`/games/${game.slug}`} className={styles.quickGame}>
+                    <span className={styles.thumb}>
+                        <Image src={cardImage(game)} alt="" fill sizes="32px" />
+                    </span>
+                    <span className={styles.profileText}>
+                        <span className={styles.quickTitle}>{game.title}</span>
+                        <span className={styles.downloadMeta}>{session} this session</span>
+                    </span>
+                </Link>
+                <button type="button" className={styles.iconButton} onClick={stopPlaying} aria-label={`Close ${game.title}`} title="Stop playing">
+                    <StopIcon fontSize="small" />
+                </button>
+            </div>
+        </section>
+    )
+}
+
+function FriendsPanel() {
+    const { friends, profileOf } = useStore()
+    const statusOf = usePresence()
+    const now = useNow(60000)
+    const online = friends
+        .map((f) => ({ ...profileOf(f.username), status: statusOf(f.username, now) }))
+        .filter((f) => f.status.state !== 'offline')
+        .sort((a, b) => (a.status.state === 'playing' ? -1 : 0) - (b.status.state === 'playing' ? -1 : 0))
+    if (online.length === 0) return null
+
+    return (
+        <section className={styles.panel} aria-labelledby="friends-online-title">
+            <h2 id="friends-online-title" className={styles.section}>Friends online · {online.length}</h2>
+            <ul className={styles.quick}>
+                {online.slice(0, 4).map((friend) => (
+                    <li key={friend.username}>
+                        <Link href={`/u/${friend.username}`} className={styles.quickGame}>
+                            <span className={styles.friendAvatar}>
+                                <Avatar user={friend} size={28} />
+                                <PresenceDot status={friend.status} className={styles.friendDot} />
+                            </span>
+                            <span className={styles.profileText}>
+                                <span className={styles.quickTitle}>{friend.displayName}</span>
+                                <span className={styles.friendStatus}>{presenceLabel(friend.status)}</span>
+                            </span>
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </section>
+    )
+}
+
+// Only rendered after hydration, so it can check the system setting directly.
+function ThemeToggle() {
+    const { prefs, updatePrefs } = useStore()
+    const dark = prefs.theme === 'system' ? !window.matchMedia('(prefers-color-scheme: light)').matches : prefs.theme === 'dark'
+    const label = dark ? 'Switch to light theme' : 'Switch to dark theme'
+
+    return (
+        <button type="button" className={styles.iconButton} onClick={() => updatePrefs({ theme: dark ? 'light' : 'dark' })} aria-label={label} title={label}>
+            {dark ? <LightModeOutlinedIcon fontSize="small" /> : <DarkModeOutlinedIcon fontSize="small" />}
+        </button>
+    )
+}
+
 export default function Sidebar(){
     const pathname = usePathname()
     const [open, setOpen] = useState(false)
     // The link that was just clicked: highlighted immediately, before the new page has loaded
     const [pendingHref, setPendingHref] = useState(null)
-    const { hydrated, user, library, wishlist, cart, play, signOut } = useStore()
+    const { hydrated, user, library, wishlist, cart, friends, wallet, playing, play, signOut, formatMoney } = useStore()
     const menuButton = useRef(null)
     const closeButton = useRef(null)
 
@@ -142,10 +199,10 @@ export default function Sidebar(){
     const isActive = (href) => (href === '/' ? current === '/' : current.startsWith(href))
     const onNavigate = (href) => href !== pathname && setPendingHref(href)
     const link = (href) => ({ href, active: isActive(href), onNavigate })
-    const counts = hydrated ? { library: library.length, wishlist: wishlist.length, cart: cart.length } : {}
+    const counts = hydrated ? { library: library.length, wishlist: wishlist.length, cart: cart.length, friends: friends.length } : {}
 
     const quickLaunch = library
-        .filter((entry) => entry.installed)
+        .filter((entry) => entry.installed && !entry.hidden && entry.slug !== playing?.slug)
         .sort((a, b) => (b.lastPlayed ?? 0) - (a.lastPlayed ?? 0))
         .slice(0, 4)
         .map((entry) => getGame(entry.slug))
@@ -167,10 +224,13 @@ export default function Sidebar(){
                 <Link href="/" className={styles.brand} aria-label="Ultimate home">
                     <Logo/>
                 </Link>
-                <Link href="/cart" className={styles.iconButton} aria-label={`Cart${counts.cart ? ` (${counts.cart})` : ''}`}>
-                    <ShoppingCartOutlinedIcon />
-                    {counts.cart > 0 && <span className={styles.badge} aria-hidden="true">{counts.cart}</span>}
-                </Link>
+                <div className={styles.topActions}>
+                    <Notifications className={styles.iconButton} />
+                    <Link href="/cart" className={styles.iconButton} aria-label={`Cart${counts.cart ? ` (${counts.cart})` : ''}`}>
+                        <ShoppingCartOutlinedIcon />
+                        {counts.cart > 0 && <span className={styles.badge} aria-hidden="true">{counts.cart}</span>}
+                    </Link>
+                </div>
             </header>
 
             <div className={`${styles.overlay} ${open ? styles.overlayVisible : ''}`} onClick={() => setOpen(false)} aria-hidden="true" />
@@ -180,6 +240,9 @@ export default function Sidebar(){
                     <Link href="/" className={styles.brand} aria-label="Ultimate home">
                         <Logo/>
                     </Link>
+                    <div className={styles.desktopOnly}>
+                        <Notifications className={styles.iconButton} />
+                    </div>
                     <button
                         ref={closeButton}
                         type="button"
@@ -191,7 +254,7 @@ export default function Sidebar(){
                     </button>
                 </div>
 
-                <SearchForm />
+                <SearchBox onNavigate={onNavigate} />
 
                 {/* Only this middle part scrolls, so the profile stays pinned at the bottom */}
                 <div className={styles.scroll}>
@@ -205,14 +268,17 @@ export default function Sidebar(){
 
                     <h2 className={styles.section}>Your games</h2>
                     <ul>
-                        <NavLink {...link('/library')} icon={VideogameAssetOutlinedIcon} label="Library" count={counts.library} />
+                        <NavLink {...link('/library')} icon={VideogameAssetOutlinedIcon} label="Library" count={counts.library} countLabel="games" />
                         <DownloadsNavLink {...link('/downloads')} icon={DownloadIcon} label="Downloads" />
-                        <NavLink {...link('/wishlist')} icon={FavoriteBorderIcon} label="Wishlist" count={counts.wishlist} />
+                        <NavLink {...link('/wishlist')} icon={FavoriteBorderIcon} label="Wishlist" count={counts.wishlist} countLabel="games" />
                         <NavLink {...link('/cart')} icon={ShoppingCartOutlinedIcon} label="Cart" count={counts.cart} />
+                        <NavLink {...link('/friends')} icon={PeopleOutlineIcon} label="Friends" count={counts.friends} countLabel="friends" />
                     </ul>
                 </nav>
 
+                {hydrated && <NowPlaying />}
                 <DownloadsPanel />
+                {hydrated && user && <FriendsPanel />}
 
                 {quickLaunch.length > 0 && (
                     <section className={styles.panel} aria-labelledby="quick-launch-title">
@@ -244,9 +310,12 @@ export default function Sidebar(){
                 </div>
 
                 <div className={styles.footer}>
-                    <ul>
-                        <NavLink {...link('/about')} icon={InfoOutlinedIcon} label="About" />
-                    </ul>
+                    <div className={styles.footerRow}>
+                        <ul>
+                            <NavLink {...link('/about')} icon={InfoOutlinedIcon} label="About" />
+                        </ul>
+                        {hydrated && <ThemeToggle />}
+                    </div>
 
                     {!hydrated ? (
                         <div className={styles.profilePlaceholder} />
@@ -262,7 +331,7 @@ export default function Sidebar(){
                                 <Avatar user={user} />
                                 <span className={styles.profileText}>
                                     <span className={styles.name}>{user.displayName}</span>
-                                    <span className={styles.username}>Profile &amp; settings</span>
+                                    <span className={styles.username}>Wallet {formatMoney(wallet.balance)}</span>
                                 </span>
                             </Link>
                             <button type="button" className={styles.iconButton} onClick={signOut} aria-label="Sign out" title="Sign out">

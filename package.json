@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "images": "node scripts/image-meta.mjs",
-    "import:steam": "node scripts/import-steam.mjs"
+    "import:steam": "node scripts/import-steam.mjs",
+    "import:ratings": "node scripts/import-ratings.mjs"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",

@@ -1,6 +1,7 @@
 import Footer from './Components/Footer'
 import Providers from './Components/Providers'
 import Sidebar from './Components/Sidebar'
+import { STORAGE_KEY } from '@/lib/storage-key'
 import './globals.css'
 import localFont from 'next/font/local'
 
@@ -49,9 +50,17 @@ export const viewport = {
   themeColor: '#121212',
 }
 
+// Applies the saved theme and accent before the first paint, so there's no flash of the wrong colours.
+// Mirrors the logic in lib/store.js (which keeps them in sync afterwards).
+const themeScript = `try{var s=JSON.parse(localStorage.getItem('${STORAGE_KEY}')||'{}'),t=(s.prefs&&s.prefs.theme)||'dark',r=document.documentElement;if(t==='system')t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';r.dataset.theme=t;var a=s.session&&s.accounts&&s.accounts[s.session.username];if(a&&a.settings&&a.settings.accent)r.dataset.accent=a.settings.accent}catch(e){}`
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
+    // The theme script changes <html> attributes before React hydrates
+    <html lang="en" className={`${poppins.variable} ${inter.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body>
         <Providers>
           <a href="#main" className="skip-link">Skip to content</a>

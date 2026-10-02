@@ -1,0 +1,128 @@
+.tabs {
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow-x: auto;
+}
+
+.tabs button {
+    flex: 1;
+    padding: 0.45rem 0.9rem;
+    background: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.tabs button:hover {
+    color: var(--text);
+}
+
+.tabs button[aria-selected='true'] {
+    background-color: var(--surface-3);
+    color: var(--text);
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    padding-top: 0.5rem;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.block h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.field label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.field input {
+    padding: 0.6rem 0.85rem;
+    background-color: var(--bg);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 0.875rem;
+}
+
+.field input:focus {
+    border-color: var(--main);
+    outline: none;
+}
+
+.muted {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.result {
+    font-size: 0.875rem;
+    color: var(--success);
+}
+
+.error {
+    font-size: 0.85rem;
+    color: var(--danger);
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.facts {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    font-size: 0.875rem;
+}
+
+.facts div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.facts dt {
+    color: var(--text-muted);
+}
+
+.facts dd {
+    min-width: 0;
+    text-align: right;
+}
+
+.facts a {
+    color: var(--main-text);
+}
+
+.path {
+    overflow-wrap: anywhere;
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 0.8rem;
+}

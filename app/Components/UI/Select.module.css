@@ -110,12 +110,12 @@ li:first-child > .group {
     padding: 0.55rem 0.75rem;
     border-radius: 9px;
     font-size: 0.9rem;
-    color: #d6dbe8;
+    color: var(--text);
     cursor: pointer;
 }
 
 .active {
-    background-color: rgba(255, 255, 255, 0.07);
+    background-color: var(--hover-strong);
     color: var(--text);
 }
 

@@ -1,0 +1,334 @@
+.profile {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+    padding-top: 2.5rem;
+}
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem 2rem;
+    padding: 2rem;
+    background:
+        radial-gradient(80% 140% at 0% 0%, hsl(var(--hue) 60% 45% / 0.28), transparent 70%),
+        var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+}
+
+.avatar {
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+}
+
+.dot {
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 0 0 4px var(--surface);
+}
+
+.identity {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+    min-width: 220px;
+}
+
+.identity h1 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.handle,
+.since,
+.muted {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.bio {
+    max-width: 60ch;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.friendTag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--success);
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 0.75rem;
+}
+
+.stats div {
+    padding: 0.9rem 1.1rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.stats dt {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.stats dd {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.section h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.recent {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.recentCard {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color 150ms;
+}
+
+.recentCard:hover {
+    border-color: var(--border-strong);
+}
+
+.banner {
+    position: relative;
+    aspect-ratio: 16 / 7;
+}
+
+.banner img {
+    object-fit: cover;
+}
+
+.recentBody {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.8rem 0.9rem 0.9rem;
+}
+
+.progress {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.2rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+}
+
+.bar {
+    flex: 1;
+    height: 4px;
+    overflow: hidden;
+    background-color: var(--surface-3);
+    border-radius: 999px;
+}
+
+.bar span {
+    display: block;
+    height: 100%;
+    background-color: var(--accent);
+    border-radius: inherit;
+}
+
+.achievements {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.6rem;
+}
+
+.achievements li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.7rem 0.85rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.trophy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #f5c542, #e08a1e);
+    color: #3a2400;
+}
+
+.achievementText {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    font-size: 0.875rem;
+}
+
+.achievementText a:hover {
+    text-decoration: underline;
+}
+
+.games {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.gameTile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.cover {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    margin-bottom: 0.3rem;
+    border-radius: 10px;
+}
+
+.cover img {
+    object-fit: cover;
+    transition: transform 300ms;
+}
+
+.gameTile:hover .cover img {
+    transform: scale(1.04);
+}
+
+.gameTitle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.reviews {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 0.75rem;
+}
+
+.reviews li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1rem 1.1rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+}
+
+.verdict {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+    font-weight: 600;
+}
+
+.verdict a {
+    color: var(--text);
+}
+
+.verdict a:hover {
+    text-decoration: underline;
+}
+
+.positive svg {
+    color: var(--success);
+}
+
+.negative svg {
+    color: var(--danger);
+}
+
+.friends {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.friends a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0.9rem 0.3rem 0.3rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 0.875rem;
+}
+
+.friends a:hover {
+    border-color: var(--border-strong);
+}
+
+.note {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.missing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 6rem 1rem 3rem;
+    text-align: center;
+}
+
+.missing h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.missing p {
+    max-width: 46ch;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}

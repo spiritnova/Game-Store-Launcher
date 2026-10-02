@@ -3,14 +3,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import CheckIcon from '@mui/icons-material/Check'
-import { bundlePrice, cardImage, formatPrice, getGame } from '@/lib/games'
+import { bundlePrice, cardImage, getGame } from '@/lib/games'
 import { placeholderColor } from '@/lib/image-colors'
 import { useStore } from '@/lib/store'
 import Button from '../UI/Button'
 import styles from './Bundles.module.css'
 
 function BundleCard({ bundle }) {
-    const { hydrated, owns, cart, addBundleToCart } = useStore()
+    const { hydrated, owns, cart, addBundleToCart, formatPrice } = useStore()
     const games = bundle.games.map(getGame)
     const ownsGame = hydrated ? owns : () => false
     const price = bundlePrice(bundle, ownsGame)

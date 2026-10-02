@@ -111,19 +111,47 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  margin-left: auto;
   font-size: 0.95rem;
   color: var(--text-muted);
 }
 
-.genres {
+.sortBy {
+  margin-left: auto;
+}
+
+.toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.filterGroup {
+  margin-bottom: 1rem;
+}
+
+.groupLabel {
+  margin-bottom: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.groupLabel span {
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: 400;
+}
+
+.chips {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 2rem;
 }
 
-.genres button {
+.chips button {
   padding: 0.35rem 0.9rem;
   background-color: var(--surface);
   border: 1px solid var(--border);
@@ -133,16 +161,56 @@
   transition: background-color 150ms, border-color 150ms;
 }
 
-.genres button:hover {
-  border-color: #555;
+.chips button:hover {
+  border-color: var(--text-muted);
 }
 
-.genres button[aria-pressed='true'] {
+.chips button[aria-pressed='true'] {
   background-color: var(--main);
   border-color: var(--main);
+  color: #fff;
+}
+
+.active {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-block: 1.25rem 0.5rem;
+}
+
+.activeChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.65rem 0.3rem 0.8rem;
+  background-color: color-mix(in srgb, var(--main) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--main) 40%, transparent);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: var(--main-text);
+  cursor: pointer;
+}
+
+.activeChip:hover {
+  background-color: color-mix(in srgb, var(--main) 26%, transparent);
+}
+
+.clearAll {
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.clearAll:hover {
+  color: var(--text);
 }
 
 .grid {
+  margin-top: 1.5rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   gap: 2rem 1.5rem;
@@ -171,7 +239,7 @@
 }
 
 @container main (max-width: 600px) {
-  .sort {
+  .sortBy {
     margin-left: 0;
   }
 

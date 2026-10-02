@@ -13,7 +13,7 @@
 
 .header p {
   max-width: 68ch;
-  color: #cfcfcf;
+  color: var(--text-soft);
   font-size: 1.05rem;
 }
 

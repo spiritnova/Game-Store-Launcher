@@ -2,8 +2,10 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import CloseIcon from '@mui/icons-material/Close'
 import SearchIcon from '@mui/icons-material/Search'
 import { allGames, currentPrice, discountPercent, genres, isOnSale } from '@/lib/games'
+import { useStore } from '@/lib/store'
 import GameCard from '../UI/GameCard'
 import Button from '../UI/Button'
 import Select from '../UI/Select'
@@ -18,15 +20,44 @@ const sorts = {
   title: { label: 'Title A–Z', compare: (a, b) => a.title.localeCompare(b.title) },
 }
 
+// Prices are compared in US dollars (the store's currency); labels follow the chosen currency.
+const prices = {
+  any: { test: () => true },
+  free: { test: (p) => p === 0 },
+  'under-10': { max: 10, test: (p) => p < 10 },
+  'under-20': { max: 20, test: (p) => p < 20 },
+  'under-40': { max: 40, test: (p) => p < 40 },
+}
+
+// Player modes and features from the store pages
+const modes = {
+  'single-player': 'Single-player',
+  'online-multiplayer': 'Online multiplayer',
+  'online-co-op': 'Online co-op',
+  'local-co-op': 'Local co-op & split screen',
+  'cross-platform': 'Cross-platform multiplayer',
+  controller: 'Controller support',
+}
+
+// Comma-separated list parameters, keeping only known values
+const listParam = (value, known) => (value ?? '').split(',').filter((v) => known.includes(v))
+
 export default function BrowseGames() {
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
+  const { hydrated, session, owns, isWishlisted, formatMoney } = useStore()
 
   // Filters live in the URL so filtered views can be shared, bookmarked and linked to.
   const genreParam = searchParams.get('genre')
-  const genre = genres.includes(genreParam) ? genreParam : null
+  const modesParam = searchParams.get('modes')
+  const selectedGenres = useMemo(() => listParam(genreParam, genres), [genreParam])
+  const selectedModes = useMemo(() => listParam(modesParam, Object.keys(modes)), [modesParam])
+  const price = prices[searchParams.get('price')] ? searchParams.get('price') : 'any'
   const saleOnly = searchParams.get('sale') === '1'
+  // Hiding owned or wishlisted games only applies once the signed-in library has loaded
+  const hideOwned = hydrated && Boolean(session) && searchParams.get('hideOwned') === '1'
+  const hideWishlisted = hydrated && Boolean(session) && searchParams.get('hideWishlisted') === '1'
   const sort = sorts[searchParams.get('sort')] ? searchParams.get('sort') : 'featured'
   const urlQuery = searchParams.get('q') ?? ''
 
@@ -64,25 +95,41 @@ export default function BrowseGames() {
     return () => clearTimeout(timer)
   }, [query, updateParams])
 
-  const setGenre = (value) => updateParams({ genre: value })
-  const setSaleOnly = (value) => updateParams({ sale: value ? '1' : null })
+  const toggleIn = (list, value) => (list.includes(value) ? list.filter((v) => v !== value) : [...list, value]).join(',')
+  const toggleGenre = (name) => updateParams({ genre: name ? toggleIn(selectedGenres, name) : null })
+  const toggleMode = (id) => updateParams({ modes: toggleIn(selectedModes, id) })
   const setSort = (value) => updateParams({ sort: value === 'featured' ? null : value })
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase()
     return allGames
       .filter((game) => !q || [game.title, game.developer, game.publisher].some((field) => field.toLowerCase().includes(q)))
-      .filter((game) => !genre || game.genres.includes(genre))
+      .filter((game) => selectedGenres.every((genre) => game.genres.includes(genre)))
+      .filter((game) => selectedModes.every((mode) => game.features.includes(modes[mode])))
+      .filter((game) => prices[price].test(currentPrice(game)))
       .filter((game) => !saleOnly || isOnSale(game))
+      .filter((game) => !hideOwned || !owns(game.slug))
+      .filter((game) => !hideWishlisted || !isWishlisted(game.slug))
       .sort(sorts[sort].compare)
-  }, [query, genre, saleOnly, sort])
+  }, [query, selectedGenres, selectedModes, price, saleOnly, hideOwned, hideWishlisted, owns, isWishlisted, sort])
 
-  const hasFilters = query.trim() || genre || saleOnly
+  const priceLabel = (id) => (id === 'any' ? 'Any price' : id === 'free' ? 'Free' : `Under ${formatMoney(prices[id].max).replace(/\.00$/, '')}`)
+
+  // Removable chips for every active filter
+  const active = [
+    ...(query.trim() ? [{ key: 'q', label: `“${query.trim()}”`, clear: () => { setQuery(''); committedQuery.current = ''; updateParams({ q: null }) } }] : []),
+    ...selectedGenres.map((g) => ({ key: `g-${g}`, label: g, clear: () => toggleGenre(g) })),
+    ...selectedModes.map((m) => ({ key: `m-${m}`, label: modes[m], clear: () => toggleMode(m) })),
+    ...(price !== 'any' ? [{ key: 'price', label: priceLabel(price), clear: () => updateParams({ price: null }) }] : []),
+    ...(saleOnly ? [{ key: 'sale', label: 'On sale', clear: () => updateParams({ sale: null }) }] : []),
+    ...(hideOwned ? [{ key: 'owned', label: 'Hiding owned', clear: () => updateParams({ hideOwned: null }) }] : []),
+    ...(hideWishlisted ? [{ key: 'wished', label: 'Hiding wishlisted', clear: () => updateParams({ hideWishlisted: null }) }] : []),
+  ]
 
   function clearFilters() {
     setQuery('')
     committedQuery.current = ''
-    updateParams({ q: null, genre: null, sale: null })
+    updateParams({ q: null, genre: null, modes: null, price: null, sale: null, hideOwned: null, hideWishlisted: null })
   }
 
   return (
@@ -105,31 +152,77 @@ export default function BrowseGames() {
           />
         </div>
 
-        <label className={styles.toggle}>
-          <input type="checkbox" checked={saleOnly} onChange={(e) => setSaleOnly(e.target.checked)} />
-          <span className={styles.switch} aria-hidden="true" />
-          On sale only
-        </label>
-
         <div className={styles.sort}>
+          <label htmlFor="browse-price">Price</label>
+          <Select
+            id="browse-price"
+            value={price}
+            onChange={(value) => updateParams({ price: value === 'any' ? null : value })}
+            options={Object.keys(prices).map((id) => ({ value: id, label: priceLabel(id) }))}
+          />
+        </div>
+
+        <div className={`${styles.sort} ${styles.sortBy}`}>
           <label htmlFor="browse-sort">Sort by</label>
           <Select id="browse-sort" value={sort} onChange={setSort} options={Object.entries(sorts).map(([value, { label }]) => ({ value, label }))} align="right" />
         </div>
       </div>
 
-      <div className={styles.genres} role="group" aria-label="Filter by genre">
-        <button type="button" aria-pressed={!genre} onClick={() => setGenre(null)}>All genres</button>
-        {genres.map((name) => (
-          <button
-            key={name}
-            type="button"
-            aria-pressed={genre === name}
-            onClick={() => setGenre(genre === name ? null : name)}
-          >
-            {name}
-          </button>
-        ))}
+      <div className={styles.toggles}>
+        <label className={styles.toggle}>
+          <input type="checkbox" checked={saleOnly} onChange={(e) => updateParams({ sale: e.target.checked ? '1' : null })} />
+          <span className={styles.switch} aria-hidden="true" />
+          On sale only
+        </label>
+        {hydrated && session && (
+          <>
+            <label className={styles.toggle}>
+              <input type="checkbox" checked={hideOwned} onChange={(e) => updateParams({ hideOwned: e.target.checked ? '1' : null })} />
+              <span className={styles.switch} aria-hidden="true" />
+              Hide games I own
+            </label>
+            <label className={styles.toggle}>
+              <input type="checkbox" checked={hideWishlisted} onChange={(e) => updateParams({ hideWishlisted: e.target.checked ? '1' : null })} />
+              <span className={styles.switch} aria-hidden="true" />
+              Hide wishlisted
+            </label>
+          </>
+        )}
       </div>
+
+      <div className={styles.filterGroup}>
+        <p className={styles.groupLabel} id="genre-label">Genres <span>(match all)</span></p>
+        <div className={styles.chips} role="group" aria-labelledby="genre-label">
+          <button type="button" aria-pressed={selectedGenres.length === 0} onClick={() => updateParams({ genre: null })}>All genres</button>
+          {genres.map((name) => (
+            <button key={name} type="button" aria-pressed={selectedGenres.includes(name)} onClick={() => toggleGenre(name)}>
+              {name}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className={styles.filterGroup}>
+        <p className={styles.groupLabel} id="modes-label">Player modes &amp; features</p>
+        <div className={styles.chips} role="group" aria-labelledby="modes-label">
+          {Object.entries(modes).map(([id, label]) => (
+            <button key={id} type="button" aria-pressed={selectedModes.includes(id)} onClick={() => toggleMode(id)}>
+              {label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {active.length > 0 && (
+        <div className={styles.active} aria-label="Active filters">
+          {active.map((filter) => (
+            <button key={filter.key} type="button" className={styles.activeChip} onClick={filter.clear} aria-label={`Remove filter: ${filter.label}`}>
+              {filter.label} <CloseIcon fontSize="inherit" />
+            </button>
+          ))}
+          {active.length > 1 && <button type="button" className={styles.clearAll} onClick={clearFilters}>Clear all</button>}
+        </div>
+      )}
 
       {results.length > 0 ? (
         <ul className={styles.grid}>
@@ -143,7 +236,7 @@ export default function BrowseGames() {
         <div className={styles.empty}>
           <h2>No games match your filters</h2>
           <p>Try a different search term or remove a filter.</p>
-          {hasFilters && <Button variant="secondary" onClick={clearFilters}>Clear filters</Button>}
+          {active.length > 0 && <Button variant="secondary" onClick={clearFilters}>Clear filters</Button>}
         </div>
       )}
     </>

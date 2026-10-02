@@ -65,14 +65,14 @@
 
 /* Glass */
 .ghost {
-  background-color: rgba(255, 255, 255, 0.06);
+  background-color: var(--hover);
   color: var(--text);
   box-shadow: inset 0 0 0 1px var(--border-strong);
   backdrop-filter: blur(6px);
 }
 
 .ghost:not(:disabled):hover {
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: var(--hover-strong);
 }
 
 .small {

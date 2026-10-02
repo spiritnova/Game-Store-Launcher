@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import ThumbDownIcon from '@mui/icons-material/ThumbDown'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
@@ -138,7 +139,7 @@ export default function Reviews({ game, seeded }) {
                                 <Avatar user={author} size={36} />
                                 <div>
                                     <p className={styles.name}>
-                                        {author.displayName}
+                                        <Link href={`/u/${author.username}`} className={styles.authorLink}>{author.displayName}</Link>
                                         {isMine && <span className={styles.youTag}>You</span>}
                                     </p>
                                     <p className={styles.meta}>{review.hoursPlayed} h played · {formatDate(review.createdAt)}</p>

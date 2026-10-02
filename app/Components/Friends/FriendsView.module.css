@@ -1,0 +1,255 @@
+.header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding-top: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.header h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.header p,
+.muted {
+    color: var(--text-muted);
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    align-items: start;
+    gap: 2rem;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.groupTitle {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 0.6rem;
+}
+
+.person {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.75rem 0.9rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color 150ms;
+}
+
+.person:hover {
+    border-color: var(--border-strong);
+}
+
+.avatar {
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+}
+
+.dot {
+    position: absolute;
+    right: -1px;
+    bottom: -1px;
+    width: 13px;
+    height: 13px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.status {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.playing {
+    color: var(--success);
+}
+
+.activity {
+    display: flex;
+    flex-direction: column;
+}
+
+.activity li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+}
+
+.activity p {
+    flex: 1;
+    min-width: 0;
+}
+
+.strong {
+    font-weight: 600;
+}
+
+.strong:hover {
+    text-decoration: underline;
+}
+
+.thumb {
+    position: relative;
+    flex-shrink: 0;
+    width: 30px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.thumb img {
+    object-fit: cover;
+}
+
+.side {
+    position: sticky;
+    top: calc(var(--topbar-h) + 1.5rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.add,
+.suggestions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.25rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+}
+
+.add label {
+    font-weight: 600;
+}
+
+.addRow {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.addRow input {
+    flex: 1;
+    min-width: 0;
+    padding: 0.6rem 0.85rem;
+    background-color: var(--bg);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+}
+
+.addRow input:focus {
+    border-color: var(--main);
+    outline: none;
+}
+
+.add p {
+    font-size: 0.8rem;
+}
+
+.success {
+    color: var(--success);
+}
+
+.error {
+    color: var(--danger);
+}
+
+.suggestions ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.suggestions li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.suggestion {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    flex: 1;
+    min-width: 0;
+    padding: 0.3rem 0.4rem;
+    margin-left: -0.4rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+.suggestion:hover {
+    background-color: var(--hover);
+}
+
+.empty {
+    padding: 3rem 1rem;
+    text-align: center;
+    background-color: var(--surface);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+}
+
+.empty h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+.empty p {
+    color: var(--text-muted);
+}
+
+@container main (max-width: 860px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .side {
+        position: static;
+        order: -1;
+    }
+}

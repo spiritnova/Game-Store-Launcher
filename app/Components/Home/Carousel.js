@@ -37,7 +37,7 @@ export default function MainCarousel({ blurs = {} }) {
     }
 
     return (
-        <section className={styles.hero} aria-roledescription="carousel" aria-label="Spotlight games">
+        <section className={`theme-dark ${styles.hero}`} aria-roledescription="carousel" aria-label="Spotlight games">
           <Swiper
             modules={[Autoplay, Pagination, Navigation, A11y]}
             onSwiper={handleSwiper}

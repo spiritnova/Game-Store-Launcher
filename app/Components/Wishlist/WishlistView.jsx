@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { cardImage, currentPrice, formatPrice, getGame, isOnSale } from '@/lib/games'
+import { cardImage, currentPrice, getGame, isOnSale } from '@/lib/games'
 import { useStore } from '@/lib/store'
 import Button from '../UI/Button'
 import Price from '../UI/Price'
@@ -11,7 +11,7 @@ import Skeleton from '../UI/Skeleton'
 import styles from './WishlistView.module.css'
 
 export default function WishlistView() {
-  const { hydrated, session, wishlist, cartItemFor, addToCart, toggleWishlist } = useStore()
+  const { hydrated, session, wishlist, cartItemFor, addToCart, toggleWishlist, formatPrice } = useStore()
 
   const games = [...wishlist]
     .sort((a, b) => b.addedAt - a.addedAt)

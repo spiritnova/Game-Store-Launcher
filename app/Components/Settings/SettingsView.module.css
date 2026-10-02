@@ -38,7 +38,7 @@
 }
 
 .tabs button:hover {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: var(--hover);
   color: var(--text);
 }
 
@@ -77,6 +77,7 @@
 
 .profileHeader {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 1.25rem;
 }
@@ -88,7 +89,7 @@
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
   gap: 0.75rem;
 }
 
@@ -313,6 +314,7 @@ label.toggleRow {
 
 .actions {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   gap: 0.5rem;
 }
@@ -362,4 +364,31 @@ label.toggleRow {
   .card {
     padding: 1.25rem;
   }
+}
+
+.grow {
+  flex: 1;
+  min-width: 0;
+}
+
+.success {
+  font-size: 0.85rem;
+  color: var(--success);
+}
+
+.balance {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.balanceValue {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.actions .muted {
+  align-self: center;
 }

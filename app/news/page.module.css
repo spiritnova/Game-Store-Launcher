@@ -55,7 +55,7 @@
 
 .leadBody > p:not(.meta),
 .cardBody > p:not(.meta) {
-  color: #cfcfcf;
+  color: var(--text-soft);
 }
 
 .meta {

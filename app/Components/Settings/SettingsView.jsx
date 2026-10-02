@@ -2,19 +2,40 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { achievementProgress } from '@/lib/achievements'
+import { CURRENCIES } from '@/lib/currency'
 import { useDownloads } from '@/lib/downloads'
-import { ACCENTS, AUTO_UPDATE_MODES, BANDWIDTH_LIMITS, CONNECTIONS, REGIONS, useStore } from '@/lib/store'
+import { formatSize } from '@/lib/games'
+import {
+  ACCENTS,
+  AUTO_UPDATE_MODES,
+  BANDWIDTH_LIMITS,
+  CONNECTIONS,
+  GIFT_CODES,
+  NOTIFICATION_SETTINGS,
+  REGIONS,
+  THEMES,
+  WALLET_AMOUNTS,
+  ageFrom,
+  driveUsage,
+  useStore,
+} from '@/lib/store'
 import Avatar from '../UI/Avatar'
 import Button from '../UI/Button'
 import Select from '../UI/Select'
 import SignInPrompt from '../UI/SignInPrompt'
 import Skeleton from '../UI/Skeleton'
+import Purchases from './Purchases'
 import styles from './SettingsView.module.css'
 
 const sections = [
   { id: 'profile', label: 'Profile' },
   { id: 'appearance', label: 'Appearance' },
-  { id: 'downloads', label: 'Downloads' },
+  { id: 'store', label: 'Store' },
+  { id: 'notifications', label: 'Notifications' },
+  { id: 'downloads', label: 'Library & downloads' },
+  { id: 'purchases', label: 'Purchases' },
+  { id: 'wallet', label: 'Wallet' },
   { id: 'account', label: 'Account' },
 ]
 
@@ -22,7 +43,7 @@ const HUES = [210, 265, 330, 0, 25, 45, 140, 175]
 const BIO_MAX = 160
 
 function ProfileSection() {
-  const { user, profile, library, community, session, updateProfile } = useStore()
+  const { user, profile, library, community, session, friends, updateProfile } = useStore()
   const [displayName, setDisplayName] = useState(profile.displayName)
   const [bio, setBio] = useState(profile.bio)
   const [hue, setHue] = useState(user.hue)
@@ -30,6 +51,7 @@ function ProfileSection() {
 
   const hours = Math.round(library.reduce((sum, e) => sum + e.playtimeMinutes, 0) / 60)
   const reviews = Object.values(community.reviews).flat().filter((r) => r.author.username === session.username).length
+  const achievements = library.reduce((sum, e) => sum + (achievementProgress(e)?.unlocked ?? 0), 0)
   const memberSince = new Date(profile.createdAt).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
   const dirty = displayName !== profile.displayName || bio !== profile.bio || hue !== user.hue
 
@@ -44,15 +66,18 @@ function ProfileSection() {
     <form className={styles.card} onSubmit={handleSubmit} noValidate>
       <div className={styles.profileHeader}>
         <Avatar user={{ ...user, displayName: displayName.trim() || user.displayName, hue }} size={72} />
-        <div>
+        <div className={styles.grow}>
           <p className={styles.profileName}>{displayName.trim() || user.displayName}</p>
           <p className={styles.muted}>@{session.username} · Member since {memberSince}</p>
         </div>
+        <Button href={`/u/${session.username}`} variant="ghost" size="small">View public profile</Button>
       </div>
 
       <dl className={styles.stats}>
         <div><dt>Games</dt><dd>{library.length}</dd></div>
         <div><dt>Hours played</dt><dd>{hours}</dd></div>
+        <div><dt>Achievements</dt><dd>{achievements}</dd></div>
+        <div><dt>Friends</dt><dd>{friends.length}</dd></div>
         <div><dt>Reviews</dt><dd>{reviews}</dd></div>
       </dl>
 
@@ -95,9 +120,22 @@ function ProfileSection() {
 }
 
 function AppearanceSection() {
-  const { settings, updateSettings } = useStore()
+  const { settings, prefs, updateSettings, updatePrefs } = useStore()
   return (
     <div className={styles.card}>
+      <fieldset className={styles.field}>
+        <legend>Theme</legend>
+        <p className={styles.muted}>Applies on this device, whether or not you’re signed in.</p>
+        <div className={styles.accents}>
+          {Object.entries(THEMES).map(([id, theme]) => (
+            <label key={id} className={styles.accent}>
+              <input type="radio" name="theme" value={id} checked={prefs.theme === id} onChange={() => updatePrefs({ theme: id })} />
+              {theme.label}
+            </label>
+          ))}
+        </div>
+      </fieldset>
+
       <fieldset className={styles.field}>
         <legend>Accent colour</legend>
         <p className={styles.muted}>Used for buttons, highlights and progress bars across the launcher.</p>
@@ -111,6 +149,67 @@ function AppearanceSection() {
           ))}
         </div>
       </fieldset>
+    </div>
+  )
+}
+
+function StoreSection() {
+  const { prefs, updatePrefs, formatPrice } = useStore()
+  const age = prefs.birthDate ? ageFrom(prefs.birthDate) : null
+
+  return (
+    <div className={styles.stack}>
+      <div className={styles.card}>
+        <h2 className={styles.cardTitle}>Currency</h2>
+        <div className={styles.field}>
+          <label htmlFor="currency">Show prices in</label>
+          <Select
+            id="currency"
+            className={styles.select}
+            value={prefs.currency}
+            onChange={(currency) => updatePrefs({ currency })}
+            aria-describedby="currency-help"
+            options={Object.entries(CURRENCIES).map(([code, c]) => ({ value: code, label: `${c.label} (${code})` }))}
+          />
+          <p id="currency-help" className={styles.muted}>
+            Prices are converted from US dollars at fixed demo rates, so a $59.99 game shows as {formatPrice(59.99)}.
+          </p>
+        </div>
+      </div>
+
+      <div className={styles.card}>
+        <h2 className={styles.cardTitle}>Mature content</h2>
+        <div className={styles.toggleRow}>
+          <span>
+            <strong>Date of birth</strong>
+            <span className={styles.muted}>
+              {prefs.birthDate
+                ? `Saved on this device (age ${age}). Games rated above your age are hidden.`
+                : 'Games rated for older players ask for your date of birth before showing their page.'}
+            </span>
+          </span>
+          {prefs.birthDate && <Button variant="ghost" size="small" onClick={() => updatePrefs({ birthDate: null })}>Clear</Button>}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function NotificationsSection() {
+  const { settings, updateSettings } = useStore()
+  return (
+    <div className={styles.card}>
+      <h2 className={styles.cardTitle}>Notify me about</h2>
+      {Object.entries(NOTIFICATION_SETTINGS).map(([id, setting]) => (
+        <Switch
+          key={id}
+          checked={settings.notify[id]}
+          onChange={(on) => updateSettings({ notify: { ...settings.notify, [id]: on } })}
+          title={setting.label}
+          description={setting.description}
+        />
+      ))}
+      <p className={styles.muted}>Notifications appear under the bell at the top of the sidebar. Refunds and receipts are always shown.</p>
     </div>
   )
 }
@@ -141,9 +240,10 @@ function Switch({ checked, onChange, title, description }) {
 }
 
 function DownloadSection() {
-  const { settings, updateSettings } = useStore()
+  const { settings, library, updateSettings } = useStore()
   const { history, clearHistory } = useDownloads()
   const region = REGIONS[settings.region] ?? REGIONS.auto
+  const drives = driveUsage(library)
 
   return (
     <div className={styles.stack}>
@@ -247,6 +347,17 @@ function DownloadSection() {
 
       <div className={styles.card}>
         <h2 className={styles.cardTitle}>Installing</h2>
+        <div className={styles.field}>
+          <label htmlFor="install-drive">Install new games to</label>
+          <Select
+            id="install-drive"
+            className={styles.select}
+            value={settings.installDrive}
+            onChange={(installDrive) => updateSettings({ installDrive })}
+            options={drives.map((d) => ({ value: d.id, label: `${d.label} · ${formatSize(d.freeGB)} free` }))}
+          />
+          <p className={styles.muted}>Move games you’ve already installed from Properties in the ⋯ menu on any game.</p>
+        </div>
         <Switch
           checked={settings.autoInstall}
           onChange={(autoInstall) => updateSettings({ autoInstall })}
@@ -261,6 +372,85 @@ function DownloadSection() {
           <Button variant="ghost" size="small" onClick={clearHistory} disabled={history.length === 0}>Clear history</Button>
         </div>
       </div>
+
+      <div className={styles.card}>
+        <h2 className={styles.cardTitle}>Playing</h2>
+        <Switch
+          checked={settings.fastPlaytime}
+          onChange={(fastPlaytime) => updateSettings({ fastPlaytime })}
+          title="Fast-forward playtime"
+          description="Demo: each second a game runs counts as a minute, so you can watch achievements unlock. Turn off to count real time."
+        />
+      </div>
+    </div>
+  )
+}
+
+function WalletSection() {
+  const { wallet, redeemedCodes, addFunds, redeemCode, formatMoney } = useStore()
+  const [amount, setAmount] = useState(String(WALLET_AMOUNTS[1]))
+  const [code, setCode] = useState('')
+  const [result, setResult] = useState(null)
+
+  return (
+    <div className={styles.stack}>
+      <div className={styles.card}>
+        <div className={styles.balance}>
+          <p className={styles.muted}>Wallet balance</p>
+          <p className={styles.balanceValue}>{formatMoney(wallet.balance)}</p>
+          <p className={styles.muted}>Pay for games at checkout. Refunds for wallet purchases come back here.</p>
+        </div>
+      </div>
+
+      <div className={styles.card}>
+        <h2 className={styles.cardTitle}>Add funds</h2>
+        <fieldset className={styles.field}>
+          <legend className="visually-hidden">Amount</legend>
+          <div className={styles.accents}>
+            {WALLET_AMOUNTS.map((value) => (
+              <label key={value} className={styles.accent}>
+                <input type="radio" name="wallet-amount" value={value} checked={amount === String(value)} onChange={() => setAmount(String(value))} />
+                {formatMoney(value)}
+              </label>
+            ))}
+          </div>
+        </fieldset>
+        <div className={styles.actions}>
+          <p className={`${styles.muted} ${styles.grow}`}>Paid with your card ending 4242 (simulated, nothing is charged).</p>
+          <Button variant="secondary" onClick={() => addFunds(Number(amount))}>Add {formatMoney(Number(amount))}</Button>
+        </div>
+      </div>
+
+      <form
+        className={styles.card}
+        onSubmit={(e) => {
+          e.preventDefault()
+          const outcome = redeemCode(code)
+          setResult(outcome)
+          if (outcome.ok) setCode('')
+        }}
+      >
+        <h2 className={styles.cardTitle}>Redeem a gift card</h2>
+        <div className={styles.field}>
+          <label htmlFor="gift-code">Code</label>
+          <input
+            id="gift-code"
+            value={code}
+            autoComplete="off"
+            spellCheck={false}
+            placeholder="XXXX-XXXX-XX"
+            onChange={(e) => { setCode(e.target.value); setResult(null) }}
+            aria-invalid={result ? !result.ok : undefined}
+            aria-describedby="gift-code-help"
+          />
+          <p id="gift-code-help" className={result ? (result.ok ? styles.success : styles.error) : styles.muted} role={result ? 'status' : undefined}>
+            {result?.message ?? `Demo codes: ${Object.keys(GIFT_CODES).filter((c) => !redeemedCodes.includes(c)).join(', ') || 'all redeemed'}.`}
+          </p>
+        </div>
+        <div className={styles.actions}>
+          <Button type="submit" variant="secondary" disabled={!code.trim()}>Redeem</Button>
+        </div>
+      </form>
     </div>
   )
 }
@@ -291,7 +481,7 @@ function AccountSection() {
         <div className={styles.toggleRow}>
           <span>
             <strong>Delete account</strong>
-            <span className={styles.muted}>Removes your library, wishlist, reviews and comments. This can&apos;t be undone.</span>
+            <span className={styles.muted}>Removes your library, wishlist, purchases, friends, reviews and comments. This can&apos;t be undone.</span>
           </span>
           {!confirming && <Button variant="ghost" size="small" className={styles.dangerButton} onClick={() => setConfirming(true)}>Delete account</Button>}
         </div>
@@ -324,10 +514,15 @@ export default function SettingsView() {
   const { hydrated, session } = useStore()
   const [active, setActive] = useState('profile')
 
-  // Support deep links such as /settings#downloads
+  // Support deep links such as /settings#downloads, including links followed while already on this page
   useEffect(() => {
-    const hash = window.location.hash.slice(1)
-    if (sections.some((s) => s.id === hash)) setActive(hash)
+    const fromHash = () => {
+      const hash = window.location.hash.slice(1)
+      if (sections.some((s) => s.id === hash)) setActive(hash)
+    }
+    fromHash()
+    window.addEventListener('hashchange', fromHash)
+    return () => window.removeEventListener('hashchange', fromHash)
   }, [])
 
   function select(id) {
@@ -346,12 +541,21 @@ export default function SettingsView() {
     return (
       <>
         {header}
-        <SignInPrompt title="Sign in to manage your profile" text="Change your display name, avatar, accent colour and download settings." next="/settings" />
+        <SignInPrompt title="Sign in to manage your profile" text="Change your profile, appearance, currency, downloads, purchases and wallet." next="/settings" />
       </>
     )
   }
 
-  const panels = { profile: ProfileSection, appearance: AppearanceSection, downloads: DownloadSection, account: AccountSection }
+  const panels = {
+    profile: ProfileSection,
+    appearance: AppearanceSection,
+    store: StoreSection,
+    notifications: NotificationsSection,
+    downloads: DownloadSection,
+    purchases: Purchases,
+    wallet: WalletSection,
+    account: AccountSection,
+  }
   const Panel = panels[active]
 
   return (

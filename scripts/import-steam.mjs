@@ -9,107 +9,13 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises'
 import path from 'node:path'
 import sharp from 'sharp'
+import { CATALOG } from './catalog.mjs'
+import { decode, fetchApp, parseRating, slugify } from './steam.mjs'
 
 const root = path.resolve(import.meta.dirname, '..')
 const out = (...p) => path.join(root, 'public', 'images', ...p)
 const SCREENSHOTS = 4
 
-// [Steam app id, our genres]. Genres are our own categories, not Steam's.
-const CATALOG = [
-  // Shooters & multiplayer
-  [730, ['Shooter', 'Multiplayer', 'Free to Play']],
-  [1172470, ['Shooter', 'Multiplayer', 'Free to Play']],
-  [578080, ['Shooter', 'Multiplayer', 'Free to Play']],
-  [359550, ['Shooter', 'Multiplayer']],
-  [553850, ['Shooter', 'Multiplayer', 'Action']],
-  [550, ['Shooter', 'Multiplayer', 'Horror']],
-  [782330, ['Shooter', 'Action']],
-  [379720, ['Shooter', 'Action']],
-  // RPGs & open worlds
-  [1245620, ['Action', 'RPG', 'Open World']],
-  [1086940, ['RPG', 'Strategy']],
-  [1091500, ['RPG', 'Open World', 'Shooter']],
-  [377160, ['RPG', 'Open World', 'Shooter']],
-  [489830, ['RPG', 'Open World']],
-  [1716740, ['RPG', 'Open World']],
-  [632470, ['RPG', 'Indie']],
-  [1687950, ['RPG']],
-  [582010, ['Action', 'RPG', 'Multiplayer']],
-  [524220, ['Action', 'RPG']],
-  // Action & adventure
-  [374320, ['Action', 'RPG']],
-  [814380, ['Action', 'Adventure']],
-  [1817230, ['Action']],
-  [870780, ['Action', 'Adventure', 'Shooter']],
-  [1850570, ['Action', 'Adventure', 'Open World']],
-  [3240220, ['Action', 'Open World', 'Multiplayer']],
-  [1659040, ['Action', 'Adventure']],
-  [203160, ['Action', 'Adventure']],
-  [1172620, ['Adventure', 'Multiplayer', 'Open World']],
-  [1426210, ['Adventure', 'Puzzle', 'Multiplayer']],
-  [1868140, ['Adventure', 'Simulation', 'Indie']],
-  // Indie, platformers & roguelikes
-  [1145360, ['Action', 'Roguelike', 'Indie']],
-  [367520, ['Action', 'Platformer', 'Indie']],
-  [504230, ['Platformer', 'Indie']],
-  [268910, ['Platformer', 'Action', 'Indie']],
-  [1057090, ['Platformer', 'Adventure']],
-  [588650, ['Roguelike', 'Platformer', 'Action']],
-  [1794680, ['Roguelike', 'Action', 'Indie']],
-  [646570, ['Roguelike', 'Strategy', 'Indie']],
-  [2379780, ['Roguelike', 'Strategy', 'Indie']],
-  [620, ['Puzzle', 'Adventure']],
-  // Horror
-  [2050650, ['Horror', 'Action', 'Shooter']],
-  [1196590, ['Horror', 'Action', 'Shooter']],
-  [1693980, ['Horror', 'Shooter']],
-  [739630, ['Horror', 'Multiplayer', 'Indie']],
-  [1966720, ['Horror', 'Multiplayer', 'Indie']],
-  [953490, ['Horror', 'Adventure', 'Puzzle']],
-  [238320, ['Horror']],
-  // Survival & sandbox
-  [105600, ['Adventure', 'Survival', 'Indie']],
-  [892970, ['Survival', 'Adventure', 'Multiplayer']],
-  [264710, ['Survival', 'Adventure', 'Open World']],
-  [242760, ['Survival', 'Horror']],
-  [252490, ['Survival', 'Multiplayer']],
-  [1623730, ['Survival', 'Open World', 'Multiplayer']],
-  [108600, ['Survival', 'Horror', 'Indie']],
-  // Strategy & simulation
-  [289070, ['Strategy']],
-  [1142710, ['Strategy']],
-  [813780, ['Strategy']],
-  [281990, ['Strategy', 'Simulation']],
-  [268500, ['Strategy']],
-  [255710, ['Simulation', 'Strategy']],
-  [427520, ['Simulation', 'Strategy', 'Indie']],
-  [526870, ['Simulation', 'Open World', 'Survival']],
-  [294100, ['Simulation', 'Strategy', 'Indie']],
-  [413150, ['Simulation', 'RPG', 'Indie']],
-  [570, ['Strategy', 'Multiplayer', 'Free to Play']],
-  // Racing & sports
-  [1551360, ['Racing', 'Open World']],
-  [244210, ['Racing', 'Simulation']],
-  [227300, ['Simulation', 'Racing']],
-  [1846380, ['Racing']],
-  [3551340, ['Sports', 'Simulation', 'Strategy']],
-  [3472040, ['Sports']],
-  [3405690, ['Sports', 'Multiplayer']],
-  [3717070, ['Sports', 'Fighting']],
-  [2290180, ['Sports', 'Open World', 'Multiplayer']],
-  [3077390, ['Sports', 'Racing']],
-  [2385530, ['Sports']],
-  [2395210, ['Sports', 'Platformer']],
-  [681280, ['Sports', 'Indie', 'Racing']],
-  [1465360, ['Simulation', 'Racing', 'Open World']],
-  [1665460, ['Sports', 'Multiplayer', 'Free to Play']],
-  // Fighting & party
-  [1364780, ['Fighting']],
-  [1778820, ['Fighting']],
-  [1971870, ['Fighting']],
-  [945360, ['Multiplayer', 'Casual']],
-  [728880, ['Casual', 'Multiplayer']],
-]
 
 // Store categories -> our feature labels, in display order.
 const FEATURES = [
@@ -127,27 +33,7 @@ const FEATURES = [
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
-const decode = (s) =>
-  s
-    .replace(/&amp;/g, '&')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;|&apos;/g, "'")
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&nbsp;/g, ' ')
-    .replace(/[®™©]/g, '')
-    .replace(/\s+/g, ' ')
-    .trim()
-
 const stripTags = (html) => decode(html.replace(/<br\s*\/?>/gi, ' ').replace(/<[^>]+>/g, ' '))
-
-function slugify(name) {
-  return decode(name)
-    .toLowerCase()
-    .replace(/['’]/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-}
 
 function shorten(text, max = 300) {
   if (text.length <= max) return text
@@ -202,13 +88,6 @@ async function tryGet(url) {
   } catch {
     return null
   }
-}
-
-async function fetchApp(id) {
-  const r = await fetch(`https://store.steampowered.com/api/appdetails?appids=${id}&cc=us&l=english`)
-  if (!r.ok) throw new Error(`appdetails ${r.status}`)
-  const entry = (await r.json())[id]
-  return entry?.success ? entry.data : null
 }
 
 const gamesPath = path.join(root, 'data', 'games.json')
@@ -288,6 +167,7 @@ for (const [id, genres] of CATALOG) {
     releaseDate: new Date(`${d.release_date.date} UTC`).toISOString().slice(0, 10),
     // Free games always get the Free to Play category
     genres: free && !genres.includes('Free to Play') ? [...genres, 'Free to Play'] : genres,
+    features: FEATURES.filter(([, keys]) => keys.some((k) => categories.has(k))).map(([label]) => label),
     price: initial,
     ...(final < initial ? { salePrice: final } : {}),
     cover: `/images/covers/${slug}.jpg`,
@@ -300,10 +180,10 @@ for (const [id, genres] of CATALOG) {
 
   details[slug] = {
     screenshots,
-    features: FEATURES.filter(([, keys]) => keys.some((k) => categories.has(k))).map(([label]) => label),
     languages: parseLanguages(d.supported_languages),
     requirements: { minimum, recommended },
     ...(d.metacritic?.score ? { metacritic: d.metacritic.score } : {}),
+    ...(parseRating(d) ? { rating: parseRating(d) } : {}),
   }
 
   games.push(game)

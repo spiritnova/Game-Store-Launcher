@@ -1,13 +1,13 @@
 'use client'
 
 import CheckIcon from '@mui/icons-material/Check'
-import { editionPrice, formatPrice, getEdition, isOnSale } from '@/lib/games'
+import { editionPrice, getEdition, isOnSale } from '@/lib/games'
 import { useStore } from '@/lib/store'
 import Button from '../UI/Button'
 import styles from './Editions.module.css'
 
 export default function Editions({ game }) {
-    const { hydrated, getEntry, cartItemFor, addToCart } = useStore()
+    const { hydrated, getEntry, cartItemFor, addToCart, formatPrice } = useStore()
     const entry = hydrated ? getEntry(game.slug) : null
     const cartItem = hydrated ? cartItemFor(game.slug) : null
 

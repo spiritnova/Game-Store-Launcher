@@ -24,7 +24,7 @@
 .copy p {
     max-width: 48ch;
     margin-bottom: 1.4rem;
-    color: #c3c9d8;
+    color: var(--text-soft);
 }
 
 .actions {
@@ -44,7 +44,7 @@
     align-items: center;
     gap: 0.9rem;
     padding: 0.85rem 1rem;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--hover);
     backdrop-filter: blur(8px);
     border: 1px solid var(--border);
     border-radius: var(--radius);

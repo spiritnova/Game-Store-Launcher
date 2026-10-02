@@ -69,7 +69,7 @@
 }
 
 .column dd {
-  color: #dcdcdc;
+  color: var(--text-soft);
 }
 
 .languages {

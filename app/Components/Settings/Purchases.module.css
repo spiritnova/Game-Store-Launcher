@@ -1,0 +1,240 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.policy {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.empty {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    background-color: var(--surface);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius-lg);
+    color: var(--text-muted);
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.row {
+    overflow: hidden;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+}
+
+.head:hover {
+    background-color: var(--hover);
+}
+
+.type {
+    flex-shrink: 0;
+    min-width: 96px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-align: center;
+    background-color: color-mix(in srgb, var(--main) 16%, transparent);
+    color: var(--main-text);
+}
+
+.refund {
+    background-color: color-mix(in srgb, var(--success) 16%, transparent);
+    color: var(--success);
+}
+
+.funds {
+    background-color: color-mix(in srgb, var(--accent) 18%, transparent);
+    color: var(--accent);
+}
+
+.what {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+
+.title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.date {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.sum {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.credit {
+    color: var(--success);
+}
+
+.caret {
+    flex-shrink: 0;
+    color: var(--text-muted);
+    transition: transform 200ms;
+}
+
+.caretOpen {
+    transform: rotate(180deg);
+}
+
+.receipt {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 1.1rem 1.2rem;
+    border-top: 1px solid var(--border);
+    background-color: var(--fill);
+}
+
+.meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.6rem 1rem;
+    font-size: 0.85rem;
+}
+
+.meta dt {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.meta dd {
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+}
+
+.items {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.items th,
+.items td {
+    padding: 0.55rem 0;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border);
+}
+
+.items thead th {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.items tfoot th {
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.items tfoot tr:last-child th,
+.items tfoot tr:last-child td {
+    border-bottom: none;
+}
+
+.total th,
+.total td {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text) !important;
+}
+
+.amount {
+    padding-left: 1rem !important;
+    text-align: right !important;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.amount s {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.items a:hover {
+    text-decoration: underline;
+}
+
+.itemMeta {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.itemMeta:empty {
+    display: none;
+}
+
+.refundLink {
+    display: block;
+    margin-top: 0.25rem;
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: 0.8rem;
+    color: var(--main-text);
+    cursor: pointer;
+}
+
+.refundLink:hover {
+    text-decoration: underline;
+}
+
+@container main (max-width: 560px) {
+    .head {
+        flex-wrap: wrap;
+        gap: 0.5rem 0.75rem;
+    }
+
+    .what {
+        flex-basis: 100%;
+        order: 3;
+    }
+
+    .sum {
+        margin-left: auto;
+    }
+}

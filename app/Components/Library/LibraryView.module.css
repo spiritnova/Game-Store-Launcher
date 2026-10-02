@@ -12,13 +12,103 @@
   color: var(--text-muted);
 }
 
+.shelves {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.shelves button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.95rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 150ms, border-color 150ms;
+}
+
+.shelves button:hover {
+  border-color: var(--border-strong);
+}
+
+.shelves button[aria-pressed='true'] {
+  background-color: var(--main);
+  border-color: var(--main);
+  color: #fff;
+}
+
+.shelfCount {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.shelves .newShelf {
+  border-style: dashed;
+  color: var(--text-muted);
+}
+
+.collectionBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin-bottom: 1.25rem;
+  padding: 0.6rem 0.6rem 0.6rem 1rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.collectionBar p {
+  flex: 1;
+  min-width: 200px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
 .toolbar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
   margin-bottom: 2rem;
+}
+
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1 1 220px;
+  max-width: 320px;
+}
+
+.search input {
+  width: 100%;
+  padding: 0.55rem 0.9rem 0.55rem 2.3rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.search input::placeholder {
+  color: var(--text-muted);
+}
+
+.search input:focus {
+  border-color: var(--main);
+  outline: none;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.75rem;
+  color: var(--text-muted);
+  pointer-events: none;
 }
 
 .tabs {
@@ -52,6 +142,7 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  margin-left: auto;
   font-size: 0.95rem;
   color: var(--text-muted);
 }
@@ -96,11 +187,52 @@
   border-radius: 4px;
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--text-muted);
+  color: #c3c9d6;
 }
 
 .status.installed {
-  color: var(--success);
+  color: #34d399;
+}
+
+.status.playing {
+  background-color: var(--success);
+  color: #04251a;
+}
+
+.favorite {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  color: #ff6b8b;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6));
+}
+
+.achievements {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.achievements:hover {
+  color: var(--text);
+}
+
+.achievementBar {
+  flex: 1;
+  height: 4px;
+  overflow: hidden;
+  background-color: var(--surface-3);
+  border-radius: 999px;
+}
+
+.achievementBar span {
+  display: block;
+  height: 100%;
+  background-color: var(--accent);
+  border-radius: inherit;
 }
 
 .body {
@@ -133,24 +265,6 @@
   gap: 0.5rem;
   margin-top: auto;
   padding-top: 0.6rem;
-}
-
-.iconButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  background-color: rgba(255, 255, 255, 0.08);
-  border: none;
-  border-radius: 4px;
-  color: var(--text-muted);
-  cursor: pointer;
-}
-
-.iconButton:hover {
-  color: var(--danger);
-  background-color: rgba(255, 107, 107, 0.12);
 }
 
 .empty {

@@ -151,7 +151,7 @@
 
 .about p {
   max-width: 70ch;
-  color: #d0d0d0;
+  color: var(--text-soft);
   font-size: 1.05rem;
 }
 

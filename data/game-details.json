@@ -7,15 +7,6 @@
       "/images/screenshots/call-of-duty-modern-warfare-2-4.jpg",
       "/images/screenshots/call-of-duty-modern-warfare-2-5.jpg"
     ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Cross-platform multiplayer",
-      "Controller support",
-      "Achievements",
-      "In-game purchases"
-    ],
     "languages": {
       "interface": [
         "English",
@@ -108,6 +99,27 @@
           "125 GB available space"
         ]
       ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Intense Violence",
+          "Blood and Gore",
+          "Sexual Themes",
+          "Strong Language",
+          "Use of Drugs"
+        ]
+      },
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Violence",
+          "Bad Language",
+          "In-Game Purchases"
+        ]
+      },
+      "requiredAge": 17
     }
   },
   "devil-may-cry-5": {
@@ -117,15 +129,6 @@
       "/images/screenshots/devil-may-cry-5-3.jpg",
       "/images/screenshots/devil-may-cry-5-4.jpg",
       "/images/screenshots/devil-may-cry-5-5.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Controller support",
-      "Achievements",
-      "Cloud saves",
-      "HDR"
     ],
     "languages": {
       "interface": [
@@ -209,7 +212,28 @@
         ]
       ]
     },
-    "metacritic": 89
+    "metacritic": 89,
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Blood",
+          "Partial Nudity",
+          "Strong Language",
+          "Violence",
+          "In-Game Purchases"
+        ]
+      },
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Violence",
+          "Bad Language",
+          "In-Game Purchases"
+        ]
+      },
+      "requiredAge": 17
+    }
   },
   "the-witcher-3": {
     "screenshots": [
@@ -218,13 +242,6 @@
       "/images/screenshots/the-witcher-3-3.jpg",
       "/images/screenshots/the-witcher-3-4.jpg",
       "/images/screenshots/the-witcher-3-5.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves",
-      "HDR"
     ],
     "languages": {
       "interface": [
@@ -313,7 +330,29 @@
         ]
       ]
     },
-    "metacritic": 93
+    "metacritic": 93,
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Blood and Gore",
+          "Intense Violence",
+          "Nudity",
+          "Strong Language",
+          "Strong Sexual Content",
+          "Use of Alcohol"
+        ]
+      },
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Violence",
+          "Bad language",
+          "In-game Purchases"
+        ]
+      },
+      "requiredAge": 17
+    }
   },
   "hogwarts-legacy": {
     "screenshots": [
@@ -322,14 +361,6 @@
       "/images/screenshots/hogwarts-legacy-3.jpg",
       "/images/screenshots/hogwarts-legacy-4.jpg",
       "/images/screenshots/hogwarts-legacy-5.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves",
-      "HDR",
-      "In-game purchases"
     ],
     "languages": {
       "interface": [
@@ -421,7 +452,27 @@
         ]
       ]
     },
-    "metacritic": 83
+    "metacritic": 83,
+    "rating": {
+      "esrb": {
+        "rating": "T",
+        "descriptors": [
+          "Fantasy Violence",
+          "Blood",
+          "Mild Language",
+          "Use of Alcohol"
+        ]
+      },
+      "pegi": {
+        "rating": "12",
+        "descriptors": [
+          "Violence",
+          "Bad Language",
+          "In-Game Purchases"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "the-last-of-us-part-1": {
     "screenshots": [
@@ -430,12 +481,6 @@
       "/images/screenshots/the-last-of-us-part-1-3.jpg",
       "/images/screenshots/the-last-of-us-part-1-4.jpg",
       "/images/screenshots/the-last-of-us-part-1-5.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -534,6 +579,26 @@
           "SSD Recommended"
         ]
       ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Blood and Gore",
+          "Intense Violence",
+          "Sexual Themes",
+          "Strong Language",
+          "Use of Alcohol"
+        ]
+      },
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Violence",
+          "Bad Language"
+        ]
+      },
+      "requiredAge": 17
     }
   },
   "fifa-23": {
@@ -543,16 +608,6 @@
       "/images/screenshots/fifa-23-3.jpg",
       "/images/screenshots/fifa-23-4.jpg",
       "/images/screenshots/fifa-23-5.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Local co-op & split screen",
-      "Cross-platform multiplayer",
-      "Controller support",
-      "Achievements",
-      "In-game purchases"
     ],
     "languages": {
       "interface": [
@@ -664,12 +719,6 @@
       "/images/screenshots/horizon-zero-dawn-4.jpg",
       "/images/screenshots/horizon-zero-dawn-5.jpg"
     ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
-    ],
     "languages": {
       "interface": [
         "English",
@@ -760,6 +809,25 @@
           "100 GB available space"
         ]
       ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "T",
+        "descriptors": [
+          "Blood",
+          "Drug Reference",
+          "Language",
+          "Mild Sexual Themes",
+          "Violence"
+        ]
+      },
+      "pegi": {
+        "rating": "16",
+        "descriptors": [
+          "Violence"
+        ]
+      },
+      "requiredAge": 12
     }
   },
   "god-of-war": {
@@ -769,12 +837,6 @@
       "/images/screenshots/god-of-war-3.jpg",
       "/images/screenshots/god-of-war-4.jpg",
       "/images/screenshots/god-of-war-5.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -873,7 +935,25 @@
         ]
       ]
     },
-    "metacritic": 93
+    "metacritic": 93,
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Blood and Gore",
+          "Intense Violence",
+          "Strong Language"
+        ]
+      },
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Bad Language",
+          "Violence"
+        ]
+      },
+      "requiredAge": 17
+    }
   },
   "spider-man-miles-morales": {
     "screenshots": [
@@ -882,12 +962,6 @@
       "/images/screenshots/spider-man-miles-morales-3.jpg",
       "/images/screenshots/spider-man-miles-morales-4.jpg",
       "/images/screenshots/spider-man-miles-morales-5.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -985,6 +1059,24 @@
           "75 GB SSD space Recommended"
         ]
       ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "T",
+        "descriptors": [
+          "Violence",
+          "Blood",
+          "Language",
+          "Drug Reference"
+        ]
+      },
+      "pegi": {
+        "rating": "16",
+        "descriptors": [
+          "Violence"
+        ]
+      },
+      "requiredAge": 0
     }
   },
   "red-dead-redemption-2": {
@@ -994,14 +1086,6 @@
       "/images/screenshots/red-dead-redemption-2-3.jpg",
       "/images/screenshots/red-dead-redemption-2-4.jpg",
       "/images/screenshots/red-dead-redemption-2-5.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Controller support",
-      "Achievements",
-      "In-game purchases"
     ],
     "languages": {
       "interface": [
@@ -1085,7 +1169,29 @@
         ]
       ]
     },
-    "metacritic": 93
+    "metacritic": 93,
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Blood and Gore",
+          "Intense Violence",
+          "Nudity",
+          "Sexual Content",
+          "Strong Language",
+          "Use of Drugs and Alcohol"
+        ]
+      },
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Strong Language",
+          "Violence",
+          "Gambling"
+        ]
+      },
+      "requiredAge": 17
+    }
   },
   "battlefield-2042": {
     "screenshots": [
@@ -1094,14 +1200,6 @@
       "/images/screenshots/battlefield-2042-3.jpg",
       "/images/screenshots/battlefield-2042-4.jpg",
       "/images/screenshots/battlefield-2042-5.jpg"
-    ],
-    "features": [
-      "Online multiplayer",
-      "Online co-op",
-      "Controller support",
-      "Achievements",
-      "HDR",
-      "In-game purchases"
     ],
     "languages": {
       "interface": [
@@ -1204,6 +1302,25 @@
           "No recommendation"
         ]
       ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Violence",
+          "Blood",
+          "Strong Language"
+        ]
+      },
+      "pegi": {
+        "rating": "16",
+        "descriptors": [
+          "Violence",
+          "Bad Language",
+          "In-Game Purchases"
+        ]
+      },
+      "requiredAge": 17
     }
   },
   "f1-22": {
@@ -1213,17 +1330,6 @@
       "/images/screenshots/f1-22-3.jpg",
       "/images/screenshots/f1-22-4.jpg",
       "/images/screenshots/f1-22-5.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Local co-op & split screen",
-      "Controller support",
-      "Achievements",
-      "Cloud saves",
-      "HDR",
-      "In-game purchases"
     ],
     "languages": {
       "interface": [
@@ -1334,11 +1440,6 @@
       "/images/screenshots/counter-strike-2-3.jpg",
       "/images/screenshots/counter-strike-2-4.jpg"
     ],
-    "features": [
-      "Online multiplayer",
-      "Cross-platform multiplayer",
-      "In-game purchases"
-    ],
     "languages": {
       "interface": [
         "Czech",
@@ -1411,13 +1512,6 @@
       "/images/screenshots/apex-legends-2.jpg",
       "/images/screenshots/apex-legends-3.jpg",
       "/images/screenshots/apex-legends-4.jpg"
-    ],
-    "features": [
-      "Online multiplayer",
-      "Online co-op",
-      "Controller support",
-      "Achievements",
-      "In-game purchases"
     ],
     "languages": {
       "interface": [
@@ -1519,7 +1613,24 @@
         ]
       ]
     },
-    "metacritic": 88
+    "metacritic": 88,
+    "rating": {
+      "esrb": {
+        "rating": "T",
+        "descriptors": [
+          "Blood",
+          "Violence"
+        ]
+      },
+      "pegi": {
+        "rating": "16",
+        "descriptors": [
+          "Violence",
+          "In-Game Purchases"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "pubg-battlegrounds": {
     "screenshots": [
@@ -1527,10 +1638,6 @@
       "/images/screenshots/pubg-battlegrounds-2.jpg",
       "/images/screenshots/pubg-battlegrounds-3.jpg",
       "/images/screenshots/pubg-battlegrounds-4.jpg"
-    ],
-    "features": [
-      "Online multiplayer",
-      "Controller support"
     ],
     "languages": {
       "interface": [
@@ -1615,6 +1722,21 @@
           "50 GB available space"
         ]
       ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "T",
+        "descriptors": [
+          "Violence",
+          "Blood",
+          "Users Interact"
+        ]
+      },
+      "pegi": {
+        "rating": "16",
+        "descriptors": []
+      },
+      "requiredAge": 13
     }
   },
   "tom-clancys-rainbow-six-siege": {
@@ -1623,13 +1745,6 @@
       "/images/screenshots/tom-clancys-rainbow-six-siege-2.jpg",
       "/images/screenshots/tom-clancys-rainbow-six-siege-3.jpg",
       "/images/screenshots/tom-clancys-rainbow-six-siege-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Controller support",
-      "In-game purchases"
     ],
     "languages": {
       "interface": [
@@ -1738,6 +1853,26 @@
           "For an up-to-date list of supported chipsets, please visit the FAQ for this game on our support website. Game contains BattleEye anti-cheat technology."
         ]
       ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Blood",
+          "Drug Reference",
+          "Strong Language",
+          "Violence"
+        ]
+      },
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Violence",
+          "Bad Language",
+          "In-Game Purchases(Includes Random Items)"
+        ]
+      },
+      "requiredAge": 17
     }
   },
   "helldivers-2": {
@@ -1746,13 +1881,6 @@
       "/images/screenshots/helldivers-2-2.jpg",
       "/images/screenshots/helldivers-2-3.jpg",
       "/images/screenshots/helldivers-2-4.jpg"
-    ],
-    "features": [
-      "Online multiplayer",
-      "Online co-op",
-      "Controller support",
-      "Achievements",
-      "In-game purchases"
     ],
     "languages": {
       "interface": [
@@ -1832,6 +1960,23 @@
           "SSD Recommended"
         ]
       ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Blood and Gore",
+          "Intense Violence"
+        ]
+      },
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Violence",
+          "In-Game Purchases"
+        ]
+      },
+      "requiredAge": 17
     }
   },
   "left-4-dead-2": {
@@ -1840,14 +1985,6 @@
       "/images/screenshots/left-4-dead-2-2.jpg",
       "/images/screenshots/left-4-dead-2-3.jpg",
       "/images/screenshots/left-4-dead-2-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -1959,14 +2096,6 @@
       "/images/screenshots/doom-eternal-3.jpg",
       "/images/screenshots/doom-eternal-4.jpg"
     ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Controller support",
-      "Achievements",
-      "Cloud saves",
-      "HDR"
-    ],
     "languages": {
       "interface": [
         "English",
@@ -2058,7 +2187,23 @@
         ]
       ]
     },
-    "metacritic": 88
+    "metacritic": 88,
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Blood and Gore",
+          "Intense Violence"
+        ]
+      },
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Violence"
+        ]
+      },
+      "requiredAge": 17
+    }
   },
   "doom": {
     "screenshots": [
@@ -2066,13 +2211,6 @@
       "/images/screenshots/doom-2.jpg",
       "/images/screenshots/doom-3.jpg",
       "/images/screenshots/doom-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -2153,7 +2291,25 @@
         ]
       ]
     },
-    "metacritic": 85
+    "metacritic": 85,
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Blood and Gore",
+          "Intense Violence",
+          "Strong Language"
+        ]
+      },
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Bad Language",
+          "Violence"
+        ]
+      },
+      "requiredAge": 17
+    }
   },
   "elden-ring": {
     "screenshots": [
@@ -2161,14 +2317,6 @@
       "/images/screenshots/elden-ring-2.jpg",
       "/images/screenshots/elden-ring-3.jpg",
       "/images/screenshots/elden-ring-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -2254,7 +2402,26 @@
         ]
       ]
     },
-    "metacritic": 94
+    "metacritic": 94,
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Blood and Gore",
+          "Language",
+          "Suggestive Themes",
+          "Violence"
+        ]
+      },
+      "pegi": {
+        "rating": "16",
+        "descriptors": [
+          "Violence",
+          "In-Game Purchases"
+        ]
+      },
+      "requiredAge": 16
+    }
   },
   "baldurs-gate-3": {
     "screenshots": [
@@ -2262,15 +2429,6 @@
       "/images/screenshots/baldurs-gate-3-2.jpg",
       "/images/screenshots/baldurs-gate-3-3.jpg",
       "/images/screenshots/baldurs-gate-3-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Cross-platform multiplayer",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -2356,7 +2514,28 @@
         ]
       ]
     },
-    "metacritic": 96
+    "metacritic": 96,
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Intense Violence",
+          "Blood and Gore",
+          "Strong Sexual Content",
+          "Nudity",
+          "Strong Language"
+        ]
+      },
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Violence",
+          "Bad Language",
+          "Sex"
+        ]
+      },
+      "requiredAge": 17
+    }
   },
   "cyberpunk-2077": {
     "screenshots": [
@@ -2364,13 +2543,6 @@
       "/images/screenshots/cyberpunk-2077-2.jpg",
       "/images/screenshots/cyberpunk-2077-3.jpg",
       "/images/screenshots/cyberpunk-2077-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves",
-      "HDR"
     ],
     "languages": {
       "interface": [
@@ -2470,7 +2642,31 @@
         ]
       ]
     },
-    "metacritic": 86
+    "metacritic": 86,
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Blood and Gore",
+          "Intense Violence",
+          "Nudity",
+          "Strong Language",
+          "Strong Sexual Content",
+          "Use of Drugs",
+          "Use of Alcohol"
+        ]
+      },
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Violence",
+          "Sex",
+          "Bad Language",
+          "In-game purchases"
+        ]
+      },
+      "requiredAge": 17
+    }
   },
   "fallout-4": {
     "screenshots": [
@@ -2478,12 +2674,6 @@
       "/images/screenshots/fallout-4-2.jpg",
       "/images/screenshots/fallout-4-3.jpg",
       "/images/screenshots/fallout-4-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -2553,7 +2743,26 @@
         ]
       ]
     },
-    "metacritic": 84
+    "metacritic": 84,
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Blood and Gore",
+          "Use of Drugs",
+          "Strong Language",
+          "Intense Violence"
+        ]
+      },
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Bad Language",
+          "Violence"
+        ]
+      },
+      "requiredAge": 17
+    }
   },
   "the-elder-scrolls-v-skyrim-special-edition": {
     "screenshots": [
@@ -2561,12 +2770,6 @@
       "/images/screenshots/the-elder-scrolls-v-skyrim-special-edition-2.jpg",
       "/images/screenshots/the-elder-scrolls-v-skyrim-special-edition-3.jpg",
       "/images/screenshots/the-elder-scrolls-v-skyrim-special-edition-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -2637,7 +2840,26 @@
         ]
       ]
     },
-    "metacritic": 74
+    "metacritic": 74,
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Blood and Gore",
+          "Intense Violence",
+          "Sexual Themes",
+          "Use of Alcohol",
+          "Language"
+        ]
+      },
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Violence"
+        ]
+      },
+      "requiredAge": 17
+    }
   },
   "starfield": {
     "screenshots": [
@@ -2645,12 +2867,6 @@
       "/images/screenshots/starfield-2.jpg",
       "/images/screenshots/starfield-3.jpg",
       "/images/screenshots/starfield-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -2737,6 +2953,27 @@
           "SSD Required"
         ]
       ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Violence",
+          "Blood",
+          "Suggestive Themes",
+          "Strong Language",
+          "Use of Drugs"
+        ]
+      },
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Violence",
+          "Bad Language",
+          "In-Game Purchases"
+        ]
+      },
+      "requiredAge": 17
     }
   },
   "disco-elysium-the-final-cut": {
@@ -2745,12 +2982,6 @@
       "/images/screenshots/disco-elysium-the-final-cut-2.jpg",
       "/images/screenshots/disco-elysium-the-final-cut-3.jpg",
       "/images/screenshots/disco-elysium-the-final-cut-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -2835,12 +3066,6 @@
       "/images/screenshots/persona-5-royal-3.jpg",
       "/images/screenshots/persona-5-royal-4.jpg"
     ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
-    ],
     "languages": {
       "interface": [
         "English",
@@ -2920,7 +3145,28 @@
         ]
       ]
     },
-    "metacritic": 95
+    "metacritic": 95,
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Violence",
+          "Blood",
+          "Sexual Themes",
+          "Partial Nudity",
+          "Strong Language",
+          "Drug Reference"
+        ]
+      },
+      "pegi": {
+        "rating": "16",
+        "descriptors": [
+          "Violence",
+          "Bad Language"
+        ]
+      },
+      "requiredAge": 17
+    }
   },
   "monster-hunter-world": {
     "screenshots": [
@@ -2928,14 +3174,6 @@
       "/images/screenshots/monster-hunter-world-2.jpg",
       "/images/screenshots/monster-hunter-world-3.jpg",
       "/images/screenshots/monster-hunter-world-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Controller support",
-      "Achievements",
-      "Cloud saves",
-      "HDR"
     ],
     "languages": {
       "interface": [
@@ -3041,7 +3279,25 @@
         ]
       ]
     },
-    "metacritic": 88
+    "metacritic": 88,
+    "rating": {
+      "esrb": {
+        "rating": "T",
+        "descriptors": [
+          "Blood",
+          "Mild Language",
+          "Use of Alcohol",
+          "Violence"
+        ]
+      },
+      "pegi": {
+        "rating": "16",
+        "descriptors": [
+          "Violence"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "nier-automata": {
     "screenshots": [
@@ -3049,12 +3305,6 @@
       "/images/screenshots/nier-automata-2.jpg",
       "/images/screenshots/nier-automata-3.jpg",
       "/images/screenshots/nier-automata-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -3148,7 +3398,26 @@
         ]
       ]
     },
-    "metacritic": 84
+    "metacritic": 84,
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Blood",
+          "Partial Nudity",
+          "Strong Language",
+          "Violence"
+        ]
+      },
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Bad language",
+          "Violence"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "dark-souls-iii": {
     "screenshots": [
@@ -3156,12 +3425,6 @@
       "/images/screenshots/dark-souls-iii-2.jpg",
       "/images/screenshots/dark-souls-iii-3.jpg",
       "/images/screenshots/dark-souls-iii-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Controller support",
-      "Achievements"
     ],
     "languages": {
       "interface": [
@@ -3260,7 +3523,24 @@
         ]
       ]
     },
-    "metacritic": 89
+    "metacritic": 89,
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Blood",
+          "Violence"
+        ]
+      },
+      "pegi": {
+        "rating": "16",
+        "descriptors": [
+          "Violence",
+          "Online Gameplay"
+        ]
+      },
+      "requiredAge": 17
+    }
   },
   "sekiro-shadows-die-twice-goty-edition": {
     "screenshots": [
@@ -3268,12 +3548,6 @@
       "/images/screenshots/sekiro-shadows-die-twice-goty-edition-2.jpg",
       "/images/screenshots/sekiro-shadows-die-twice-goty-edition-3.jpg",
       "/images/screenshots/sekiro-shadows-die-twice-goty-edition-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -3370,7 +3644,23 @@
         ]
       ]
     },
-    "metacritic": 88
+    "metacritic": 88,
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Blood and Gore",
+          "Violence"
+        ]
+      },
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Violence"
+        ]
+      },
+      "requiredAge": 17
+    }
   },
   "hi-fi-rush": {
     "screenshots": [
@@ -3378,12 +3668,6 @@
       "/images/screenshots/hi-fi-rush-2.jpg",
       "/images/screenshots/hi-fi-rush-3.jpg",
       "/images/screenshots/hi-fi-rush-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -3472,7 +3756,21 @@
         ]
       ]
     },
-    "metacritic": 90
+    "metacritic": 90,
+    "rating": {
+      "esrb": {
+        "rating": "T",
+        "descriptors": [
+          "Fantasy Violence",
+          "Language"
+        ]
+      },
+      "pegi": {
+        "rating": "12",
+        "descriptors": []
+      },
+      "requiredAge": 0
+    }
   },
   "control-ultimate-edition": {
     "screenshots": [
@@ -3480,13 +3778,6 @@
       "/images/screenshots/control-ultimate-edition-2.jpg",
       "/images/screenshots/control-ultimate-edition-3.jpg",
       "/images/screenshots/control-ultimate-edition-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves",
-      "HDR"
     ],
     "languages": {
       "interface": [
@@ -3573,7 +3864,25 @@
         ]
       ]
     },
-    "metacritic": 85
+    "metacritic": 85,
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Blood",
+          "Strong Language",
+          "Violence"
+        ]
+      },
+      "pegi": {
+        "rating": "16",
+        "descriptors": [
+          "Violence",
+          "Bad Language"
+        ]
+      },
+      "requiredAge": 17
+    }
   },
   "hitman-world-of-assassination": {
     "screenshots": [
@@ -3581,12 +3890,6 @@
       "/images/screenshots/hitman-world-of-assassination-2.jpg",
       "/images/screenshots/hitman-world-of-assassination-3.jpg",
       "/images/screenshots/hitman-world-of-assassination-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -3658,7 +3961,27 @@
         ]
       ]
     },
-    "metacritic": 87
+    "metacritic": 87,
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Drug Reference",
+          "Blood",
+          "Intense Violence",
+          "Strong Language"
+        ]
+      },
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Bad Language",
+          "Violence",
+          "In-Game Purchases"
+        ]
+      },
+      "requiredAge": 17
+    }
   },
   "tomb-raider-game-of-the-year": {
     "screenshots": [
@@ -3666,13 +3989,6 @@
       "/images/screenshots/tomb-raider-game-of-the-year-2.jpg",
       "/images/screenshots/tomb-raider-game-of-the-year-3.jpg",
       "/images/screenshots/tomb-raider-game-of-the-year-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -3763,7 +4079,26 @@
         ]
       ]
     },
-    "metacritic": 86
+    "metacritic": 86,
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Blood and Gore",
+          "Intense Violence",
+          "Strong Language"
+        ]
+      },
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Bad Language",
+          "Violence",
+          "Online Gameplay"
+        ]
+      },
+      "requiredAge": 17
+    }
   },
   "sea-of-thieves-2026-edition": {
     "screenshots": [
@@ -3771,14 +4106,6 @@
       "/images/screenshots/sea-of-thieves-2026-edition-2.jpg",
       "/images/screenshots/sea-of-thieves-2026-edition-3.jpg",
       "/images/screenshots/sea-of-thieves-2026-edition-4.jpg"
-    ],
-    "features": [
-      "Online multiplayer",
-      "Online co-op",
-      "Cross-platform multiplayer",
-      "Controller support",
-      "Achievements",
-      "In-game purchases"
     ],
     "languages": {
       "interface": [
@@ -3863,6 +4190,23 @@
           "100 GB available space"
         ]
       ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "T",
+        "descriptors": [
+          "Violence",
+          "Use of Alcohol",
+          "Crude Humor"
+        ]
+      },
+      "pegi": {
+        "rating": "12",
+        "descriptors": [
+          "Violence"
+        ]
+      },
+      "requiredAge": 0
     }
   },
   "it-takes-two": {
@@ -3871,14 +4215,6 @@
       "/images/screenshots/it-takes-two-2.jpg",
       "/images/screenshots/it-takes-two-3.jpg",
       "/images/screenshots/it-takes-two-4.jpg"
-    ],
-    "features": [
-      "Online multiplayer",
-      "Online co-op",
-      "Local co-op & split screen",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -3965,7 +4301,26 @@
         ]
       ]
     },
-    "metacritic": 89
+    "metacritic": 89,
+    "rating": {
+      "esrb": {
+        "rating": "T",
+        "descriptors": [
+          "Animated Blood",
+          "Comic Mischief",
+          "Fantasy Violence",
+          "Language"
+        ]
+      },
+      "pegi": {
+        "rating": "12",
+        "descriptors": [
+          "Violence",
+          "Bad Language"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "dave-the-diver": {
     "screenshots": [
@@ -3973,12 +4328,6 @@
       "/images/screenshots/dave-the-diver-2.jpg",
       "/images/screenshots/dave-the-diver-3.jpg",
       "/images/screenshots/dave-the-diver-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -4070,12 +4419,6 @@
       "/images/screenshots/hades-3.jpg",
       "/images/screenshots/hades-4.jpg"
     ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
-    ],
     "languages": {
       "interface": [
         "English",
@@ -4140,7 +4483,20 @@
         ]
       ]
     },
-    "metacritic": 93
+    "metacritic": 93,
+    "rating": {
+      "esrb": {
+        "rating": "T",
+        "descriptors": [
+          "Alcohol Reference",
+          "Blood",
+          "Mild Language",
+          "Suggestive Themes",
+          "Violence"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "hollow-knight": {
     "screenshots": [
@@ -4148,12 +4504,6 @@
       "/images/screenshots/hollow-knight-2.jpg",
       "/images/screenshots/hollow-knight-3.jpg",
       "/images/screenshots/hollow-knight-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -4237,7 +4587,17 @@
         ]
       ]
     },
-    "metacritic": 87
+    "metacritic": 87,
+    "rating": {
+      "esrb": {
+        "rating": "E10+",
+        "descriptors": [
+          "Fantasy Violence",
+          "Mild Blood"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "celeste": {
     "screenshots": [
@@ -4245,12 +4605,6 @@
       "/images/screenshots/celeste-2.jpg",
       "/images/screenshots/celeste-3.jpg",
       "/images/screenshots/celeste-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -4304,14 +4658,6 @@
       "/images/screenshots/cuphead-3.jpg",
       "/images/screenshots/cuphead-4.jpg"
     ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Local co-op & split screen",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
-    ],
     "languages": {
       "interface": [
         "English",
@@ -4358,7 +4704,25 @@
       ],
       "recommended": []
     },
-    "metacritic": 88
+    "metacritic": 88,
+    "rating": {
+      "esrb": {
+        "rating": "E10+",
+        "descriptors": [
+          "Fantasy Violence",
+          "Mild Language",
+          "Use of Alcohol And Tobacco"
+        ]
+      },
+      "pegi": {
+        "rating": "7",
+        "descriptors": [
+          "Fear",
+          "Violence"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "ori-and-the-will-of-the-wisps": {
     "screenshots": [
@@ -4366,13 +4730,6 @@
       "/images/screenshots/ori-and-the-will-of-the-wisps-2.jpg",
       "/images/screenshots/ori-and-the-will-of-the-wisps-3.jpg",
       "/images/screenshots/ori-and-the-will-of-the-wisps-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves",
-      "HDR"
     ],
     "languages": {
       "interface": [
@@ -4454,7 +4811,23 @@
         ]
       ]
     },
-    "metacritic": 88
+    "metacritic": 88,
+    "rating": {
+      "esrb": {
+        "rating": "E",
+        "descriptors": [
+          "Mild Fantasy Violence"
+        ]
+      },
+      "pegi": {
+        "rating": "7",
+        "descriptors": [
+          "Fear",
+          "Violence"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "dead-cells": {
     "screenshots": [
@@ -4462,12 +4835,6 @@
       "/images/screenshots/dead-cells-2.jpg",
       "/images/screenshots/dead-cells-3.jpg",
       "/images/screenshots/dead-cells-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -4559,7 +4926,24 @@
         ]
       ]
     },
-    "metacritic": 89
+    "metacritic": 89,
+    "rating": {
+      "esrb": {
+        "rating": "T",
+        "descriptors": [
+          "Violence",
+          "Blood and Gore",
+          "Language"
+        ]
+      },
+      "pegi": {
+        "rating": "16",
+        "descriptors": [
+          "Violence"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "vampire-survivors": {
     "screenshots": [
@@ -4567,14 +4951,6 @@
       "/images/screenshots/vampire-survivors-2.jpg",
       "/images/screenshots/vampire-survivors-3.jpg",
       "/images/screenshots/vampire-survivors-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -4629,12 +5005,6 @@
       "/images/screenshots/slay-the-spire-3.jpg",
       "/images/screenshots/slay-the-spire-4.jpg"
     ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
-    ],
     "languages": {
       "interface": [
         "English",
@@ -4682,7 +5052,18 @@
       ],
       "recommended": []
     },
-    "metacritic": 89
+    "metacritic": 89,
+    "rating": {
+      "esrb": {
+        "rating": "E10+",
+        "descriptors": [
+          "Fantasy Violence",
+          "Use of Tobacco",
+          "Alcohol Reference"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "balatro": {
     "screenshots": [
@@ -4690,12 +5071,6 @@
       "/images/screenshots/balatro-2.jpg",
       "/images/screenshots/balatro-3.jpg",
       "/images/screenshots/balatro-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -4747,15 +5122,6 @@
       "/images/screenshots/portal-2-2.jpg",
       "/images/screenshots/portal-2-3.jpg",
       "/images/screenshots/portal-2-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Local co-op & split screen",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -4836,13 +5202,6 @@
       "/images/screenshots/resident-evil-4-2.jpg",
       "/images/screenshots/resident-evil-4-3.jpg",
       "/images/screenshots/resident-evil-4-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves",
-      "HDR"
     ],
     "languages": {
       "interface": [
@@ -4936,7 +5295,18 @@
         ]
       ]
     },
-    "metacritic": 91
+    "metacritic": 91,
+    "rating": {
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Violence",
+          "Bad Language",
+          "In-Game Purchase"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "resident-evil-village": {
     "screenshots": [
@@ -4944,13 +5314,6 @@
       "/images/screenshots/resident-evil-village-2.jpg",
       "/images/screenshots/resident-evil-village-3.jpg",
       "/images/screenshots/resident-evil-village-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves",
-      "HDR"
     ],
     "languages": {
       "interface": [
@@ -5037,7 +5400,17 @@
         ]
       ]
     },
-    "metacritic": 83
+    "metacritic": 83,
+    "rating": {
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Violence",
+          "Bad Language and In-Game Purchases"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "dead-space": {
     "screenshots": [
@@ -5045,13 +5418,6 @@
       "/images/screenshots/dead-space-2.jpg",
       "/images/screenshots/dead-space-3.jpg",
       "/images/screenshots/dead-space-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves",
-      "HDR"
     ],
     "languages": {
       "interface": [
@@ -5148,7 +5514,25 @@
         ]
       ]
     },
-    "metacritic": 87
+    "metacritic": 87,
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Intense Violence",
+          "Blood and Gore",
+          "Strong Language"
+        ]
+      },
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Violence",
+          "Bad Language"
+        ]
+      },
+      "requiredAge": 17
+    }
   },
   "phasmophobia": {
     "screenshots": [
@@ -5156,14 +5540,6 @@
       "/images/screenshots/phasmophobia-2.jpg",
       "/images/screenshots/phasmophobia-3.jpg",
       "/images/screenshots/phasmophobia-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -5272,12 +5648,6 @@
       "/images/screenshots/lethal-company-3.jpg",
       "/images/screenshots/lethal-company-4.jpg"
     ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Controller support"
-    ],
     "languages": {
       "interface": [
         "English"
@@ -5322,12 +5692,6 @@
       "/images/screenshots/carrion-2.jpg",
       "/images/screenshots/carrion-3.jpg",
       "/images/screenshots/carrion-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -5380,12 +5744,6 @@
       "/images/screenshots/outlast-2.jpg",
       "/images/screenshots/outlast-3.jpg",
       "/images/screenshots/outlast-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -5477,7 +5835,20 @@
         ]
       ]
     },
-    "metacritic": 80
+    "metacritic": 80,
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Intense Violence",
+          "Blood and Gore",
+          "Sexual Content",
+          "Nudity",
+          "Strong Language"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "terraria": {
     "screenshots": [
@@ -5485,14 +5856,6 @@
       "/images/screenshots/terraria-2.jpg",
       "/images/screenshots/terraria-3.jpg",
       "/images/screenshots/terraria-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -5520,14 +5883,6 @@
       "/images/screenshots/valheim-2.jpg",
       "/images/screenshots/valheim-3.jpg",
       "/images/screenshots/valheim-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -5618,12 +5973,6 @@
       "/images/screenshots/subnautica-2.jpg",
       "/images/screenshots/subnautica-3.jpg",
       "/images/screenshots/subnautica-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -5717,7 +6066,17 @@
         ]
       ]
     },
-    "metacritic": 87
+    "metacritic": 87,
+    "rating": {
+      "esrb": {
+        "rating": "E10+",
+        "descriptors": [
+          "Fantasy Violence",
+          "Mild Language"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "the-forest": {
     "screenshots": [
@@ -5725,13 +6084,6 @@
       "/images/screenshots/the-forest-2.jpg",
       "/images/screenshots/the-forest-3.jpg",
       "/images/screenshots/the-forest-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Controller support",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -5834,13 +6186,6 @@
       "/images/screenshots/rust-2.jpg",
       "/images/screenshots/rust-3.jpg",
       "/images/screenshots/rust-4.jpg"
-    ],
-    "features": [
-      "Online multiplayer",
-      "Online co-op",
-      "Cross-platform multiplayer",
-      "Achievements",
-      "In-game purchases"
     ],
     "languages": {
       "interface": [
@@ -5965,15 +6310,6 @@
       "/images/screenshots/palworld-3.jpg",
       "/images/screenshots/palworld-4.jpg"
     ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Cross-platform multiplayer",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
-    ],
     "languages": {
       "interface": [
         "English",
@@ -6074,14 +6410,6 @@
       "/images/screenshots/project-zomboid-3.jpg",
       "/images/screenshots/project-zomboid-4.jpg"
     ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Local co-op & split screen",
-      "Cross-platform multiplayer",
-      "Controller support"
-    ],
     "languages": {
       "interface": [
         "English",
@@ -6147,14 +6475,6 @@
       "/images/screenshots/sid-meiers-civilization-vi-2.jpg",
       "/images/screenshots/sid-meiers-civilization-vi-3.jpg",
       "/images/screenshots/sid-meiers-civilization-vi-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Local co-op & split screen",
-      "Cross-platform multiplayer",
-      "Achievements",
-      "In-game purchases"
     ],
     "languages": {
       "interface": [
@@ -6251,7 +6571,25 @@
         ]
       ]
     },
-    "metacritic": 88
+    "metacritic": 88,
+    "rating": {
+      "esrb": {
+        "rating": "E10+",
+        "descriptors": [
+          "Drug Reference",
+          "Language",
+          "Mild Violence",
+          "Suggestive Themes"
+        ]
+      },
+      "pegi": {
+        "rating": "12",
+        "descriptors": [
+          "Violence"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "total-war-warhammer-iii": {
     "screenshots": [
@@ -6259,13 +6597,6 @@
       "/images/screenshots/total-war-warhammer-iii-2.jpg",
       "/images/screenshots/total-war-warhammer-iii-3.jpg",
       "/images/screenshots/total-war-warhammer-iii-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -6349,7 +6680,25 @@
         ]
       ]
     },
-    "metacritic": 86
+    "metacritic": 86,
+    "rating": {
+      "esrb": {
+        "rating": "T",
+        "descriptors": [
+          "Blood",
+          "Crude Humor",
+          "Suggestive Themes",
+          "Violence"
+        ]
+      },
+      "pegi": {
+        "rating": "16",
+        "descriptors": [
+          "Violence"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "age-of-empires-ii-definitive-edition": {
     "screenshots": [
@@ -6357,14 +6706,6 @@
       "/images/screenshots/age-of-empires-ii-definitive-edition-2.jpg",
       "/images/screenshots/age-of-empires-ii-definitive-edition-3.jpg",
       "/images/screenshots/age-of-empires-ii-definitive-edition-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Cross-platform multiplayer",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -6465,7 +6806,25 @@
         ]
       ]
     },
-    "metacritic": 84
+    "metacritic": 84,
+    "rating": {
+      "esrb": {
+        "rating": "T",
+        "descriptors": [
+          "Mild Blood",
+          "Mild Language",
+          "Violence"
+        ]
+      },
+      "pegi": {
+        "rating": "12",
+        "descriptors": [
+          "Violence",
+          "Bad Language"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "stellaris": {
     "screenshots": [
@@ -6473,13 +6832,6 @@
       "/images/screenshots/stellaris-2.jpg",
       "/images/screenshots/stellaris-3.jpg",
       "/images/screenshots/stellaris-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Cross-platform multiplayer",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -6574,7 +6926,19 @@
         ]
       ]
     },
-    "metacritic": 78
+    "metacritic": 78,
+    "rating": {
+      "pegi": {
+        "rating": "7",
+        "descriptors": [
+          "Violence",
+          "Users Interact",
+          "In-Game Purchases",
+          "Implied Violence"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "xcom-2": {
     "screenshots": [
@@ -6582,11 +6946,6 @@
       "/images/screenshots/xcom-2-2.jpg",
       "/images/screenshots/xcom-2-3.jpg",
       "/images/screenshots/xcom-2-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -6672,7 +7031,24 @@
         ]
       ]
     },
-    "metacritic": 88
+    "metacritic": 88,
+    "rating": {
+      "esrb": {
+        "rating": "T",
+        "descriptors": [
+          "Blood",
+          "Use of Tobacco",
+          "Violence"
+        ]
+      },
+      "pegi": {
+        "rating": "16",
+        "descriptors": [
+          "Violence"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "cities-skylines": {
     "screenshots": [
@@ -6680,11 +7056,6 @@
       "/images/screenshots/cities-skylines-2.jpg",
       "/images/screenshots/cities-skylines-3.jpg",
       "/images/screenshots/cities-skylines-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -6763,7 +7134,18 @@
         ]
       ]
     },
-    "metacritic": 85
+    "metacritic": 85,
+    "rating": {
+      "esrb": {
+        "rating": "E",
+        "descriptors": []
+      },
+      "pegi": {
+        "rating": "3",
+        "descriptors": []
+      },
+      "requiredAge": 0
+    }
   },
   "factorio": {
     "screenshots": [
@@ -6771,15 +7153,6 @@
       "/images/screenshots/factorio-2.jpg",
       "/images/screenshots/factorio-3.jpg",
       "/images/screenshots/factorio-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Cross-platform multiplayer",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -6887,15 +7260,6 @@
       "/images/screenshots/satisfactory-3.jpg",
       "/images/screenshots/satisfactory-4.jpg"
     ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Cross-platform multiplayer",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
-    ],
     "languages": {
       "interface": [
         "English",
@@ -6979,11 +7343,6 @@
       "/images/screenshots/rimworld-3.jpg",
       "/images/screenshots/rimworld-4.jpg"
     ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Cloud saves"
-    ],
     "languages": {
       "interface": [
         "English",
@@ -7047,15 +7406,6 @@
       "/images/screenshots/stardew-valley-3.jpg",
       "/images/screenshots/stardew-valley-4.jpg"
     ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Local co-op & split screen",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
-    ],
     "languages": {
       "interface": [
         "English",
@@ -7102,7 +7452,26 @@
       ],
       "recommended": []
     },
-    "metacritic": 89
+    "metacritic": 89,
+    "rating": {
+      "esrb": {
+        "rating": "E10+",
+        "descriptors": [
+          "Fantasy Violence",
+          "Mild Blood",
+          "Mild Language",
+          "Use of Alcohol and Tobacco",
+          "Simulated Gambling"
+        ]
+      },
+      "pegi": {
+        "rating": "12",
+        "descriptors": [
+          "Violence"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "dota-2": {
     "screenshots": [
@@ -7110,10 +7479,6 @@
       "/images/screenshots/dota-2-2.jpg",
       "/images/screenshots/dota-2-3.jpg",
       "/images/screenshots/dota-2-4.jpg"
-    ],
-    "features": [
-      "Online multiplayer",
-      "In-game purchases"
     ],
     "languages": {
       "interface": [
@@ -7197,16 +7562,6 @@
       "/images/screenshots/forza-horizon-5-2.jpg",
       "/images/screenshots/forza-horizon-5-3.jpg",
       "/images/screenshots/forza-horizon-5-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Cross-platform multiplayer",
-      "Controller support",
-      "Achievements",
-      "Cloud saves",
-      "HDR"
     ],
     "languages": {
       "interface": [
@@ -7302,6 +7657,21 @@
           "110 GB available space"
         ]
       ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "E",
+        "descriptors": [
+          "Users Interact / Online Interactions Not Rated"
+        ]
+      },
+      "pegi": {
+        "rating": "3",
+        "descriptors": [
+          "In-Game Purchases"
+        ]
+      },
+      "requiredAge": 0
     }
   },
   "assetto-corsa": {
@@ -7310,12 +7680,6 @@
       "/images/screenshots/assetto-corsa-2.jpg",
       "/images/screenshots/assetto-corsa-3.jpg",
       "/images/screenshots/assetto-corsa-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Controller support",
-      "Achievements"
     ],
     "languages": {
       "interface": [
@@ -7409,14 +7773,6 @@
       "/images/screenshots/euro-truck-simulator-2-3.jpg",
       "/images/screenshots/euro-truck-simulator-2-4.jpg"
     ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
-    ],
     "languages": {
       "interface": [
         "English",
@@ -7498,7 +7854,14 @@
         ]
       ]
     },
-    "metacritic": 79
+    "metacritic": 79,
+    "rating": {
+      "pegi": {
+        "rating": "3",
+        "descriptors": []
+      },
+      "requiredAge": 0
+    }
   },
   "need-for-speed-unbound": {
     "screenshots": [
@@ -7506,14 +7869,6 @@
       "/images/screenshots/need-for-speed-unbound-2.jpg",
       "/images/screenshots/need-for-speed-unbound-3.jpg",
       "/images/screenshots/need-for-speed-unbound-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Cross-platform multiplayer",
-      "Controller support",
-      "Achievements",
-      "HDR"
     ],
     "languages": {
       "interface": [
@@ -7602,6 +7957,24 @@
           "50 GB available space"
         ]
       ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "T",
+        "descriptors": [
+          "Mild Violence",
+          "Mild Suggestive Themes",
+          "Language"
+        ]
+      },
+      "pegi": {
+        "rating": "12",
+        "descriptors": [
+          "Bad Language",
+          "In-Game Purchases"
+        ]
+      },
+      "requiredAge": 0
     }
   },
   "efootball": {
@@ -7610,16 +7983,6 @@
       "/images/screenshots/efootball-2.jpg",
       "/images/screenshots/efootball-3.jpg",
       "/images/screenshots/efootball-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Local co-op & split screen",
-      "Cross-platform multiplayer",
-      "Controller support",
-      "Cloud saves",
-      "In-game purchases"
     ],
     "languages": {
       "interface": [
@@ -7711,6 +8074,22 @@
           "70 GB available space"
         ]
       ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "E",
+        "descriptors": [
+          "Mild Language"
+        ]
+      },
+      "pegi": {
+        "rating": "3",
+        "descriptors": [
+          "In-Game Purchases",
+          "In-Game Purchases(Includes Random Items)"
+        ]
+      },
+      "requiredAge": 0
     }
   },
   "street-fighter-6": {
@@ -7719,16 +8098,6 @@
       "/images/screenshots/street-fighter-6-2.jpg",
       "/images/screenshots/street-fighter-6-3.jpg",
       "/images/screenshots/street-fighter-6-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Local co-op & split screen",
-      "Cross-platform multiplayer",
-      "Controller support",
-      "Achievements",
-      "Cloud saves",
-      "In-game purchases"
     ],
     "languages": {
       "interface": [
@@ -7814,7 +8183,29 @@
         ]
       ]
     },
-    "metacritic": 92
+    "metacritic": 92,
+    "rating": {
+      "esrb": {
+        "rating": "T",
+        "descriptors": [
+          "Violence",
+          "Mild Blood",
+          "Suggestive Themes",
+          "Language",
+          "Use of Alcohol and Tobacco"
+        ]
+      },
+      "pegi": {
+        "rating": "12",
+        "descriptors": [
+          "Violence",
+          "Bad Language",
+          "Sex",
+          "In-Game Purchases"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "tekken-8": {
     "screenshots": [
@@ -7822,14 +8213,6 @@
       "/images/screenshots/tekken-8-2.jpg",
       "/images/screenshots/tekken-8-3.jpg",
       "/images/screenshots/tekken-8-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Local co-op & split screen",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -7931,7 +8314,25 @@
         ]
       ]
     },
-    "metacritic": 91
+    "metacritic": 91,
+    "rating": {
+      "esrb": {
+        "rating": "T",
+        "descriptors": [
+          "Violence",
+          "Suggestive Themes",
+          "Language"
+        ]
+      },
+      "pegi": {
+        "rating": "16",
+        "descriptors": [
+          "Violence",
+          "In-Game Purchases"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "mortal-kombat-1": {
     "screenshots": [
@@ -7939,17 +8340,6 @@
       "/images/screenshots/mortal-kombat-1-2.jpg",
       "/images/screenshots/mortal-kombat-1-3.jpg",
       "/images/screenshots/mortal-kombat-1-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Local co-op & split screen",
-      "Cross-platform multiplayer",
-      "Controller support",
-      "Achievements",
-      "Cloud saves",
-      "HDR",
-      "In-game purchases"
     ],
     "languages": {
       "interface": [
@@ -8039,7 +8429,26 @@
         ]
       ]
     },
-    "metacritic": 82
+    "metacritic": 82,
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Intense Violence",
+          "Blood and Gore",
+          "Strong Language"
+        ]
+      },
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Violence",
+          "Bad Language",
+          "In-Game Purchases"
+        ]
+      },
+      "requiredAge": 18
+    }
   },
   "among-us": {
     "screenshots": [
@@ -8047,14 +8456,6 @@
       "/images/screenshots/among-us-2.jpg",
       "/images/screenshots/among-us-3.jpg",
       "/images/screenshots/among-us-4.jpg"
-    ],
-    "features": [
-      "Online multiplayer",
-      "Online co-op",
-      "Cross-platform multiplayer",
-      "Controller support",
-      "Achievements",
-      "In-game purchases"
     ],
     "languages": {
       "interface": [
@@ -8121,15 +8522,6 @@
       "/images/screenshots/overcooked-2-2.jpg",
       "/images/screenshots/overcooked-2-3.jpg",
       "/images/screenshots/overcooked-2-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Local co-op & split screen",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -8202,13 +8594,6 @@
       "/images/screenshots/death-stranding-directors-cut-2.jpg",
       "/images/screenshots/death-stranding-directors-cut-3.jpg",
       "/images/screenshots/death-stranding-directors-cut-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Controller support",
-      "Achievements",
-      "Cloud saves",
-      "HDR"
     ],
     "languages": {
       "interface": [
@@ -8318,7 +8703,19 @@
         ]
       ]
     },
-    "metacritic": 85
+    "metacritic": 85,
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Blood",
+          "Intense Violence",
+          "Partial Nudity",
+          "Strong Language"
+        ]
+      },
+      "requiredAge": 0
+    }
   },
   "grand-theft-auto-v-enhanced": {
     "screenshots": [
@@ -8326,14 +8723,6 @@
       "/images/screenshots/grand-theft-auto-v-enhanced-2.jpg",
       "/images/screenshots/grand-theft-auto-v-enhanced-3.jpg",
       "/images/screenshots/grand-theft-auto-v-enhanced-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Controller support",
-      "Achievements",
-      "In-game purchases"
     ],
     "languages": {
       "interface": [
@@ -8416,6 +8805,29 @@
           "SSD with DirectStorage-compatibility"
         ]
       ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Intense Violence",
+          "Blood and Gore",
+          "Nudity",
+          "Mature Humor",
+          "Strong Language",
+          "Strong Sexual Content",
+          "Use of Drugs and Alcohol"
+        ]
+      },
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Violence",
+          "Online Play",
+          "Strong Language"
+        ]
+      },
+      "requiredAge": 17
     }
   },
   "riders-republic": {
@@ -8424,16 +8836,6 @@
       "/images/screenshots/riders-republic-2.jpg",
       "/images/screenshots/riders-republic-3.jpg",
       "/images/screenshots/riders-republic-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Cross-platform multiplayer",
-      "Controller support",
-      "Achievements",
-      "HDR",
-      "In-game purchases"
     ],
     "languages": {
       "interface": [
@@ -8522,6 +8924,23 @@
           "Windows Compatible Mouse & Keyboard. Onmline Connection required. Controller highly recommended"
         ]
       ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "T",
+        "descriptors": [
+          "Lyrics"
+        ]
+      },
+      "pegi": {
+        "rating": "12",
+        "descriptors": [
+          "Violence",
+          "bad language",
+          "in-game purchases"
+        ]
+      },
+      "requiredAge": 0
     }
   },
   "motogp25": {
@@ -8530,15 +8949,6 @@
       "/images/screenshots/motogp25-2.jpg",
       "/images/screenshots/motogp25-3.jpg",
       "/images/screenshots/motogp25-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Local co-op & split screen",
-      "Cross-platform multiplayer",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -8615,6 +9025,17 @@
           "24 GB available space"
         ]
       ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "E",
+        "descriptors": []
+      },
+      "pegi": {
+        "rating": "3",
+        "descriptors": []
+      },
+      "requiredAge": 0
     }
   },
   "pga-tour-2k25": {
@@ -8623,16 +9044,6 @@
       "/images/screenshots/pga-tour-2k25-2.jpg",
       "/images/screenshots/pga-tour-2k25-3.jpg",
       "/images/screenshots/pga-tour-2k25-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Local co-op & split screen",
-      "Controller support",
-      "Achievements",
-      "HDR",
-      "In-game purchases"
     ],
     "languages": {
       "interface": [
@@ -8711,6 +9122,22 @@
           "30 GB available space"
         ]
       ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "E",
+        "descriptors": [
+          "Mild Language",
+          "Alcohol Reference"
+        ]
+      },
+      "pegi": {
+        "rating": "3",
+        "descriptors": [
+          "In-Game Purchases"
+        ]
+      },
+      "requiredAge": 0
     }
   },
   "tony-hawks-pro-skater-1-2": {
@@ -8719,14 +9146,6 @@
       "/images/screenshots/tony-hawks-pro-skater-1-2-2.jpg",
       "/images/screenshots/tony-hawks-pro-skater-1-2-3.jpg",
       "/images/screenshots/tony-hawks-pro-skater-1-2-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Local co-op & split screen",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -8801,6 +9220,21 @@
           "24 GB available space"
         ]
       ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "T",
+        "descriptors": [
+          "Lyrics"
+        ]
+      },
+      "pegi": {
+        "rating": "12",
+        "descriptors": [
+          "Bad Language"
+        ]
+      },
+      "requiredAge": 0
     }
   },
   "descenders": {
@@ -8809,13 +9243,6 @@
       "/images/screenshots/descenders-2.jpg",
       "/images/screenshots/descenders-3.jpg",
       "/images/screenshots/descenders-4.jpg"
-    ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
     ],
     "languages": {
       "interface": [
@@ -8906,14 +9333,6 @@
       "/images/screenshots/snowrunner-3.jpg",
       "/images/screenshots/snowrunner-4.jpg"
     ],
-    "features": [
-      "Single-player",
-      "Online multiplayer",
-      "Online co-op",
-      "Controller support",
-      "Achievements",
-      "Cloud saves"
-    ],
     "languages": {
       "interface": [
         "English",
@@ -8977,6 +9396,13 @@
           "50 GB available space"
         ]
       ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "E",
+        "descriptors": []
+      },
+      "requiredAge": 0
     }
   }
 }

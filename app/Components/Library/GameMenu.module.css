@@ -1,0 +1,48 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    background-color: var(--hover);
+    border: none;
+    border-radius: 10px;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.button:hover,
+.button[aria-expanded='true'] {
+    background-color: var(--hover-strong);
+    color: var(--text);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form input {
+    padding: 0.65rem 0.85rem;
+    background-color: var(--bg);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+}
+
+.form input:focus {
+    border-color: var(--main);
+    outline: none;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.6rem;
+    margin-top: 0.75rem;
+}

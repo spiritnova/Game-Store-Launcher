@@ -11,14 +11,15 @@ import SystemUpdateAltIcon from '@mui/icons-material/SystemUpdateAlt'
 import { cardImage, formatSize, getGame } from '@/lib/games'
 import { placeholderColor } from '@/lib/image-colors'
 import { formatEta, formatSpeed, statusLabel, useDownloads } from '@/lib/downloads'
-import { AUTO_UPDATE_MODES, BANDWIDTH_LIMITS, CONNECTIONS, formatRelative, useStore } from '@/lib/store'
+import { AUTO_UPDATE_MODES, BANDWIDTH_LIMITS, CONNECTIONS, driveUsage, formatRelative, useStore } from '@/lib/store'
 import Button from '../UI/Button'
 import ProgressBar from '../UI/ProgressBar'
 import SignInPrompt from '../UI/SignInPrompt'
 import Skeleton from '../UI/Skeleton'
 import styles from './DownloadsView.module.css'
 
-const DRIVE_GB = 2000
+const QUEUED = { install: 'Install', update: 'Update', repair: 'Repair' }
+const FINISHED = { install: 'Installed', update: 'Updated', repair: 'Repaired' }
 
 function SpeedGraph({ samples, max }) {
     const width = 300
@@ -84,7 +85,7 @@ export default function DownloadsView() {
     }
 
     const game = current && getGame(current.slug)
-    const installedGB = library.filter((e) => e.installed).reduce((sum, e) => sum + (getGame(e.slug).sizeGB ?? 0), 0)
+    const drives = driveUsage(library)
     const peak = samples.length ? Math.max(...samples) : 0
     const remaining = current ? current.sizeGB - current.downloadedGB : 0
     const autoUpdate = AUTO_UPDATE_MODES[settings.autoUpdate]
@@ -184,7 +185,7 @@ export default function DownloadsView() {
                                             <div className={styles.rowBody}>
                                                 <p className={styles.rowTitle}>{queued.title}</p>
                                                 <p className={styles.rowMeta}>
-                                                    {item.kind === 'update' ? 'Update' : 'Install'} · {formatSize(item.sizeGB)}
+                                                    {QUEUED[item.kind]} · {formatSize(item.sizeGB)}
                                                     {item.downloadedGB > 0 && ` · ${Math.floor((item.downloadedGB / item.sizeGB) * 100)}% done`}
                                                 </p>
                                             </div>
@@ -261,7 +262,7 @@ export default function DownloadsView() {
                                             <div className={styles.rowBody}>
                                                 <p className={styles.rowTitle}>{finished.title}</p>
                                                 <p className={styles.rowMeta}>
-                                                    {item.kind === 'update' ? 'Updated' : 'Installed'} · {formatSize(item.sizeGB)} · {formatRelative(item.finishedAt)}
+                                                    {FINISHED[item.kind]} · {formatSize(item.sizeGB)} · {formatRelative(item.finishedAt)}
                                                 </p>
                                             </div>
                                             {installed && (
@@ -279,19 +280,21 @@ export default function DownloadsView() {
 
                 <aside className={styles.disk} aria-labelledby="disk-title">
                     <h2 id="disk-title" className={styles.sectionTitle}>Storage</h2>
-                    <p className={styles.diskLabel}>Local disk (C:) · simulated</p>
-                    <div className={styles.diskBar} aria-hidden="true">
-                        <span style={{ width: `${Math.min(100, (installedGB / DRIVE_GB) * 100)}%` }} />
-                    </div>
+                    {drives.map((drive) => (
+                        <div key={drive.id} className={styles.drive}>
+                            <p className={styles.diskLabel}>
+                                {drive.label}
+                                {drive.id === settings.installDrive && <span className={styles.defaultDrive}>Default</span>}
+                            </p>
+                            <div className={styles.diskBar} aria-hidden="true">
+                                <span style={{ width: `${drive.percent}%` }} />
+                            </div>
+                            <p className={styles.diskMeta}>
+                                {formatSize(drive.gamesGB)} of games · {formatSize(drive.freeGB)} free of {formatSize(drive.capacityGB)}
+                            </p>
+                        </div>
+                    ))}
                     <dl className={styles.diskStats}>
-                        <div>
-                            <dt>Installed games</dt>
-                            <dd>{formatSize(installedGB)}</dd>
-                        </div>
-                        <div>
-                            <dt>Free space</dt>
-                            <dd>{formatSize(DRIVE_GB - installedGB)}</dd>
-                        </div>
                         <div>
                             <dt>Region</dt>
                             <dd>{region.label.replace(' (recommended)', '')}</dd>

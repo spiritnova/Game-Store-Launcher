@@ -1,4 +1,8 @@
-:root {
+/* Dark theme (the default). `.theme-dark` keeps these colours inside areas drawn over artwork
+   (the home carousel, game banners), so they stay legible in the light theme too. */
+:root,
+.theme-dark {
+  color-scheme: dark;
   /* Surfaces: a deep blue-black with a slight cool tint, layered lighter as they rise */
   --bg: #0a0b10;
   --surface: #12141c;
@@ -9,17 +13,34 @@
 
   --text: #f4f6fb;
   --text-muted: #98a1b5;
-  --main: #3d8bff;
-  --main-text: #7db0ff;
+  /* Long-form body text: a step softer than headings */
+  --text-soft: #d3d8e2;
   --accent: #f5c542;
   --success: #34d399;
   --danger: #ff6b7a;
+  --warning: #e0b84c;
+
+  /* Tints for hover states and subtle fills: white on dark, ink on light */
+  --fg-rgb: 255 255 255;
+  --fill: rgb(var(--fg-rgb) / 0.03);
+  --hover: rgb(var(--fg-rgb) / 0.06);
+  --hover-strong: rgb(var(--fg-rgb) / 0.1);
+
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+.theme-dark {
+  color: var(--text);
+}
+
+:root {
+  --main: #3d8bff;
+  --main-text: #7db0ff;
 
   --radius-sm: 10px;
   --radius: 14px;
   --radius-lg: 20px;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.5);
 
   --sidebar-w: 256px;
   --topbar-h: 0px;
@@ -28,16 +49,36 @@
   --section-gap: clamp(2.5rem, 5vw, 4rem);
 }
 
+/* Light theme, chosen in Settings > Appearance or with the sidebar toggle */
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f1f3f8;
+  --surface: #ffffff;
+  --surface-2: #f6f7fb;
+  --surface-3: #e5e8f0;
+  --border: rgba(15, 23, 42, 0.1);
+  --border-strong: rgba(15, 23, 42, 0.18);
+
+  --text: #111827;
+  --text-muted: #566074;
+  --text-soft: #343c4c;
+  --main-text: #1d63d8;
+  --accent: #9a6400;
+  --success: #047857;
+  --danger: #d61f45;
+  --warning: #a16207;
+
+  --fg-rgb: 15 23 42;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 24px 60px rgba(15, 23, 42, 0.16);
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-
-html {
-  color-scheme: dark;
 }
 
 body {
@@ -78,6 +119,23 @@ h3 {
 :root[data-accent="pink"] {
   --main: #db2777;
   --main-text: #f58bc0;
+}
+
+/* Darker accent text so links stay readable on light surfaces */
+:root[data-theme='light'][data-accent="purple"] {
+  --main-text: #6d3fd8;
+}
+
+:root[data-theme='light'][data-accent="green"] {
+  --main-text: #15803d;
+}
+
+:root[data-theme='light'][data-accent="orange"] {
+  --main-text: #c2410c;
+}
+
+:root[data-theme='light'][data-accent="pink"] {
+  --main-text: #be185d;
 }
 
 /* Sidebar + content column. Components size themselves with @container main queries,

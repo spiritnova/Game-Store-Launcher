@@ -89,7 +89,7 @@
 }
 
 .eyebrowPaused {
-    color: #e0b84c;
+    color: var(--warning);
 }
 
 .currentTop h2 {
@@ -314,8 +314,31 @@
     margin: 0;
 }
 
+.drive {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
 .diskLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.defaultDrive {
+    padding: 0 6px;
+    background-color: color-mix(in srgb, var(--main) 18%, transparent);
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--main-text);
+}
+
+.diskMeta {
+    font-size: 0.78rem;
     color: var(--text-muted);
 }
 

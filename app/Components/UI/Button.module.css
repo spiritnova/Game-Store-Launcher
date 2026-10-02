@@ -86,3 +86,9 @@
   font-size: 1.02rem;
   border-radius: 14px;
 }
+
+/* Busy (e.g. processing a payment): stays in full colour while it can't be clicked */
+.button[aria-busy='true']:disabled {
+  cursor: progress;
+  opacity: 1;
+}

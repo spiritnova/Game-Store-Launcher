@@ -10,9 +10,11 @@ import ExtensionOutlinedIcon from '@mui/icons-material/ExtensionOutlined'
 import { bundlePrice, cardImage, dlcPrice, editionPrice, getBundle, getDlc, getEdition, getGame } from '@/lib/games'
 import { placeholderColor } from '@/lib/image-colors'
 import { useDownloads } from '@/lib/downloads'
+import { simulatePayment } from '@/lib/payment'
 import { DEMO_USER, useStore } from '@/lib/store'
 import Button from '../UI/Button'
 import Skeleton from '../UI/Skeleton'
+import Spinner from '../UI/Spinner'
 import styles from './CartView.module.css'
 
 // Normalizes a cart item (game, DLC or bundle) into what the cart displays and charges.
@@ -113,6 +115,7 @@ export default function CartView() {
   const [order, setOrder] = useState(null)
   const [method, setMethod] = useState(null)
   const [error, setError] = useState(null)
+  const [processing, setProcessing] = useState(false)
 
   const gameInCart = (slug) =>
     cart.some((item) => !item.gift && ((item.type === 'game' && item.slug === slug) || (item.type === 'bundle' && getBundle(item.slug).games.includes(slug))))
@@ -125,8 +128,13 @@ export default function CartView() {
   // Pay from the wallet by default when it covers the order
   const payWith = method === 'wallet' && !walletCovers ? 'card' : method ?? (walletCovers ? 'wallet' : 'card')
 
-  function purchase() {
+  async function purchase() {
+    if (processing) return
+    setError(null)
+    setProcessing(true)
+    await simulatePayment(total === 0 ? 'free' : payWith)
     const result = checkout(payWith)
+    setProcessing(false)
     if (!result) return
     if (result.error) return setError(result.error)
     if (settings.autoInstall) result.purchases.forEach(({ game }) => downloads.install(game))
@@ -193,6 +201,7 @@ export default function CartView() {
                   type="button"
                   className={styles.remove}
                   onClick={() => removeFromCart(line.id)}
+                  disabled={processing}
                   aria-label={`Remove ${line.title} from cart`}
                   title="Remove"
                 >
@@ -227,14 +236,14 @@ export default function CartView() {
                   <fieldset className={styles.payment}>
                     <legend>Pay with</legend>
                     <label className={styles.method}>
-                      <input type="radio" name="payment" value="wallet" checked={payWith === 'wallet'} disabled={!walletCovers} onChange={() => { setMethod('wallet'); setError(null) }} />
+                      <input type="radio" name="payment" value="wallet" checked={payWith === 'wallet'} disabled={!walletCovers || processing} onChange={() => { setMethod('wallet'); setError(null) }} />
                       <span>
                         <strong>Ultimate Wallet</strong>
                         <span>{formatMoney(wallet.balance)} available{!walletCovers && ', not enough for this order'}</span>
                       </span>
                     </label>
                     <label className={styles.method}>
-                      <input type="radio" name="payment" value="card" checked={payWith === 'card'} onChange={() => { setMethod('card'); setError(null) }} />
+                      <input type="radio" name="payment" value="card" checked={payWith === 'card'} disabled={processing} onChange={() => { setMethod('card'); setError(null) }} />
                       <span>
                         <strong>Card ending 4242</strong>
                         <span>Simulated, nothing is charged</span>
@@ -245,9 +254,14 @@ export default function CartView() {
                 )}
                 {error && <p className={styles.error} role="alert">{error}</p>}
                 {blocked && <p className={styles.error}>Add {blocked.missingBase.title} to your cart, or remove its DLC, to check out.</p>}
-                <Button size="large" onClick={purchase} disabled={Boolean(blocked)}>
-                  {total === 0 ? 'Get for free' : `Purchase for ${formatPrice(total)}`}
+                <Button size="large" onClick={purchase} disabled={Boolean(blocked) || processing} aria-busy={processing}>
+                  {processing ? (
+                    <>
+                      <Spinner /> {total === 0 ? 'Adding to your library…' : payWith === 'card' ? 'Processing payment…' : 'Paying from your wallet…'}
+                    </>
+                  ) : total === 0 ? 'Get for free' : `Purchase for ${formatPrice(total)}`}
                 </Button>
+                <p className="visually-hidden" role="status">{processing ? 'Processing your order' : ''}</p>
               </>
             ) : (
               <div className={styles.signIn}>

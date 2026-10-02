@@ -8,3 +8,8 @@
     font-weight: 600;
     letter-spacing: 0.5px;
 }
+
+.avatar {
+    overflow: hidden;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}

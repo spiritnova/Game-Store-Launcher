@@ -345,3 +345,8 @@
 .warning a {
   text-decoration: underline;
 }
+
+.remove:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}

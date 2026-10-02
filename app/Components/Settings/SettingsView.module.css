@@ -392,3 +392,37 @@ label.toggleRow {
 .actions .muted {
   align-self: center;
 }
+
+.avatars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.avatarChoice {
+  position: relative;
+  display: flex;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 120ms;
+}
+
+.avatarChoice:hover {
+  transform: scale(1.06);
+}
+
+.avatarChoice input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.avatarChoice:has(input:checked) {
+  box-shadow: 0 0 0 3px var(--surface), 0 0 0 5px var(--main);
+}
+
+.avatarChoice:has(input:focus-visible) {
+  outline: 2px solid var(--main-text);
+  outline-offset: 4px;
+}

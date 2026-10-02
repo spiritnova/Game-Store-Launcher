@@ -3,7 +3,9 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { achievementProgress } from '@/lib/achievements'
+import { AVATAR_CHOICES } from '@/lib/avatars'
 import { CURRENCIES } from '@/lib/currency'
+import { simulatePayment } from '@/lib/payment'
 import { useDownloads } from '@/lib/downloads'
 import { formatSize } from '@/lib/games'
 import {
@@ -25,6 +27,7 @@ import Button from '../UI/Button'
 import Select from '../UI/Select'
 import SignInPrompt from '../UI/SignInPrompt'
 import Skeleton from '../UI/Skeleton'
+import Spinner from '../UI/Spinner'
 import Purchases from './Purchases'
 import styles from './SettingsView.module.css'
 
@@ -47,25 +50,27 @@ function ProfileSection() {
   const [displayName, setDisplayName] = useState(profile.displayName)
   const [bio, setBio] = useState(profile.bio)
   const [hue, setHue] = useState(user.hue)
+  // undefined = the creature generated from your username, 'initials', or one of AVATAR_CHOICES
+  const [avatar, setAvatar] = useState(user.avatar)
   const [error, setError] = useState(null)
 
   const hours = Math.round(library.reduce((sum, e) => sum + e.playtimeMinutes, 0) / 60)
   const reviews = Object.values(community.reviews).flat().filter((r) => r.author.username === session.username).length
   const achievements = library.reduce((sum, e) => sum + (achievementProgress(e)?.unlocked ?? 0), 0)
   const memberSince = new Date(profile.createdAt).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
-  const dirty = displayName !== profile.displayName || bio !== profile.bio || hue !== user.hue
+  const dirty = displayName !== profile.displayName || bio !== profile.bio || hue !== user.hue || avatar !== user.avatar
 
   function handleSubmit(e) {
     e.preventDefault()
     const name = displayName.trim()
     if (name.length < 2 || name.length > 24) return setError('Use 2–24 characters.')
-    updateProfile({ displayName: name, bio: bio.trim(), avatarHue: hue })
+    updateProfile({ displayName: name, bio: bio.trim(), avatarHue: hue, avatar: avatar ?? null })
   }
 
   return (
     <form className={styles.card} onSubmit={handleSubmit} noValidate>
       <div className={styles.profileHeader}>
-        <Avatar user={{ ...user, displayName: displayName.trim() || user.displayName, hue }} size={72} />
+        <Avatar user={{ ...user, displayName: displayName.trim() || user.displayName, hue, avatar }} size={72} />
         <div className={styles.grow}>
           <p className={styles.profileName}>{displayName.trim() || user.displayName}</p>
           <p className={styles.muted}>@{session.username} · Member since {memberSince}</p>
@@ -99,6 +104,19 @@ function ProfileSection() {
         <textarea id="bio" rows={3} maxLength={BIO_MAX} value={bio} onChange={(e) => setBio(e.target.value)} aria-describedby="bio-count" />
         <p id="bio-count" className={styles.muted}>{bio.length} / {BIO_MAX}</p>
       </div>
+
+      <fieldset className={styles.field}>
+        <legend>Profile picture</legend>
+        <div className={styles.avatars}>
+          {[undefined, ...AVATAR_CHOICES, 'initials'].map((choice) => (
+            <label key={choice ?? 'default'} className={styles.avatarChoice} title={choice === 'initials' ? 'Initials' : undefined}>
+              <input type="radio" name="avatar" checked={avatar === choice} onChange={() => setAvatar(choice)} />
+              <Avatar user={{ ...user, displayName: displayName.trim() || user.displayName, hue, avatar: choice }} size={48} />
+              <span className="visually-hidden">{choice === undefined ? 'Your own creature' : choice === 'initials' ? 'Initials' : `Creature ${choice.split('-')[1]}`}</span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
 
       <fieldset className={styles.field}>
         <legend>Avatar colour</legend>
@@ -391,6 +409,14 @@ function WalletSection() {
   const [amount, setAmount] = useState(String(WALLET_AMOUNTS[1]))
   const [code, setCode] = useState('')
   const [result, setResult] = useState(null)
+  const [adding, setAdding] = useState(false)
+
+  async function add() {
+    setAdding(true)
+    await simulatePayment('card')
+    addFunds(Number(amount))
+    setAdding(false)
+  }
 
   return (
     <div className={styles.stack}>
@@ -417,7 +443,9 @@ function WalletSection() {
         </fieldset>
         <div className={styles.actions}>
           <p className={`${styles.muted} ${styles.grow}`}>Paid with your card ending 4242 (simulated, nothing is charged).</p>
-          <Button variant="secondary" onClick={() => addFunds(Number(amount))}>Add {formatMoney(Number(amount))}</Button>
+          <Button variant="secondary" onClick={add} disabled={adding} aria-busy={adding}>
+            {adding ? <><Spinner /> Processing payment…</> : `Add ${formatMoney(Number(amount))}`}
+          </Button>
         </div>
       </div>
 

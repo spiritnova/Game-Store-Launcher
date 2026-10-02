@@ -9,7 +9,7 @@ const MENU_WIDTH = 240
 
 // Action menu (ARIA menu button). The menu is rendered at the end of <body> and positioned against the
 // window, so cards with overflow: hidden or transformed drawers can't clip or offset it.
-//   items: [{ label, onSelect, icon?: Component, checked?: boolean, danger?: boolean }
+//   items: [{ label, onSelect, icon?: Component, checkedIcon?: Component, checked?: boolean, danger?: boolean }
 //           | { heading: 'Text' } | { divider: true }]
 export default function Menu({ label, children, items, className, buttonClassName }) {
     const [open, setOpen] = useState(false)
@@ -53,8 +53,9 @@ export default function Menu({ label, children, items, className, buttonClassNam
         const onPointerDown = (e) => {
             if (!menu.current?.contains(e.target) && !button.current?.contains(e.target)) close(false)
         }
+        // Resizing targets the window (not a node); scrolling inside the menu itself keeps it open
         const onMove = (e) => {
-            if (!menu.current?.contains(e.target)) close(false)
+            if (!(e.target instanceof Node) || !menu.current?.contains(e.target)) close(false)
         }
         document.addEventListener('pointerdown', onPointerDown)
         window.addEventListener('scroll', onMove, true)
@@ -112,7 +113,8 @@ export default function Menu({ label, children, items, className, buttonClassNam
                         if (item.divider) return <li key={`d${index}`} role="separator" className={styles.divider} />
                         if (item.heading) return <li key={`h${index}`} role="presentation" className={styles.heading}>{item.heading}</li>
                         const order = orderOf.get(item)
-                        const Icon = item.icon
+                        // Checkable items with an icon swap it when checked (heart -> filled heart); without one they show a tick
+                        const Icon = item.checked && item.checkedIcon ? item.checkedIcon : item.icon
                         const checkable = item.checked !== undefined
                         return (
                             <li key={`${item.label}-${index}`} role="presentation">
@@ -127,7 +129,7 @@ export default function Menu({ label, children, items, className, buttonClassNam
                                     onClick={() => select(item)}
                                 >
                                     <span className={styles.icon} aria-hidden="true">
-                                        {checkable ? item.checked && <CheckIcon fontSize="inherit" /> : Icon && <Icon fontSize="inherit" />}
+                                        {Icon ? <Icon fontSize="inherit" /> : checkable && item.checked && <CheckIcon fontSize="inherit" />}
                                     </span>
                                     <span className={styles.label}>{item.label}</span>
                                 </button>

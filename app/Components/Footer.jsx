@@ -21,7 +21,7 @@ const sections = [
             { href: '/downloads', label: 'Downloads' },
             { href: '/wishlist', label: 'Wishlist' },
             { href: '/cart', label: 'Cart' },
-            { href: '/settings', label: 'Profile & settings' },
+            { href: '/settings', label: 'Settings' },
             { href: '/about', label: 'About this project' },
         ],
     },

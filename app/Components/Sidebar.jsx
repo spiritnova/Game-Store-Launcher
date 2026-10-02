@@ -13,6 +13,7 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined'
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined'
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined'
 import LogoutIcon from '@mui/icons-material/Logout'
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
 import MenuIcon from '@mui/icons-material/Menu'
 import NewspaperOutlinedIcon from '@mui/icons-material/NewspaperOutlined'
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline'
@@ -196,6 +197,7 @@ export default function Sidebar(){
     }, [open])
 
     const current = pendingHref ?? pathname
+    const profileHref = user ? `/u/${user.username}` : null
     const isActive = (href) => (href === '/' ? current === '/' : current.startsWith(href))
     const onNavigate = (href) => href !== pathname && setPendingHref(href)
     const link = (href) => ({ href, active: isActive(href), onNavigate })
@@ -322,17 +324,27 @@ export default function Sidebar(){
                     ) : user ? (
                         <div className={styles.profile}>
                             <Link
-                                href="/settings"
-                                className={`${styles.profileLink} ${isActive('/settings') ? styles.profileActive : ''}`}
-                                aria-label={`${user.displayName}, open profile and settings`}
-                                aria-current={isActive('/settings') ? 'page' : undefined}
-                                onClick={() => onNavigate('/settings')}
+                                href={profileHref}
+                                className={`${styles.profileLink} ${isActive(profileHref) ? styles.profileActive : ''}`}
+                                aria-label={`${user.displayName}, view your profile`}
+                                aria-current={isActive(profileHref) ? 'page' : undefined}
+                                onClick={() => onNavigate(profileHref)}
                             >
-                                <Avatar user={user} />
+                                <Avatar user={user} size={32} />
                                 <span className={styles.profileText}>
                                     <span className={styles.name}>{user.displayName}</span>
                                     <span className={styles.username}>Wallet {formatMoney(wallet.balance)}</span>
                                 </span>
+                            </Link>
+                            <Link
+                                href="/settings"
+                                className={`${styles.iconButton} ${isActive('/settings') ? styles.iconActive : ''}`}
+                                aria-label="Settings"
+                                title="Settings"
+                                aria-current={isActive('/settings') ? 'page' : undefined}
+                                onClick={() => onNavigate('/settings')}
+                            >
+                                <SettingsOutlinedIcon fontSize="small" />
                             </Link>
                             <button type="button" className={styles.iconButton} onClick={signOut} aria-label="Sign out" title="Sign out">
                                 <LogoutIcon fontSize="small" />

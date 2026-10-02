@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import AddIcon from '@mui/icons-material/Add'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'
+import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz'
 import ReplayIcon from '@mui/icons-material/Replay'
@@ -56,7 +57,7 @@ export default function GameMenu({ game, className }) {
     if (!entry) return null
 
     const items = [
-        { label: 'Favourite', checked: Boolean(entry.favorite), onSelect: () => toggleFavorite(game.slug), icon: FavoriteBorderIcon },
+        { label: 'Favourite', checked: Boolean(entry.favorite), onSelect: () => toggleFavorite(game.slug), icon: FavoriteBorderIcon, checkedIcon: FavoriteIcon },
         { heading: 'Collections' },
         ...collections.map((c) => ({ label: c.name, checked: c.slugs.includes(game.slug), onSelect: () => toggleCollection(c.id, game.slug) })),
         { label: 'New collection…', icon: AddIcon, onSelect: () => setDialog('collection') },

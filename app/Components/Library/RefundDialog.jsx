@@ -24,7 +24,7 @@ export default function RefundDialog({ game, dlcId = null, open, onClose }) {
                 info?.eligible ? (
                     <>
                         <Button variant="ghost" onClick={onClose}>Keep {dlcId ? 'it' : 'the game'}</Button>
-                        <Button onClick={() => { refund(game.slug, dlcId); onClose() }}>Refund {formatMoney(info.amount)}</Button>
+                        <Button onClick={() => { refund(game.slug, dlcId); onClose() }}>Refund {formatMoney(info.total)}</Button>
                     </>
                 ) : (
                     <Button variant="ghost" onClick={onClose}>Close</Button>
@@ -36,7 +36,10 @@ export default function RefundDialog({ game, dlcId = null, open, onClose }) {
                     <dl className={styles.facts}>
                         <div><dt>Order</dt><dd>{info.transaction.id}</dd></div>
                         <div><dt>Bought</dt><dd>{formatDateTime(info.transaction.createdAt)}</dd></div>
-                        <div><dt>Refund amount</dt><dd>{formatMoney(info.amount)}</dd></div>
+                        <div><dt>Refund amount</dt><dd>{formatMoney(info.total)}</dd></div>
+                        {info.upgrades.length > 0 && (
+                            <div><dt>Includes</dt><dd>{info.upgrades.map((u) => `${u.item.title} (${formatMoney(u.item.price)})`).join(', ')}</dd></div>
+                        )}
                         <div><dt>Refunded to</dt><dd>{info.method === 'wallet' ? 'Your Ultimate Wallet' : 'Card ending 4242'}</dd></div>
                     </dl>
                     <p className={styles.muted}>

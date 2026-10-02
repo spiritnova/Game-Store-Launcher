@@ -7,6 +7,9 @@ import CardGiftcardIcon from '@mui/icons-material/CardGiftcard'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'
 import ExtensionOutlinedIcon from '@mui/icons-material/ExtensionOutlined'
+import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined'
+import UpgradeIcon from '@mui/icons-material/Upgrade'
+import { COUPONS } from '@/lib/coupons'
 import { bundlePrice, cardImage, dlcPrice, editionPrice, getBundle, getDlc, getEdition, getGame } from '@/lib/games'
 import { placeholderColor } from '@/lib/image-colors'
 import { useDownloads } from '@/lib/downloads'
@@ -17,9 +20,26 @@ import Skeleton from '../UI/Skeleton'
 import Spinner from '../UI/Spinner'
 import styles from './CartView.module.css'
 
-// Normalizes a cart item (game, DLC or bundle) into what the cart displays and charges.
-// `gameInCart` tells whether a DLC's base game is being bought in the same order.
-function describe(item, owns, profileOf, gameInCart) {
+// Normalizes a cart item (game, DLC, edition upgrade or bundle) into what the cart displays and charges.
+// `gameInCart` tells whether a DLC's base game is being bought in the same order; `pricing` is the
+// store's priced cart (upgrade prices depend on the edition and DLC you own).
+function describe(item, { owns, profileOf, gameInCart, pricing }) {
+  if (item.type === 'upgrade') {
+    const game = getGame(item.slug)
+    const edition = getEdition(game, item.edition)
+    const priced = pricing.items.find((line) => line.upgrade && line.slug === item.slug)
+    return {
+      id: item.id,
+      title: `${edition.name} upgrade`,
+      subtitle: priced ? `Upgrades your ${getEdition(game, priced.from).name} of ${game.title}` : `Requires ${game.title}`,
+      href: `/games/${game.slug}#editions`,
+      image: cardImage(game),
+      tag: 'Upgrade',
+      original: priced?.original ?? 0,
+      // The price before any coupon, which the summary shows on its own line
+      price: priced ? priced.price + (priced.couponDiscount ?? 0) : 0,
+    }
+  }
   if (item.type === 'dlc') {
     const game = getGame(item.slug)
     const dlc = getDlc(game, item.dlc)
@@ -70,7 +90,7 @@ function describe(item, owns, profileOf, gameInCart) {
 
 function OrderConfirmation({ order, autoInstalled }) {
   const { formatPrice, profileOf } = useStore()
-  const bought = order.purchases.length + order.dlc.length
+  const bought = order.purchases.length + order.dlc.length + order.upgrades.length
   return (
     <div className={styles.confirmation}>
       <CheckCircleIcon className={styles.check} />
@@ -86,6 +106,11 @@ function OrderConfirmation({ order, autoInstalled }) {
           <li key={game.slug}>
             {game.title}
             {edition.id !== 'standard' && ` · ${edition.name}`}
+          </li>
+        ))}
+        {order.upgrades.map(({ game, to }) => (
+          <li key={`${game.slug}-upgrade`}>
+            <UpgradeIcon fontSize="inherit" /> {game.title} · {to.name}
           </li>
         ))}
         {order.dlc.map(({ game, dlc }) => (
@@ -109,8 +134,61 @@ function OrderConfirmation({ order, autoInstalled }) {
   )
 }
 
+// Apply or remove a coupon code. The discount itself is worked out by the store from what's in the cart.
+function CouponField({ disabled }) {
+  const { coupon, cartPricing, applyCouponCode, removeCoupon } = useStore()
+  const [code, setCode] = useState('')
+  const [message, setMessage] = useState(null)
+  const applied = cartPricing.coupon
+
+  if (coupon) {
+    return (
+      <div className={styles.coupon}>
+        <p className={`${styles.couponApplied} ${applied?.ok ? '' : styles.couponInvalid}`}>
+          <LocalOfferOutlinedIcon fontSize="small" />
+          <span>
+            <strong>{coupon}</strong> · {applied?.ok ? applied.coupon.description : `No longer applies: ${applied?.message}`}
+          </span>
+          <button type="button" onClick={removeCoupon} disabled={disabled} aria-label={`Remove coupon ${coupon}`}>Remove</button>
+        </p>
+      </div>
+    )
+  }
+
+  return (
+    <form
+      className={styles.coupon}
+      onSubmit={(e) => {
+        e.preventDefault()
+        const result = applyCouponCode(code)
+        setMessage(result)
+        if (result.ok) setCode('')
+      }}
+    >
+      <label htmlFor="coupon-code">Coupon code</label>
+      <div className={styles.couponRow}>
+        <input
+          id="coupon-code"
+          value={code}
+          autoComplete="off"
+          spellCheck={false}
+          placeholder="e.g. SAVE10"
+          disabled={disabled}
+          onChange={(e) => { setCode(e.target.value); setMessage(null) }}
+          aria-invalid={message ? !message.ok : undefined}
+          aria-describedby="coupon-help"
+        />
+        <Button type="submit" variant="ghost" size="small" disabled={disabled || !code.trim()}>Apply</Button>
+      </div>
+      <p id="coupon-help" className={message && !message.ok ? styles.error : styles.couponHint} role={message ? 'status' : undefined}>
+        {message?.message ?? `Demo codes: ${Object.keys(COUPONS).join(', ')}`}
+      </p>
+    </form>
+  )
+}
+
 export default function CartView() {
-  const { hydrated, session, settings, cart, owns, wallet, profileOf, removeFromCart, checkout, signIn, formatPrice, formatMoney } = useStore()
+  const { hydrated, session, settings, cart, owns, wallet, profileOf, cartPricing, removeFromCart, checkout, signIn, formatPrice, formatMoney } = useStore()
   const downloads = useDownloads()
   const [order, setOrder] = useState(null)
   const [method, setMethod] = useState(null)
@@ -119,11 +197,14 @@ export default function CartView() {
 
   const gameInCart = (slug) =>
     cart.some((item) => !item.gift && ((item.type === 'game' && item.slug === slug) || (item.type === 'bundle' && getBundle(item.slug).games.includes(slug))))
-  const lines = cart.map((item) => describe(item, owns, profileOf, gameInCart))
+  const lines = cart.map((item) => describe(item, { owns, profileOf, gameInCart, pricing: cartPricing }))
   const blocked = lines.find((line) => line.missingBase)
   const subtotal = lines.reduce((sum, line) => sum + line.original, 0)
-  const total = lines.reduce((sum, line) => sum + line.price, 0)
-  const savings = subtotal - total
+  const beforeCoupon = lines.reduce((sum, line) => sum + line.price, 0)
+  const savings = subtotal - beforeCoupon
+  const coupon = cartPricing.coupon
+  const couponDiscount = coupon?.ok ? coupon.discount : 0
+  const total = Math.max(0, beforeCoupon - couponDiscount)
   const walletCovers = wallet.balance + 0.001 >= total
   // Pay from the wallet by default when it covers the order
   const payWith = method === 'wallet' && !walletCovers ? 'card' : method ?? (walletCovers ? 'wallet' : 'card')
@@ -224,11 +305,19 @@ export default function CartView() {
                   <dd>−{formatPrice(savings)}</dd>
                 </div>
               )}
+              {couponDiscount > 0 && (
+                <div className={styles.savings}>
+                  <dt>Coupon {coupon.code}</dt>
+                  <dd>−{formatPrice(couponDiscount)}</dd>
+                </div>
+              )}
               <div className={styles.total}>
                 <dt>Total</dt>
                 <dd>{formatPrice(total)}</dd>
               </div>
             </dl>
+
+            <CouponField disabled={processing} />
 
             {session ? (
               <>

@@ -485,7 +485,7 @@ function WalletSection() {
 
 function AccountSection() {
   const router = useRouter()
-  const { session, signOut, deleteAccount } = useStore()
+  const { session, deleteAccount } = useStore()
   const [confirming, setConfirming] = useState(false)
   const [typed, setTyped] = useState('')
 
@@ -502,7 +502,7 @@ function AccountSection() {
           <strong>Sign out</strong>
           <span className={styles.muted}>Your library and settings stay saved in this browser.</span>
         </span>
-        <Button variant="ghost" size="small" onClick={signOut}>Sign out</Button>
+        <Button variant="ghost" size="small" href="/signout">Sign out</Button>
       </div>
 
       <div className={styles.danger}>

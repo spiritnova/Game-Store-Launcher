@@ -25,7 +25,8 @@ function summary(tx, profileOf) {
 function Receipt({ tx, onRefund }) {
     const { refundInfo, profileOf, formatMoney } = useStore()
     const original = tx.items.reduce((sum, i) => sum + i.original, 0)
-    const discount = original - tx.total
+    const couponDiscount = tx.items.reduce((sum, i) => sum + (i.couponDiscount ?? 0), 0)
+    const discount = original - tx.total - couponDiscount
 
     return (
         <div className={styles.receipt}>
@@ -45,7 +46,8 @@ function Receipt({ tx, onRefund }) {
                 </thead>
                 <tbody>
                     {tx.items.map((item, i) => {
-                        const refund = tx.type === 'purchase' && item.slug && !item.giftTo && !item.refunded ? refundInfo(item.slug, item.dlc ?? null) : null
+                        // Upgrades are refunded together with their game, not on their own
+                        const refund = tx.type === 'purchase' && item.slug && !item.upgrade && !item.giftTo && !item.refunded ? refundInfo(item.slug, item.dlc ?? null) : null
                         const refundable = refund?.eligible && refund.transaction.id === tx.id
                         return (
                             <tr key={`${item.slug ?? item.title}-${i}`}>
@@ -54,6 +56,7 @@ function Receipt({ tx, onRefund }) {
                                     <span className={styles.itemMeta}>
                                         {[
                                             item.dlc ? `DLC for ${item.gameTitle ?? getGame(item.slug)?.title}` : null,
+                                            item.upgrade ? `Edition upgrade for ${item.gameTitle ?? getGame(item.slug)?.title}` : null,
                                             item.editionName && item.editionName !== 'Standard Edition' ? item.editionName : null,
                                             item.bundle ? `Part of ${item.bundle}` : null,
                                             item.giftTo ? `Gift for ${profileOf(item.giftTo).displayName}` : null,
@@ -77,8 +80,14 @@ function Receipt({ tx, onRefund }) {
                 <tfoot>
                     {discount > 0.004 && (
                         <tr>
-                            <th scope="row">Discounts</th>
+                            <th scope="row">Sale &amp; bundle discounts</th>
                             <td className={styles.amount}>−{formatMoney(discount)}</td>
+                        </tr>
+                    )}
+                    {tx.type === 'purchase' && couponDiscount > 0.004 && (
+                        <tr>
+                            <th scope="row">Coupon {tx.coupon}</th>
+                            <td className={styles.amount}>−{formatMoney(couponDiscount)}</td>
                         </tr>
                     )}
                     <tr className={styles.total}>

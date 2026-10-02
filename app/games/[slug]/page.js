@@ -127,7 +127,7 @@ export default function GamePage({ params }) {
             {game.features.length > 0 && <Features features={game.features} />}
             {game.editions.length > 1 && <Editions game={game} />}
             <Dlc game={game} />
-            {bundles.length > 0 && <Bundles bundles={bundles} />}
+            {bundles.length > 0 && <Bundles bundles={bundles} currentSlug={game.slug} />}
             {(info.requirements.minimum.length > 0 || info.requirements.recommended.length > 0) && (
               <SystemRequirements requirements={info.requirements} />
             )}

@@ -11,8 +11,8 @@ Nothing is actually sold. Sign-in, purchases, installs, playtime and friends are
 - **A real-sized catalog**: 90+ games across 19 categories (Action, RPG, Horror, Roguelike, Strategy, Racing, Sports, Fighting, Free to Play…), imported from Steam's public store listings.
 - **Browse**: search by title, developer or publisher; combine genres, player modes (co-op, online, controller support…) and price ranges; show only sales; hide games you own or wishlisted; sort by price, discount, release date or title. Active filters show as removable chips, and every filter is stored in the URL, so a view like `/games?genre=RPG,Action&modes=online-co-op&price=under-20` can be shared.
 - **Game pages**: screenshot gallery with a full-screen viewer, editions (Deluxe, Gold, Complete…), bundles, player modes (single-player, co-op, online), system requirements, supported languages, downloadable content (expansions and add-ons imported from Steam, bought separately or included with editions like the Complete Edition), ESRB and PEGI age ratings with content descriptors, achievements with global unlock rates, friends who own the game, player reviews with helpful votes, a discussion thread, "More from this studio" and related games. Mature games ask for a date of birth first, like Steam. Every game page is statically generated, and unknown games return a 404.
-- **Cart & checkout**: buy any edition, or a bundle priced for the games you don't own yet. Sale and bundle discounts are itemised. Pay with the wallet or a simulated card, and buy any game as a gift for a friend, with a message.
-- **Purchases & refunds**: a purchase history with itemised receipts (order number, payment method, discounts). Games bought in the last 14 days and played for less than 2 hours can be refunded to the original payment method; DLC too, counting playtime since it was bought. Refunding a game keeps the DLC you bought for it.
+- **Cart & checkout**: buy any edition, or a bundle priced for the games you don't own yet. Sale and bundle discounts are itemised. Pay with the wallet or a simulated card (with a short simulated processing step), apply a coupon code (`SAVE10`, `INDIE25`, `ADDONS15`, `BIG15`, `FIRSTPLAY`), and buy any game as a gift for a friend, with a message. Own a lower edition? Upgrade to a higher one for the price difference, with DLC you already bought credited.
+- **Purchases & refunds**: a purchase history with itemised receipts (order number, payment method, discounts). Games bought in the last 14 days and played for less than 2 hours can be refunded to the original payment method; DLC too, counting playtime since it was bought. Refunding a game also refunds edition upgrades bought for it, and keeps the DLC you bought for it.
 - **Wallet**: add funds or redeem a gift card code (`ULTIMATE-DEMO-20` and `WELCOME-5` work once per account).
 - **Accounts**: sign in with any username, or with one click as the demo player. Each account keeps its own library and wishlist. Passwords are only validated, never stored.
 - **Wishlist**: add games from any card or game page (requires sign-in).
@@ -73,7 +73,7 @@ app/
   friends/        Friends list and activity
   u/[username]/   Public player profiles
   settings/       Profile, settings, purchases and wallet
-  signin/         Mock sign-in
+  signin/, signout/  Mock sign-in and sign-out
   news/, about/   Static content pages
 data/
   games.json      Game catalogue: prices, editions, DLC, features, art, descriptions (sent to the browser)

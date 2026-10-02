@@ -85,3 +85,37 @@
     font-weight: 400;
     color: var(--text-muted);
 }
+
+.current {
+    border-color: color-mix(in srgb, var(--success) 50%, var(--border));
+}
+
+.yours {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--success);
+}
+
+.included {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.upgrade {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem 0.75rem;
+    width: 100%;
+}
+
+.credit {
+    flex-basis: 100%;
+    order: 3;
+    font-size: 0.78rem;
+    color: var(--success);
+}

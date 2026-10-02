@@ -171,7 +171,7 @@ export default function Sidebar(){
     const [open, setOpen] = useState(false)
     // The link that was just clicked: highlighted immediately, before the new page has loaded
     const [pendingHref, setPendingHref] = useState(null)
-    const { hydrated, user, library, wishlist, cart, friends, wallet, playing, play, signOut, formatMoney } = useStore()
+    const { hydrated, user, library, wishlist, cart, friends, wallet, playing, play, formatMoney } = useStore()
     const menuButton = useRef(null)
     const closeButton = useRef(null)
 
@@ -346,9 +346,9 @@ export default function Sidebar(){
                             >
                                 <SettingsOutlinedIcon fontSize="small" />
                             </Link>
-                            <button type="button" className={styles.iconButton} onClick={signOut} aria-label="Sign out" title="Sign out">
+                            <Link href="/signout" className={styles.iconButton} aria-label="Sign out" title="Sign out" onClick={() => onNavigate('/signout')}>
                                 <LogoutIcon fontSize="small" />
-                            </button>
+                            </Link>
                         </div>
                     ) : (
                         <Button href={`/signin?next=${encodeURIComponent(pathname)}`} variant="secondary" className={styles.signIn}>

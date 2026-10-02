@@ -89,42 +89,41 @@ function LibraryCard({ entry }) {
           </Link>
         )}
 
-        {download ? (
-          <div className={styles.progressRow}>
-            <ProgressBar value={download.progress} label={`${status} ${game.title}`} />
-            {download.status === 'paused' || download.status === 'queued' ? (
-              <Button variant="ghost" size="small" onClick={() => downloads.resume(game.slug)}>{download.status === 'paused' ? 'Resume' : 'Start'}</Button>
-            ) : (
-              <Button variant="ghost" size="small" onClick={() => downloads.cancel(game.slug)}>Cancel</Button>
-            )}
-          </div>
-        ) : (
-          <div className={styles.actions}>
-            {entry.installed ? (
-              <>
-                {isPlaying ? (
-                  <Button variant="secondary" size="small" onClick={stopPlaying}>
-                    <StopIcon fontSize="small" /> Stop
-                  </Button>
-                ) : (
-                  <Button variant="success" size="small" onClick={() => play(game)}>
-                    <PlayArrowIcon fontSize="small" /> Play
-                  </Button>
-                )}
-                {update && (
-                  <Button variant="secondary" size="small" onClick={() => downloads.queueUpdate(game.slug)} title={`${formatSize(update.sizeGB)} update`} aria-label={`Update ${game.title}`}>
-                    <SystemUpdateAltIcon fontSize="small" />
-                  </Button>
-                )}
-              </>
-            ) : (
-              <Button variant="ghost" size="small" onClick={() => downloads.install(game)}>
-                <DownloadIcon fontSize="small" /> Install
-              </Button>
-            )}
-            <GameMenu game={game} />
-          </div>
-        )}
+        <div className={download ? styles.progressRow : styles.actions}>
+          {download ? (
+            <>
+              <ProgressBar value={download.progress} label={`${status} ${game.title}`} />
+              {download.status === 'paused' || download.status === 'queued' ? (
+                <Button variant="ghost" size="small" onClick={() => downloads.resume(game.slug)}>{download.status === 'paused' ? 'Resume' : 'Start'}</Button>
+              ) : (
+                <Button variant="ghost" size="small" onClick={() => downloads.cancel(game.slug)}>Cancel</Button>
+              )}
+            </>
+          ) : entry.installed ? (
+            <>
+              {isPlaying ? (
+                <Button variant="secondary" size="small" onClick={stopPlaying}>
+                  <StopIcon fontSize="small" /> Stop
+                </Button>
+              ) : (
+                <Button variant="success" size="small" onClick={() => play(game)}>
+                  <PlayArrowIcon fontSize="small" /> Play
+                </Button>
+              )}
+              {update && (
+                <Button variant="secondary" size="small" onClick={() => downloads.queueUpdate(game.slug)} title={`${formatSize(update.sizeGB)} update`} aria-label={`Update ${game.title}`}>
+                  <SystemUpdateAltIcon fontSize="small" />
+                </Button>
+              )}
+            </>
+          ) : (
+            <Button variant="ghost" size="small" onClick={() => downloads.install(game)}>
+              <DownloadIcon fontSize="small" /> Install
+            </Button>
+          )}
+          {/* Same place in every state, so its dialogs (Properties, refunds) stay open when a download starts */}
+          <GameMenu game={game} />
+        </div>
       </div>
     </article>
   )

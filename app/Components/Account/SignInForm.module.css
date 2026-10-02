@@ -95,3 +95,8 @@
   font-size: 0.8rem;
   color: var(--text-muted);
 }
+
+.done {
+  font-size: 3.5rem !important;
+  color: var(--success);
+}

@@ -29,7 +29,7 @@ function validate({ username, password }) {
 export default function SignInForm() {
   const router = useRouter()
   const next = safeNext(useSearchParams().get('next'))
-  const { hydrated, session, user, signIn, signOut } = useStore()
+  const { hydrated, session, user, signIn } = useStore()
   const [values, setValues] = useState({ username: '', password: '' })
   const [errors, setErrors] = useState({})
 
@@ -53,11 +53,12 @@ export default function SignInForm() {
     return (
       <div className={styles.card}>
         <Avatar user={user} size={56} />
-        <h1>You&apos;re signed in</h1>
+        <h1>You&apos;re already signed in</h1>
         <p className={styles.lead}>Signed in as <strong>{user.displayName}</strong> (@{session.username}).</p>
         <div className={styles.row}>
           <Button href={next}>Continue</Button>
-          <Button variant="ghost" onClick={signOut}>Sign out</Button>
+          {/* Switching accounts signs out first, then comes back here */}
+          <Button variant="ghost" href="/signout?next=%2Fsignin">Use a different account</Button>
         </div>
       </div>
     )

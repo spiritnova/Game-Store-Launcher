@@ -59,7 +59,8 @@ export default function GameActions({ game, detailsHref, stacked = false }) {
 
     const entry = getEntry(game.slug)
     const details = detailsHref && <Button href={detailsHref} variant="ghost" size="large">View details</Button>
-    const secondary = stacked && <SecondaryActions game={game} owned={Boolean(entry)} />
+    // Keyed so it stays mounted (with any open dialog) as the buttons around it change, e.g. when a download starts
+    const secondary = stacked && <SecondaryActions key="secondary" game={game} owned={Boolean(entry)} />
 
     if (!entry) {
         return (

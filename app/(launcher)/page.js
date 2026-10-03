@@ -4,10 +4,12 @@ import { blurProps } from '@/lib/images'
 import BundleShowcase from '../Components/Home/BundleShowcase'
 import Carousel from '../Components/Home/Carousel'
 import Categories from '../Components/Home/Categories'
+import ComingSoon from '../Components/Home/ComingSoon'
 import ContinuePlaying from '../Components/Home/ContinuePlaying'
 import FeaturedGames from '../Components/Home/FeaturedGames'
 import NewsStrip from '../Components/Home/NewsStrip'
 import Rail from '../Components/Home/Rail'
+import TopRated from '../Components/Home/TopRated'
 import Button from '../Components/UI/Button'
 import styles from './page.module.css'
 
@@ -55,13 +57,11 @@ export default function Home() {
 
       <Rail id="deals-title" title="Top deals" subtitle="The biggest discounts in the store right now" href="/games?sale=1&sort=discount" games={rows(deals)} />
       <Rail id="new-title" title="New releases" subtitle="The latest games to hit the store" href="/games?sort=newest" games={rows(newest)} />
-      {upcoming.length > 0 && (
-        <Rail id="soon-title" title="Coming soon" subtitle="Pre-order now, pre-load early and play on release day" href="/games?upcoming=1" games={rows(upcoming)} />
-      )}
+      {upcoming.length > 0 && <ComingSoon games={upcoming} backdrop={details[upcoming[0].slug]?.screenshots[0]} />}
 
       <FeaturedGames/>
 
-      <Rail id="rated-title" title="Top rated" subtitle="Critically acclaimed, ranked by Metacritic score" href="/games" games={rows(topRated)} />
+      <TopRated games={topRated.slice(0, 10).map((game) => ({ game: card(game), score: score(game) }))} />
 
       <Categories/>
 

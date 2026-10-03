@@ -1,0 +1,219 @@
+.section {
+    padding-block: calc(var(--section-gap) / 2);
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    gap: 1.25rem;
+}
+
+.single {
+    grid-template-columns: 1fr;
+}
+
+/* The next release, on its own banner art */
+.spotlight {
+    position: relative;
+    display: flex;
+    min-height: 420px;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 0 0 1px var(--border);
+    background-color: #0a0b10;
+    color: #f4f6fb;
+}
+
+.backdrop {
+    object-fit: cover;
+    object-position: center;
+}
+
+.spotlight::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(8, 9, 14, 0.92) 0%, rgba(8, 9, 14, 0.7) 45%, rgba(8, 9, 14, 0.1) 100%),
+        linear-gradient(0deg, rgba(8, 9, 14, 0.8) 0%, rgba(8, 9, 14, 0) 50%);
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0.6rem;
+    max-width: 480px;
+    padding: clamp(1.25rem, 3vw, 2.25rem);
+}
+
+.eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #c9d1e0;
+}
+
+.countdown {
+    color: #7db0ff;
+}
+
+.logo {
+    position: relative;
+    width: min(300px, 80%);
+    height: 96px;
+}
+
+.logo img {
+    object-fit: contain;
+    object-position: left center;
+    filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.6));
+}
+
+.title {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.date {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 0.9rem;
+    color: #c9d1e0;
+}
+
+.buy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+/* Everything after it, as a dated list */
+.timeline {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    background-color: var(--surface);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 0 0 1px var(--border);
+}
+
+.timeline li + li {
+    border-top: 1px solid var(--border);
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 52px 48px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.7rem 0.75rem;
+    border-radius: var(--radius-sm);
+    transition: background-color 150ms;
+}
+
+.row:hover {
+    background-color: var(--hover);
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.35rem 0;
+    background-color: var(--fill);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    line-height: 1.1;
+}
+
+.day span {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--main-text);
+}
+
+.day strong {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.thumb {
+    position: relative;
+    width: 48px;
+    height: 64px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.thumb img {
+    object-fit: cover;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.row:hover .name {
+    color: var(--main-text);
+}
+
+.meta {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+@container main (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .spotlight {
+        min-height: 380px;
+    }
+}
+
+@container main (max-width: 480px) {
+    .row {
+        grid-template-columns: 48px 40px minmax(0, 1fr);
+    }
+
+    .row > :last-child {
+        grid-column: 3;
+    }
+
+    .thumb {
+        width: 40px;
+        height: 54px;
+    }
+}

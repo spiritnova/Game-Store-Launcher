@@ -1,0 +1,28 @@
+/* Accent glow over a faint grid, in the launcher's accent colour */
+.art {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(circle at 50% 55%, color-mix(in srgb, var(--main) 45%, transparent) 0%, transparent 60%),
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px) 0 0 / 28px 28px,
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px) 0 0 / 28px 28px,
+        linear-gradient(160deg, #141a2b 0%, #0a0b10 100%);
+}
+
+.tile {
+    display: grid;
+    place-items: center;
+    width: clamp(64px, 28%, 104px);
+    aspect-ratio: 1;
+    border-radius: 26%;
+    background: linear-gradient(145deg, color-mix(in srgb, var(--main) 85%, white), var(--main));
+    box-shadow: 0 18px 40px color-mix(in srgb, var(--main) 40%, transparent), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.icon.icon {
+    width: 52%;
+    height: 52%;
+    color: #fff;
+}

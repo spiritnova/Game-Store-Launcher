@@ -1,5 +1,15 @@
 [
   {
+    "slug": "preorders-and-friend-requests",
+    "date": "2026-10-03",
+    "category": "Launcher update",
+    "title": "Pre-order upcoming games, and send friend requests",
+    "excerpt": "Seven upcoming games are up for pre-order, with a release calendar on the home page. Pre-load three days early and play on release day. Adding a friend now sends a request they can accept, and you can set yourself to away or invisible.",
+    "art": "preorders",
+    "href": "/games?upcoming=1",
+    "cta": "See what’s coming"
+  },
+  {
     "slug": "catalog-expansion",
     "date": "2026-10-01",
     "category": "Store update",
@@ -15,7 +25,7 @@
     "category": "Sale",
     "title": "The Mega Sale is live: up to 75% off",
     "excerpt": "Red Dead Redemption 2 and Hogwarts Legacy lead this week's deals, with dozens of games discounted across the store.",
-    "image": "/images/covers/red-dead-redemption-2.jpg",
+    "image": "/images/banners/red-dead-redemption-2.jpg",
     "href": "/games?sale=1",
     "cta": "Shop the sale"
   },
@@ -25,9 +35,9 @@
     "category": "Launcher update",
     "title": "Your library now tracks playtime",
     "excerpt": "See how long you have played each game and when you last launched it, then sort your library by recent activity.",
-    "image": "/images/heroes/the-witcher-3.jpg",
     "href": "/library",
-    "cta": "Open your library"
+    "cta": "Open your library",
+    "art": "playtime"
   },
   {
     "slug": "featured-battlefield",
@@ -45,9 +55,9 @@
     "category": "Launcher update",
     "title": "Save games for later with wishlists",
     "excerpt": "Tap the + on any game card to add it to your wishlist. Sale prices appear on your wishlist automatically.",
-    "image": "/images/heroes/devil-may-cry-5.jpg",
     "href": "/wishlist",
-    "cta": "View wishlist"
+    "cta": "View wishlist",
+    "art": "wishlist"
   },
   {
     "slug": "spotlight-mw2",

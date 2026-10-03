@@ -1,0 +1,104 @@
+.section {
+    padding-block: calc(var(--section-gap) / 2);
+}
+
+/* Two columns that read top to bottom: 1–5, then 6–10 */
+.chart {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(5, auto);
+    grid-auto-flow: column;
+    column-gap: 1.25rem;
+}
+
+.chart li {
+    border-bottom: 1px solid var(--border);
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 2.6rem 54px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 0.6rem;
+    border-radius: var(--radius-sm);
+    transition: background-color 150ms;
+}
+
+.row:hover {
+    background-color: var(--hover);
+}
+
+.rank {
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-align: center;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+}
+
+.podium .rank {
+    color: var(--accent);
+}
+
+.thumb {
+    position: relative;
+    width: 54px;
+    height: 72px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px var(--border);
+}
+
+.thumb img {
+    object-fit: cover;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    min-width: 0;
+}
+
+.name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.row:hover .name {
+    color: var(--main-text);
+}
+
+.meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Metacritic colours: green for 75+, which is every game in this chart */
+.score {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background-color: color-mix(in srgb, var(--success) 18%, transparent);
+    border: 1px solid color-mix(in srgb, var(--success) 45%, transparent);
+    font-weight: 700;
+    color: var(--success);
+}
+
+@container main (max-width: 760px) {
+    .chart {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        grid-auto-flow: row;
+    }
+}

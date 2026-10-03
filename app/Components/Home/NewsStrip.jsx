@@ -1,7 +1,6 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import news from '@/data/news.json'
-import { blurProps } from '@/lib/images'
+import NewsArt from '../News/NewsArt'
 import SectionHeader from '../UI/SectionHeader'
 import styles from './NewsStrip.module.css'
 
@@ -18,7 +17,7 @@ export default function NewsStrip() {
                     <li key={post.slug}>
                         <Link href={post.href} className={styles.card}>
                             <div className={styles.image}>
-                                <Image src={post.image} alt="" fill sizes="(max-width: 700px) 100vw, 30vw" {...blurProps(post.image)} />
+                                <NewsArt post={post} sizes="(max-width: 700px) 100vw, 30vw" />
                                 <span className={styles.category}>{post.category}</span>
                             </div>
                             <div className={styles.body}>

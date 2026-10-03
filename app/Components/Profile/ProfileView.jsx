@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import BlockIcon from '@mui/icons-material/Block'
+import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline'
 import CheckIcon from '@mui/icons-material/Check'
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz'
@@ -120,7 +121,10 @@ export default function ProfileView({ username }) {
                             <Button variant="ghost" size="small" onClick={() => unblockPlayer(username)}>Unblock</Button>
                         </>
                     ) : session && friend ? (
-                        <span className={styles.friendTag}><CheckIcon fontSize="small" /> Friends</span>
+                        <>
+                            <span className={styles.friendTag}><CheckIcon fontSize="small" /> Friends</span>
+                            <Button href={`/messages?with=${username}`} variant="secondary" size="small"><ChatBubbleOutlineIcon fontSize="small" /> Message</Button>
+                        </>
                     ) : session && request === 'incoming' ? (
                         <>
                             <span className={styles.muted}>Sent you a friend request</span>

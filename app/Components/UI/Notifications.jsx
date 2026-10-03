@@ -4,6 +4,7 @@ import { useEffect, useId, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import Link from 'next/link'
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard'
+import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline'
 import CloseIcon from '@mui/icons-material/Close'
 import DownloadDoneIcon from '@mui/icons-material/DownloadDone'
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
@@ -23,6 +24,7 @@ const ICONS = {
     achievement: EmojiEventsIcon,
     gift: CardGiftcardIcon,
     friend: PersonAddAlt1Icon,
+    message: ChatBubbleOutlineIcon,
     refund: ReplayIcon,
     release: EventAvailableIcon,
 }

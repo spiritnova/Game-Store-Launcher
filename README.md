@@ -19,6 +19,7 @@ Nothing is actually sold. Sign-in, purchases, installs, playtime and friends are
 - **Wishlist**: add games from any card or game page (requires sign-in).
 - **Library & downloads**: install, play and uninstall games. Organise them into collections, favourites and hidden games, and search or sort the library. Playing a game runs a session that adds playtime (fast-forwarded in the demo) and unlocks achievements as you go. Updates come with a version number and patch notes; the library has an Updates filter and an "Update all" button. Each game has properties: version and what's new, owned DLC, launch options, verify files (repairs anything that fails), move the install folder between drives, and purchase and refund details. The download manager has a queue you can reorder, pause/resume, a live speed graph, ETAs, storage per drive and a simulated connection speed (demo turbo, 1 Gbps or 100 Mbps).
 - **Friends & profiles**: send friend requests by username to demo players (who accept within a few seconds) or other accounts in the same browser (who answer when they log in); accept, decline or cancel requests on the Friends page or a profile; block players to stop their requests and gifts (unblock under Settings › Account). Set your own status (online, away or invisible) from the dot next to your name in the sidebar. See who's online or playing what, follow recent activity, and open public profiles (`/u/pixelnomad`) with recently played games, achievements, most played games and reviews. Review and comment authors link to their profiles.
+- **Messages**: chat with friends from the Messages page (or the Message button on a friend's profile). Demo players show "typing…" and answer within a few seconds, with replies that fit what you wrote; other accounts in this browser get your messages when they log in. Conversations are sorted by the latest message, unread counts show in the sidebar, and a link like `/messages?with=pixelnomad` opens a conversation directly.
 - **Notifications**: wishlist sales and releases, unlocked pre-orders, finished downloads and updates, achievements, gifts, friend requests and refunds, each type switchable in Settings.
 - **Profile & settings**: display name, bio, avatar colour, dark, light or system theme, an accent colour, currency (prices convert from US dollars at fixed demo rates), date of birth for age-rated games, notification types, download and install-drive settings, purchases, wallet, sign out and account deletion.
 - **Performance**: images are served as resized WebP with blurred placeholders and colour backgrounds while loading; heavy game details (requirements, languages) stay on the server; download progress lives in its own context so it doesn't re-render the whole app.
@@ -74,6 +75,7 @@ app/
     cart/           Cart and checkout
     downloads/      Download manager
     friends/        Friends list and activity
+    messages/       Conversations with friends (?with=username opens one)
     u/[username]/   Public player profiles
     settings/       Profile, settings, purchases and wallet
     news/, about/   Static content pages
@@ -87,6 +89,7 @@ lib/
   games.js        Catalogue helpers (pricing, filtering, related games)
   store.js        Client store: accounts, settings, cart, checkout, wallet, refunds, gifts, library,
                   collections, play sessions, friends, notifications, reviews, comments
+  chat.js         Message thread ids and demo players' replies
   downloads.js    Download queue and simulated network
   achievements.js Sample achievements, unlocked by playtime
   players.js      Demo players: profiles, libraries and online status

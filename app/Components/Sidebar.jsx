@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline'
 import CloseIcon from '@mui/icons-material/Close'
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined'
 import DownloadIcon from '@mui/icons-material/Download'
@@ -201,7 +202,7 @@ export default function Sidebar(){
     const [open, setOpen] = useState(false)
     // The link that was just clicked: highlighted immediately, before the new page has loaded
     const [pendingHref, setPendingHref] = useState(null)
-    const { hydrated, user, library, wishlist, cart, incomingRequests, wallet, playing, play, formatMoney, prefs, updatePrefs } = useStore()
+    const { hydrated, user, library, wishlist, cart, incomingRequests, unreadMessages, wallet, playing, play, formatMoney, prefs, updatePrefs } = useStore()
     const menuButton = useRef(null)
     const closeButton = useRef(null)
     const search = useRef(null)
@@ -270,6 +271,7 @@ export default function Sidebar(){
             sales: wishlist.filter((entry) => isOnSale(getGame(entry.slug))).length,
             cart: cart.length,
             requests: incomingRequests.length,
+            messages: unreadMessages,
         }
         : {}
 
@@ -359,6 +361,7 @@ export default function Sidebar(){
                         <NavLink {...link('/wishlist')} icon={FavoriteBorderIcon} label="Wishlist" count={counts.sales} countLabel="on sale" />
                         <NavLink {...link('/cart')} icon={ShoppingCartOutlinedIcon} label="Cart" count={counts.cart} />
                         <NavLink {...link('/friends')} icon={PeopleOutlineIcon} label="Friends" count={counts.requests} countLabel={counts.requests === 1 ? 'friend request' : 'friend requests'} />
+                        <NavLink {...link('/messages')} icon={ChatBubbleOutlineIcon} label="Messages" count={counts.messages} countLabel={counts.messages === 1 ? 'unread message' : 'unread messages'} />
                     </ul>
                 </nav>
 

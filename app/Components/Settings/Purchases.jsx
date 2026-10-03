@@ -101,7 +101,6 @@ function Receipt({ tx, onRefund }) {
     )
 }
 
-// Purchase history with expandable receipts and refunds.
 export default function Purchases() {
     const { transactions, profileOf, formatMoney } = useStore()
     const [open, setOpen] = useState(() => new Set(transactions[0] ? [transactions[0].id] : []))

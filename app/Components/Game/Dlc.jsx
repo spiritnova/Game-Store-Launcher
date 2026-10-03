@@ -13,7 +13,6 @@ function formatDate(iso) {
     return new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' })
 }
 
-// Add-ons for a game, with what you own (bought or included with your edition) and what's in the cart.
 export default function Dlc({ game }) {
     const { hydrated, owns, dlcFor, cart, addDlcToCart, formatPrice } = useStore()
     const dlc = game.dlc ?? []

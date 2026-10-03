@@ -16,7 +16,6 @@ const STEPS = [
   { id: 'friend', title: 'Make a friend', hint: 'Accept RetroFox’s request, or add someone.', href: '/friends' },
 ]
 
-// A first-visit checklist pointing at the launcher's best features. Steps tick off as they're done.
 export default function GettingStarted() {
   const { hydrated, session, tour, setTourDismissed } = useStore()
   if (!hydrated || !session || !tour || tour.dismissed) return null

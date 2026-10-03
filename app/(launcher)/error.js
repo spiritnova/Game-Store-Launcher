@@ -6,7 +6,6 @@ import { clearSavedData } from '@/lib/reset-storage'
 import Button from '../Components/UI/Button'
 import styles from '../not-found.module.css'
 
-// Shown when a page crashes while rendering. The sidebar and footer stay usable around it.
 export default function Error({ error, reset }) {
   useEffect(() => {
     console.error(error)

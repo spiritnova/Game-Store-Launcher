@@ -8,7 +8,6 @@ import CloseIcon from '@mui/icons-material/Close'
 import FullscreenIcon from '@mui/icons-material/Fullscreen'
 import styles from './MediaGallery.module.css'
 
-// Screenshot viewer with a thumbnail strip and a full-screen lightbox.
 // `shots` come from the server with their blur placeholders: [{ src, blurDataURL }]
 export default function MediaGallery({ title, shots }) {
     const [index, setIndex] = useState(0)

@@ -15,7 +15,7 @@ function safeNext(value) {
   return value && value.startsWith('/') && !value.startsWith('//') ? value : null
 }
 
-// Asks before signing out, then confirms it. With ?next= it continues there instead (switching accounts).
+// With ?next= it continues there instead (used when switching accounts)
 export default function SignOutView() {
   const router = useRouter()
   const next = safeNext(useSearchParams().get('next'))

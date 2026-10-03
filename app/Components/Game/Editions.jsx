@@ -7,7 +7,6 @@ import { useStore } from '@/lib/store'
 import Button from '../UI/Button'
 import styles from './Editions.module.css'
 
-// What an edition's card offers: buy it, upgrade to it, or show that you already have it.
 function EditionAction({ game, edition, entry, cartItem }) {
     const { hydrated, cart, dlcFor, addToCart, addUpgradeToCart, formatPrice } = useStore()
 

@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import styles from './Logo.module.css'
 
-// The Ultimate Game Launcher wordmark, with white lettering on the dark theme and ink lettering on
-// the light theme. Assets come from `npm run brand`. `compact` shows just the app icon.
+// Assets come from `npm run brand`. `compact` shows just the icon.
 export default function Logo({ height = 40, priority = false, compact = false }) {
     if (compact) return <Image src="/icon.png" alt="Ultimate Game Launcher" width={height} height={height} priority={priority} unoptimized />
 

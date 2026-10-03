@@ -26,7 +26,6 @@
   opacity: 0.5;
 }
 
-/* Main call to action: accent gradient with a glow */
 .primary {
   background: linear-gradient(135deg, color-mix(in srgb, var(--main) 78%, white), var(--main));
   color: #fff;
@@ -39,7 +38,6 @@
   transform: translateY(-1px);
 }
 
-/* Softer accent button */
 .secondary {
   background-color: color-mix(in srgb, var(--main) 20%, transparent);
   color: var(--main-text);

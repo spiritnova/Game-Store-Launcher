@@ -1,4 +1,3 @@
-/* A slim strip at the end of the page: text on the left, button on the right */
 .cta {
   display: flex;
   flex-wrap: wrap;

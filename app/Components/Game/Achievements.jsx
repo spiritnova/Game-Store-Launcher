@@ -9,7 +9,6 @@ import styles from './Achievements.module.css'
 
 const PAGE = 8
 
-// The game's achievements with how many players have unlocked each one, plus your own progress if you own it.
 export default function Achievements({ game }) {
     const { hydrated, getEntry } = useStore()
     const [showAll, setShowAll] = useState(false)

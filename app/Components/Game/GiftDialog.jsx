@@ -11,7 +11,6 @@ import styles from './GiftDialog.module.css'
 const MESSAGE_MAX = 200
 const OTHER = '__other'
 
-// Buy a game for a friend (or any player): the gift goes into the cart and is delivered at checkout.
 export default function GiftDialog({ game, open, onClose }) {
     return (
         <Dialog open={open} onClose={onClose} title={`Gift ${game.title}`} description="Gifts go to the player’s library as soon as you check out.">

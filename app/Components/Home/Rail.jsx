@@ -7,7 +7,6 @@ import GameCard from '../UI/GameCard'
 import SectionHeader from '../UI/SectionHeader'
 import styles from './Rail.module.css'
 
-// A horizontally scrolling row of game cards with scroll-snap and arrow buttons.
 export default function Rail({ id, title, subtitle, href, games }) {
     const track = useRef(null)
     const [edges, setEdges] = useState({ start: true, end: false })

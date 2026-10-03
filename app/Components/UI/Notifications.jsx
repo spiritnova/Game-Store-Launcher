@@ -31,7 +31,6 @@ const ICONS = {
 
 const PANEL_WIDTH = 360
 
-// Bell button with the notification centre: wishlist sales, finished downloads, achievements, gifts and friends.
 // Notifications shown in the panel are marked as read when it closes.
 export default function Notifications({ className }) {
     const { hydrated, session, notifications, unreadCount, markNotificationsRead, removeNotification, clearNotifications } = useStore()

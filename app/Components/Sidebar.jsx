@@ -95,7 +95,6 @@ function DownloadsPanel() {
     )
 }
 
-// The running game, with a session timer and a way to close it.
 function NowPlaying() {
     const { playing, stopPlaying } = useStore()
     const now = useNow(1000)
@@ -238,7 +237,6 @@ export default function Sidebar(){
         return () => document.removeEventListener('keydown', onKeyDown)
     }, [])
 
-    // Navigation finished: close the drawer and drop the pending highlight
     useEffect(() => {
         setOpen(false)
         setPendingHref(null)

@@ -1,44 +1,49 @@
 # Ultimate Game Launcher
 
-A showcase PC game launcher built with Next.js. It recreates the two halves of a launcher like Epic or Steam: a **storefront** to discover and buy games, and a **library** to install and launch them.
+A PC game launcher in the style of Steam and Epic, built with Next.js. There's a store where you browse and buy games, and a library where you install and play them.
 
-Nothing is actually sold. Sign-in, purchases, installs, playtime and friends are simulated and saved in your browser.
+Nothing is actually for sale. Accounts, purchases, downloads, playtime and friends are all simulated and saved in your browser's localStorage, so there's no backend to set up.
 
-## Features
+Live demo: https://ultimate-game-launcher.vercel.app
 
-- **Launcher layout**: a Steam-style sidebar with store search (suggestions as you type), library navigation, live counts, a notification centre, a "now playing" panel, a downloads panel, friends online, quick launch, a theme toggle and your profile with wallet balance. On phones it becomes a slide-out drawer.
-- **Discover**: spotlight carousel (pausable, honours reduced-motion settings), a top-deals row, a "Coming soon" row of upcoming games, featured games and a "Browse by category" grid.
-- **A real-sized catalog**: 100+ games across 19 categories (Action, RPG, Horror, Roguelike, Strategy, Racing, Sports, Fighting, Free to Play…), imported from Steam's public store listings.
-- **Browse**: search by title, developer or publisher; combine genres, player modes (co-op, online, controller support…) and price ranges; show only sales or only upcoming games; hide games you own or wishlisted; sort by price, discount, release date or title. Active filters show as removable chips, and every filter is stored in the URL, so a view like `/games?genre=RPG,Action&modes=online-co-op&price=under-20` can be shared.
-- **Game pages**: screenshot gallery with a full-screen viewer, editions (Deluxe, Gold, Complete…), bundles, player modes (single-player, co-op, online), system requirements, supported languages, downloadable content (expansions and add-ons imported from Steam, bought separately or included with editions like the Complete Edition), ESRB and PEGI age ratings with content descriptors, achievements with global unlock rates, friends who own the game, player reviews with helpful votes, a discussion thread, "More from this studio" and related games. Mature games ask for a date of birth first, like Steam. Every game page is statically generated (and rebuilt hourly, so upcoming games switch over on release day), and unknown games return a 404.
-- **Pre-orders**: upcoming games show their release date on cards and pages and can be pre-ordered (or gifted). Pre-orders can be pre-loaded 3 days before release and played from the release date (midnight UTC, shown in your local time); reviews open and achievements appear once a game is out. You get an "out now" notification when a pre-order unlocks or a wishlisted game is released.
-- **Cart & checkout**: buy any edition, or a bundle priced for the games you don't own yet. Sale and bundle discounts are itemised. Pay with the wallet or a simulated card (with a short simulated processing step), apply a coupon code (`SAVE10`, `INDIE25`, `ADDONS15`, `BIG15`, `FIRSTPLAY`), and buy any game as a gift for a friend, with a message. Own a lower edition? Upgrade to a higher one for the price difference, with DLC you already bought credited.
-- **Purchases & refunds**: a purchase history with itemised receipts (order number, payment method, discounts). Games bought in the last 14 days and played for less than 2 hours can be refunded to the original payment method, and pre-orders any time before release (and for 14 days after); DLC too, counting playtime since it was bought. Refunding a game also refunds edition upgrades bought for it, and keeps the DLC you bought for it.
-- **Wallet**: add funds or redeem a gift card code (`ULTIMATE-DEMO-20` and `WELCOME-5` work once per account).
-- **Login and registration**: the launcher opens behind an entry screen. Create an account (username, display name, password with a strength meter) or log in; passwords are checked against a salted SHA-256 hash kept in the browser, never stored as text. The demo account is one click away (or log in with `demo` / `demo`). Change your password under Settings › Account (the demo account's password stays `demo`). Opening any launcher page while logged out shows a short boot screen, then the login screen, and returns you to that page afterwards. Signing out asks first.
-- **Wishlist**: add games from any card or game page (requires sign-in).
-- **Library & downloads**: install, play and uninstall games. Organise them into collections, favourites and hidden games, and search or sort the library. Playing a game runs a session that adds playtime (fast-forwarded in the demo) and unlocks achievements as you go. Updates come with a version number and patch notes; the library has an Updates filter and an "Update all" button. Each game has properties: version and what's new, owned DLC, launch options, verify files (repairs anything that fails), move the install folder between drives, and purchase and refund details. The download manager has a queue you can reorder, pause/resume, a live speed graph, ETAs, storage per drive and a simulated connection speed (demo turbo, 1 Gbps or 100 Mbps).
-- **Friends & profiles**: send friend requests by username to demo players (who accept within a few seconds) or other accounts in the same browser (who answer when they log in); accept, decline or cancel requests on the Friends page or a profile; block players to stop their requests and gifts (unblock under Settings › Account). Set your own status (online, away or invisible) from the dot next to your name in the sidebar. See who's online or playing what, follow recent activity, and open public profiles (`/u/pixelnomad`) with recently played games, achievements, most played games and reviews. Review and comment authors link to their profiles.
-- **Messages**: chat with friends from the Messages page (or the Message button on a friend's profile). Demo players show "typing…" and answer within a few seconds, with replies that fit what you wrote; other accounts in this browser get your messages when they log in. Conversations are sorted by the latest message, unread counts show in the sidebar, and a link like `/messages?with=pixelnomad` opens a conversation directly.
-- **Notifications**: wishlist sales and releases, unlocked pre-orders, finished downloads and updates, achievements, gifts, friend requests and refunds, each type switchable in Settings.
-- **Profile & settings**: display name, bio, avatar colour, dark, light or system theme, an accent colour, currency (prices convert from US dollars at fixed demo rates), date of birth for age-rated games, notification types, download and install-drive settings, purchases, wallet, sign out and account deletion.
-- **Performance**: images are served as resized WebP with blurred placeholders and colour backgrounds while loading; heavy game details (requirements, languages) stay on the server; download progress lives in its own context so it doesn't re-render the whole app.
-- **Polish**: toasts for every action, loading skeletons, empty states, a custom 404, error pages that offer to reset damaged saved data, per-page titles, an Open Graph image and keyboard and screen-reader support.
+## Trying it out
 
-The demo player account comes with a few games (two with updates waiting, so it updates manually), DLC, four friends and a friend request waiting from RetroFox, a collection, a wallet balance and a purchase history (Red Dead Redemption 2 is still refundable). Use **Reset demo data** on the About page to restore it.
+Click "Continue as demo player" on the login screen, or log in with `demo` / `demo`. The demo account already owns a few games (two of them have updates waiting), has four friends, a friend request from RetroFox and a short chat with PixelNomad. Red Dead Redemption 2 was bought 3 days ago, so you can try a refund on it.
+
+Some things worth clicking:
+
+- Press Play on a game. Playtime is fast-forwarded (a second counts as a minute), so achievements start popping up after a while.
+- Install or update something and open Downloads. Under Settings > Library & downloads you can switch from "demo turbo" to 1 Gbps or 100 Mbps if you want to watch the queue.
+- Coupons: `SAVE10`, `INDIE25`, `ADDONS15`, `BIG15`, `FIRSTPLAY`. Gift cards for the wallet: `ULTIMATE-DEMO-20`, `WELCOME-5` (once per account).
+- Message a friend. Demo players answer after a few seconds, and the answer depends on what you wrote.
+- Browse filters are saved in the URL, e.g. `/games?genre=RPG,Action&price=under-20`.
+
+"Reset demo data" on the About page puts everything back.
+
+## What's in it
+
+The catalog has 103 games across 19 genres, imported from Steam's public store pages: prices, editions, DLC, screenshots, system requirements, languages and ESRB/PEGI ratings. Mature games ask for a date of birth first.
+
+On the store side there's the Discover page, a Browse page with filters, game pages, a cart that handles editions, bundles, DLC, coupons and gifts, and pre-orders for upcoming games. Game pages are statically generated and rebuilt every hour, so a pre-order turns into a released game on its release day without a redeploy.
+
+On the library side you can install, update, verify and uninstall games, sort them into collections, play them, and refund them. Refunds follow Steam's rules: within 14 days and under 2 hours played. Pre-orders can be refunded any time before release.
+
+There are also friends, public profiles (`/u/pixelnomad`), messages, notifications, a wallet, purchase history with receipts, and settings for the theme (dark, light or system), accent colour, currency and downloads.
+
+Passwords for accounts created in the browser are stored as a salted SHA-256 hash, not as text. It's still a demo, so don't reuse a real password.
 
 ## Tech stack
 
-- [Next.js 14](https://nextjs.org/) App Router with static generation
-- React 18, with a Context store persisted to `localStorage`
-- CSS Modules with shared design tokens in `app/globals.css`
-- [Swiper](https://swiperjs.com/) for the carousels
-- [Material UI icons](https://mui.com/material-ui/material-icons/)
-- `next/image` with [sharp](https://sharp.pixelplumbing.com/) for resized WebP output and generated blur placeholders
+- [Next.js 14](https://nextjs.org/) (App Router) and React 18
+- A React context store saved to `localStorage`, split into action modules in `lib/store/actions`
+- CSS Modules, with the theme colours as CSS variables in `app/globals.css`
+- [Swiper](https://swiperjs.com/) for the carousels and [Material UI icons](https://mui.com/material-ui/material-icons/)
+- `next/image` with [sharp](https://sharp.pixelplumbing.com/) for WebP images and blur placeholders
+- [Vitest](https://vitest.dev/) for the store logic (pricing, refunds, coupons, release dates)
 
-## Getting started
+## Running it locally
 
-Requires Node.js 18.17 or newer.
+Needs Node.js 18.17 or newer.
 
 ```bash
 npm install
@@ -48,70 +53,47 @@ npm run dev     # http://localhost:3000
 Other scripts:
 
 ```bash
-npm run lint    # ESLint (next/core-web-vitals)
-npm run build   # production build
-npm start       # serve the production build
-npm run import:steam  # import more games from Steam (see below)
-npm run import:ratings  # refresh ESRB/PEGI age ratings from Steam
-npm run import:dlc      # refresh DLC (titles, prices, art) from Steam, then run `npm run images`
-npm run brand           # regenerate the favicon, wordmarks and Open Graph image from assets/brand
-npm run images       # regenerate image placeholders after adding or changing artwork
+npm test                # unit tests
+npm run lint
+npm run build           # production build
+npm start               # serve the production build
+npm run import:steam    # import games listed in scripts/catalog.mjs
+npm run import:ratings  # refresh ESRB/PEGI ratings
+npm run import:dlc      # refresh DLC, then run `npm run images`
+npm run images          # regenerate image placeholders after changing artwork
+npm run brand           # regenerate the favicon, logos and Open Graph image
 ```
 
-Set `NEXT_PUBLIC_SITE_URL` to your deployed URL so Open Graph images resolve to absolute links.
+Set `NEXT_PUBLIC_SITE_URL` to the deployed URL so the Open Graph image gets an absolute link.
 
-> **Windows note:** if `next build` fails with `PageNotFoundError`, check that your terminal's path uses an uppercase drive letter (`C:\...`, not `c:\...`). This is a known Next.js issue on Windows.
+`npm run dev` and `npm run build` both write to `.next`, so don't build while the dev server is running. Build into another folder instead: `NEXT_DIST_DIR=.next-prod npm run build`.
+
+On Windows, if `next build` fails with `PageNotFoundError`, make sure the terminal's path starts with an uppercase drive letter (`C:\`, not `c:\`). It's a known Next.js bug.
 
 ## Project structure
 
 ```
 app/
-  Components/     UI building blocks (Sidebar, Footer, cards, carousels, views)
-  (auth)/         Entry screen without the launcher around it: login, register, signout
-  (launcher)/     Everything behind login, with the sidebar (layout.js holds the login gate)
-    games/          Browse page and game pages (/games/[slug])
-    library/        Library page
-    wishlist/       Wishlist page
-    cart/           Cart and checkout
-    downloads/      Download manager
-    friends/        Friends list and activity
-    messages/       Conversations with friends (?with=username opens one)
-    u/[username]/   Public player profiles
-    settings/       Profile, settings, purchases and wallet
-    news/, about/   Static content pages
-data/
-  games.json      Game catalogue: prices, editions, DLC, features, art, descriptions (sent to the browser)
-  game-details.json  Screenshots, languages, requirements, age ratings (server only)
-  bundles.json    Bundles and their discounts
-  image-meta.json, image-colors.json  Generated image placeholders
-  news.json       News posts
+  (auth)/         login, register and sign-out (no sidebar)
+  (launcher)/     everything behind the login, with the sidebar
+  Components/     components, grouped by page
+data/             games, game details (server only), bundles, news, image placeholders
 lib/
-  games.js        Catalogue helpers (pricing, filtering, related games)
-  store.js        Client store: accounts, settings, cart, checkout, wallet, refunds, gifts, library,
-                  collections, play sessions, friends, notifications, reviews, comments
-  chat.js         Message thread ids and demo players' replies
-  downloads.js    Download queue and simulated network
-  achievements.js Sample achievements, unlocked by playtime
-  players.js      Demo players: profiles, libraries and online status
-  community.js    Sample reviews and comments from demo players
-  currency.js     Display currencies and price formatting
-  images.js       Blur placeholders (server only)
-scripts/
-  image-meta.mjs  Generates image placeholders
-  import-steam.mjs  Imports games, details and artwork from the Steam store API
-  import-ratings.mjs  Adds ESRB/PEGI age ratings from the Steam store API
-  import-dlc.mjs  Imports DLC (up to four paid add-ons per game) from the Steam store API
-  brand.mjs       Generates the brand assets
-  catalog.mjs, steam.mjs  The list of Steam games and shared helpers
-public/images/    Game covers, banners, logos and DLC art
-public/brand/     Ultimate Game Launcher wordmarks (generated by `npm run brand`)
-assets/brand/     Source logos: the app icon and the wordmark
+  store/          the client store: state, actions, pricing and refunds
+  downloads.js    download queue and the fake network
+  games.js        catalog helpers
+  chat.js         demo players' message replies
+  players.js      demo players and their online status
+scripts/          Steam importers and image/brand generators
+tests/            Vitest tests
 ```
 
-To add games, add a `[steamAppId, [genres]]` line to the `CATALOG` list in `scripts/import-steam.mjs` and run `npm run import:steam`, then `npm run images`. The importer downloads and optimizes the artwork and fills in prices, descriptions, screenshots, requirements and languages. It skips games already imported, games without a US price or cover art, and upcoming games without an exact release date or a pre-order price. Upcoming games are imported as pre-orders. Prices are the live US prices at import time.
+## Adding games
 
-You can also add a game by hand: an entry in `data/games.json` and `data/game-details.json`, with its images in `public/images/`. Add `salePrice` to put it on sale, `featured: true` to show it in Featured, or a `spotlight` block to add it to the home carousel.
+Add a `[steamAppId, [genres]]` line to `CATALOG` in `scripts/catalog.mjs`, then run `npm run import:steam` and `npm run images`. The importer skips games that are already in the catalog, games without a US price or cover art, and upcoming games without a fixed release date. Prices are whatever Steam charges at import time.
+
+You can also add a game by hand in `data/games.json` and `data/game-details.json`, with its images in `public/images/`. `salePrice` puts it on sale, `featured: true` shows it under Featured, and a `spotlight` block adds it to the home carousel.
 
 ## Credits
 
-Game titles, logos and artwork are trademarks of their respective owners and are used for demonstration only. Screenshots, system requirements, languages, feature lists, DLC and age ratings come from the games' public store listings (games whose US listing shows no rating are marked "Not rated"). Prices and edition contents are illustrative, exchange rates are fixed demo values, and demo players, their reviews, comments, libraries and achievements are sample content.
+Game names, logos and artwork belong to their owners and are only used for this demo. Screenshots, requirements, languages, DLC and age ratings come from the games' Steam store pages. Prices, exchange rates, demo players, their reviews and their libraries are made up.

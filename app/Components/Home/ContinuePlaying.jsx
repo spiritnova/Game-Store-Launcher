@@ -12,7 +12,6 @@ import Button from '../UI/Button'
 import SectionHeader from '../UI/SectionHeader'
 import styles from './ContinuePlaying.module.css'
 
-// "Continue playing": the player's recently played installed games.
 export default function ContinuePlaying() {
     const { hydrated, session, library, play } = useStore()
     const downloads = useDownloads()

@@ -6,7 +6,6 @@ import Button from '../UI/Button'
 import Dialog from '../UI/Dialog'
 import styles from './PropertiesDialog.module.css'
 
-// Explains the refund policy, then refunds the game (removing it from the library) or one of its DLC.
 export default function RefundDialog({ game, dlcId = null, open, onClose }) {
     const { refundInfo, refund, formatMoney } = useStore()
     const info = open ? refundInfo(game.slug, dlcId) : null

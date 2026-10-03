@@ -12,7 +12,6 @@
     grid-template-columns: 1fr;
 }
 
-/* The next release, on its own banner art */
 .spotlight {
     position: relative;
     display: flex;
@@ -102,7 +101,6 @@
     margin-top: 0.5rem;
 }
 
-/* Everything after it, as a dated list */
 .timeline {
     list-style: none;
     margin: 0;

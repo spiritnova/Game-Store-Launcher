@@ -48,7 +48,6 @@ function NameForm({ initial, submitLabel, onCancel, onSubmit }) {
     )
 }
 
-// "…" menu for a game you own: favourite, collections, hide, properties, uninstall and refund.
 export default function GameMenu({ game, className }) {
     const { getEntry, collections, toggleFavorite, toggleHidden, toggleCollection, createCollection, uninstall } = useStore()
     const [dialog, setDialog] = useState(null)

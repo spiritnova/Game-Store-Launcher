@@ -390,7 +390,7 @@
         background: linear-gradient(0deg, var(--surface) 0%, transparent 60%);
     }
 
-    /* minmax(0, …) so long rows can shrink instead of widening the page */
+    /* minmax(0, ...) so long rows can shrink instead of widening the page */
     .columns {
         grid-template-columns: minmax(0, 1fr);
     }

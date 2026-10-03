@@ -10,7 +10,6 @@ export const metadata = {
 export default function Messages() {
   return (
     <main className="container">
-      {/* MessagesView reads the open conversation from the URL (?with=), which requires a Suspense boundary for static rendering */}
       <Suspense fallback={<Skeleton height="480px" radius="14px" />}>
         <MessagesView />
       </Suspense>

@@ -43,7 +43,6 @@ export default function Select({ id, value, onChange, options, disabled = false,
         close()
     }
 
-    // Click outside closes the menu
     useEffect(() => {
         if (!open) return
         const onPointerDown = (e) => {
@@ -53,7 +52,6 @@ export default function Select({ id, value, onChange, options, disabled = false,
         return () => document.removeEventListener('pointerdown', onPointerDown)
     }, [open])
 
-    // Keep the highlighted option in view
     useEffect(() => {
         if (open) list.current?.querySelector(`[data-index="${active}"]`)?.scrollIntoView({ block: 'nearest' })
     }, [open, active])

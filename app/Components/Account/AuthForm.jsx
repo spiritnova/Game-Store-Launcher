@@ -18,7 +18,7 @@ function safeNext(value) {
   return value && value.startsWith('/') && !value.startsWith('//') ? value : '/'
 }
 
-// Also used by Settings › Account to change the password
+// Also used by Settings > Account to change the password
 export function PasswordStrength({ id, password }) {
   const strength = passwordStrength(password)
   return (
@@ -58,7 +58,6 @@ export function PasswordField({ id, label, value, onChange, error, hint, autoCom
   )
 }
 
-// The entry screen's form: "login" or "register". Already logged in? It goes straight to the launcher.
 export default function AuthForm({ mode }) {
   const router = useRouter()
   const next = safeNext(useSearchParams().get('next'))

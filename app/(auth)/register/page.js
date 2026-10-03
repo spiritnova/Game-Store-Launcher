@@ -8,7 +8,6 @@ export const metadata = {
 
 export default function Register() {
   return (
-    // AuthForm reads ?next= from the URL, which requires a Suspense boundary for static rendering
     <Suspense>
       <AuthForm mode="register" />
     </Suspense>

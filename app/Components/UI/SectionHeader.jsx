@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import styles from './SectionHeader.module.css'
 
-// Consistent title row for home page sections: title, optional subtitle, "See all" link and extra controls.
 export default function SectionHeader({ id, title, subtitle, href, hrefLabel = 'See all', children }) {
     return (
         <div className={styles.header}>

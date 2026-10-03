@@ -1,4 +1,3 @@
-/* Inset, rounded hero: a "featured game" card rather than a full-bleed slab */
 .hero{
     position: relative;
     margin: 1.25rem var(--page-x) 0;
@@ -107,7 +106,6 @@
     background-color: rgba(10, 11, 16, 0.8);
 }
 
-/* Glass arrows that appear when the hero is hovered */
 .swiper :global(.swiper-button-next),
 .swiper :global(.swiper-button-prev){
     width: 44px;
@@ -138,7 +136,6 @@
     left: 1.1rem;
 }
 
-/* Pill-shaped page indicator */
 .swiper :global(.swiper-pagination){
     bottom: 1.2rem;
 }

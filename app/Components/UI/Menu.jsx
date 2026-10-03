@@ -42,7 +42,6 @@ export default function Menu({ label, children, items, className, buttonClassNam
         item.onSelect()
     }
 
-    // Move focus to the highlighted item
     useLayoutEffect(() => {
         if (open) menu.current?.querySelector(`[data-index="${active}"]`)?.focus()
     }, [open, active])

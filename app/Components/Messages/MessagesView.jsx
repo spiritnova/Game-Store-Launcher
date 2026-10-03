@@ -19,13 +19,11 @@ import styles from './MessagesView.module.css'
 const DAY = 24 * 60 * 60 * 1000
 // Messages from the same person within 5 minutes are grouped under one timestamp
 const GROUP_MS = 5 * 60 * 1000
-// The character counter shows up this close to the limit
 const COUNTER_FROM = MESSAGE_MAX - 100
 
 const startOfDay = (t) => new Date(t).setHours(0, 0, 0, 0)
 const time = (t) => new Date(t).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })
 
-// "Today", "Yesterday", or the date, for the separators between days
 function dayLabel(t, now) {
     const days = Math.round((startOfDay(now) - startOfDay(t)) / DAY)
     if (days === 0) return 'Today'
@@ -33,7 +31,6 @@ function dayLabel(t, now) {
     return new Date(t).toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })
 }
 
-// A short time for the conversation list: the time today, the weekday this week, else the date
 function shortTime(t, now) {
     const days = Math.round((startOfDay(now) - startOfDay(t)) / DAY)
     if (days === 0) return time(t)
@@ -41,7 +38,6 @@ function shortTime(t, now) {
     return new Date(t).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 }
 
-// Splits a thread into days, and each day into runs of messages from the same person
 function groupMessages(messages) {
     const days = []
     for (const message of messages) {
@@ -168,13 +164,11 @@ function Thread({ name, now, onBack }) {
         if (unread > 0 || pinged) markThreadRead(name)
     }, [name, unread, pinged, markThreadRead])
 
-    // A new conversation starts with a fresh draft
     useEffect(() => {
         setDraft('')
         setError(null)
     }, [name])
 
-    // Keep the newest message in view
     useEffect(() => {
         if (list.current) list.current.scrollTop = list.current.scrollHeight
     }, [name, messages.length, typing])

@@ -2,7 +2,7 @@
     padding-block: calc(var(--section-gap) / 2);
 }
 
-/* Two columns that read top to bottom: 1–5, then 6–10 */
+/* Two columns that read top to bottom: 1-5, then 6-10 */
 .chart {
     list-style: none;
     padding: 0;

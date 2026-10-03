@@ -1,4 +1,3 @@
-// Builders for test accounts and carts, on top of the store's own record helpers.
 import { libraryEntry, purchaseRecord } from '@/lib/store/records'
 import { newAccount } from '@/lib/store/state'
 

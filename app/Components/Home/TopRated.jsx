@@ -6,7 +6,7 @@ import Price from '../UI/Price'
 import SectionHeader from '../UI/SectionHeader'
 import styles from './TopRated.module.css'
 
-// A numbered chart instead of a slider: the ranking is the point. `games` are [{ game, score }], best first.
+// `games` are [{ game, score }], best first
 export default function TopRated({ games }) {
     return (
         <section className={`container ${styles.section}`} aria-labelledby="rated-title">

@@ -34,7 +34,6 @@ const prices = {
   'under-40': { max: 40, test: (p) => p < 40 },
 }
 
-// Player modes and features from the store pages
 const modes = {
   'single-player': 'Single-player',
   'online-multiplayer': 'Online multiplayer',
@@ -44,7 +43,6 @@ const modes = {
   controller: 'Controller support',
 }
 
-// Comma-separated list parameters, keeping only known values
 const listParam = (value, known) => (value ?? '').split(',').filter((v) => known.includes(v))
 
 export default function BrowseGames() {
@@ -125,7 +123,6 @@ export default function BrowseGames() {
 
   const priceLabel = (id) => (id === 'any' ? 'Any price' : id === 'free' ? 'Free' : `Under ${formatMoney(prices[id].max).replace(/\.00$/, '')}`)
 
-  // Removable chips for every active filter
   const active = [
     ...(query.trim() ? [{ key: 'q', label: `“${query.trim()}”`, clear: () => { setQuery(''); committedQuery.current = ''; updateParams({ q: null }) } }] : []),
     ...selectedGenres.map((g) => ({ key: `g-${g}`, label: g, clear: () => toggleGenre(g) })),

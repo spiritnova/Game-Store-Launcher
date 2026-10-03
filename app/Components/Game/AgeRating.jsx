@@ -10,7 +10,6 @@ export function gateAge(rating) {
     return Math.max(rating.requiredAge ?? 0, esrb, pegi)
 }
 
-// ESRB and PEGI ratings with their content descriptors, as listed on the game's store page.
 export default function AgeRating({ rating }) {
     if (!rating?.esrb && !rating?.pegi) {
         return (

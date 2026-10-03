@@ -61,7 +61,6 @@ function AddFriend() {
     )
 }
 
-// Requests waiting for you to answer, and the ones you sent
 function Requests() {
     const { incomingRequests, outgoingRequests, profileOf, acceptFriendRequest, declineFriendRequest, cancelFriendRequest } = useStore()
     if (incomingRequests.length === 0 && outgoingRequests.length === 0) return null
@@ -152,7 +151,6 @@ export default function FriendsView() {
         ...DEMO_PLAYERS.filter((p) => suggestable(p.username)).map((p) => profileOf(p.username)),
     ].slice(0, 6)
 
-    // Recent activity: what friends (demo players) played lately
     const activity = friends
         .flatMap((f) => {
             const player = getPlayer(f.username)

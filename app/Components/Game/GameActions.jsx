@@ -21,7 +21,6 @@ import GameMenu from '../Library/GameMenu'
 import GiftDialog from './GiftDialog'
 import styles from './GameActions.module.css'
 
-// "Buy as a gift" and, for games you own, the manage menu. Only on the game page (stacked layout).
 function SecondaryActions({ game, owned }) {
     const { session } = useStore()
     const [gifting, setGifting] = useState(false)
@@ -43,7 +42,6 @@ function SecondaryActions({ game, owned }) {
     )
 }
 
-// Cart / install / play controls that follow the game's state for the signed-in user.
 // `detailsHref` adds a link to the game page (used in the home carousel).
 export default function GameActions({ game, detailsHref, stacked = false }) {
     const { hydrated, getEntry, cartItemFor, addToCart, play, playing, stopPlaying } = useStore()

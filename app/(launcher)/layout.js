@@ -3,7 +3,6 @@ import AchievementPopup from '../Components/UI/AchievementPopup'
 import Footer from '../Components/Footer'
 import Sidebar from '../Components/Sidebar'
 
-// Every launcher page: the sidebar, the page and the footer, shown once someone is logged in.
 export default function LauncherLayout({ children }) {
   return (
     <AuthGate>

@@ -9,7 +9,6 @@ import styles from './auth.module.css'
 // Cover art for the mosaic behind the brand panel: spotlight and featured games first
 const mosaic = [...allGames.filter((game) => game.spotlight || game.featured), ...allGames].filter((game, i, list) => list.indexOf(game) === i).slice(0, 18)
 
-// The entry screen around login, register and sign-out: brand panel on one side, the form on the other.
 export default function AuthLayout({ children }) {
   return (
     <div className={styles.auth}>

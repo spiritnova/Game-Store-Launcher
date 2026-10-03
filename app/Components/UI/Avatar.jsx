@@ -3,7 +3,6 @@ import styles from './Avatar.module.css'
 
 const cells = (list) => list.map(([x, y]) => `M${x} ${y}h1v1h-1z`).join('')
 
-// A pixel-art creature in the account's colour, or initials for people who chose them.
 export default function Avatar({ user, size = 36 }) {
     const seed = avatarSeed(user)
     const box = { width: size, height: size }

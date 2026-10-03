@@ -137,7 +137,7 @@ function OrderConfirmation({ order, autoInstalled }) {
   )
 }
 
-// Apply or remove a coupon code. The discount itself is worked out by the store from what's in the cart.
+// the discount itself is calculated by the store from the cart contents
 function CouponField({ disabled }) {
   const { coupon, cartPricing, applyCouponCode, removeCoupon } = useStore()
   const [code, setCode] = useState('')

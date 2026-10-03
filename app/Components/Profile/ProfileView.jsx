@@ -36,7 +36,6 @@ function reviewsBy(username) {
     return seedReviews.get(username)
 }
 
-// Everything a profile shows, for a local account or a demo player.
 function useProfile(username, now) {
     const { accounts, community, profileOf } = useStore()
     const local = accounts[username]

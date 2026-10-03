@@ -5,7 +5,7 @@ import { releaseTime } from '@/lib/games'
 
 const DAY = 24 * 60 * 60 * 1000
 
-// "Out in 3 days", "Out tomorrow"… Rendered after hydration only, since it depends on the current time.
+// "Out in 3 days", "Out tomorrow"... Rendered after hydration only, since it depends on the current time.
 export default function ReleaseCountdown({ game, className }) {
     const [now, setNow] = useState(null)
     useEffect(() => {

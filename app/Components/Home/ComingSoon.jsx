@@ -12,7 +12,6 @@ const LIST = 6
 // Release dates are whole days in UTC, so they're formatted in UTC too
 const formatDate = (game, options) => new Date(game.releaseDate).toLocaleDateString('en-US', { ...options, timeZone: 'UTC' })
 
-// A release calendar instead of a slider: the next game out, large, beside a dated list of the ones after it.
 // `backdrop` is a screenshot of the next game (store hero art is often too dark to sit behind text).
 export default function ComingSoon({ games, backdrop }) {
     const [next, ...later] = games

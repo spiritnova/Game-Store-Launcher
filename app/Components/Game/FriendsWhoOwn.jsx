@@ -6,7 +6,6 @@ import { formatPlaytime, useStore } from '@/lib/store'
 import Avatar from '../UI/Avatar'
 import styles from './FriendsWhoOwn.module.css'
 
-// "3 friends own this game" with their playtime, for the game page's purchase panel.
 export default function FriendsWhoOwn({ game }) {
     const { hydrated, friends, accounts, profileOf } = useStore()
     if (!hydrated || friends.length === 0) return null

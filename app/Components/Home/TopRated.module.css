@@ -15,7 +15,28 @@
 }
 
 .chart li {
-    border-bottom: 1px solid var(--border);
+    position: relative;
+}
+
+/* Dividers between rows, inset to the row padding and hidden around the highlighted row so they
+   never cut across its rounded corners. None above the first row of each column. */
+.chart li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0.6rem;
+    right: 0.6rem;
+    border-top: 1px solid var(--border);
+    transition: opacity 150ms;
+}
+
+.chart li:first-child::before,
+.chart li:nth-child(6)::before,
+.chart li:hover::before,
+.chart li:hover + li::before,
+.chart li:has(.row:focus-visible)::before,
+.chart li:has(.row:focus-visible) + li::before {
+    opacity: 0;
 }
 
 .row {
@@ -100,5 +121,15 @@
         grid-template-columns: 1fr;
         grid-template-rows: none;
         grid-auto-flow: row;
+    }
+
+    /* One column: #6 follows #5, so it gets its divider back (unless a neighbour is highlighted) */
+    .chart li:nth-child(6):not(:hover)::before {
+        opacity: 1;
+    }
+
+    .chart li:hover + li:nth-child(6)::before,
+    .chart li:has(.row:focus-visible) + li:nth-child(6)::before {
+        opacity: 0;
     }
 }

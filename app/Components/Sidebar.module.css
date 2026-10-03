@@ -308,6 +308,7 @@
 }
 
 .profile{
+    position: relative;
     display: flex;
     align-items: center;
     gap: 0.1rem;
@@ -475,4 +476,36 @@
 /* Settings and sign-out buttons beside the name: narrower so the name has room */
 .profile .iconButton{
     width: 30px;
+}
+
+/* Status dot on the bottom-right of the profile avatar (32px, inset by the row and link padding).
+   The button is larger than the dot so it's easier to hit. */
+.statusAnchor{
+    position: absolute;
+    left: calc(0.6rem + 18px);
+    top: calc(50% + 2px);
+}
+
+.statusButton{
+    display: grid;
+    place-items: center;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.statusDot.statusDot{
+    width: 12px;
+    height: 12px;
+    box-shadow: 0 0 0 2px var(--surface);
+    transition: box-shadow 150ms;
+}
+
+.statusButton:hover .statusDot,
+.statusButton[aria-expanded='true'] .statusDot{
+    box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--main);
 }

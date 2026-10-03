@@ -114,8 +114,27 @@
     box-shadow: 0 0 0 1px var(--border);
 }
 
-.timeline li + li {
+.timeline li {
+    position: relative;
+}
+
+/* Dividers stop short of the edges and hide around the highlighted row, so they never cut across
+   its rounded corners */
+.timeline li + li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0.75rem;
+    right: 0.75rem;
     border-top: 1px solid var(--border);
+    transition: opacity 150ms;
+}
+
+.timeline li:hover::before,
+.timeline li:hover + li::before,
+.timeline li:has(.row:focus-visible)::before,
+.timeline li:has(.row:focus-visible) + li::before {
+    opacity: 0;
 }
 
 .row {

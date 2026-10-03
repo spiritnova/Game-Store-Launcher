@@ -153,20 +153,22 @@ function FriendsPanel() {
     )
 }
 
-// The status friends see (online, away or invisible), shown as a dot that opens a menu to change it.
+// The status friends see (online, away or invisible): a dot on the corner of your avatar that opens a
+// menu to change it. It sits beside the profile link rather than inside it (a button can't go in a link).
 function StatusMenu() {
     const { user, status, setStatus } = useStore()
     const presence = usePresence()(user.username, Date.now())
     return (
         <Menu
             label={`Status: ${presenceLabel(presence)}. Change status`}
-            buttonClassName={styles.iconButton}
+            className={styles.statusAnchor}
+            buttonClassName={styles.statusButton}
             items={[
                 { heading: 'Show me as' },
                 ...Object.entries(STATUSES).map(([id, s]) => ({ label: s.label, checked: status === id, onSelect: () => setStatus(id) })),
             ]}
         >
-            <PresenceDot status={presence} />
+            <PresenceDot status={presence} className={styles.statusDot} />
         </Menu>
     )
 }

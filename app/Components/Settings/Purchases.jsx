@@ -59,6 +59,7 @@ function Receipt({ tx, onRefund }) {
                                             item.upgrade ? `Edition upgrade for ${item.gameTitle ?? getGame(item.slug)?.title}` : null,
                                             item.editionName && item.editionName !== 'Standard Edition' ? item.editionName : null,
                                             item.bundle ? `Part of ${item.bundle}` : null,
+                                            item.preorder ? 'Pre-order' : null,
                                             item.giftTo ? `Gift for ${profileOf(item.giftTo).displayName}` : null,
                                             item.refunded ? `Refunded ${formatDateTime(item.refunded)}` : null,
                                         ].filter(Boolean).join(' · ')}
@@ -123,7 +124,7 @@ export default function Purchases() {
                     {transactions.length} {transactions.length === 1 ? 'transaction' : 'transactions'} · {formatMoney(spent)} spent on games after refunds
                 </p>
                 <p className={styles.policy}>
-                    Games bought in the last {REFUND_DAYS} days and played for less than {REFUND_MINUTES / 60} hours can be refunded.
+                    Games bought in the last {REFUND_DAYS} days and played for less than {REFUND_MINUTES / 60} hours can be refunded. Pre-orders can be refunded any time before release.
                 </p>
             </div>
 

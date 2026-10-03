@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import CloseIcon from '@mui/icons-material/Close'
 import SearchIcon from '@mui/icons-material/Search'
-import { allGames, currentPrice, discountPercent, genres, isOnSale } from '@/lib/games'
+import { allGames, currentPrice, discountPercent, genres, isOnSale, isReleased } from '@/lib/games'
 import { useStore } from '@/lib/store'
 import GameCard from '../UI/GameCard'
 import Button from '../UI/Button'
@@ -16,7 +16,11 @@ const sorts = {
   'price-asc': { label: 'Price: low to high', compare: (a, b) => currentPrice(a) - currentPrice(b) },
   'price-desc': { label: 'Price: high to low', compare: (a, b) => currentPrice(b) - currentPrice(a) },
   discount: { label: 'Biggest discount', compare: (a, b) => discountPercent(b) - discountPercent(a) },
-  newest: { label: 'Newest', compare: (a, b) => b.releaseDate.localeCompare(a.releaseDate) },
+  // Released games newest first, then pre-orders soonest first
+  newest: {
+    label: 'Newest',
+    compare: (a, b) => isReleased(b) - isReleased(a) || (isReleased(a) ? b.releaseDate.localeCompare(a.releaseDate) : a.releaseDate.localeCompare(b.releaseDate)),
+  },
   title: { label: 'Title A–Z', compare: (a, b) => a.title.localeCompare(b.title) },
 }
 
@@ -55,6 +59,7 @@ export default function BrowseGames() {
   const selectedModes = useMemo(() => listParam(modesParam, Object.keys(modes)), [modesParam])
   const price = prices[searchParams.get('price')] ? searchParams.get('price') : 'any'
   const saleOnly = searchParams.get('sale') === '1'
+  const upcomingOnly = searchParams.get('upcoming') === '1'
   // Hiding owned or wishlisted games only applies once the signed-in library has loaded
   const hideOwned = hydrated && Boolean(session) && searchParams.get('hideOwned') === '1'
   const hideWishlisted = hydrated && Boolean(session) && searchParams.get('hideWishlisted') === '1'
@@ -108,10 +113,11 @@ export default function BrowseGames() {
       .filter((game) => selectedModes.every((mode) => game.features.includes(modes[mode])))
       .filter((game) => prices[price].test(currentPrice(game)))
       .filter((game) => !saleOnly || isOnSale(game))
+      .filter((game) => !upcomingOnly || !isReleased(game))
       .filter((game) => !hideOwned || !owns(game.slug))
       .filter((game) => !hideWishlisted || !isWishlisted(game.slug))
       .sort(sorts[sort].compare)
-  }, [query, selectedGenres, selectedModes, price, saleOnly, hideOwned, hideWishlisted, owns, isWishlisted, sort])
+  }, [query, selectedGenres, selectedModes, price, saleOnly, upcomingOnly, hideOwned, hideWishlisted, owns, isWishlisted, sort])
 
   const priceLabel = (id) => (id === 'any' ? 'Any price' : id === 'free' ? 'Free' : `Under ${formatMoney(prices[id].max).replace(/\.00$/, '')}`)
 
@@ -122,6 +128,7 @@ export default function BrowseGames() {
     ...selectedModes.map((m) => ({ key: `m-${m}`, label: modes[m], clear: () => toggleMode(m) })),
     ...(price !== 'any' ? [{ key: 'price', label: priceLabel(price), clear: () => updateParams({ price: null }) }] : []),
     ...(saleOnly ? [{ key: 'sale', label: 'On sale', clear: () => updateParams({ sale: null }) }] : []),
+    ...(upcomingOnly ? [{ key: 'upcoming', label: 'Coming soon', clear: () => updateParams({ upcoming: null }) }] : []),
     ...(hideOwned ? [{ key: 'owned', label: 'Hiding owned', clear: () => updateParams({ hideOwned: null }) }] : []),
     ...(hideWishlisted ? [{ key: 'wished', label: 'Hiding wishlisted', clear: () => updateParams({ hideWishlisted: null }) }] : []),
   ]
@@ -129,7 +136,7 @@ export default function BrowseGames() {
   function clearFilters() {
     setQuery('')
     committedQuery.current = ''
-    updateParams({ q: null, genre: null, modes: null, price: null, sale: null, hideOwned: null, hideWishlisted: null })
+    updateParams({ q: null, genre: null, modes: null, price: null, sale: null, upcoming: null, hideOwned: null, hideWishlisted: null })
   }
 
   return (
@@ -173,6 +180,11 @@ export default function BrowseGames() {
           <input type="checkbox" checked={saleOnly} onChange={(e) => updateParams({ sale: e.target.checked ? '1' : null })} />
           <span className={styles.switch} aria-hidden="true" />
           On sale only
+        </label>
+        <label className={styles.toggle}>
+          <input type="checkbox" checked={upcomingOnly} onChange={(e) => updateParams({ upcoming: e.target.checked ? '1' : null })} />
+          <span className={styles.switch} aria-hidden="true" />
+          Coming soon
         </label>
         {hydrated && session && (
           <>

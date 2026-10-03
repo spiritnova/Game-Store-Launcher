@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
 import SystemUpdateAltIcon from '@mui/icons-material/SystemUpdateAlt'
-import { getGame } from '@/lib/games'
+import { getGame, isReleased } from '@/lib/games'
 import { placeholderColor } from '@/lib/image-colors'
 import { useDownloads } from '@/lib/downloads'
 import { formatLastPlayed, formatPlaytime, useStore } from '@/lib/store'
@@ -21,7 +21,7 @@ export default function ContinuePlaying() {
     if (!session) return null
 
     const recent = library
-        .filter((entry) => entry.installed)
+        .filter((entry) => entry.installed && isReleased(getGame(entry.slug)))
         .sort((a, b) => (b.lastPlayed ?? 0) - (a.lastPlayed ?? 0))
         .slice(0, 4)
     if (recent.length === 0) return null

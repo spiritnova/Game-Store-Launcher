@@ -59,6 +59,17 @@ export async function fetchApp(id) {
   return entry?.success ? entry.data : null
 }
 
+// Artwork URLs from the store's browse API. Newer apps keep their library art under hashed paths, so the
+// classic `apps/{id}/library_600x900.jpg` URLs don't exist for them. { cover, hero, logo }, each possibly null.
+export async function fetchAssets(id) {
+  const input = { ids: [{ appid: id }], context: { country_code: 'US', language: 'english' }, data_request: { include_assets: true } }
+  const json = await steamJson(`https://api.steampowered.com/IStoreBrowseService/GetItems/v1?input_json=${encodeURIComponent(JSON.stringify(input))}`)
+  const assets = json.response?.store_items?.[0]?.assets
+  if (!assets) return { cover: null, hero: null, logo: null }
+  const url = (file) => (file ? `https://shared.akamai.steamstatic.com/store_item_assets/${assets.asset_url_format.replace('${FILENAME}', file)}` : null)
+  return { cover: url(assets.library_capsule_2x ?? assets.library_capsule), hero: url(assets.library_hero), logo: url(assets.library_logo) }
+}
+
 // US prices for many apps in one request: { id: { initial, final } } (apps without a price are left out)
 export async function fetchPrices(ids) {
   if (ids.length === 0) return {}

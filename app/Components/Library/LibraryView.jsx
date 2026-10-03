@@ -12,7 +12,7 @@ import SearchIcon from '@mui/icons-material/Search'
 import StopIcon from '@mui/icons-material/Stop'
 import SystemUpdateAltIcon from '@mui/icons-material/SystemUpdateAlt'
 import { achievementProgress } from '@/lib/achievements'
-import { cardImage, formatSize, getEdition, getGame } from '@/lib/games'
+import { canPreload, cardImage, formatSize, formatUnlockTime, getEdition, getGame, isReleased, preloadTime, releaseTime } from '@/lib/games'
 import { placeholderColor } from '@/lib/image-colors'
 import { statusLabel, useDownloads } from '@/lib/downloads'
 import { formatLastPlayed, formatPlaytime, getUpdate, useStore } from '@/lib/store'
@@ -45,13 +45,16 @@ function LibraryCard({ entry }) {
   const download = downloads.statusOf(game.slug)
   const lastPlayed = formatLastPlayed(entry.lastPlayed)
   const edition = getEdition(game, entry.edition)
-  const achievements = achievementProgress(entry)
+  // Pre-orders have nothing to unlock yet
+  const achievements = isReleased(game) ? achievementProgress(entry) : null
   const isPlaying = playing?.slug === game.slug
+  const released = isReleased(game)
 
   const update = downloads.updateFor(game.slug)
   let status = 'Not installed'
   if (isPlaying) status = 'Playing'
   else if (download) status = statusLabel(download)
+  else if (!released) status = entry.installed ? 'Pre-loaded' : 'Pre-ordered'
   else if (entry.installed) status = update ? 'Update available' : 'Installed'
 
   return (
@@ -75,7 +78,7 @@ function LibraryCard({ entry }) {
         </h2>
         {edition.id !== 'standard' && <p className={styles.edition}>{edition.name}</p>}
         <p className={styles.meta}>
-          {formatPlaytime(entry.playtimeMinutes)}
+          {released ? formatPlaytime(entry.playtimeMinutes) : `Unlocks ${formatUnlockTime(releaseTime(game))}`}
           {lastPlayed && <> · {lastPlayed}</>}
           {!entry.installed && <> · {formatSize(game.sizeGB)}</>}
           {game.dlc?.length > 0 && <> · {dlcFor(game.slug).all.length}/{game.dlc.length} DLC</>}
@@ -99,6 +102,10 @@ function LibraryCard({ entry }) {
                 <Button variant="ghost" size="small" onClick={() => downloads.cancel(game.slug)}>Cancel</Button>
               )}
             </>
+          ) : !released && (entry.installed || !canPreload(game)) ? (
+            <p className={styles.locked}>
+              {entry.installed ? 'Ready to play on release day' : `Pre-load from ${formatUnlockTime(preloadTime(game))}`}
+            </p>
           ) : entry.installed ? (
             <>
               {isPlaying ? (
@@ -118,7 +125,7 @@ function LibraryCard({ entry }) {
             </>
           ) : (
             <Button variant="ghost" size="small" onClick={() => downloads.install(game)}>
-              <DownloadIcon fontSize="small" /> Install
+              <DownloadIcon fontSize="small" /> {released ? 'Install' : 'Pre-load'}
             </Button>
           )}
           {/* Same place in every state, so its dialogs (Properties, refunds) stay open when a download starts */}

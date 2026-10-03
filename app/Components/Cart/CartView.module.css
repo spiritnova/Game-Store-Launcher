@@ -263,6 +263,12 @@
   font-style: italic;
 }
 
+.note {
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+  color: var(--main-text);
+}
+
 .orderId {
   font-size: 0.8rem;
   font-variant-numeric: tabular-nums;

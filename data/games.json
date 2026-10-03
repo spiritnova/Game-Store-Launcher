@@ -4576,5 +4576,361 @@
         "image": "/images/dlc/snowrunner--season-8-grand-harvest.jpg"
       }
     ]
+  },
+  {
+    "slug": "football-manager-26",
+    "title": "Football Manager 26",
+    "developer": "Sports Interactive",
+    "publisher": "SEGA",
+    "releaseDate": "2025-11-04",
+    "genres": [
+      "Sports",
+      "Simulation",
+      "Strategy"
+    ],
+    "features": [
+      "Single-player",
+      "Online multiplayer",
+      "Controller support",
+      "Achievements",
+      "Cloud saves"
+    ],
+    "price": 59.99,
+    "cover": "/images/covers/football-manager-26.jpg",
+    "banner": "/images/banners/football-manager-26.jpg",
+    "description": "Step into the dugout and experience the future of football management.",
+    "sizeGB": 20,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 59.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "nba-2k26",
+    "title": "NBA 2K26",
+    "developer": "Visual Concepts",
+    "publisher": "2K",
+    "releaseDate": "2025-09-04",
+    "genres": [
+      "Sports"
+    ],
+    "features": [
+      "Single-player",
+      "Online multiplayer",
+      "Online co-op",
+      "Local co-op & split screen",
+      "Controller support",
+      "Achievements",
+      "Cloud saves",
+      "In-game purchases"
+    ],
+    "price": 69.99,
+    "cover": "/images/covers/nba-2k26.jpg",
+    "banner": "/images/banners/nba-2k26.jpg",
+    "description": "Bragging rights are on the line in MyCAREER, MyTEAM, MyNBA, The W, and Play Now. Showcase your bag of moves with hyper realism, Powered by ProPLAY, and challenge your friends, or rivals, in NBA 2K26’s competitive modes—and leave no doubt that you wear the crown.",
+    "sizeGB": 110,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 69.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "ea-sports-fc-26",
+    "title": "EA SPORTS FC 26",
+    "developer": "EA Canada",
+    "publisher": "Electronic Arts",
+    "releaseDate": "2025-09-25",
+    "genres": [
+      "Sports",
+      "Multiplayer"
+    ],
+    "features": [
+      "Single-player",
+      "Online multiplayer",
+      "Online co-op",
+      "Local co-op & split screen",
+      "Cross-platform multiplayer",
+      "Controller support",
+      "Achievements",
+      "HDR",
+      "In-game purchases"
+    ],
+    "price": 69.99,
+    "cover": "/images/covers/ea-sports-fc-26.jpg",
+    "banner": "/images/banners/ea-sports-fc-26.jpg",
+    "description": "Experience The World's Game like never before in EA SPORTS FC 26. Go for glory in a 48-team international tournament mode, take on themed Manager Live Challenges, and step into Player Career with new international ICONs and Heroes.",
+    "sizeGB": 100,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 69.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "wwe-2k26",
+    "title": "WWE 2K26",
+    "developer": "Visual Concepts",
+    "publisher": "2K",
+    "releaseDate": "2026-03-12",
+    "genres": [
+      "Sports",
+      "Fighting"
+    ],
+    "features": [
+      "Single-player",
+      "Online multiplayer",
+      "Online co-op",
+      "Local co-op & split screen",
+      "Controller support",
+      "Achievements",
+      "Cloud saves",
+      "In-game purchases"
+    ],
+    "price": 69.99,
+    "salePrice": 27.99,
+    "cover": "/images/covers/wwe-2k26.jpg",
+    "banner": "/images/banners/wwe-2k26.jpg",
+    "description": "The show never stops in WWE 2K26! Step into CM Punk’s 2K Showcase, dominate with 400+ Superstars and Legends, and unleash chaos with all-new match types.",
+    "sizeGB": 120,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 69.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "gears-of-war-e-day",
+    "title": "Gears of War: E-Day",
+    "developer": "The Coalition",
+    "publisher": "Xbox Game Studios",
+    "releaseDate": "2026-10-06",
+    "genres": [
+      "Shooter",
+      "Action",
+      "Multiplayer"
+    ],
+    "features": [
+      "Single-player",
+      "Online multiplayer",
+      "Online co-op",
+      "Cross-platform multiplayer",
+      "Controller support",
+      "Achievements",
+      "HDR",
+      "In-game purchases"
+    ],
+    "price": 69.99,
+    "cover": "/images/covers/gears-of-war-e-day.jpg",
+    "banner": "/images/banners/gears-of-war-e-day.jpg",
+    "logo": "/images/logos/gears-of-war-e-day.png",
+    "description": "Experience Emergence Day – the brutal origin story of one of gaming’s most acclaimed third-person shooter franchises.",
+    "sizeGB": 115,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 69.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "phantom-blade-zero",
+    "title": "Phantom Blade Zero",
+    "developer": "S-GAME Studio",
+    "publisher": "S-GAME Publishing",
+    "releaseDate": "2026-10-28",
+    "genres": [
+      "Action",
+      "RPG"
+    ],
+    "features": [
+      "Single-player",
+      "Controller support",
+      "Achievements",
+      "Cloud saves"
+    ],
+    "price": 59.99,
+    "cover": "/images/covers/phantom-blade-zero.jpg",
+    "banner": "/images/banners/phantom-blade-zero.jpg",
+    "description": "S-GAME presents Phantom Blade Zero, a fusion of classic Wuxia storytelling and exhilarating action powered by Unreal Engine 5. You play as Soul, a warrior with only sixty-six days left to live. Fend off assassins, unravel world-ending conspiracies, and defend your values with your life.",
+    "sizeGB": 20,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 59.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "call-of-duty-modern-warfare-4",
+    "title": "Call of Duty: Modern Warfare 4",
+    "developer": "Infinity Ward",
+    "publisher": "Activision",
+    "releaseDate": "2026-10-22",
+    "genres": [
+      "Shooter",
+      "Multiplayer",
+      "Action"
+    ],
+    "features": [
+      "Single-player",
+      "Online multiplayer",
+      "Online co-op",
+      "Cross-platform multiplayer",
+      "Controller support",
+      "Achievements",
+      "HDR",
+      "In-game purchases"
+    ],
+    "price": 69.99,
+    "cover": "/images/covers/call-of-duty-modern-warfare-4.jpg",
+    "banner": "/images/banners/call-of-duty-modern-warfare-4.jpg",
+    "description": "War erupts on the Korean Peninsula as North Korea launches an invasion that threatens to destabilize the world in Call of Duty: Modern Warfare 4.",
+    "sizeGB": 20,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 69.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "castlevania-belmonts-curse",
+    "title": "Castlevania: Belmont's Curse",
+    "developer": "KONAMI",
+    "publisher": "KONAMI",
+    "releaseDate": "2026-10-14",
+    "genres": [
+      "Action",
+      "Platformer"
+    ],
+    "features": [
+      "Single-player",
+      "Controller support"
+    ],
+    "price": 29.99,
+    "cover": "/images/covers/castlevania-belmonts-curse.jpg",
+    "banner": "/images/banners/castlevania-belmonts-curse.jpg",
+    "description": "Crimson Curse —Will Your Fate Bloom in Despair or Salvation Set 23 years after Castlevania Dracula's Curse - follow Rose Belmont's journey in an all new 2D Action-Exploration title from KONAMI, Evil Empire and Motion Twin.",
+    "sizeGB": 10,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 29.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "planet-zoo-2",
+    "title": "Planet Zoo 2",
+    "developer": "Frontier Developments",
+    "publisher": "Frontier Developments",
+    "releaseDate": "2026-10-13",
+    "genres": [
+      "Simulation",
+      "Strategy"
+    ],
+    "features": [
+      "Single-player",
+      "Controller support",
+      "Achievements",
+      "Cloud saves",
+      "HDR"
+    ],
+    "price": 49.99,
+    "cover": "/images/covers/planet-zoo-2.jpg",
+    "banner": "/images/banners/planet-zoo-2.jpg",
+    "description": "Build a wilder world in Planet Zoo 2. Create distinctive zoos around the globe filled with awe-inspiring animals, including fully aquatic and flying species, before taking your experience beyond the zoo to release your animals into expansive Wildlife Reserves.",
+    "sizeGB": 40,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 49.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "clive-barkers-hellraiser-revival",
+    "title": "Clive Barker's Hellraiser: Revival",
+    "developer": "Saber Interactive",
+    "publisher": "Saber Interactive",
+    "releaseDate": "2026-10-08",
+    "genres": [
+      "Horror",
+      "Action"
+    ],
+    "features": [
+      "Single-player",
+      "Controller support",
+      "Achievements",
+      "Cloud saves"
+    ],
+    "price": 39.99,
+    "cover": "/images/covers/clive-barkers-hellraiser-revival.jpg",
+    "banner": "/images/banners/clive-barkers-hellraiser-revival.jpg",
+    "logo": "/images/logos/clive-barkers-hellraiser-revival.png",
+    "description": "Experience a new chapter in the legendary horror series like never before. Clive Barker's Hellraiser: Revival takes first-person action horror survival to the next level. Wield the powers of the Genesis Configuration puzzle box to survive your bargain with the infamous Pinhead.",
+    "sizeGB": 80,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 39.99,
+        "includes": []
+      }
+    ]
+  },
+  {
+    "slug": "final-fantasy-resonance",
+    "title": "FINAL FANTASY RESONANCE",
+    "developer": "Square Enix",
+    "publisher": "Square Enix",
+    "releaseDate": "2026-10-22",
+    "genres": [
+      "RPG",
+      "Action"
+    ],
+    "features": [
+      "Single-player",
+      "Controller support",
+      "Achievements",
+      "Cloud saves"
+    ],
+    "price": 49.99,
+    "cover": "/images/covers/final-fantasy-resonance.jpg",
+    "banner": "/images/banners/final-fantasy-resonance.jpg",
+    "description": "Return to the pixel‑art world of FINAL FANTASY, evolved from its classic roots. Travel with companions bound by fate and call on Visions to aid you in battle to uncover the truth behind a force that threatens to bring everything to ruin.",
+    "sizeGB": 15,
+    "editions": [
+      {
+        "id": "standard",
+        "name": "Standard Edition",
+        "price": 49.99,
+        "includes": []
+      }
+    ]
   }
 ]

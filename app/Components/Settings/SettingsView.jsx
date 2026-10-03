@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { achievementProgress } from '@/lib/achievements'
 import { AVATAR_CHOICES } from '@/lib/avatars'
@@ -13,8 +14,11 @@ import {
   AUTO_UPDATE_MODES,
   BANDWIDTH_LIMITS,
   CONNECTIONS,
+  DEMO_PASSWORD,
+  DEMO_USER,
   GIFT_CODES,
   NOTIFICATION_SETTINGS,
+  PASSWORD_MIN,
   REGIONS,
   THEMES,
   WALLET_AMOUNTS,
@@ -22,6 +26,7 @@ import {
   driveUsage,
   useStore,
 } from '@/lib/store'
+import { PasswordField, PasswordStrength } from '../Account/AuthForm'
 import Avatar from '../UI/Avatar'
 import Button from '../UI/Button'
 import Select from '../UI/Select'
@@ -483,7 +488,117 @@ function WalletSection() {
   )
 }
 
+const EMPTY_PASSWORDS = { current: '', next: '', confirm: '' }
+
+function PasswordCard() {
+  const { session, hasPassword, changePassword } = useStore()
+  const [values, setValues] = useState(EMPTY_PASSWORDS)
+  const [errors, setErrors] = useState({})
+  const [busy, setBusy] = useState(false)
+  const [done, setDone] = useState(null)
+
+  if (session.username === DEMO_USER.username) {
+    return (
+      <div className={styles.card}>
+        <h2 className={styles.cardTitle}>Password</h2>
+        <p className={styles.muted}>The demo account’s password is always “{DEMO_PASSWORD}” so anyone can try the launcher. Create your own account to choose a password.</p>
+      </div>
+    )
+  }
+
+  const update = (field) => (e) => {
+    setValues((current) => ({ ...current, [field]: e.target.value }))
+    setErrors((current) => ({ ...current, [field]: undefined, form: undefined }))
+    setDone(null)
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    const found = {}
+    if (hasPassword && !values.current) found.current = 'Enter your current password.'
+    if (values.next.length < PASSWORD_MIN) found.next = `Use at least ${PASSWORD_MIN} characters.`
+    if (values.confirm !== values.next) found.confirm = 'The passwords don’t match.'
+    setErrors(found)
+    if (Object.keys(found).length > 0) return
+    setBusy(true)
+    const result = await changePassword({ current: values.current, next: values.next })
+    setBusy(false)
+    if (!result.ok) return setErrors(result.field ? { [result.field]: result.message } : { form: result.message })
+    setValues(EMPTY_PASSWORDS)
+    setDone(result.message)
+  }
+
+  return (
+    <form className={styles.card} onSubmit={handleSubmit} noValidate>
+      <h2 className={styles.cardTitle}>{hasPassword ? 'Change password' : 'Set a password'}</h2>
+      {!hasPassword && <p className={styles.muted}>This account was made before passwords existed. Set one so only you can log in.</p>}
+      {errors.form && <p className={styles.error} role="alert">{errors.form}</p>}
+      {/* Lets password managers match the new password to this account */}
+      <input type="text" name="username" autoComplete="username" value={session.username} readOnly hidden />
+      {hasPassword && (
+        <PasswordField id="current-password" label="Current password" autoComplete="current-password" value={values.current} onChange={update('current')} error={errors.current} />
+      )}
+      <PasswordField
+        id="new-password"
+        label="New password"
+        autoComplete="new-password"
+        value={values.next}
+        onChange={update('next')}
+        error={errors.next}
+        hint={<PasswordStrength id="new-password-hint" password={values.next} />}
+      />
+      <PasswordField id="confirm-password" label="Confirm new password" autoComplete="new-password" value={values.confirm} onChange={update('confirm')} error={errors.confirm} />
+      <div className={styles.actions}>
+        {done && <p className={`${styles.success} ${styles.grow}`} role="status">{done}</p>}
+        <Button type="submit" variant="secondary" disabled={busy || !values.next} aria-busy={busy}>
+          {busy ? <><Spinner /> Saving…</> : hasPassword ? 'Change password' : 'Set password'}
+        </Button>
+      </div>
+    </form>
+  )
+}
+
+function BlockedCard() {
+  const { blocked, profileOf, unblockPlayer } = useStore()
+  return (
+    <div className={styles.card}>
+      <h2 className={styles.cardTitle}>Blocked players</h2>
+      {blocked.length === 0 ? (
+        <p className={styles.muted}>Nobody. Block a player from the ⋯ menu on their profile to stop their friend requests and gifts.</p>
+      ) : (
+        <ul className={styles.blockedList}>
+          {blocked.map((b) => {
+            const person = profileOf(b.username)
+            return (
+              <li key={b.username} className={styles.toggleRow}>
+                <Link href={`/u/${b.username}`} className={styles.blockedPerson}>
+                  <Avatar user={person} size={32} />
+                  <span>
+                    <strong>{person.displayName}</strong>
+                    <span className={styles.muted}>@{b.username} · Blocked {new Date(b.blockedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                  </span>
+                </Link>
+                <Button variant="ghost" size="small" onClick={() => unblockPlayer(b.username)}>Unblock</Button>
+              </li>
+            )
+          })}
+        </ul>
+      )}
+    </div>
+  )
+}
+
 function AccountSection() {
+  return (
+    <div className={styles.stack}>
+      <PasswordCard />
+      <BlockedCard />
+      <AccountCard />
+    </div>
+  )
+}
+
+function AccountCard() {
   const router = useRouter()
   const { session, deleteAccount } = useStore()
   const [confirming, setConfirming] = useState(false)

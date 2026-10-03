@@ -103,6 +103,51 @@
     color: var(--success);
 }
 
+.requests {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.request {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    padding: 0.65rem 0.9rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.requestPerson {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex: 1;
+    min-width: 180px;
+}
+
+.requestPerson:hover .name {
+    text-decoration: underline;
+}
+
+.requestActions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pending {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
 .activity {
     display: flex;
     flex-direction: column;

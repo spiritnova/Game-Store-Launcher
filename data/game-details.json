@@ -9404,5 +9404,1160 @@
       },
       "requiredAge": 0
     }
+  },
+  "football-manager-26": {
+    "screenshots": [
+      "/images/screenshots/football-manager-26-1.jpg",
+      "/images/screenshots/football-manager-26-2.jpg",
+      "/images/screenshots/football-manager-26-3.jpg",
+      "/images/screenshots/football-manager-26-4.jpg"
+    ],
+    "languages": {
+      "interface": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Danish",
+        "Dutch",
+        "Greek",
+        "Japanese",
+        "Korean",
+        "Norwegian",
+        "Polish",
+        "Portuguese - Portugal",
+        "Russian",
+        "Simplified Chinese",
+        "Spanish - Latin America",
+        "Swedish",
+        "Turkish",
+        "Arabic"
+      ],
+      "audio": []
+    },
+    "requirements": {
+      "minimum": [
+        [
+          "OS",
+          "Windows 10 (with updates 22H2), Windows 11 (with updates 23H2)"
+        ],
+        [
+          "Processor",
+          "Desktop: Intel Core i3-530 or AMD FX-4100 Laptop: Intel Core i3-330M or AMD A6-5200 Requires SSE4.2 & SSSE3"
+        ],
+        [
+          "Memory",
+          "4 GB RAM"
+        ],
+        [
+          "Graphics",
+          "Desktop: NVIDIA GeForce GTX 960 or AMD Radeon R9 380 or Intel HD 530 Laptop: NVIDIA GeForce GTX 960M or AMD Radeon R9 M375 or Intel HD 530 512MiB VRAM"
+        ],
+        [
+          "DirectX",
+          "Version 11"
+        ],
+        [
+          "Storage",
+          "20 GB available space"
+        ],
+        [
+          "Additional Notes",
+          "Microsoft no longer supports Windows 10 or older versions."
+        ]
+      ],
+      "recommended": [
+        [
+          "OS",
+          "Windows 11 – with updates (23H2)"
+        ],
+        [
+          "Processor",
+          "Desktop: Intel Core i5-9600 or AMD Ryzen 5 2600 Laptop: Intel Core i5-1035G7 or AMD Ryzen 7 3750H"
+        ],
+        [
+          "Memory",
+          "12 GB RAM"
+        ],
+        [
+          "Graphics",
+          "Desktop: NVIDIA GeForce RTX 2060 or AMD Radeon RX 5600 XT Laptop: NVIDIA GeForce RTX 2060 Mobile or AMD Radeon RX 6600M"
+        ],
+        [
+          "DirectX",
+          "Version 11"
+        ],
+        [
+          "Storage",
+          "20 GB available space"
+        ],
+        [
+          "Additional Notes",
+          "Microsoft no longer supports Windows 10 or older versions."
+        ]
+      ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "E",
+        "descriptors": [
+          "Mild Language"
+        ]
+      },
+      "pegi": {
+        "rating": "3",
+        "descriptors": [
+          "In-Game Purchases"
+        ]
+      },
+      "requiredAge": 0
+    }
+  },
+  "nba-2k26": {
+    "screenshots": [
+      "/images/screenshots/nba-2k26-1.jpg",
+      "/images/screenshots/nba-2k26-2.jpg",
+      "/images/screenshots/nba-2k26-3.jpg",
+      "/images/screenshots/nba-2k26-4.jpg"
+    ],
+    "languages": {
+      "interface": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Japanese",
+        "Korean",
+        "Simplified Chinese",
+        "Traditional Chinese"
+      ],
+      "audio": [
+        "English"
+      ]
+    },
+    "requirements": {
+      "minimum": [
+        [
+          "OS",
+          "Windows 10 64-Bit (latest update)"
+        ],
+        [
+          "Processor",
+          "Intel Core i3-9100 or AMD Ryzen 3 1200"
+        ],
+        [
+          "Memory",
+          "8 GB RAM"
+        ],
+        [
+          "Graphics",
+          "NVIDIA GeForce GTX 1060 5 GB or AMD Radeon RX 5500 XT 4 GB or Intel Arc A580"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Network",
+          "Broadband Internet connection"
+        ],
+        [
+          "Storage",
+          "110 GB available space"
+        ],
+        [
+          "Additional Notes",
+          "SSD Required. Dual-analog Gamepad recommended. Initial installation requires one-time internet connection for Steam authentication; software installations required (included with the game) include DirectX and Visual C++ Redistributable 2019. In order to play NBA 2K26 on PC, you need a processor capable of supporting AVX2 and a graphics card capable of supporting DirectX feature level 12.0."
+        ]
+      ],
+      "recommended": [
+        [
+          "OS",
+          "Windows 11 64-Bit (latest update)"
+        ],
+        [
+          "Processor",
+          "Intel Core i5-10600 or AMD Ryzen 5 3600X"
+        ],
+        [
+          "Memory",
+          "16 GB RAM"
+        ],
+        [
+          "Graphics",
+          "NVIDIA GeForce RTX 2070 8 GB or AMD Radeon RX 5700 8 GB or Intel Arc A770"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Network",
+          "Broadband Internet connection"
+        ],
+        [
+          "Storage",
+          "110 GB available space"
+        ],
+        [
+          "Additional Notes",
+          "SSD Required. Dual-analog Gamepad recommended. Initial installation requires one-time internet connection for Steam authentication; software installations required (included with the game) include DirectX and Visual C++ Redistributable 2019. In order to play NBA 2K26 on PC, you need a processor capable of supporting AVX2 and a graphics card capable of supporting DirectX feature level 12.0."
+        ]
+      ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "E",
+        "descriptors": [
+          "No descriptors"
+        ]
+      },
+      "pegi": {
+        "rating": "3",
+        "descriptors": [
+          "In-Game Purchases",
+          "In-Game Purchases (Includes Random Items)"
+        ]
+      },
+      "requiredAge": 0
+    }
+  },
+  "ea-sports-fc-26": {
+    "screenshots": [
+      "/images/screenshots/ea-sports-fc-26-1.jpg",
+      "/images/screenshots/ea-sports-fc-26-2.jpg",
+      "/images/screenshots/ea-sports-fc-26-3.jpg",
+      "/images/screenshots/ea-sports-fc-26-4.jpg"
+    ],
+    "languages": {
+      "interface": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Arabic",
+        "Dutch",
+        "Japanese",
+        "Korean",
+        "Polish",
+        "Portuguese - Brazil",
+        "Simplified Chinese",
+        "Spanish - Latin America",
+        "Turkish",
+        "Czech",
+        "Danish",
+        "Norwegian",
+        "Portuguese - Portugal",
+        "Russian",
+        "Swedish",
+        "Traditional Chinese"
+      ],
+      "audio": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Arabic",
+        "Dutch",
+        "Japanese",
+        "Korean",
+        "Polish",
+        "Portuguese - Brazil",
+        "Simplified Chinese",
+        "Spanish - Latin America",
+        "Turkish"
+      ]
+    },
+    "requirements": {
+      "minimum": [
+        [
+          "OS",
+          "Windows 10/11 - 64-Bit (Latest Update)."
+        ],
+        [
+          "Processor",
+          "AMD Ryzen 5 1600 or Intel Core i5 6600k"
+        ],
+        [
+          "Memory",
+          "8 GB RAM"
+        ],
+        [
+          "Graphics",
+          "AMD RX 570 or Nvidia GTX 1050 Ti"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Network",
+          "Broadband Internet connection"
+        ],
+        [
+          "Storage",
+          "100 GB available space"
+        ],
+        [
+          "Sound Card",
+          "DirectX: 12 Compatible video card or equivalent (feature level 12_0)"
+        ]
+      ],
+      "recommended": [
+        [
+          "OS",
+          "Windows 10/11 - 64-Bit (Latest Update)."
+        ],
+        [
+          "Processor",
+          "AMD Ryzen 7 2700X or Intel Core i7 6700"
+        ],
+        [
+          "Memory",
+          "12 GB RAM"
+        ],
+        [
+          "Graphics",
+          "AMD RX 5600 XT or Nvidia GTX 1660"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Network",
+          "Broadband Internet connection"
+        ],
+        [
+          "Storage",
+          "100 GB available space"
+        ],
+        [
+          "Sound Card",
+          "DirectX: 12 Compatible video card or equivalent (feature level 12_0)"
+        ]
+      ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "E",
+        "descriptors": []
+      },
+      "pegi": {
+        "rating": "3",
+        "descriptors": [
+          "In-Game Purchases"
+        ]
+      },
+      "requiredAge": 0
+    }
+  },
+  "wwe-2k26": {
+    "screenshots": [
+      "/images/screenshots/wwe-2k26-1.jpg",
+      "/images/screenshots/wwe-2k26-2.jpg",
+      "/images/screenshots/wwe-2k26-3.jpg",
+      "/images/screenshots/wwe-2k26-4.jpg"
+    ],
+    "languages": {
+      "interface": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Arabic"
+      ],
+      "audio": [
+        "English"
+      ]
+    },
+    "requirements": {
+      "minimum": [
+        [
+          "OS",
+          "Windows 10 64-bit"
+        ],
+        [
+          "Processor",
+          "i7-4770 | Ryzen 5 1500x"
+        ],
+        [
+          "Memory",
+          "16 GB RAM"
+        ],
+        [
+          "Graphics",
+          "RTX 2060 | RX 5700"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Storage",
+          "120 GB available space"
+        ],
+        [
+          "Sound Card",
+          "DirectX 9.0c compatible sound card"
+        ],
+        [
+          "Additional Notes",
+          "GPU must have at least 6GB of Video Memory | CPU must support AVX2 & F16C"
+        ]
+      ],
+      "recommended": [
+        [
+          "OS",
+          "Windows 10 64-bit"
+        ],
+        [
+          "Processor",
+          "i7-7700 | Ryzen 5 2600"
+        ],
+        [
+          "Memory",
+          "16 GB RAM"
+        ],
+        [
+          "Graphics",
+          "RTX 3060 | RX 6700XT"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Storage",
+          "120 GB available space"
+        ],
+        [
+          "Sound Card",
+          "DirectX 9.0c compatible sound card"
+        ],
+        [
+          "Additional Notes",
+          "At Least 12GB of Video Memory | CPU must support AVX2 & F16C"
+        ]
+      ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "T",
+        "descriptors": [
+          "Violence",
+          "Blood",
+          "Suggestive Themes",
+          "Language"
+        ]
+      },
+      "pegi": {
+        "rating": "16",
+        "descriptors": [
+          "Violence",
+          "In-Game Purchases (Includes Random Items)"
+        ]
+      },
+      "requiredAge": 0
+    }
+  },
+  "gears-of-war-e-day": {
+    "screenshots": [
+      "/images/screenshots/gears-of-war-e-day-1.jpg",
+      "/images/screenshots/gears-of-war-e-day-2.jpg",
+      "/images/screenshots/gears-of-war-e-day-3.jpg",
+      "/images/screenshots/gears-of-war-e-day-4.jpg"
+    ],
+    "languages": {
+      "interface": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Arabic",
+        "Czech",
+        "Dutch",
+        "Hungarian",
+        "Japanese",
+        "Korean",
+        "Norwegian",
+        "Polish",
+        "Portuguese - Brazil",
+        "Portuguese - Portugal",
+        "Russian",
+        "Simplified Chinese",
+        "Spanish - Latin America",
+        "Swedish",
+        "Traditional Chinese",
+        "Turkish",
+        "Finnish"
+      ],
+      "audio": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Japanese",
+        "Korean",
+        "Portuguese - Brazil",
+        "Simplified Chinese",
+        "Spanish - Latin America",
+        "Traditional Chinese"
+      ]
+    },
+    "requirements": {
+      "minimum": [
+        [
+          "OS",
+          "Windows 10 64-bit 22H 19045.7291"
+        ],
+        [
+          "Processor",
+          "AMD Ryzen 5 2600X / Intel i7‑6850K / i5‑10400"
+        ],
+        [
+          "Memory",
+          "12 GB RAM"
+        ],
+        [
+          "Graphics",
+          "Hardware Ray Tracing capable GPU is required. NVIDIA GeForce RTX 5050 / NVIDIA GeForce RTX 2060 / AMD Radeon RX 6600 / Radeon RX 9060"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Network",
+          "Broadband Internet connection"
+        ],
+        [
+          "Storage",
+          "115 GB available space"
+        ],
+        [
+          "Sound Card",
+          "Windows compatible audio device"
+        ],
+        [
+          "Additional Notes",
+          "Storage: SSD required (solid-state drive)"
+        ]
+      ],
+      "recommended": [
+        [
+          "OS",
+          "Windows 11 64bit (25H2) or newer"
+        ],
+        [
+          "Processor",
+          "AMD Ryzen 5 5600 / Intel i5-11600K"
+        ],
+        [
+          "Memory",
+          "16 GB RAM"
+        ],
+        [
+          "Graphics",
+          "NVIDIA GeForce RTX 5060 / NVIDIA GeForce RTX 3060ti / AMD Radeon RX 6700 XT / Radeon RX 9060 XT"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Network",
+          "Broadband Internet connection"
+        ],
+        [
+          "Storage",
+          "115 GB available space"
+        ],
+        [
+          "Sound Card",
+          "Windows compatible audio device"
+        ],
+        [
+          "Additional Notes",
+          "Storage: SSD required (solid-state drive)"
+        ]
+      ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Intense Violence",
+          "Blood and Gore",
+          "Strong Language"
+        ]
+      },
+      "pegi": {
+        "rating": "18",
+        "descriptors": [
+          "Bad Language",
+          "Violence"
+        ]
+      },
+      "requiredAge": 17
+    }
+  },
+  "phantom-blade-zero": {
+    "screenshots": [
+      "/images/screenshots/phantom-blade-zero-1.jpg",
+      "/images/screenshots/phantom-blade-zero-2.jpg",
+      "/images/screenshots/phantom-blade-zero-3.jpg",
+      "/images/screenshots/phantom-blade-zero-4.jpg"
+    ],
+    "languages": {
+      "interface": [
+        "English",
+        "Simplified Chinese",
+        "French",
+        "German",
+        "Spanish - Spain",
+        "Russian",
+        "Japanese",
+        "Traditional Chinese",
+        "Portuguese - Brazil",
+        "Korean",
+        "Italian",
+        "Thai",
+        "Vietnamese",
+        "Portuguese - Portugal",
+        "Spanish - Latin America"
+      ],
+      "audio": [
+        "English",
+        "Simplified Chinese"
+      ]
+    },
+    "requirements": {
+      "minimum": [
+        [
+          "OS",
+          "Windows 10/11 (64bit required)"
+        ],
+        [
+          "Processor",
+          "Intel Core i7-8700K / AMD Ryzen 5 3600"
+        ],
+        [
+          "Memory",
+          "16 GB RAM"
+        ],
+        [
+          "Graphics",
+          "NVIDIA GeForce GTX 1660 6GB / AMD Radeon RX 5500 XT 8GB"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Additional Notes",
+          "1080p / 30 FPS with upscaling enabled. SSD installation required."
+        ]
+      ],
+      "recommended": [
+        [
+          "OS",
+          "Windows 10/11 (64bit required)"
+        ],
+        [
+          "Processor",
+          "Intel Core i5-10600K / AMD Ryzen 5 5600X"
+        ],
+        [
+          "Memory",
+          "16 GB RAM"
+        ],
+        [
+          "Graphics",
+          "NVIDIA GeForce RTX 3060 Ti 8GB / AMD Radeon RX 6700 XT 12GB"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Additional Notes",
+          "1440p / 60 FPS with upscaling enabled. SSD installation required."
+        ]
+      ]
+    }
+  },
+  "call-of-duty-modern-warfare-4": {
+    "screenshots": [
+      "/images/screenshots/call-of-duty-modern-warfare-4-1.jpg",
+      "/images/screenshots/call-of-duty-modern-warfare-4-2.jpg",
+      "/images/screenshots/call-of-duty-modern-warfare-4-3.jpg",
+      "/images/screenshots/call-of-duty-modern-warfare-4-4.jpg"
+    ],
+    "languages": {
+      "interface": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Korean",
+        "Polish",
+        "Russian",
+        "Traditional Chinese",
+        "Japanese",
+        "Spanish - Latin America",
+        "Arabic",
+        "Simplified Chinese",
+        "Portuguese - Brazil"
+      ],
+      "audio": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Korean",
+        "Japanese",
+        "Spanish - Latin America",
+        "Simplified Chinese",
+        "Portuguese - Brazil"
+      ]
+    },
+    "requirements": {
+      "minimum": [
+        [
+          "Additional Notes",
+          "TBD"
+        ]
+      ],
+      "recommended": [
+        [
+          "Additional Notes",
+          "TBD"
+        ]
+      ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "M",
+        "descriptors": [
+          "Intense Violence",
+          "Blood and Gore",
+          "Strong Language",
+          "Use of Drugs"
+        ]
+      },
+      "requiredAge": 17
+    }
+  },
+  "castlevania-belmonts-curse": {
+    "screenshots": [
+      "/images/screenshots/castlevania-belmonts-curse-1.jpg",
+      "/images/screenshots/castlevania-belmonts-curse-2.jpg",
+      "/images/screenshots/castlevania-belmonts-curse-3.jpg",
+      "/images/screenshots/castlevania-belmonts-curse-4.jpg"
+    ],
+    "languages": {
+      "interface": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Portuguese - Brazil",
+        "Russian",
+        "Simplified Chinese",
+        "Traditional Chinese",
+        "Japanese",
+        "Korean"
+      ],
+      "audio": [
+        "English",
+        "Japanese"
+      ]
+    },
+    "requirements": {
+      "minimum": [
+        [
+          "OS",
+          "Windows11"
+        ],
+        [
+          "Processor",
+          "Intel Core i5 8400"
+        ],
+        [
+          "Memory",
+          "16 GB RAM"
+        ],
+        [
+          "Graphics",
+          "nVidia Geforce GTX1650"
+        ],
+        [
+          "DirectX",
+          "Version 11"
+        ],
+        [
+          "Storage",
+          "10 GB available space"
+        ]
+      ],
+      "recommended": [
+        [
+          "OS",
+          "Windows11"
+        ],
+        [
+          "Processor",
+          "Intel Core i5 10400"
+        ],
+        [
+          "Memory",
+          "16 GB RAM"
+        ],
+        [
+          "Graphics",
+          "nVidia Geforce RTX3060"
+        ],
+        [
+          "DirectX",
+          "Version 11"
+        ],
+        [
+          "Storage",
+          "10 GB available space"
+        ]
+      ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "T",
+        "descriptors": [
+          "Violence",
+          "Blood",
+          "Mild Suggestive Themes"
+        ]
+      },
+      "pegi": {
+        "rating": "16",
+        "descriptors": [
+          "Violence"
+        ]
+      },
+      "requiredAge": 13
+    }
+  },
+  "planet-zoo-2": {
+    "screenshots": [
+      "/images/screenshots/planet-zoo-2-1.jpg",
+      "/images/screenshots/planet-zoo-2-2.jpg",
+      "/images/screenshots/planet-zoo-2-3.jpg",
+      "/images/screenshots/planet-zoo-2-4.jpg"
+    ],
+    "languages": {
+      "interface": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Czech",
+        "Danish",
+        "Dutch",
+        "Japanese",
+        "Korean",
+        "Polish",
+        "Portuguese - Brazil",
+        "Russian",
+        "Simplified Chinese",
+        "Spanish - Latin America",
+        "Thai",
+        "Traditional Chinese"
+      ],
+      "audio": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Japanese",
+        "Korean",
+        "Portuguese - Brazil",
+        "Simplified Chinese",
+        "Spanish - Latin America"
+      ]
+    },
+    "requirements": {
+      "minimum": [
+        [
+          "OS",
+          "Windows 10, 11"
+        ],
+        [
+          "Processor",
+          "Intel i7-8700K / AMD Ryzen 5 3600"
+        ],
+        [
+          "Memory",
+          "16 GB RAM"
+        ],
+        [
+          "Graphics",
+          "NVIDIA GeForce RTX 2060 (6GB VRAM) / AMD Radeon RX 5600XT (6GB VRAM) / Intel Arc A750 (8GB VRAM)"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Storage",
+          "40 GB available space"
+        ],
+        [
+          "Additional Notes",
+          "SSD Recommended. Microsoft has ended support for Windows 10 meaning we cannot guarantee ongoing compatibility."
+        ]
+      ],
+      "recommended": [
+        [
+          "OS",
+          "Windows 11"
+        ],
+        [
+          "Processor",
+          "Intel i7-10700K / AMD Ryzen 7 5800X"
+        ],
+        [
+          "Memory",
+          "16 GB RAM"
+        ],
+        [
+          "Graphics",
+          "NVIDIA GeForce RTX 3070 (8GB VRAM) / AMD Radeon RX 6700XT (12GB VRAM) / Intel Arc A770 (16GB VRAM)"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Storage",
+          "40 GB available space"
+        ],
+        [
+          "Additional Notes",
+          "SSD Required"
+        ]
+      ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "E10+",
+        "descriptors": [
+          "Mild Violence",
+          "Mild Blood",
+          "Crude Humor"
+        ]
+      },
+      "pegi": {
+        "rating": "7",
+        "descriptors": [
+          "Mild Violence",
+          "Pressure to Play"
+        ]
+      },
+      "requiredAge": 0
+    }
+  },
+  "clive-barkers-hellraiser-revival": {
+    "screenshots": [
+      "/images/screenshots/clive-barkers-hellraiser-revival-1.jpg",
+      "/images/screenshots/clive-barkers-hellraiser-revival-2.jpg",
+      "/images/screenshots/clive-barkers-hellraiser-revival-3.jpg",
+      "/images/screenshots/clive-barkers-hellraiser-revival-4.jpg"
+    ],
+    "languages": {
+      "interface": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish - Spain",
+        "Russian",
+        "Simplified Chinese",
+        "Portuguese - Brazil"
+      ],
+      "audio": [
+        "English"
+      ]
+    },
+    "requirements": {
+      "minimum": [
+        [
+          "OS",
+          "Windows 10 64-bit + (22H2 update or later)"
+        ],
+        [
+          "Processor",
+          "AMD Ryzen 5 1500X, Intel Core i5-8400"
+        ],
+        [
+          "Memory",
+          "8 GB RAM"
+        ],
+        [
+          "Graphics",
+          "AMD Radeon RX Vega 64 8GB, NVIDIA GeForce GTX 1660"
+        ],
+        [
+          "Storage",
+          "80 GB available space"
+        ],
+        [
+          "Additional Notes",
+          "SSD is recommended"
+        ]
+      ],
+      "recommended": [
+        [
+          "OS",
+          "Windows 10 64-bit + (22H2 update or later)"
+        ],
+        [
+          "Processor",
+          "AMD Ryzen 5 5600X, Intel Core i5-12400F"
+        ],
+        [
+          "Memory",
+          "16 GB RAM"
+        ],
+        [
+          "Graphics",
+          "AMD Radeon RX 6600 XT, NVIDIA RTX 3060"
+        ],
+        [
+          "Storage",
+          "80 GB available space"
+        ],
+        [
+          "Additional Notes",
+          "SSD is recommended"
+        ]
+      ]
+    }
+  },
+  "final-fantasy-resonance": {
+    "screenshots": [
+      "/images/screenshots/final-fantasy-resonance-1.jpg",
+      "/images/screenshots/final-fantasy-resonance-2.jpg",
+      "/images/screenshots/final-fantasy-resonance-3.jpg",
+      "/images/screenshots/final-fantasy-resonance-4.jpg"
+    ],
+    "languages": {
+      "interface": [
+        "English",
+        "French",
+        "German",
+        "Spanish - Spain",
+        "Simplified Chinese",
+        "Traditional Chinese",
+        "Japanese",
+        "Korean"
+      ],
+      "audio": [
+        "English",
+        "Japanese"
+      ]
+    },
+    "requirements": {
+      "minimum": [
+        [
+          "OS",
+          "Windows 11"
+        ],
+        [
+          "Processor",
+          "AMD Ryzen 3 2300X / Intel Core i3-8100"
+        ],
+        [
+          "Memory",
+          "8 GB RAM"
+        ],
+        [
+          "Graphics",
+          "AMD Radeon RX 6400 / Intel Arc A580 / NVIDIA GeForce GTX 1650"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Storage",
+          "15 GB available space"
+        ],
+        [
+          "Additional Notes",
+          "Display Resolution / Framerate：1920 × 1080 @ 30 FPS, Graphics Preset \"Low\""
+        ]
+      ],
+      "recommended": [
+        [
+          "OS",
+          "Windows 11"
+        ],
+        [
+          "Processor",
+          "AMD Ryzen 5 2500X / Intel Core i3-8100"
+        ],
+        [
+          "Memory",
+          "8 GB RAM"
+        ],
+        [
+          "Graphics",
+          "AMD Radeon RX 5500 XT / Intel Arc A580 / NVIDIA GeForce GTX 1650"
+        ],
+        [
+          "DirectX",
+          "Version 12"
+        ],
+        [
+          "Storage",
+          "15 GB available space"
+        ],
+        [
+          "Additional Notes",
+          "Display Resolution / Framerate：1920×1080 @ 60 FPS, Graphics Preset \"Highest\""
+        ]
+      ]
+    },
+    "rating": {
+      "esrb": {
+        "rating": "E10+",
+        "descriptors": [
+          "Fantasy Violence",
+          "Suggestive Themes",
+          "Language",
+          "Alcohol Reference"
+        ]
+      },
+      "pegi": {
+        "rating": "12",
+        "descriptors": [
+          "Violence",
+          "Bad Language",
+          "In-Game Purchases"
+        ]
+      },
+      "requiredAge": 0
+    }
   }
 }

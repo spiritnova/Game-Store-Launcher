@@ -117,6 +117,10 @@
     color: #ff7eb6;
 }
 
+.release {
+    color: var(--main-text);
+}
+
 .text {
     display: flex;
     flex-direction: column;

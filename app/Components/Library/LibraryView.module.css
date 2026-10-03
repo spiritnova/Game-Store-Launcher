@@ -321,3 +321,10 @@
 .status.hasUpdate {
   color: #f5c542;
 }
+
+.locked {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}

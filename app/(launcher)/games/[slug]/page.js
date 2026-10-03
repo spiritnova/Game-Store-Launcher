@@ -12,7 +12,9 @@ import {
   getGame,
   getMoreFromStudio,
   getRelatedGames,
+  isReleased,
   isSvg,
+  PRELOAD_DAYS,
   releaseYear,
 } from '@/lib/games'
 import { blurProps } from '@/lib/images'
@@ -35,6 +37,8 @@ import styles from './page.module.css'
 
 // Unknown games reach the page and call notFound(), which shows the 404 inside the launcher
 export const dynamicParams = true
+// Rebuilt hourly so pre-orders turn into released games on their release date
+export const revalidate = 3600
 
 export function generateStaticParams() {
   return allGames.map((game) => ({ slug: game.slug }))
@@ -65,6 +69,7 @@ export default function GamePage({ params }) {
   const related = getRelatedGames(game, 4, studio.games.map((g) => g.slug))
   const multiplayer = game.features.some((f) => f.includes('multiplayer') || f.includes('co-op'))
   const shots = info.screenshots.map((src) => ({ src, blurDataURL: blurProps(src).blurDataURL }))
+  const released = isReleased(game)
 
   return (
     <main>
@@ -98,7 +103,7 @@ export default function GamePage({ params }) {
               {/* The logo already shows the title; without one, show the title as text */}
               <h1 className={game.logo ? 'visually-hidden' : styles.title}>{game.title}</h1>
               <p className={styles.meta}>
-                {game.developer} · {releaseYear(game)}
+                {game.developer} · {released ? releaseYear(game) : <span className={styles.comingSoon}>Coming {formatReleaseDate(game)}</span>}
                 {info.metacritic && (
                   <span className={styles.metacritic} title="Metacritic score">
                     <strong>{info.metacritic}</strong> Metacritic
@@ -133,12 +138,14 @@ export default function GamePage({ params }) {
               <SystemRequirements requirements={info.requirements} />
             )}
             {info.languages.interface.length > 0 && <Languages languages={info.languages} />}
-            <Achievements game={game} />
+            {/* Global unlock rates only exist once people are playing */}
+            {released && <Achievements game={game} />}
             <Reviews game={game} seeded={getSeedReviews(game)} />
             <Comments game={game} seeded={getSeedComments(game, multiplayer)} />
           </div>
 
           <aside className={styles.purchase} aria-label="Purchase">
+            {!released && <p className={styles.preorder}>Pre-order now. Pre-load {PRELOAD_DAYS} days early and play on release day.</p>}
             <Price game={game} size="large" />
             <GameActions game={game} stacked />
             {game.editions.length > 1 && (

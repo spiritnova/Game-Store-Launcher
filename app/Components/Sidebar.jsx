@@ -21,12 +21,13 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
 import StopIcon from '@mui/icons-material/Stop'
 import VideogameAssetOutlinedIcon from '@mui/icons-material/VideogameAssetOutlined'
-import { cardImage, getGame } from '@/lib/games'
+import { cardImage, getGame, isReleased } from '@/lib/games'
 import { formatSpeed, statusLabel, useDownloads } from '@/lib/downloads'
-import { useStore } from '@/lib/store'
+import { STATUSES, useStore } from '@/lib/store'
 import { useNow } from '@/lib/useNow'
 import Avatar from './UI/Avatar'
 import Logo from './UI/Logo'
+import Menu from './UI/Menu'
 import Notifications from './UI/Notifications'
 import { PresenceDot, presenceLabel, usePresence } from './UI/Presence'
 import ProgressBar from './UI/ProgressBar'
@@ -152,6 +153,24 @@ function FriendsPanel() {
     )
 }
 
+// The status friends see (online, away or invisible), shown as a dot that opens a menu to change it.
+function StatusMenu() {
+    const { user, status, setStatus } = useStore()
+    const presence = usePresence()(user.username, Date.now())
+    return (
+        <Menu
+            label={`Status: ${presenceLabel(presence)}. Change status`}
+            buttonClassName={styles.iconButton}
+            items={[
+                { heading: 'Show me as' },
+                ...Object.entries(STATUSES).map(([id, s]) => ({ label: s.label, checked: status === id, onSelect: () => setStatus(id) })),
+            ]}
+        >
+            <PresenceDot status={presence} />
+        </Menu>
+    )
+}
+
 // Only rendered after hydration, so it can check the system setting directly.
 function ThemeToggle() {
     const { prefs, updatePrefs } = useStore()
@@ -203,7 +222,7 @@ export default function Sidebar(){
     const counts = hydrated ? { library: library.length, wishlist: wishlist.length, cart: cart.length, friends: friends.length } : {}
 
     const quickLaunch = library
-        .filter((entry) => entry.installed && !entry.hidden && entry.slug !== playing?.slug)
+        .filter((entry) => entry.installed && !entry.hidden && entry.slug !== playing?.slug && isReleased(getGame(entry.slug)))
         .sort((a, b) => (b.lastPlayed ?? 0) - (a.lastPlayed ?? 0))
         .slice(0, 4)
         .map((entry) => getGame(entry.slug))
@@ -334,6 +353,7 @@ export default function Sidebar(){
                                     <span className={styles.username}>Wallet {formatMoney(wallet.balance)}</span>
                                 </span>
                             </Link>
+                            {hydrated && <StatusMenu />}
                             <Link
                                 href="/settings"
                                 className={`${styles.iconButton} ${isActive('/settings') ? styles.iconActive : ''}`}

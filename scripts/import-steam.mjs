@@ -10,7 +10,7 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises'
 import path from 'node:path'
 import sharp from 'sharp'
 import { CATALOG } from './catalog.mjs'
-import { decode, fetchApp, parseRating, shorten, slugify, stripTags } from './steam.mjs'
+import { decode, fetchApp, fetchAssets, parseRating, shorten, slugify, stripTags } from './steam.mjs'
 
 const root = path.resolve(import.meta.dirname, '..')
 const out = (...p) => path.join(root, 'public', 'images', ...p)
@@ -72,6 +72,7 @@ async function get(url) {
 }
 
 async function tryGet(url) {
+  if (!url) return null
   try {
     return await get(url)
   } catch {
@@ -102,14 +103,19 @@ for (const [id, genres] of CATALOG) {
 
   const slug = slugify(d.name)
   if (known.has(slug)) continue
-  if (d.release_date?.coming_soon) { skipped.push(`${d.name}: not released yet`); continue }
+  // Upcoming games are sold as pre-orders, so they need an exact date ("Oct 6, 2026", not "2027")
+  const released = new Date(`${d.release_date?.date} UTC`)
+  if (Number.isNaN(released.getTime())) { skipped.push(`${d.name}: no release date yet`); continue }
 
   const free = Boolean(d.is_free)
   const overview = d.price_overview
-  if (!free && !overview) { skipped.push(`${d.name}: no US price`); continue }
+  if (!free && !overview) { skipped.push(`${d.name}: no US price${d.release_date.coming_soon ? ' (no pre-order)' : ''}`); continue }
 
   const base = `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${id}`
-  const coverSrc = await tryGet(`${base}/library_600x900.jpg`)
+  // Newer apps only have their library art under hashed paths
+  let assets = null
+  const lookupAssets = async () => (assets ??= await fetchAssets(id).catch(() => ({ cover: null, hero: null, logo: null })))
+  const coverSrc = (await tryGet(`${base}/library_600x900.jpg`)) ?? (await tryGet((await lookupAssets()).cover))
   if (!coverSrc) { skipped.push(`${d.name}: no cover art`); continue }
 
   const shotSources = await Promise.all((d.screenshots ?? []).slice(0, SCREENSHOTS).map((s) => tryGet(s.path_full)))
@@ -119,13 +125,13 @@ for (const [id, genres] of CATALOG) {
   // Artwork
   await sharp(coverSrc).resize(600, 800, { fit: 'cover', position: sharp.strategy.attention }).jpeg({ quality: 80, mozjpeg: true }).toFile(out('covers', `${slug}.jpg`))
 
-  const heroSrc = await tryGet(`${base}/library_hero.jpg`)
+  const heroSrc = (await tryGet(`${base}/library_hero.jpg`)) ?? (await tryGet((await lookupAssets()).hero))
   const bannerPipeline = heroSrc
     ? sharp(heroSrc).resize({ width: 1920, withoutEnlargement: true })
     : sharp(shots[0]).resize(1920, 620, { fit: 'cover', position: 'attention' })
   await bannerPipeline.jpeg({ quality: 78, mozjpeg: true }).toFile(out('banners', `${slug}.jpg`))
 
-  const logoSrc = await tryGet(`${base}/logo.png`)
+  const logoSrc = (await tryGet(`${base}/logo.png`)) ?? (await tryGet((await lookupAssets()).logo))
   let logo
   if (logoSrc) {
     await sharp(logoSrc).resize({ width: 800, withoutEnlargement: true }).png({ compressionLevel: 9, palette: true }).toFile(out('logos', `${slug}.png`))
@@ -151,7 +157,7 @@ for (const [id, genres] of CATALOG) {
     title: decode(d.name),
     developer: decode(d.developers?.[0] ?? 'Unknown developer'),
     publisher: decode(d.publishers?.[0] ?? d.developers?.[0] ?? 'Unknown publisher'),
-    releaseDate: new Date(`${d.release_date.date} UTC`).toISOString().slice(0, 10),
+    releaseDate: released.toISOString().slice(0, 10),
     // Free games always get the Free to Play category
     genres: free && !genres.includes('Free to Play') ? [...genres, 'Free to Play'] : genres,
     features: FEATURES.filter(([, keys]) => keys.some((k) => categories.has(k))).map(([label]) => label),

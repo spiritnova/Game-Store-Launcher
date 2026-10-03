@@ -10,7 +10,7 @@ import ExtensionOutlinedIcon from '@mui/icons-material/ExtensionOutlined'
 import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined'
 import UpgradeIcon from '@mui/icons-material/Upgrade'
 import { COUPONS } from '@/lib/coupons'
-import { bundlePrice, cardImage, dlcPrice, editionPrice, getBundle, getDlc, getEdition, getGame } from '@/lib/games'
+import { bundlePrice, canPreload, cardImage, dlcPrice, editionPrice, formatReleaseDate, getBundle, getDlc, getEdition, getGame, isReleased } from '@/lib/games'
 import { placeholderColor } from '@/lib/image-colors'
 import { useDownloads } from '@/lib/downloads'
 import { simulatePayment } from '@/lib/payment'
@@ -61,12 +61,14 @@ function describe(item, { owns, profileOf, gameInCart, pricing }) {
     const game = getGame(item.slug)
     const edition = getEdition(game, item.edition)
     const editionLabel = edition.id === 'standard' ? game.publisher : edition.name
+    const preorder = !isReleased(game)
     return {
       id: item.id,
       title: game.title,
       subtitle: item.gift ? `Gift for ${profileOf(item.gift.to).displayName} · ${editionLabel}` : editionLabel,
+      note: preorder ? `Pre-order · Releases ${formatReleaseDate(game)}. Refundable any time before then.` : null,
       gift: item.gift,
-      tag: item.gift ? 'Gift' : null,
+      tag: item.gift ? 'Gift' : preorder ? 'Pre-order' : null,
       href: `/games/${game.slug}`,
       image: cardImage(game),
       original: edition.price,
@@ -106,6 +108,7 @@ function OrderConfirmation({ order, autoInstalled }) {
           <li key={game.slug}>
             {game.title}
             {edition.id !== 'standard' && ` · ${edition.name}`}
+            {!isReleased(game) && ` · Pre-order, unlocks ${formatReleaseDate(game)}`}
           </li>
         ))}
         {order.upgrades.map(({ game, to }) => (
@@ -218,8 +221,10 @@ export default function CartView() {
     setProcessing(false)
     if (!result) return
     if (result.error) return setError(result.error)
-    if (settings.autoInstall) result.purchases.forEach(({ game }) => downloads.install(game))
-    setOrder({ ...result, autoInstalled: settings.autoInstall })
+    // Pre-orders download once their pre-load opens
+    const installable = result.purchases.filter(({ game }) => canPreload(game))
+    if (settings.autoInstall) installable.forEach(({ game }) => downloads.install(game))
+    setOrder({ ...result, autoInstalled: settings.autoInstall && installable.length > 0 })
   }
 
   return (
@@ -267,6 +272,7 @@ export default function CartView() {
                     <Link href={line.href}>{line.title}</Link>
                   </h2>
                   <p>{line.subtitle}</p>
+                  {line.note && <p className={styles.note}>{line.note}</p>}
                   {line.gift?.message && <p className={styles.giftMessage}>“{line.gift.message}”</p>}
                   {line.missingBase && (
                     <p className={styles.warning}>

@@ -94,6 +94,15 @@ export const CATALOG = [
   [1971870, ['Fighting']],
   [945360, ['Multiplayer', 'Casual']],
   [728880, ['Casual', 'Multiplayer']],
+  // Upcoming games, sold as pre-orders until their release date. Only games with a set date and a
+  // pre-order price on Steam are imported.
+  [3010850, ['Shooter', 'Action', 'Multiplayer']],
+  [4115450, ['Action', 'RPG']],
+  [4435490, ['Shooter', 'Multiplayer', 'Action']],
+  [4231820, ['Action', 'Platformer']],
+  [3219030, ['Simulation', 'Strategy']],
+  [1551980, ['Horror', 'Action']],
+  [3259780, ['RPG', 'Action']],
 ]
 
 // Games added by hand (not imported from CATALOG) whose Steam title differs from ours, so a title

@@ -3,13 +3,14 @@
 import { useState } from 'react'
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard'
+import EventIcon from '@mui/icons-material/Event'
 import DownloadIcon from '@mui/icons-material/Download'
 import PauseIcon from '@mui/icons-material/Pause'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import StopIcon from '@mui/icons-material/Stop'
 import SystemUpdateAltIcon from '@mui/icons-material/SystemUpdateAlt'
-import { formatSize } from '@/lib/games'
+import { canPreload, formatSize, formatUnlockTime, isReleased, preloadTime, releaseTime } from '@/lib/games'
 import { statusLabel, useDownloads } from '@/lib/downloads'
 import { useStore } from '@/lib/store'
 import Button from '../UI/Button'
@@ -58,6 +59,7 @@ export default function GameActions({ game, detailsHref, stacked = false }) {
     }
 
     const entry = getEntry(game.slug)
+    const released = isReleased(game)
     const details = detailsHref && <Button href={detailsHref} variant="ghost" size="large">View details</Button>
     // Keyed so it stays mounted (with any open dialog) as the buttons around it change, e.g. when a download starts
     const secondary = stacked && <SecondaryActions key="secondary" game={game} owned={Boolean(entry)} />
@@ -71,7 +73,7 @@ export default function GameActions({ game, detailsHref, stacked = false }) {
                     </Button>
                 ) : (
                     <Button size="large" onClick={() => addToCart(game)}>
-                        <AddShoppingCartIcon fontSize="small" /> {game.price === 0 ? 'Get for free' : 'Add to cart'}
+                        <AddShoppingCartIcon fontSize="small" /> {!released ? 'Pre-order' : game.price === 0 ? 'Get for free' : 'Add to cart'}
                     </Button>
                 )}
                 {details ?? <WishlistButton game={game} variant="full" />}
@@ -114,9 +116,17 @@ export default function GameActions({ game, detailsHref, stacked = false }) {
 
     return (
         <div className={className}>
-            {!entry.installed ? (
+            {!entry.installed && !canPreload(game) ? (
+                <Button variant="secondary" size="large" disabled>
+                    <EventIcon fontSize="small" /> Pre-load from {formatUnlockTime(preloadTime(game))}
+                </Button>
+            ) : !entry.installed ? (
                 <Button variant="success" size="large" onClick={() => downloads.install(game)}>
-                    <DownloadIcon /> Install
+                    <DownloadIcon /> {released ? 'Install' : 'Pre-load'}
+                </Button>
+            ) : !released ? (
+                <Button variant="secondary" size="large" disabled>
+                    <EventIcon fontSize="small" /> Unlocks {formatUnlockTime(releaseTime(game))}
                 </Button>
             ) : isPlaying ? (
                 <Button variant="secondary" size="large" onClick={stopPlaying}>

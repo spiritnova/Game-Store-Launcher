@@ -7,6 +7,7 @@ import CardGiftcardIcon from '@mui/icons-material/CardGiftcard'
 import CloseIcon from '@mui/icons-material/Close'
 import DownloadDoneIcon from '@mui/icons-material/DownloadDone'
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
+import EventAvailableIcon from '@mui/icons-material/EventAvailable'
 import LocalOfferIcon from '@mui/icons-material/LocalOffer'
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone'
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1'
@@ -23,6 +24,7 @@ const ICONS = {
     gift: CardGiftcardIcon,
     friend: PersonAddAlt1Icon,
     refund: ReplayIcon,
+    release: EventAvailableIcon,
 }
 
 const PANEL_WIDTH = 360
@@ -116,7 +118,7 @@ export default function Notifications({ className }) {
                     </header>
 
                     {notifications.length === 0 ? (
-                        <p className={styles.empty}>You’re all caught up. Sales on your wishlist, finished downloads, achievements and gifts show up here.</p>
+                        <p className={styles.empty}>You’re all caught up. Sales and releases, finished downloads, achievements, friend requests and gifts show up here.</p>
                     ) : (
                         <ul className={styles.list}>
                             {notifications.map((n) => {

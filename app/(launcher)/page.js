@@ -1,5 +1,5 @@
 import details from '@/data/game-details.json'
-import { allGames, currentPrice, spotlightGames, topDeals } from '@/lib/games'
+import { allGames, currentPrice, isReleased, spotlightGames, topDeals, upcomingGames } from '@/lib/games'
 import { blurProps } from '@/lib/images'
 import BundleShowcase from '../Components/Home/BundleShowcase'
 import Carousel from '../Components/Home/Carousel'
@@ -10,6 +10,9 @@ import NewsStrip from '../Components/Home/NewsStrip'
 import Rail from '../Components/Home/Rail'
 import Button from '../Components/UI/Button'
 import styles from './page.module.css'
+
+// Rebuilt hourly so "New releases" and "Coming soon" follow the calendar
+export const revalidate = 3600
 
 const ROW = 16
 const score = (game) => details[game.slug]?.metacritic ?? 0
@@ -22,23 +25,26 @@ const card = (game) => ({
   genres: game.genres,
   price: game.price,
   salePrice: game.salePrice,
+  releaseDate: game.releaseDate,
   cover: game.cover,
   hero: game.hero,
 })
 const rows = (games) => games.slice(0, ROW).map(card)
 
 export default function Home() {
-  const today = new Date().toISOString().slice(0, 10)
+  // Pre-orders get their own row; the other rows only show games that are out
+  const released = allGames.filter((g) => isReleased(g))
+  const upcoming = upcomingGames()
 
   const deals = topDeals(ROW)
-  const newest = [...allGames].filter((g) => g.releaseDate <= today).sort((a, b) => b.releaseDate.localeCompare(a.releaseDate))
-  const topRated = allGames.filter((g) => score(g) > 0).sort((a, b) => score(b) - score(a))
-  const withFriends = allGames
+  const newest = [...released].sort((a, b) => b.releaseDate.localeCompare(a.releaseDate))
+  const topRated = released.filter((g) => score(g) > 0).sort((a, b) => score(b) - score(a))
+  const withFriends = released
     .filter((g) => features(g).some((f) => f === 'Online co-op' || f === 'Local co-op & split screen'))
     .sort((a, b) => score(b) - score(a))
-  const free = allGames.filter((g) => g.price === 0)
-  const under10 = allGames.filter((g) => g.price > 0 && currentPrice(g) < 10).sort((a, b) => score(b) - score(a) || currentPrice(a) - currentPrice(b))
-  const byGenre = (genre) => allGames.filter((g) => g.genres.includes(genre)).sort((a, b) => score(b) - score(a))
+  const free = released.filter((g) => g.price === 0)
+  const under10 = released.filter((g) => g.price > 0 && currentPrice(g) < 10).sort((a, b) => score(b) - score(a) || currentPrice(a) - currentPrice(b))
+  const byGenre = (genre) => released.filter((g) => g.genres.includes(genre)).sort((a, b) => score(b) - score(a))
 
   return (
     <main>
@@ -49,6 +55,9 @@ export default function Home() {
 
       <Rail id="deals-title" title="Top deals" subtitle="The biggest discounts in the store right now" href="/games?sale=1&sort=discount" games={rows(deals)} />
       <Rail id="new-title" title="New releases" subtitle="The latest games to hit the store" href="/games?sort=newest" games={rows(newest)} />
+      {upcoming.length > 0 && (
+        <Rail id="soon-title" title="Coming soon" subtitle="Pre-order now, pre-load early and play on release day" href="/games?upcoming=1" games={rows(upcoming)} />
+      )}
 
       <FeaturedGames/>
 

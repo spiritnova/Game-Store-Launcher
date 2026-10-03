@@ -2,9 +2,12 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import BlockIcon from '@mui/icons-material/Block'
 import CheckIcon from '@mui/icons-material/Check'
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz'
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1'
+import PersonRemoveIcon from '@mui/icons-material/PersonRemove'
 import ThumbDownIcon from '@mui/icons-material/ThumbDown'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import { achievementProgress, unlockedAchievements } from '@/lib/achievements'
@@ -16,6 +19,7 @@ import { formatLastPlayed, formatPlaytime, useStore } from '@/lib/store'
 import { useNow } from '@/lib/useNow'
 import Avatar from '../UI/Avatar'
 import Button from '../UI/Button'
+import Menu from '../UI/Menu'
 import { PresenceDot, presenceLabel, usePresence } from '../UI/Presence'
 import Skeleton from '../UI/Skeleton'
 import styles from './ProfileView.module.css'
@@ -60,7 +64,10 @@ function useProfile(username, now) {
 }
 
 export default function ProfileView({ username }) {
-    const { hydrated, session, isFriend, addFriend, removeFriend } = useStore()
+    const {
+        hydrated, session, isFriend, isBlocked, requestWith,
+        sendFriendRequest, acceptFriendRequest, declineFriendRequest, cancelFriendRequest, removeFriend, blockPlayer, unblockPlayer,
+    } = useStore()
     const now = useNow(60000)
     const statusOf = usePresence()
     const profile = useProfile(username, now)
@@ -78,6 +85,8 @@ export default function ProfileView({ username }) {
 
     const isMe = session?.username === username
     const friend = isFriend(username)
+    const blocked = isBlocked(username)
+    const request = requestWith(username)
     const status = statusOf(username, now)
     const library = profile.library
     const hours = Math.round(library.reduce((sum, e) => sum + e.playtimeMinutes, 0) / 60)
@@ -105,14 +114,39 @@ export default function ProfileView({ username }) {
                 <div className={styles.actions}>
                     {isMe ? (
                         <Button href="/settings" variant="ghost">Edit profile</Button>
-                    ) : session && friend ? (
+                    ) : session && blocked ? (
                         <>
-                            <span className={styles.friendTag}><CheckIcon fontSize="small" /> Friends</span>
-                            <Button variant="ghost" size="small" onClick={() => removeFriend(username)}>Remove friend</Button>
+                            <span className={styles.blockedTag}><BlockIcon fontSize="small" /> Blocked</span>
+                            <Button variant="ghost" size="small" onClick={() => unblockPlayer(username)}>Unblock</Button>
+                        </>
+                    ) : session && friend ? (
+                        <span className={styles.friendTag}><CheckIcon fontSize="small" /> Friends</span>
+                    ) : session && request === 'incoming' ? (
+                        <>
+                            <span className={styles.muted}>Sent you a friend request</span>
+                            <Button onClick={() => acceptFriendRequest(username)}><CheckIcon fontSize="small" /> Accept</Button>
+                            <Button variant="ghost" onClick={() => declineFriendRequest(username)}>Decline</Button>
+                        </>
+                    ) : session && request === 'outgoing' ? (
+                        <>
+                            <span className={styles.muted}>Friend request sent</span>
+                            <Button variant="ghost" size="small" onClick={() => cancelFriendRequest(username)}>Cancel request</Button>
                         </>
                     ) : session ? (
-                        <Button onClick={() => addFriend(username)}><PersonAddAlt1Icon fontSize="small" /> Add friend</Button>
+                        <Button onClick={() => sendFriendRequest(username)}><PersonAddAlt1Icon fontSize="small" /> Add friend</Button>
                     ) : null}
+                    {session && !isMe && !blocked && (
+                        <Menu
+                            label={`More options for ${profile.displayName}`}
+                            buttonClassName={styles.more}
+                            items={[
+                                ...(friend ? [{ label: 'Remove friend', icon: PersonRemoveIcon, onSelect: () => removeFriend(username) }] : []),
+                                { label: 'Block', icon: BlockIcon, danger: true, onSelect: () => blockPlayer(username) },
+                            ]}
+                        >
+                            <MoreHorizIcon fontSize="small" />
+                        </Menu>
+                    )}
                 </div>
             </header>
 

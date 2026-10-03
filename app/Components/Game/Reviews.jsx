@@ -6,6 +6,7 @@ import ThumbDownIcon from '@mui/icons-material/ThumbDown'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
 import { authorHue, formatDate, reviewSummary } from '@/lib/community'
+import { formatReleaseDate, isReleased } from '@/lib/games'
 import { useStore } from '@/lib/store'
 import Avatar from '../UI/Avatar'
 import Button from '../UI/Button'
@@ -92,6 +93,7 @@ export default function Reviews({ game, seeded }) {
 
     let composer = null
     if (!hydrated) composer = null
+    else if (!isReleased(game)) composer = <p className={styles.notice}>Reviews open when {game.title} is released on {formatReleaseDate(game)}.</p>
     else if (!session) composer = <p className={styles.notice}>Sign in to write a review.</p>
     else if (!owns(game.slug)) composer = <p className={styles.notice}>Only players who own {game.title} can review it.</p>
     else if (!mine || editing) composer = <ReviewForm game={game} existing={editing ? mine : null} onDone={() => setEditing(false)} />

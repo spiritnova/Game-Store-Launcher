@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { cardImage, discountPercent, isOnSale } from '@/lib/games'
+import { cardImage, discountPercent, formatShortDate, isOnSale, isReleased, releaseTime } from '@/lib/games'
 import { placeholderColor } from '@/lib/image-colors'
 import Price from './Price'
 import WishlistButton from './WishlistButton'
@@ -15,6 +15,7 @@ export default function GameCard({ game, headingLevel = 3, sizes = '(max-width: 
                 <div className={styles.media} style={{ backgroundColor: placeholderColor(cardImage(game)) }}>
                     <Image src={cardImage(game)} alt="" fill sizes={sizes} className={styles.image} />
                     {isOnSale(game) && <span className={styles.discount}>-{discountPercent(game)}%</span>}
+                    {game.releaseDate && !isReleased(game) && <span className={styles.upcoming}>Out {formatShortDate(releaseTime(game))}</span>}
                 </div>
                 <div className={styles.info}>
                     <Heading className={styles.title}>{game.title}</Heading>

@@ -1,6 +1,6 @@
 'use client'
 
-import { getDlc } from '@/lib/games'
+import { getDlc, isReleased } from '@/lib/games'
 import { formatDateTime, REFUND_DAYS, REFUND_MINUTES, useStore } from '@/lib/store'
 import Button from '../UI/Button'
 import Dialog from '../UI/Dialog'
@@ -19,6 +19,8 @@ export default function RefundDialog({ game, dlcId = null, open, onClose }) {
             title={`Refund ${name}`}
             description={dlcId
                 ? `DLC bought in the last ${REFUND_DAYS} days can be refunded if you've played less than ${REFUND_MINUTES / 60} hours since buying it.`
+                : !isReleased(game)
+                ? `Pre-orders can be refunded any time before release, and for ${REFUND_DAYS} days after it if played for less than ${REFUND_MINUTES / 60} hours.`
                 : `Games bought in the last ${REFUND_DAYS} days and played for less than ${REFUND_MINUTES / 60} hours can be refunded.`}
             footer={
                 info?.eligible ? (

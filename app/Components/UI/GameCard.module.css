@@ -49,6 +49,19 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
+.upcoming {
+    position: absolute;
+    left: 0.6rem;
+    top: 0.6rem;
+    padding: 3px 9px;
+    background-color: rgba(10, 12, 18, 0.82);
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+    backdrop-filter: blur(6px);
+}
+
 .info {
     display: flex;
     flex-direction: column;

@@ -18,7 +18,22 @@ function safeNext(value) {
   return value && value.startsWith('/') && !value.startsWith('//') ? value : '/'
 }
 
-function PasswordField({ id, label, value, onChange, error, hint, autoComplete }) {
+// Also used by Settings › Account to change the password
+export function PasswordStrength({ id, password }) {
+  const strength = passwordStrength(password)
+  return (
+    <div id={id} className={styles.strength}>
+      <div className={styles.meter} aria-hidden="true">
+        {[1, 2, 3, 4].map((level) => <span key={level} className={strength >= level ? styles[`level${strength}`] : ''} />)}
+      </div>
+      <p className={styles.hint}>
+        {password ? `${STRENGTH[password.length < PASSWORD_MIN ? 0 : strength]} · ` : ''}At least {PASSWORD_MIN} characters.
+      </p>
+    </div>
+  )
+}
+
+export function PasswordField({ id, label, value, onChange, error, hint, autoComplete }) {
   const [visible, setVisible] = useState(false)
   const describedBy = error ? `${id}-error` : hint ? `${id}-hint` : undefined
   return (
@@ -99,7 +114,6 @@ export default function AuthForm({ mode }) {
     return <div className={styles.card} aria-busy="true"><Spinner /></div>
   }
 
-  const strength = passwordStrength(values.password)
   return (
     <div className={styles.card}>
       <nav className={styles.tabs} aria-label="Account">
@@ -149,16 +163,7 @@ export default function AuthForm({ mode }) {
           value={values.password}
           onChange={update('password')}
           error={errors.password}
-          hint={registering && (
-            <div id="password-hint" className={styles.strength}>
-              <div className={styles.meter} aria-hidden="true">
-                {[1, 2, 3, 4].map((level) => <span key={level} className={strength >= level ? styles[`level${strength}`] : ''} />)}
-              </div>
-              <p className={styles.hint}>
-                {values.password ? `${STRENGTH[values.password.length < PASSWORD_MIN ? 0 : strength]} · ` : ''}At least {PASSWORD_MIN} characters.
-              </p>
-            </div>
-          )}
+          hint={registering && <PasswordStrength id="password-hint" password={values.password} />}
         />
 
         {registering && (

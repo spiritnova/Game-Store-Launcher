@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import CheckIcon from '@mui/icons-material/Check'
+import HourglassEmptyIcon from '@mui/icons-material/HourglassEmpty'
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1'
 import { cardImage, getGame } from '@/lib/games'
 import { DEMO_PLAYERS, getPlayer, playerLibrary } from '@/lib/players'
@@ -23,7 +25,7 @@ const GROUPS = [
 ]
 
 function AddFriend() {
-    const { addFriend } = useStore()
+    const { sendFriendRequest } = useStore()
     const [name, setName] = useState('')
     const [result, setResult] = useState(null)
 
@@ -32,7 +34,7 @@ function AddFriend() {
             className={styles.add}
             onSubmit={(e) => {
                 e.preventDefault()
-                const outcome = addFriend(name)
+                const outcome = sendFriendRequest(name)
                 setResult(outcome)
                 if (outcome.ok) setName('')
             }}
@@ -53,14 +55,72 @@ function AddFriend() {
                 </Button>
             </div>
             <p id="friend-help" className={result ? (result.ok ? styles.success : styles.error) : styles.muted} role={result ? 'status' : undefined}>
-                {result?.message ?? 'Friend requests are accepted straight away in this demo. Other accounts in this browser can be added too.'}
+                {result?.message ?? 'Demo players answer within a few seconds. Other accounts in this browser see your request when they log in.'}
             </p>
         </form>
     )
 }
 
+// Requests waiting for you to answer, and the ones you sent
+function Requests() {
+    const { incomingRequests, outgoingRequests, profileOf, acceptFriendRequest, declineFriendRequest, cancelFriendRequest } = useStore()
+    if (incomingRequests.length === 0 && outgoingRequests.length === 0) return null
+    const row = (request, actions) => {
+        const person = profileOf(request.username)
+        return (
+            <li key={request.username} className={styles.request}>
+                <Link href={`/u/${person.username}`} className={styles.requestPerson}>
+                    <Avatar user={person} size={40} />
+                    <span className={styles.text}>
+                        <span className={styles.name}>{person.displayName}</span>
+                        <span className={styles.status}>@{person.username} · {formatRelative(request.sentAt)}</span>
+                    </span>
+                </Link>
+                <span className={styles.requestActions}>{actions(person)}</span>
+            </li>
+        )
+    }
+
+    return (
+        <>
+            {incomingRequests.length > 0 && (
+                <section aria-labelledby="incoming-title" className={styles.group}>
+                    <h2 id="incoming-title" className={styles.groupTitle}>Friend requests · {incomingRequests.length}</h2>
+                    <ul className={styles.requests}>
+                        {incomingRequests.map((request) => row(request, (person) => (
+                            <>
+                                <Button size="small" onClick={() => acceptFriendRequest(person.username)} aria-label={`Accept ${person.displayName}’s friend request`}>
+                                    <CheckIcon fontSize="small" /> Accept
+                                </Button>
+                                <Button variant="ghost" size="small" onClick={() => declineFriendRequest(person.username)} aria-label={`Decline ${person.displayName}’s friend request`}>
+                                    Decline
+                                </Button>
+                            </>
+                        )))}
+                    </ul>
+                </section>
+            )}
+            {outgoingRequests.length > 0 && (
+                <section aria-labelledby="outgoing-title" className={styles.group}>
+                    <h2 id="outgoing-title" className={styles.groupTitle}>Sent requests · {outgoingRequests.length}</h2>
+                    <ul className={styles.requests}>
+                        {outgoingRequests.map((request) => row(request, (person) => (
+                            <>
+                                <span className={styles.pending}><HourglassEmptyIcon fontSize="inherit" /> Pending</span>
+                                <Button variant="ghost" size="small" onClick={() => cancelFriendRequest(person.username)} aria-label={`Cancel your friend request to ${person.displayName}`}>
+                                    Cancel
+                                </Button>
+                            </>
+                        )))}
+                    </ul>
+                </section>
+            )}
+        </>
+    )
+}
+
 export default function FriendsView() {
-    const { hydrated, session, friends, accounts, profileOf, isFriend, addFriend } = useStore()
+    const { hydrated, session, friends, accounts, profileOf, isFriend, isBlocked, requestWith, sendFriendRequest } = useStore()
     const statusOf = usePresence()
     const now = useNow(60000)
 
@@ -84,10 +144,12 @@ export default function FriendsView() {
     const people = friends.map((f) => ({ ...profileOf(f.username), since: f.since, status: statusOf(f.username, now) }))
     const grouped = GROUPS.map((g) => ({ ...g, people: people.filter((p) => p.status.state === g.id) })).filter((g) => g.people.length)
 
-    // Suggestions: demo players and other accounts in this browser who aren't friends yet
+    // Suggestions: demo players and other accounts in this browser who aren't friends yet, haven't sent
+    // you a request (those show above) and aren't blocked
+    const suggestable = (name) => !isFriend(name) && !isBlocked(name) && requestWith(name) !== 'incoming'
     const suggestions = [
-        ...Object.keys(accounts).filter((name) => name !== session.username && !isFriend(name)).map((name) => profileOf(name)),
-        ...DEMO_PLAYERS.filter((p) => !isFriend(p.username)).map((p) => profileOf(p.username)),
+        ...Object.keys(accounts).filter((name) => name !== session.username && suggestable(name)).map((name) => profileOf(name)),
+        ...DEMO_PLAYERS.filter((p) => suggestable(p.username)).map((p) => profileOf(p.username)),
     ].slice(0, 6)
 
     // Recent activity: what friends (demo players) played lately
@@ -105,6 +167,7 @@ export default function FriendsView() {
             {header}
             <div className={styles.layout}>
                 <div className={styles.main}>
+                    <Requests />
                     {friends.length === 0 ? (
                         <div className={styles.empty}>
                             <h2>No friends yet</h2>
@@ -171,9 +234,13 @@ export default function FriendsView() {
                                             <Avatar user={person} size={32} />
                                             <span className={styles.name}>{person.displayName}</span>
                                         </Link>
-                                        <Button variant="ghost" size="small" onClick={() => addFriend(person.username)} aria-label={`Add ${person.displayName} as a friend`}>
-                                            Add
-                                        </Button>
+                                        {requestWith(person.username) === 'outgoing' ? (
+                                            <span className={styles.pending}>Requested</span>
+                                        ) : (
+                                            <Button variant="ghost" size="small" onClick={() => sendFriendRequest(person.username)} aria-label={`Send ${person.displayName} a friend request`}>
+                                                Add
+                                            </Button>
+                                        )}
                                     </li>
                                 ))}
                             </ul>

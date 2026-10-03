@@ -288,13 +288,29 @@
     color: var(--text-muted);
 }
 
+/* One column on narrow screens: your requests and friends first, then adding friends, then activity */
 @container main (max-width: 860px) {
     .layout {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
     }
 
+    .main,
     .side {
-        position: static;
-        order: -1;
+        display: contents;
+    }
+
+    .add {
+        order: 1;
+    }
+
+    .suggestions {
+        order: 2;
+    }
+
+    .activitySection {
+        order: 3;
     }
 }

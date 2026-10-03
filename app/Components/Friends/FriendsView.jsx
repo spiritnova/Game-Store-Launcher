@@ -198,7 +198,7 @@ export default function FriendsView() {
                     )}
 
                     {activity.length > 0 && (
-                        <section aria-labelledby="activity-title" className={styles.group}>
+                        <section aria-labelledby="activity-title" className={`${styles.group} ${styles.activitySection}`}>
                             <h2 id="activity-title" className={styles.groupTitle}>Recent activity</h2>
                             <ul className={styles.activity}>
                                 {activity.map((item) => {

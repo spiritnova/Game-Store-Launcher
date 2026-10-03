@@ -1,6 +1,6 @@
 'use client'
 
-import { useId, useMemo, useRef, useState } from 'react'
+import { useEffect, useId, useMemo, useRef, useState } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import SearchIcon from '@mui/icons-material/Search'
@@ -28,15 +28,19 @@ function suggest(query) {
 }
 
 // Store search with suggestions as you type (ARIA combobox). Enter opens the highlighted game, or the
-// full results page when nothing is highlighted.
-export default function SearchBox({ onNavigate }) {
+// full results page when nothing is highlighted. `inputRef` lets the sidebar focus it (Ctrl/Cmd+K).
+export default function SearchBox({ onNavigate, inputRef }) {
     const router = useRouter()
     const { formatPrice } = useStore()
     const [query, setQuery] = useState('')
     const [open, setOpen] = useState(false)
     const [active, setActive] = useState(-1)
-    const input = useRef(null)
+    const ownInput = useRef(null)
+    const input = inputRef ?? ownInput
     const id = useId()
+    // The shortcut hint, once we know whether this is a Mac
+    const [shortcut, setShortcut] = useState(null)
+    useEffect(() => setShortcut(/Mac|iPhone|iPad/.test(navigator.platform) ? '⌘K' : 'Ctrl K'), [])
     const listId = `${id}-list`
 
     const results = useMemo(() => suggest(query), [query])
@@ -115,7 +119,9 @@ export default function SearchBox({ onNavigate }) {
                 onFocus={() => setOpen(true)}
                 onBlur={() => setOpen(false)}
                 onKeyDown={onKeyDown}
+                aria-keyshortcuts="Control+K Meta+K"
             />
+            {shortcut && !query && <kbd className={styles.kbd} aria-hidden="true">{shortcut}</kbd>}
 
             {expanded && (
                 <ul id={listId} role="listbox" aria-label="Suggestions" className={styles.list}>

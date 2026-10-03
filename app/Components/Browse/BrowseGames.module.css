@@ -238,9 +238,94 @@
   margin-bottom: 0.5rem;
 }
 
+/* Only shown on phones, where the filters fold away */
+.filtersButton {
+  display: none;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.9rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.filtersButton[aria-expanded='true'] {
+  border-color: var(--main);
+  color: var(--main-text);
+}
+
+.filterCount {
+  display: grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  background-color: var(--main);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  color: #fff;
+}
+
+/* On wider screens the wrapper doesn't change the layout */
+.filters {
+  display: contents;
+}
+
 @container main (max-width: 600px) {
   .sortBy {
     margin-left: 0;
+  }
+
+  .search {
+    flex-basis: 100%;
+    max-width: none;
+  }
+
+  .toolbar {
+    gap: 0.75rem 1rem;
+  }
+
+  /* One row under the search box: Filters, price and sort. The labels stay for screen readers. */
+  .filtersButton {
+    display: inline-flex;
+    order: 1;
+    flex-shrink: 0;
+  }
+
+  .sort {
+    order: 2;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .sort > label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .sort > :last-child {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .filters {
+    display: none;
+  }
+
+  .filters[data-open='true'] {
+    display: block;
+    margin-bottom: 1.25rem;
+    padding: 1rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
   }
 
   .grid {

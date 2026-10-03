@@ -379,7 +379,7 @@
 
 @container main (max-width: 900px) {
     .current {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .wideThumb {
@@ -390,8 +390,9 @@
         background: linear-gradient(0deg, var(--surface) 0%, transparent 60%);
     }
 
+    /* minmax(0, …) so long rows can shrink instead of widening the page */
     .columns {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 }
 

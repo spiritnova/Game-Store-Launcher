@@ -7,6 +7,7 @@ import Categories from '../Components/Home/Categories'
 import ComingSoon from '../Components/Home/ComingSoon'
 import ContinuePlaying from '../Components/Home/ContinuePlaying'
 import FeaturedGames from '../Components/Home/FeaturedGames'
+import GettingStarted from '../Components/Home/GettingStarted'
 import NewsStrip from '../Components/Home/NewsStrip'
 import Rail from '../Components/Home/Rail'
 import TopRated from '../Components/Home/TopRated'
@@ -53,6 +54,8 @@ export default function Home() {
       <h1 className="visually-hidden">Discover games on Ultimate Game Launcher</h1>
       <Carousel blurs={Object.fromEntries(spotlightGames.map((g) => [g.hero, blurProps(g.hero).blurDataURL]))}/>
 
+      <GettingStarted />
+
       <ContinuePlaying/>
 
       <Rail id="deals-title" title="Top deals" subtitle="The biggest discounts in the store right now" href="/games?sale=1&sort=discount" games={rows(deals)} />
@@ -75,10 +78,14 @@ export default function Home() {
 
       <NewsStrip/>
 
-      <section className={`container ${styles.cta}`}>
-        <h2>Looking for something else?</h2>
-        <p>Search and filter all {allGames.length} games in the store by category, price and discount.</p>
-        <Button href="/games" size="large">Browse all games</Button>
+      <section className="container">
+        <div className={styles.cta}>
+          <div>
+            <h2>Looking for something else?</h2>
+            <p>Search and filter all {allGames.length} games by category, price and discount.</p>
+          </div>
+          <Button href="/games">Browse all games</Button>
+        </div>
       </section>
     </main>
   )

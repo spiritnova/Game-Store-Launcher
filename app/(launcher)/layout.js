@@ -1,4 +1,5 @@
 import AuthGate from '../Components/Account/AuthGate'
+import AchievementPopup from '../Components/UI/AchievementPopup'
 import Footer from '../Components/Footer'
 import Sidebar from '../Components/Sidebar'
 
@@ -14,6 +15,7 @@ export default function LauncherLayout({ children }) {
           <Footer />
         </div>
       </div>
+      <AchievementPopup />
     </AuthGate>
   )
 }

@@ -24,6 +24,31 @@
     outline: none;
 }
 
+.kbd {
+    position: absolute;
+    right: 0.6rem;
+    padding: 1px 6px;
+    background-color: var(--hover);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    pointer-events: none;
+    transition: opacity 150ms;
+}
+
+/* Hidden while typing, and on touch screens (no keyboard shortcut there) */
+.search:focus-within .kbd {
+    opacity: 0;
+}
+
+@media (hover: none) {
+    .kbd {
+        display: none;
+    }
+}
+
 .icon {
     position: absolute;
     left: 0.75rem;

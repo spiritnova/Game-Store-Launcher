@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { achievementProgress } from '@/lib/achievements'
@@ -600,7 +600,7 @@ function AccountSection() {
 
 function AccountCard() {
   const router = useRouter()
-  const { session, deleteAccount } = useStore()
+  const { session, deleteAccount, tour, setTourDismissed } = useStore()
   const [confirming, setConfirming] = useState(false)
   const [typed, setTyped] = useState('')
 
@@ -611,6 +611,15 @@ function AccountCard() {
           <strong>Username</strong>
           <span className={styles.muted}>@{session.username}. Usernames can&apos;t be changed.</span>
         </span>
+      </div>
+      <div className={styles.toggleRow}>
+        <span>
+          <strong>Getting started checklist</strong>
+          <span className={styles.muted}>The “Try the launcher” steps on the Discover page.</span>
+        </span>
+        <Button variant="ghost" size="small" onClick={() => setTourDismissed(!tour?.dismissed)}>
+          {tour?.dismissed ? 'Show it' : 'Hide it'}
+        </Button>
       </div>
       <div className={styles.toggleRow}>
         <span>
@@ -656,6 +665,12 @@ function AccountCard() {
 export default function SettingsView() {
   const { hydrated, session } = useStore()
   const [active, setActive] = useState('profile')
+  const tabs = useRef(null)
+
+  // On phones the tabs scroll sideways: keep the selected one in view
+  useEffect(() => {
+    tabs.current?.querySelector('[aria-current="true"]')?.scrollIntoView({ block: 'nearest', inline: 'nearest' })
+  }, [active])
 
   // Support deep links such as /settings#downloads, including links followed while already on this page
   useEffect(() => {
@@ -705,7 +720,7 @@ export default function SettingsView() {
     <>
       {header}
       <div className={styles.layout}>
-        <nav className={styles.tabs} aria-label="Settings sections">
+        <nav ref={tabs} className={styles.tabs} aria-label="Settings sections">
           {sections.map((section) => (
             <button
               key={section.id}

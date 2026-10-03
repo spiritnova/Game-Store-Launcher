@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import CloseIcon from '@mui/icons-material/Close'
 import SearchIcon from '@mui/icons-material/Search'
+import TuneIcon from '@mui/icons-material/Tune'
 import { allGames, currentPrice, discountPercent, genres, isOnSale, isReleased } from '@/lib/games'
 import { useStore } from '@/lib/store'
 import GameCard from '../UI/GameCard'
@@ -100,6 +101,9 @@ export default function BrowseGames() {
     return () => clearTimeout(timer)
   }, [query, updateParams])
 
+  // On phones the filters fold away behind a button, so the results aren't pushed off screen
+  const [filtersOpen, setFiltersOpen] = useState(false)
+
   const toggleIn = (list, value) => (list.includes(value) ? list.filter((v) => v !== value) : [...list, value]).join(',')
   const toggleGenre = (name) => updateParams({ genre: name ? toggleIn(selectedGenres, name) : null })
   const toggleMode = (id) => updateParams({ modes: toggleIn(selectedModes, id) })
@@ -132,6 +136,9 @@ export default function BrowseGames() {
     ...(hideOwned ? [{ key: 'owned', label: 'Hiding owned', clear: () => updateParams({ hideOwned: null }) }] : []),
     ...(hideWishlisted ? [{ key: 'wished', label: 'Hiding wishlisted', clear: () => updateParams({ hideWishlisted: null }) }] : []),
   ]
+
+  // Filters inside the fold-away panel (search, price and sort stay visible)
+  const filterCount = selectedGenres.length + selectedModes.length + [saleOnly, upcomingOnly, hideOwned, hideWishlisted].filter(Boolean).length
 
   function clearFilters() {
     setQuery('')
@@ -169,12 +176,24 @@ export default function BrowseGames() {
           />
         </div>
 
+        <button
+          type="button"
+          className={styles.filtersButton}
+          aria-expanded={filtersOpen}
+          aria-controls="browse-filters"
+          onClick={() => setFiltersOpen(!filtersOpen)}
+        >
+          <TuneIcon fontSize="small" /> Filters
+          {filterCount > 0 && <span className={styles.filterCount}>{filterCount}</span>}
+        </button>
+
         <div className={`${styles.sort} ${styles.sortBy}`}>
           <label htmlFor="browse-sort">Sort by</label>
           <Select id="browse-sort" value={sort} onChange={setSort} options={Object.entries(sorts).map(([value, { label }]) => ({ value, label }))} align="right" />
         </div>
       </div>
 
+      <div id="browse-filters" className={styles.filters} data-open={filtersOpen}>
       <div className={styles.toggles}>
         <label className={styles.toggle}>
           <input type="checkbox" checked={saleOnly} onChange={(e) => updateParams({ sale: e.target.checked ? '1' : null })} />
@@ -223,6 +242,8 @@ export default function BrowseGames() {
             </button>
           ))}
         </div>
+      </div>
+
       </div>
 
       {active.length > 0 && (

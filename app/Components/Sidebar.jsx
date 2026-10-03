@@ -11,6 +11,8 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined'
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined'
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined'
+import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft'
+import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight'
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined'
 import LogoutIcon from '@mui/icons-material/Logout'
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
@@ -18,12 +20,13 @@ import MenuIcon from '@mui/icons-material/Menu'
 import NewspaperOutlinedIcon from '@mui/icons-material/NewspaperOutlined'
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
+import SearchIcon from '@mui/icons-material/Search'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
 import StopIcon from '@mui/icons-material/Stop'
 import VideogameAssetOutlinedIcon from '@mui/icons-material/VideogameAssetOutlined'
-import { cardImage, getGame, isReleased } from '@/lib/games'
+import { cardImage, getGame, isOnSale, isReleased } from '@/lib/games'
 import { formatSpeed, statusLabel, useDownloads } from '@/lib/downloads'
-import { STATUSES, useStore } from '@/lib/store'
+import { getUpdate, STATUSES, useStore } from '@/lib/store'
 import { useNow } from '@/lib/useNow'
 import Avatar from './UI/Avatar'
 import Logo from './UI/Logo'
@@ -34,13 +37,14 @@ import ProgressBar from './UI/ProgressBar'
 import SearchBox from './SearchBox'
 import styles from './Sidebar.module.css'
 
-function NavLink({ href, icon: Icon, label, count, countLabel, active, onNavigate }) {
+function NavLink({ href, icon: Icon, label, count, countLabel, active, onNavigate, collapsed }) {
     return (
         <li>
             <Link
                 href={href}
                 className={`${styles.link} ${active ? styles.active : ''}`}
                 aria-current={active ? 'page' : undefined}
+                title={collapsed ? label : undefined}
                 onClick={(e) => {
                     // Plain left clicks only: ctrl/cmd-click opens a new tab and shouldn't move the highlight
                     if (e.button === 0 && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey) onNavigate(href)
@@ -120,6 +124,9 @@ function NowPlaying() {
     )
 }
 
+// Kept short so Quick launch stays in view on laptop screens
+const FRIENDS_SHOWN = 3
+
 function FriendsPanel() {
     const { friends, profileOf } = useStore()
     const statusOf = usePresence()
@@ -134,7 +141,7 @@ function FriendsPanel() {
         <section className={styles.panel} aria-labelledby="friends-online-title">
             <h2 id="friends-online-title" className={styles.section}>Friends online · {online.length}</h2>
             <ul className={styles.quick}>
-                {online.slice(0, 4).map((friend) => (
+                {online.slice(0, FRIENDS_SHOWN).map((friend) => (
                     <li key={friend.username}>
                         <Link href={`/u/${friend.username}`} className={styles.quickGame}>
                             <span className={styles.friendAvatar}>
@@ -149,6 +156,9 @@ function FriendsPanel() {
                     </li>
                 ))}
             </ul>
+            {online.length > FRIENDS_SHOWN && (
+                <Link href="/friends" className={styles.more}>+{online.length - FRIENDS_SHOWN} more online</Link>
+            )}
         </section>
     )
 }
@@ -191,9 +201,41 @@ export default function Sidebar(){
     const [open, setOpen] = useState(false)
     // The link that was just clicked: highlighted immediately, before the new page has loaded
     const [pendingHref, setPendingHref] = useState(null)
-    const { hydrated, user, library, wishlist, cart, friends, wallet, playing, play, formatMoney } = useStore()
+    const { hydrated, user, library, wishlist, cart, incomingRequests, wallet, playing, play, formatMoney, prefs, updatePrefs } = useStore()
     const menuButton = useRef(null)
     const closeButton = useRef(null)
+    const search = useRef(null)
+    // Icons only (wide screens). The layout script applies it before paint; this drives tooltips and the toggle.
+    const collapsed = hydrated && prefs.sidebar === 'collapsed'
+    const toggleCollapsed = () => updatePrefs({ sidebar: collapsed ? 'expanded' : 'collapsed' })
+
+    // Puts the cursor in the store search: opens the drawer on phones, expands a collapsed sidebar
+    const focusSearch = () => {
+        if (window.matchMedia('(max-width: 900px)').matches) setOpen(true)
+        else if (collapsed) updatePrefs({ sidebar: 'expanded' })
+        // After the drawer or sidebar has opened
+        setTimeout(() => search.current?.focus(), 60)
+    }
+
+    // Keyboard shortcuts: Ctrl/Cmd+K searches the store, Ctrl/Cmd+B collapses the sidebar.
+    // Read through a ref so the listener is added once but always sees the current state.
+    const shortcuts = useRef(null)
+    shortcuts.current = (e) => {
+        if (!(e.ctrlKey || e.metaKey) || e.altKey || e.shiftKey) return
+        const key = e.key.toLowerCase()
+        if (key === 'k') {
+            e.preventDefault()
+            focusSearch()
+        } else if (key === 'b' && !e.target.closest?.('input, textarea, [contenteditable="true"]') && window.matchMedia('(min-width: 901px)').matches) {
+            e.preventDefault()
+            toggleCollapsed()
+        }
+    }
+    useEffect(() => {
+        const onKeyDown = (e) => shortcuts.current(e)
+        document.addEventListener('keydown', onKeyDown)
+        return () => document.removeEventListener('keydown', onKeyDown)
+    }, [])
 
     // Navigation finished: close the drawer and drop the pending highlight
     useEffect(() => {
@@ -220,13 +262,21 @@ export default function Sidebar(){
     const profileHref = user ? `/u/${user.username}` : null
     const isActive = (href) => (href === '/' ? current === '/' : current.startsWith(href))
     const onNavigate = (href) => href !== pathname && setPendingHref(href)
-    const link = (href) => ({ href, active: isActive(href), onNavigate })
-    const counts = hydrated ? { library: library.length, wishlist: wishlist.length, cart: cart.length, friends: friends.length } : {}
+    const link = (href) => ({ href, active: isActive(href), onNavigate, collapsed })
+    // Badges only count things that need attention, so they stand out when they appear
+    const counts = hydrated
+        ? {
+            updates: library.filter((entry) => getUpdate(entry)).length,
+            sales: wishlist.filter((entry) => isOnSale(getGame(entry.slug))).length,
+            cart: cart.length,
+            requests: incomingRequests.length,
+        }
+        : {}
 
     const quickLaunch = library
         .filter((entry) => entry.installed && !entry.hidden && entry.slug !== playing?.slug && isReleased(getGame(entry.slug)))
         .sort((a, b) => (b.lastPlayed ?? 0) - (a.lastPlayed ?? 0))
-        .slice(0, 4)
+        .slice(0, 3)
         .map((entry) => getGame(entry.slug))
 
     return(
@@ -260,10 +310,20 @@ export default function Sidebar(){
             <aside id="sidebar" className={`${styles.sidebar} ${open ? styles.open : ''}`} aria-label="Sidebar">
                 <div className={styles.header}>
                     <Link href="/" className={styles.brand} aria-label="Ultimate Game Launcher home">
-                        <Logo height={44} priority />
+                        <span className={styles.fullLogo}><Logo height={44} priority /></span>
+                        <span className={styles.compactLogo}><Logo compact height={36} /></span>
                     </Link>
-                    <div className={styles.desktopOnly}>
+                    <div className={`${styles.desktopOnly} ${styles.headerActions}`}>
                         <Notifications className={styles.iconButton} />
+                        <button
+                            type="button"
+                            className={styles.iconButton}
+                            onClick={toggleCollapsed}
+                            aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+                            title={`${collapsed ? 'Expand' : 'Collapse'} sidebar (Ctrl+B)`}
+                        >
+                            {collapsed ? <KeyboardDoubleArrowRightIcon fontSize="small" /> : <KeyboardDoubleArrowLeftIcon fontSize="small" />}
+                        </button>
                     </div>
                     <button
                         ref={closeButton}
@@ -276,7 +336,11 @@ export default function Sidebar(){
                     </button>
                 </div>
 
-                <SearchBox onNavigate={onNavigate} />
+                <SearchBox onNavigate={onNavigate} inputRef={search} />
+                {/* Shown instead of the search box when the sidebar is collapsed */}
+                <button type="button" className={`${styles.iconButton} ${styles.searchButton}`} onClick={focusSearch} aria-label="Search store" title="Search store (Ctrl+K)">
+                    <SearchIcon fontSize="small" />
+                </button>
 
                 {/* Only this middle part scrolls, so the profile stays pinned at the bottom */}
                 <div className={styles.scroll}>
@@ -290,18 +354,16 @@ export default function Sidebar(){
 
                     <h2 className={styles.section}>Your games</h2>
                     <ul>
-                        <NavLink {...link('/library')} icon={VideogameAssetOutlinedIcon} label="Library" count={counts.library} countLabel="games" />
+                        <NavLink {...link('/library')} icon={VideogameAssetOutlinedIcon} label="Library" count={counts.updates} countLabel={counts.updates === 1 ? 'update available' : 'updates available'} />
                         <DownloadsNavLink {...link('/downloads')} icon={DownloadIcon} label="Downloads" />
-                        <NavLink {...link('/wishlist')} icon={FavoriteBorderIcon} label="Wishlist" count={counts.wishlist} countLabel="games" />
+                        <NavLink {...link('/wishlist')} icon={FavoriteBorderIcon} label="Wishlist" count={counts.sales} countLabel="on sale" />
                         <NavLink {...link('/cart')} icon={ShoppingCartOutlinedIcon} label="Cart" count={counts.cart} />
-                        <NavLink {...link('/friends')} icon={PeopleOutlineIcon} label="Friends" count={counts.friends} countLabel="friends" />
+                        <NavLink {...link('/friends')} icon={PeopleOutlineIcon} label="Friends" count={counts.requests} countLabel={counts.requests === 1 ? 'friend request' : 'friend requests'} />
                     </ul>
                 </nav>
 
                 {hydrated && <NowPlaying />}
                 <DownloadsPanel />
-                {hydrated && user && <FriendsPanel />}
-
                 {quickLaunch.length > 0 && (
                     <section className={styles.panel} aria-labelledby="quick-launch-title">
                         <h2 id="quick-launch-title" className={styles.section}>Quick launch</h2>
@@ -328,6 +390,8 @@ export default function Sidebar(){
                         </ul>
                     </section>
                 )}
+                {hydrated && user && <FriendsPanel />}
+
 
                 </div>
 

@@ -509,3 +509,132 @@
 .statusButton[aria-expanded='true'] .statusDot{
     box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--main);
 }
+
+/* ---------- Header extras ---------- */
+.fullLogo{
+    display: flex;
+}
+
+.compactLogo,
+.searchButton{
+    display: none;
+}
+
+.headerActions{
+    display: flex;
+    gap: 2px;
+}
+
+/* Badges count things that need attention, so they use the accent colour */
+.count{
+    background-color: color-mix(in srgb, var(--main) 24%, transparent);
+    color: var(--main-text);
+}
+
+.more{
+    display: block;
+    margin: 0.15rem 0.5rem 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--main-text);
+}
+
+.more:hover{
+    text-decoration: underline;
+}
+
+/* ---------- Collapsed: icons only (wide screens; phones always use the full drawer) ---------- */
+@media (min-width: 901px){
+    :global(:root[data-sidebar='collapsed']) .sidebar{
+        align-items: center;
+        padding-inline: 0.6rem;
+    }
+
+    :global(:root[data-sidebar='collapsed']) .header,
+    :global(:root[data-sidebar='collapsed']) .headerActions,
+    :global(:root[data-sidebar='collapsed']) .footerRow,
+    :global(:root[data-sidebar='collapsed']) .profile{
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4rem;
+        padding-inline: 0;
+    }
+
+    :global(:root[data-sidebar='collapsed']) .fullLogo,
+    :global(:root[data-sidebar='collapsed']) .sidebar > form,
+    :global(:root[data-sidebar='collapsed']) .section,
+    :global(:root[data-sidebar='collapsed']) .panel,
+    :global(:root[data-sidebar='collapsed']) .profileText{
+        display: none;
+    }
+
+    :global(:root[data-sidebar='collapsed']) .compactLogo,
+    :global(:root[data-sidebar='collapsed']) .searchButton{
+        display: flex;
+    }
+
+    :global(:root[data-sidebar='collapsed']) .scroll{
+        width: calc(100% + 1.2rem);
+        margin-inline: -0.6rem;
+        padding-inline: 0.6rem;
+    }
+
+    :global(:root[data-sidebar='collapsed']) .nav ul{
+        align-items: center;
+    }
+
+    /* Labels stay readable to screen readers; links show a tooltip instead */
+    :global(:root[data-sidebar='collapsed']) .label{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+    }
+
+    :global(:root[data-sidebar='collapsed']) .link{
+        justify-content: center;
+        width: 44px;
+        height: 42px;
+        padding: 0;
+    }
+
+    /* Badges become small counters on the icon's corner */
+    :global(:root[data-sidebar='collapsed']) .count{
+        position: absolute;
+        top: 3px;
+        right: 2px;
+        min-width: 16px;
+        height: 16px;
+        padding: 0 4px;
+        background-color: var(--main);
+        font-size: 0.62rem;
+        line-height: 16px;
+        color: #fff;
+    }
+
+    :global(:root[data-sidebar='collapsed']) .footer{
+        width: 100%;
+        align-items: center;
+    }
+
+    :global(:root[data-sidebar='collapsed']) .footerRow ul{
+        flex: none;
+    }
+
+    :global(:root[data-sidebar='collapsed']) .profile{
+        width: 100%;
+        padding-block: 0.35rem;
+    }
+
+    :global(:root[data-sidebar='collapsed']) .profileLink{
+        flex: none;
+    }
+
+    /* The status dot follows the avatar, which is now centred at the top of the column */
+    :global(:root[data-sidebar='collapsed']) .statusAnchor{
+        left: calc(50% + 2px);
+        top: calc(0.6rem + 18px);
+    }
+}
